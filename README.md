@@ -1,6 +1,6 @@
 # Accelerating SQL with Complex Visual Querying
 
-This is a repository of a **Master Thesis**. This Project it was developed by **Pedro Santos Rodrigues** in order to obtain the Master Degree of **Computer Science and Informatics Engineering at NOVA School of Science and Technology (FCT NOVA)**. Although the work has many academical content, it has also some buisness content once, all this project was developed on **OutSystems** in order to increment the value of the company and his product.
+This is a repository of a **Master Thesis**. This Project was developed by **Pedro Santos Rodrigues** in order to obtain the Master Degree of **Computer Science and Informatics Engineering at NOVA School of Science and Technology (FCT NOVA)**. Although the work has much academical content, it has also some business content, once all this project was developed on **OutSystems** in order to increment the value of the company and his product.
 
 ## Project Context
 
