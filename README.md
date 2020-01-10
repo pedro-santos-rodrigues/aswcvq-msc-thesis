@@ -1,54 +1,12 @@
-# NOVAthesis LaTeX template
+# Accelerating SQL with Complex Visual Querying
 
---------
+This is a repository of a **Master Thesis**. This Project it was developed by **Pedro Santos Rodrigues** in order to obtain the Master Degree of **Computer Science and Informatics Engineering at NOVA School of Science and Technology (FCT NOVA)**. Although the work has many academical content, it has also some buisness content once, all this project was developed on **OutSystems** in order to increment the value of the company and his product.
 
-*If you are here looking for the (deprecated) Word templates (not maintained anymore), please go to [this other repository](https://github.com/joaomlourenco/novathesis_word).*
+## Project Context
 
---------
+OutSystems is a multi-awarded company that offers a groundbreaking solution for rapid application development (RAD) with the OutSystems Platform, empowering developers to build innovative business solutions fast with low effort. Using a **visual programming language**, the OutSystems platform allows developers to create state-of-the-art web and mobile applications, while having little concern for the complex technologies that implement those applications. OutSystems automatically generates all the code that is needed to run the applications. The platform provides a visual querying language that enables users with little or no development knowledge to get data from the database and transform it by joining, filterering, sorting, or grouping it. All this without the need to resort to SQL or any other complex querying language.
 
-The NOVAthesis LaTeX class is a thesis template initially designed for the PhD and MSc thesis at [FCT Universidade NOVA de Lisboa (FCT-NOVA)](http://www.fct.nova.pt), Portugal. The class provides utilities to easily set up the cover page, the front matter pages, the page headers, etc. with respect to the official guidelines of the FCT-NOVA for writing PhD dissertations.
+## Project Description
 
-The template is easily customizable, including the support for other institutions as well. Currently the template supports out-of-thebox (at least): 17 Chapter Styles, 7 font sets, 4 schools.  If you customize this template for your institution or add new style files, please [let me knwow](http://docentes.fct.unl.pt/joao-lourenco) about the thorns in the process, so that I can work a bit to smooth them.  Thanks!
+Although this language covers a majority of usages, there are scenarios where it may not be powerful or usable enough. This is especially true when dealing with several database tables or when needing more advanced constructs like subqueries, IN, NOT IN, NOT EXISTS clauses, and more. In those cases OutSystems developers need to resort to low-level SQL code, which not only requires more skills, but also makes the code harder to read, increasing the cost of evolving the applications with fixes or new features. The goal of this project is to design and evaluate a new and more powerful Language and **User Experience** that allows developers to do all these complex data queries in a very easy way without using SQL. 
 
-*This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.*
-
-## Donations
-
-If you think this template really helped you while writing your thesis, think about doing a [small donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KTPG2K2AHCRAW). I'll keep a list thanking to all the identified donors that identify themselves in the “*Add special instructions to the seller:*” box.
-
-## Getting Started
-
-### Download
-
-Get the latest realease from the [releases page](https://github.com/joaomlourenco/novathesis/releases)!
-
-### Problems and Difficulties
-
-Check the [wiki](https://github.com/joaomlourenco/novathesis/wiki) and have some hope! :smile:
-
-If you couldn't find what you were looking for, ask for help in:
-
-* the [discussion forum](https://groups.google.com/forum/#!forum/novathesis) at https://groups.google.com/forum/#!forum/novathesis. 
-* the [facebook page](https://www.facebook.com/groups/novathesis/) (PT or EN) at https://www.facebook.com/groups/novathesis.
-* the [google group](https://groups.google.com/forum/#!forum/novathesis) (EN only please) at https://groups.google.com/forum/#!forum/novathesis.
-* You may also give a look at the new [NOVA thesis blog](https://novathesis.blogspot.pt) at https://novathesis.blogspot.pt.
-
-Those are the right places to learn about LaTeX and ask for help!  *Please don't ask for help by email! We won't answer…*
-
-### Suggestions and Recommendations
-
-Please add them to the [wiki](https://github.com/joaomlourenco/novathesis/wiki) and help other users!
-
-**Did you find a bug?**  Please [open an issue](https://github.com/joaomlourenco/novathesis/issues). Thanks!
-
-## Disclaimer
-
-These are not official templates for FCT-NOVA, although they are fully compliant to the FCT and NOVA formatting regulations.
-
-The Word template is *frozen*.  The maintenance is very very limited.
-
-All contributors, both sporadic and regular, are welcome. :) Please [contact me](http://docentes.fct.unl.pt/joao-lourenco) to join the team.
-
-## Recent News
-
-Please check the file `changelog.txt` for the complete listing of changes.
