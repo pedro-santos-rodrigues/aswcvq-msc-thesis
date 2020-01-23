@@ -11,13 +11,24 @@
 
 \chapter{Introduction}
 \label{cha:introduction}
-This project was developed on a particular environment, and, as such as, this chapter will introduce this thesis, starting by all the contextualization about the company, the product, and its section which will be the nuclear focus of this thesis, followed by the description the motivation behind it. In addition, will be presented an overview of the problem, such as expected contributions and the structure of the document. 
+This project was developed \textcolor{red}{on a particular environment}, and, as such as, this chapter will introduce this thesis, starting by all the contextualization about the company, the product, \textcolor{red}{and its section which will be the nuclear focus of this thesis}, followed by the description the motivation behind it. In addition, will be presented an overview of the problem, such as expected contributions and the structure of the document. 
 
 \section{Context} 
 \label{sec:context}
-Once this project was proposed to improve the visual way that the users of the OutSystems Platform can query data, in this section, will be first provided some context about the OutSystems, in order to obtain an overview of the product. \textcolor{gray}{After this, also a description of Aggregates, which is the current OutSystems feature to build queries through visual interaction will be provided.}
-
 \textcolor{gray}{The main idea in this section, is to present a short description, with three or four paragraphs, which contains some executive summaries of the problem and of the topics of this work.}
+
+Nowadays, Information and Computer Systems have been in everyone’s life, aggregating not only personal information, but also in all sectors of corporate environments. However, well before any system like this, since the people started to count or write, they have needed to store pieces of information. \cite{historyOfDatabases} Thenceforth, by many years, people have used physical information, like paper, to store data, but with the digital transformation, these resources are less and less used.
+
+In the decades of the 1960s, Database Management Systems (DBMS) arose, and later at 1970s new management systems that use relational models, designated as Relational Database Management Systems (RDBMS). Moreover, first Data Query Languages (DQL) appeared, like SQL \cite{sequel_aStructuredEnglishQueryLanguage}, which was considered by the ANSI \footnote{American National Standards Institute} and ISO \footnote{International Organization for Standardization} as the standard query language \cite{databaseManagementSystems}. These technological evolutions have improved the effectiveness and the efficiency of the querying process. However, to find some information on databases more knowledge is needed. Thus, if from one side the technological evolution and the digital transformation have optimized the data querying process, only a subset of people can use these powerful querying technologies.
+
+Visual Query Systems (VQSs), defined by Catarci, \textit{et. al.} \cite{visualQuerySystemsForDatabases_aSurvey} as “systems for querying databases that use a visual representation to depict the domain of interest and express related requests”, are used to mitigate some problems already referred, since these systems use different visual representations and interaction strategies to made database queries using more intuitive visual approaches instead of using textual languages which are more difficult to learn manly for people without programming base knowledge. In addition, even if it is not mandatory to be considered a VQS, some systems have also data visualization features which can be useful to view the query result, even as the possibility to manage the database schema in a visual way too.
+
+However, usually, these visual languages are associated as more useful to naive users, while textual languages are associated to more expert users.  Conversely, some studies have revealed that these might be convenient to the expert users too. For example, the comparison made by Catarci and Santucci \cite{diagrammaticVsTextualQueryLanguages_aComparativeExperiment} concludes that diagrammatic languages can reduce the error rate of the queries made in a textual language by expert users, since even these make mistakes in simple queries (e.g. because they do not remember the name of the tables or the precise syntax of some language expressions). Thus, it is important to analyse how those languages could be used to optimize the querying process not only to the users with a low experience level but also for highly experienced users.
+
+ Nonetheless, the widely users’ background and the diversity of the data domain made that a lot of these systems need to be modelled to a specific domain, because it is very difficult to find an global integrated solution that covers necessities of all users on all domains being this personal or professional.
+
+
+
 
 \section{Motivation}
 \label{sec:motivation}
