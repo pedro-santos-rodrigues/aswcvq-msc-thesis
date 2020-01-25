@@ -15,8 +15,6 @@ This project was developed \textcolor{red}{on a particular environment}, and, as
 
 \section{Context} 
 \label{sec:context}
-\textcolor{gray}{The main idea in this section, is to present a short description, with three or four paragraphs, which contains some executive summaries of the problem and of the topics of this work.}
-
 Nowadays, Information and Computer Systems have been in everyone’s life, aggregating not only personal information, but also in all sectors of corporate environments. However, well before any system like this, since the people started to count or write, they have needed to store pieces of information. \cite{historyOfDatabases} Thenceforth, by many years, people have used physical information, like paper, to store data, but with the digital transformation, these resources are less and less used.
 
 In the decades of the 1960s, Database Management Systems (DBMS) arose, and later at 1970s new management systems that use relational models, designated as Relational Database Management Systems (RDBMS). Moreover, first Data Query Languages (DQL) appeared, like SQL \cite{sequel_aStructuredEnglishQueryLanguage}, which was considered by the ANSI \footnote{American National Standards Institute} and ISO \footnote{International Organization for Standardization} as the standard query language \cite{databaseManagementSystems}. These technological evolutions have improved the effectiveness and the efficiency of the querying process. However, to find some information on databases more knowledge is needed. Thus, if from one side the technological evolution and the digital transformation have optimized the data querying process, only a subset of people can use these powerful querying technologies.
@@ -27,24 +25,50 @@ However, usually, these visual languages are associated as more useful to naive 
 
  Nonetheless, the widely users’ background and the diversity of the data domain made that a lot of these systems need to be modelled to a specific domain, because it is very difficult to find an global integrated solution that covers necessities of all users on all domains being this personal or professional.
 
-
-
-
 \section{Motivation}
 \label{sec:motivation}
-\textcolor{gray}{It will be presented the motivation behind this project. So, it will be explained what are the user possibilities to build queries, including visual and not visual ways, and what are the problems related with both of them. Also, will be presented what is the company's motivation to do this project, since users can do the queries that they want in different ways.}
+
+Low-Code Development is a recent development paradigm which seeks to reduce the time and effort spent in tasks that will not have a significant impact on the final product outcome. Just as the rise of high-level languages, APIs, and third-party infrastructures have provided to developers to be more productive and spend more effort on most value sections of the software they produce. Also, the goal of the Low-Code is to extend this reasoning, using visual IDEs, connectors between components and lifecycle managers, to put away some concerns as infrastructure and re-implementation of patterns and free up people to think better on things that could be more relevant to their objectives \cite{outsystems_whatIsLowCode}.
+
+The goal of this project is to analyse and improve the OutSystems Platform data querying component that can be used to create relational database queries through drag and drop interactions and simple configurations beyond visual interactions and multiple drag and drop features. This platform aim is to provide a complete application development environment where users with different development backgrounds can build, deploy and manage their applications above good practices and state-of-the-art technologies even without having to worry about those details.
+
+However, conversely of No-Code approaches, the development through low-code systems give the possibility to use low-level code, written in textual languages like Java, .NET or SQL, in order to increase the extensibility and the power of low-code solutions \cite{outsystems_lowcodeVsNocode}. Therefore, it is provided to users an alternative to perform their requests that are not supported by the low-code visual approaches. However, if the visual languages of low-code platforms are more robust, responding more thoroughly to users’ requirements, there is a diminished demand to resort on these textual programming languages which are high error-prone and have a worse learning curve, requiring also, on multiple situations, previous coding experience.
+
+Furthermore, as mentioned by  Amaral \textit{et. al.}, web and mobile applications produced on OutSystems’ technology, have proven not only an increase on quality \cite{improvingTheDeveloperExperienceWithALowCodeProcessModellingLanguage}, but also allowed developers to increase 10.9x on productivity, when compared with  IT Industry standards that do not use these rapid software development solutions \cite{outByNumbers2013}. These results reinforces the importance of this matter, the improvement of visual languages used on this platform.
+
 
 \section{Problem Description}
 \label{sec:problem_description}
-\textcolor{gray}{In this section, will be presented generally the problem of this thesis. The goal of this section is to provide a global view of the problem without many details.}
+The OutSystems platform provides a visual query language that allows users to retrieve data from databases by simple processes. Besides, with this language, it is possible to perform some naive operations that are usually supported by textual Data Querying Languages (DQL), namely join, filter, sort and group operations.
+
+Currently, the OutSystems’ solutions have been applied on digital transformation processes in multiple industries that lead with high quantities of data, in order to accelerate the application development processes, unlocking its value and growth.
+
+To this extent, the already implemented querying tool can not deal with a set of scenarios, because it might be not accurate when the domain has a lot of tables involved, or does not support essential advanced constructors. Are part of these constructors not supported clauses like IN, NOT IN, EXISTS, NOT EXISTS, DISTINCT and the possibility to use subqueries.
+
+Under the above mentioned circumstances, the goal of this project is to design and evaluate a new and more powerful Language and User Experience that allows developers to do all these complex data queries in a very easy way without using SQL.
 
 \section{Research Questions}
 \label{sec:research_questions}
-\textcolor{gray}{Following, will be enumerated the most important question which guides the workflow (e.g. Can we enable OutSystems developers to easily do most kinds of database queries without ever using SQL?). The goal is to do all the research and development in order to obtain answers to all of these questions.}
+\begin{itemize}
+  \item What query features are supported by the existing OutSystems visual query language?
+  \item Why do OutSystems developers use SQL to perform database queries?
+  \item Why are the queries that can be built visually are written though SQL?
+  \item What are the main causes that users pointed out to use SQL?
+  \item What users are more unsatisfied with the current provided approach to retrieve data?
+  \item Can we enable OutSystems developers to easily do all kinds of database queries without ever using SQL?
+\end{itemize}
 
 \section{Main Expected Contributions}
 \label{sec:main_exp_contributions}
-\textcolor{gray}{In the Main Expected Contributions, will be enumerated what are the thesis contributions to this work and to the proposed final solution.}
+This work aims to provide a set of contributions not only as a scientific research, but also with a perspective of creating the most value added to OutSystems. Thus, are presented below a summary of the main expected contributions for this project:
+
+\begin{itemize}
+  \item A synthesization of the design concepts, including relevant interaction and conceptual models, usability definitions, guidelines and principles, and a description of the processes to evaluate the human-computer interaction in the context of a software analysis;
+  \item Provide a state-of-the art about what are the most significant Visual Query Systems, presenting also a comparison of visual representation techniques and interaction strategies used, as well as other important features proper for this study;
+  \item A description of the analysis made to identify what are the most impactful problems regarding the existing visual query language, which includes user interviews and data analysis;
+  \item Design and implementation of a new graphical user interface prototype that tries to improve the existing solution to make queries visually. This prototype expects to fix some predominant problems selected as the most relevant to solve;
+  \item An usability evaluation of the prototype developed through the use of user tests, confronting these results with the first obtained.
+\end{itemize} 
 
 \section{Structure}
 \label{sec:structure}
