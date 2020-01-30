@@ -121,6 +121,49 @@ Finally, regarding the methodology about how to use the prototypes built, Dix et
 
 \subsubsection{Evaluation Techniques}
 \label{subsubsec:user_and_task_analysis}
+The evaluation phases are crucial in the design process, since they allow designers to understand the system's specific problems and the impact of the interfaces made on users. So, the expected results of these processes are a prioritized list of usability issues, referring to what usability principles and guidelines are not accomplished and what solutions can be applied to solve the problem. \cite{usabilityEngineering}  
+
+However, there are different approaches to evaluate interfaces. First, one important topic that distinguishes two types of techniques is who performs the evaluation, because there are techniques where only the designers and specialists are involved in this process, and are another type of evaluation where the user participates in the evaluation. \cite{humanComputerInteraction} Thus, there are two types of evaluation: evaluation through expert analysis and evaluation through user participation.
+
+\bigskip
+
+\textbf{Evaluation through expert analysis}
+
+In this type of evaluation, designers, or other specialists, evaluate the system, supporting their analysis on cognitive principles, to preview usability problems likely to occur. Moreover, this evaluation not only is cheaper because it does not involve users, as also can be applied on any phase of the design process, from the design specification to the high fidelity prototypes. \cite{humanComputerInteraction}
+
+Regarding the approach presented above, these two methods are one of the most used:
+
+\begin{itemize}
+	\item \textbf{Heuristic Evaluation} \cite{heuristicEvaluationOfUserInterfaces}: The system is thoroughly analyzed in order to find problems that do not follow important and recognized usability heuristics. After a problem has been detected, it should be reported not only with a description of the problem and the heuristics that are not accomplished, but also with the severity level and possible solutions to solve it. \cite{usabilityEngineering}
+	\item \textbf{Cognitive Walkthrough} \cite{cognitiveWalkthroughs}: This method uses a sequence of actions as principal resource to guide the evaluation process. For each action the evaluator tries to understand if all steps are clear and visible, as well as if due feedback was provided to confirm the actions completed. Usually, the main focus of this method is analysing the learnability of the system. Mainly, to understand if the system has good to learn through exploration instead rather than using manuals, training or other types of \textit{a priori} learning processes. \cite{humanComputerInteraction}
+\end{itemize}
+
+A study made by Desurvire \textit{et al.} \cite{WhatIsGainedAndLostWhenUsingMethodsOtherThanEmpiricalTesting} concluded that Heuristic Evaluation made by specialists is better to predict some problems before the user testing process than Cognitive Walkthrough. The reason pointed out for this result is that heuristic evaluation can often help to remind the designers of problems since this method analyses more dimensions of the system than Cognitive Walkthrough.
+
+\bigskip
+
+\textbf{Evaluation through user participation}
+
+Although there exist methods that do not need the users to evaluate the system usability, it is difficult to predict all the behaviours of the users when they interact with a system. Therefore, there are multiple methods to make usability tests with the people for whom the system is intended. Then, following will be presented some of them that are more useful on the context of this work, respecting the terminology used by Dix \textit{it al.} \cite{humanComputerInteraction}:
+
+\begin{itemize}
+	\item \textbf{Observational Methods}: the main principle of these methods is observing users using the system to conclude important usability information about it. Usually, it is requested to the user that ‘thinks aloud’ because it might be possible to obtain more insight information that can be useful, not only to understand why the user might have made an error, but also that can be a good strategy to find starting points for other possible solutions for them. Moreover, although usually these tests have a set of predetermined tasks, since it is easier to find the user reaction to the system part the need to be tested, also can be executed tests only by evaluating the normal tasks of the users on their work;
+	\item \textbf{Experimental Methods}: starting from a properly defined test hypothesis, there are selected a set of users to perform an experimental test to verify if the test hypothesis proves to be true or not. Thus, it is necessary to define previously all the experimental environment that includes: the test hypothesis that wants to be verified, the users that will perform the test,  and the independent and dependent variables. The dependent variables are the ones that express the result of the test in function of the independent variables, such as the task execution time or the number of the errors that occurred. The independent variables are chosen by the test designer to produce different conditions for comparison. Examples of independent variables can be the size of an interface component or the use of an interaction technique. This method is very useful to verify through a test hypothesis which of the possible solutions presented (independent variables) has a better performance for the intended application context;
+	\item \textbf{Query Methods}: these methods focus on what the user thinks about the system, collecting information from interviews or questionnaires to analyse this opinion. One advantage of this method is that it might reveal issues not complained before, but contrary a lot of cases are not tested, since in the interaction field, many times, the user only finds a problem when it occurs for the first time. So it is not possible to extract concrete information from users that never have passed for this situation.
+\end{itemize}
+
+\bigskip
+
+Finally, independently of the evaluation process adopted (through expert analysis or through user participation), severity ratings should be attributed to the problems identified in order to define the main priorities and understand which might have a larger impact on the system acceptability. However, although these levels should be attributed by specialists, if they use not only cognitive principles, but also use the results observed from user testing phase to sustain the classification of the problems detected, the result can be more accurate. 
+
+Besides, the Figure \ref{fig:severityLevels}, extracted from \cite{usabilityEngineering}, displays two influential factors that should be taken into account to attribute a severity level to a problem: how many users are experiencing this problem and what is the impact level on the user.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{severityLevels}
+	\caption{Severity Levels of the Problems based on their impact on the users (extracted from \cite{usabilityEngineering})}
+	\label{fig:severityLevels}
+\end{figure}
 
 \subsubsection{Errors Classification}
 \label{subsubsec:errors_classification}
