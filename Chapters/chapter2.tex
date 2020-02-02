@@ -180,15 +180,45 @@ Therefore, the strategy to mitigate the problems associated with these two types
 \section{OutSystems Background}
 \label{sec:outsystems_background}
 
-\subsection{Platform Overview}
-\label{subsec:platform_overview}
+The OutSystems Platform has the mission of simplifying and accelerating the development and management of digital enterprise solutions, no matter the dimension and domain of the applications. It covers the entire development lifecycle which aims to promote rapid development and integration, to facilitate and speed up the deployment stages, to keep track the status and health of the applications produced, and to expedite the management of daily operations and configurations on the final products. \cite{eg_developingWithOutsystems}
+
+\subsection{Visual Development Environment}
+\label{subsec:visual_development_environment}
+
+Service Studio is the low-code development environment of the platform, which allows the developers to create complete applications using visual elements to perform drag and drop actions. Figure \ref{fig:ss_workspace} presents an overview of the IDE, which highlights the different areas of the workspace.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[height=3.75in]{outsystemsArchitecture}
-	\caption{OutSystems Platform Overview \cite{outsystemsToolsAndComponents}}
-	\label{fig:outsystemsArchitecture}
+	\includegraphics[height=3.1in]{ss_workspace}
+	\caption{Main areas of Service Studio \cite{serviceStudioOverview}}
+	\label{fig:ss_workspace}
 \end{figure}
 
-\subsection{Previous Work}
-\label{subsec:previous_work}
+Using the widgets and icons provided in the toolbox, the main area is dedicated to design the applications’ interface and logic. So, in the main area, there are visual elements, which can be set using the properties editor, placed on the bottom right corner of the screen. 
+
+Also, it includes other sections whose main purpose is not the product development, but are related to key actions of the software development process. Therefore, on the window’s top, there is a toolbar which has shortcuts to some of the most common operations, and a green circle button, denominated "1-Click Publish button", to start the automated deployment process provided. In addition, the bottom of the window is dedicated not only to the presentation of messages, errors, and warnings but also to debugging the application.
+
+Since the development environment can be used to develop a complete full-stack application, the elements, which can be manipulated in the Service Studio, can be related to different parts of the application. Thus, following will be described the purpose of each one of the Application Layer Tabs, that contains in that section, a tree view of the elements related:
+
+\begin{itemize}
+	\item \textbf{Processes}: in this section, it is possible to create and manage business processes of the systems through a flow that can be composed by human or automatic activities, time waits, conditional decisions and indications to execute processes. In addition, on this section can be configured the timers of application. Then, it is possible to indicate when a timer should start, what is it period and what action should be performed when it is triggered;
+	\item \textbf{Interface}: the purpose of this section is the management of the components related to the visual interface of the final application. It is possible to observe all applications’ screens, as well as, the variables and the actions related to each one. Moreover, flows between the various screens can be also defined. Accordingly to the overview presented above, if one screen or action is selected, it will be possible to add new visual components to the interface or assign new elements to the action flow in order to define all the client-side logic of the screen;
+	\item \textbf{Logic}: in this area is where is defined the core logic of the application It includes not only the server actions of the application but also the exceptions specification, the existing user’s roles and also the integration with external services. Although there is a data section on the application layer tabs, which will be described below, the actions which require data querying are managed into this section.
+	\item \textbf{Data}: the database modelling aspects are covered in this section, making possible the creation of diagrams to represent the schema of the database. Moreover, in the tree view of this tab  is allowed to establish new entities and static entities in order to define the data model of the application.
+\end{itemize}
+
+\subsection{Data Querying}
+\label{subsec:data_querying}
+
+\subsubsection{Previous Work}
+\label{subsubsec:previous_work}
+
+\subsubsection{Current Progress}
+\label{subsubsec:current_progress}
+
+% \begin{figure}[htbp]
+% 	\centering
+% 	\includegraphics[height=3.75in]{outsystemsArchitecture}
+% 	\caption{OutSystems Platform Overview \cite{outsystemsToolsAndComponents}}
+% 	\label{fig:outsystemsArchitecture}
+% \end{figure}
