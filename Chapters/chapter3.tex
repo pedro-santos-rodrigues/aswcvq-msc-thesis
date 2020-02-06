@@ -15,11 +15,34 @@ In this chapter, will be described and compared a set of technologies and techni
 The first relevant topic to analyse is the visual representation approaches, which can be applied to design an user interface capable to build queries through a visual language. Catarci \textit{et al.} \cite{visualQuerySystemsForDatabases_aSurvey} presented an interesting classification according to the visual formalism which the interface is based on:
 
 \begin{itemize}
-    \item \textbf{Form-based}: 
-    \item \textbf{Diagram-based}: 
-    \item \textbf{Icon-based}: 
-    \item \textbf{Hybrid}: 
+    \item \textbf{Form-based}: based on forms, which can be seen as a rectangular grid of other components (subforms, groups of cells, a combination of cells, etc.) that group objects in a named collection regarding its structure. Forms and tables are similar,  but contrary to the tables, forms allow nesting. Thus, forms can be seen as a generalization of tables. In this approach, the relationships can be represented among cells, cells subsets, or even the overall set, providing to the user three information levels;
+    \item \textbf{Diagram-based}: usage of graphical representations, such as graphs, charts and diagrams to better transmit the relationships among data. The aim is to use visual representations to help the understanding of the relationships between concepts which are represented by textual labels;
+    \item \textbf{Icon-based}: as the opposite of the diagram-based, this type of interfaces tries to facilitate the understanding of the concepts instead of relationships. So, are used Icons, which are visual segmented objects to transmit a message or information, using analogies and metaphors with the real-world objects, or even conventions that are used to express no tangible objects, as computer processes;
+    \item \textbf{Hybrid}: these approaches can combine the previous visual formalisms in order to select the best combination of advantages to the application usage domain.
 \end{itemize}
+
+Following, it is essential to specify what are the visual query language requisites, to understand and compare the different parts of the systems. Accordingly, table X presents the query creation required specifications, comparing them with the respective indication in SQL.
+
+\begin{table}[ht]
+	\caption{Query Language Requisites}
+	\label{tab:hla:results}
+\centering
+\begin{tabular}{|
+    >{\columncolor[HTML]{EFEFEF}}l |l|l|}
+    \hline
+    \cellcolor[HTML]{C0C0C0}{\color[HTML]{333333} \textbf{Specification}} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{333333} \textbf{Description}}                                                                                               & \cellcolor[HTML]{C0C0C0}{\color[HTML]{333333} \textbf{SQL Indication}}                                                                   \\ \hline
+    \textbf{Data Source}                                                  & \begin{tabular}[c]{@{}l@{}}Entities and attributes which \\ will be presented in the query\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Using SELECT and \\ FROM statements\end{tabular}                                                              \\ \hline
+    \textbf{Merge Type}                                                   & \begin{tabular}[c]{@{}l@{}}Define how will be merged \\ attributes of different entities\end{tabular}                                                             & Using JOIN clauses                                                                                                                       \\ \hline
+    \textbf{Filtering Criteria}                                           & \begin{tabular}[c]{@{}l@{}}Criteria that can be used to \\ filter records, presenting in the \\ result only those that fulfil a \\ set of conditions\end{tabular} & \begin{tabular}[c]{@{}l@{}}Using WHERE \\ clause\end{tabular}                                                                            \\ \hline
+    \textbf{Sorting Criteria}                                             & \begin{tabular}[c]{@{}l@{}}Define what are the criteria to \\ sort the records of the result\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}Using ORDER BY \\ clause\end{tabular}                                                                         \\ \hline
+    \textbf{Aggregation Functons}                                         & \begin{tabular}[c]{@{}l@{}}Group a set of records by \\ comparison or using mathematical \\ functions\end{tabular}                                                & \begin{tabular}[c]{@{}l@{}}Using  GROUP BY \\ statements or SQL \\ functions, such as \\ MIN, MAX, \\ COUNT, AVG and \\ SUM\end{tabular} \\ \hline
+    \textbf{Calculated Attributes}                                        & \begin{tabular}[c]{@{}l@{}}Attributes added, based on \\ existing ones\end{tabular}                                                                               & \begin{tabular}[c]{@{}l@{}}Using SELECT \\ statement\end{tabular}                                                                        \\ \hline
+    \textbf{Distinct Values}                                              & \begin{tabular}[c]{@{}l@{}}If only different values will be \\ considered in the result \\ (removing duplicated values)\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Using SELECT \\ DISTINCT statement\end{tabular}                                                               \\ \hline
+    \textbf{Unions}                                                       & \begin{tabular}[c]{@{}l@{}}Combine the result of two \\ different queries\end{tabular}                                                                            & \begin{tabular}[c]{@{}l@{}}Using UNION \\ operator\end{tabular}                                                                          \\ \hline
+    \textbf{Subqueries}                                                   & \begin{tabular}[c]{@{}l@{}}Defining a query that uses \\ other queries, for example, \\ to filter the result\end{tabular}                                         & \begin{tabular}[c]{@{}l@{}}Nesting SELECT \\ statements\end{tabular}                                                                     \\ \hline
+    \end{tabular}
+\end{table}
+
 
 \section{Data Visualization}
 \label{sec:data_visualization}
