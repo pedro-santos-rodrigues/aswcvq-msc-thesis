@@ -257,7 +257,7 @@ When the Aggregate is created, the first step is the data source selection in or
 	%\label{fig:aggregate_created}
 %\end{figure}
 
-Hereupon, the Aggregate has already been created and the data source of them specified, so it is possible to start querying visually, in a progressive way, seeing at the same time the query output. Figure X demonstrates an Aggregate on the referred state, to be possible to understand the structure of the interface.
+Hereupon, the Aggregate has already been created and the data source of it specified, so the visual querying process can be started, in a progressive way, seeing at the same time the query output. Figure X demonstrates an Aggregate on the referred state, to be possible to understand the structure of the interface.
 
 \begin{figure}[htbp]
 	\centering
@@ -266,9 +266,9 @@ Hereupon, the Aggregate has already been created and the data source of them spe
 	\label{fig:aggregate_created}
 \end{figure}
 
-First, this component of the OutSystems Platform presents two main capabilities, represented visually in two distinct areas: the query design area, and the viewer of the query result. The former, located at the top of the window, is composed of a set of four tabs, where its selection action changes the grey area to the respective form-based interface. The latter is a table-based interface, which is similar to spreadsheets applications, such as Microsoft Excel \cite{microsoftExcel} of Google Sheets \cite{googleSheets} and its principal aim is to provide a direct and visual manner to show the query output.
+First, this component of the OutSystems Platform presents two main capabilities, represented visually in two distinct areas: the query design area, and the viewer of the query result. The former, located at the top of the window, is composed of a set of four tabs, where each selection action changes the grey area to the respective form-based interface. The latter is a table-based interface, which is similar to spreadsheets applications, such as Microsoft Excel \cite{microsoftExcel} of Google Sheets \cite{googleSheets} and its principal aim is to provide a direct and visual approach to show the query output.
 
-Focusing on the query design area, the sources tab, illustrated in Figure \ref{fig:aggregates_source_tab}, it can be used to add, change or remove the entities of the quey, defining also the join types between them. There are three join types available: Only with, with or without, and with. These joins correspond to the inner join, left join, and full outer join type of SQL. Additionally, each one appears with a visual representation similar to Venn Diagrams \cite{venn1880diagrams} to be easier to identify which data is selected on each join type. Moreover, it is possible to edit the join condition textually, using the platform expression editor.
+Focusing on the query design area, the sources tab, illustrated in Figure \ref{fig:aggregates_source_tab}, it can be used to add, change or remove the entities of the quey, defining also, the join types between them. There are three join types available: "only with", "with or without", and "with". The respective joins in SQL are: "inner join", "left join", and "full outer join". Additionally, each one appears with a visual representation similar to Venn Diagrams \cite{venn1880diagrams} to be easier to identify which data is selected on each join type. Moreover, it is possible to edit the join condition textually, using the platform expression editor.
 
 \begin{figure}[htbp]
 	\centering
@@ -277,11 +277,11 @@ Focusing on the query design area, the sources tab, illustrated in Figure \ref{f
 	\label{fig:aggregates_source_tab}
 \end{figure}
 
-The filtering tab is can be used to apply filters in the query likewise the where statements in SQL. These filters can be defined through boolean conditions inserted in the expression editor. Despite the fact that they are provided shortcuts listed in a tree view and others in a list of buttons, the conditions are specified using only textual language. 
+The filtering tab is can be used to apply filters in the query likewise the where statements in SQL. These filters can be defined through boolean conditions inserted in the expression editor. Despite the fact that they are provided shortcuts, listed in a tree view and also others in a list of buttons, the conditions are specified using only textual language. 
 
-The sort conditions can be added in the sorting tab choosing the add sort or the add dynamic sort options available. The difference between them is that dynamic sort relies on a variable of the system, contrary to the other that depends only on an attribute of an entity. To add a sort, the user has to select what entity wants to sort and specify what are the sort criteria, for example, ascending or descending.  Moreover, more than one sort can be inserted for different entities. Also, the sorts inserted can be ordered to define the priority between them.
+The sort conditions can be added in the sorting tab choosing the add sort or the add dynamic sort options available. The difference between them is that dynamic sort relies on a variable of the system, contrary to the other that depends only on an entity attribute. To add a sort, the user has to select what entity wants to sort and specify what are the sort criteria, for example, ascending or descending.  Moreover, more than one sort can be inserted for different entities. Also, the sorts inserted can be ordered to define the priority between them.
 
-Finally, the last tab has a different behaviour when compared with the rest of the options available in this interface area. The main goal of this feature is the testing of query output when it is assigned concrete values to the variables concerned in the query. Thus, it does not contribute to the query design in the same way as the other tabs, presenting only a test purpose in the context of the query result visualization.
+Finally, the last tab has a different behaviour when compared with the rest of the options available in this interface area. The main goal of this feature is the testing of query output when it is assigned concrete values to the variables referred in the query. Thus, it does not contribute to the query design in the same way as the other tabs, presenting only a test purpose in the context of the query result visualization.
 
 Figure \ref{fig:aggregates_filter_sort_test} presents an usage example of the last three sections referred, to create a query to filter and sort dates, regarding a value of a variable.
 
