@@ -21,11 +21,11 @@ The first relevant topic to analyse is the visual representation approaches, whi
     \item \textbf{Hybrid}: these approaches can combine the previous visual formalisms in order to select the best combination of advantages to the application usage domain.
 \end{itemize}
 
-Following, it is essential to specify what are the visual query language requisites, to understand and compare the different parts of the systems. Accordingly, table X presents the query creation required specifications, comparing them with the respective indication in SQL.
+Following, it is essential to specify what are the visual query language requisites, to understand and compare the different parts of the systems. Accordingly, Table \ref{tab:query_language_requisites} presents the query creation required specifications, comparing them with the respective indication in SQL.
 
 \begin{table}[ht]
 	\caption{Query Language Requisites}
-	\label{tab:hla:results}
+	\label{tab:query_language_requisites}
 \centering
 \begin{tabular}{|
     >{\columncolor[HTML]{EFEFEF}}l |l|l|}
@@ -43,6 +43,31 @@ Following, it is essential to specify what are the visual query language requisi
     \end{tabular}
 \end{table}
 
+Nevertheless, there are two relevant aspects, according to the last requisites presented: the interaction process to indicate the query specifications, the interface feedback about what the current query. Both are fundamental since a good visual query language aims to simplify not only, the design process but also, the query readability, promoting a faster and easier recognition of what are the desired data.
+
+Chartio \cite{chartio} has two components to query databases visually: using the Data Explorer \cite{chartioDataExplorer} or using the new Visual SQL \cite{chartioVisualSQL}. Regarding the data source specification, these two systems use different strategies to select and present the entities and attributes related to the query. In the Data Explorer, there is a list of tables in a fixed, scrollable and searchable tree view, where the user can expand each one and choose the desired attributes. Also, above this list of collapsible items, there is a search component that can be used to select the desired attributes. This system divides the attributes into two different types: Measures and Dimensions. Usually, measure refers to quantitative data and dimensions to categorical data. So, to insert the attributes in the query, users can drag and drop the required attributes to the form-based interface that contains the Measures, Dimensions and Filters of the query (Figure \ref{fig:chartioDataExplorer}) \cite{chartioDataExplorer}. 
+
+On the other hand, the new component of Chartio, the Visual SQL provides a different interface to select the data sources. Contrary to the previous approach, there is any fixed list in any part of the window to choose the attributes required to the query. In this way, there is only a search text component that is activated when the user clicks on “add column” action. After this, is presented over a new interface component that has a list similar to the referred above where is possible to view a preview of some data entries in the table (Figure \ref{fig:chartioVisualSQL}) \cite{chartioVisualSQL}. 
+
+In the systems referred above the columns are added one by one sequentially, but other systems have different methods to select the table’s columns. For example, in Tableau Prep \cite{tableauPrep} and Microsoft Power BI \cite{powerBI} the table is chosen using a list, and all its attributes are added automatically (Figure \ref{fig:tableauPrep}). In these approaches, the users can remove, if they want, the columns not desired after. \cite{tableauPrepHelpWhatsNew} \cite{powerBIShapeAndCombineData}
+
+Other systems, as Devart dbForge Query Builder \cite{dbForgeQueryBuilder} uses a diagram-based interface to select the entities and attributes of the query. In this system, the user can drag and drop the desired tables to the diagram area, and select through checkboxes the attributes needed, that are presented in the database schema diagram (Figure \ref{fig:devartDbForge}). The Figure \ref{fig:approaches_select_data_sources} presents some examples of the techniques referred above to select the entities and attributes of the query.
+
+
+\begin{figure}[htbp]
+    \centering
+    \subcaptionbox{Chartio Data Explorer\label{fig:chartioDataExplorer} \cite{chartioDataExplorer}}%
+      {\includegraphics[width=0.5\linewidth]{chartio-data-explorer-data-source}}%
+    \subcaptionbox{Chartio Visual SQL\label{fig:chartioVisualSQL} \cite{chartioVisualSQL}}%
+      {\includegraphics[width=0.5\linewidth]{chartio-visual-sql-data-source}}%
+      \\
+    \subcaptionbox{Tableau Prep\label{fig:tableauPrep} \cite{tableauPrepHelpWhatsNew}}%
+    {\includegraphics[width=0.5\linewidth]{tableau-data-source}}%
+  \subcaptionbox{Devart dbForge Query Builder\label{fig:devartDbForge} \cite{dbForgeQueryBuilder}}%
+    {\includegraphics[width=0.5\linewidth]{dbforge-data-source}}%
+  \caption{Different approaches to select the entities of the query.}
+    \label{fig:approaches_select_data_sources}
+  \end{figure}
 
 \section{Data Visualization}
 \label{sec:data_visualization}
