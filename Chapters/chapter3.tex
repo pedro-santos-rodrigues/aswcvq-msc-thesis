@@ -45,13 +45,17 @@ Following, it is essential to specify what are the visual query language requisi
 
 Nevertheless, there are two relevant aspects, according to the last requisites presented: the interaction process to indicate the query specifications, the interface feedback about what the current query. Both are fundamental since a good visual query language aims to simplify not only, the design process but also, the query readability, promoting a faster and easier recognition of what are the desired data.
 
+\bigskip
+
+\textbf{Data Source:}
+
 Chartio \cite{chartio} has two components to query databases visually: using the Data Explorer \cite{chartioDataExplorer} or using the new Visual SQL \cite{chartioVisualSQL}. Regarding the data source specification, these two systems use different strategies to select and present the entities and attributes related to the query. In the Data Explorer, there is a list of tables in a fixed, scrollable and searchable tree view, where the user can expand each one and choose the desired attributes. Also, above this list of collapsible items, there is a search component that can be used to select the desired attributes. This system divides the attributes into two different types: Measures and Dimensions. Usually, measure refers to quantitative data and dimensions to categorical data. So, to insert the attributes in the query, users can drag and drop the required attributes to the form-based interface that contains the Measures, Dimensions and Filters of the query (Figure \ref{fig:chartioDataExplorer}) \cite{chartioDataExplorer}. 
 
 On the other hand, the new component of Chartio, the Visual SQL provides a different interface to select the data sources. Contrary to the previous approach, there is any fixed list in any part of the window to choose the attributes required to the query. In this way, there is only a search text component that is activated when the user clicks on “add column” action. After this, is presented over a new interface component that has a list similar to the referred above where is possible to view a preview of some data entries in the table (Figure \ref{fig:chartioVisualSQL}) \cite{chartioVisualSQL}. 
 
 In the systems referred above the columns are added one by one sequentially, but other systems have different methods to select the table’s columns. For example, in Tableau Prep \cite{tableauPrep} and Microsoft Power BI \cite{powerBI} the table is chosen using a list, and all its attributes are added automatically (Figure \ref{fig:tableauPrep}). In these approaches, the users can remove, if they want, the columns not desired after. \cite{tableauPrepHelpWhatsNew} \cite{powerBIShapeAndCombineData}
 
-Other systems, as Devart dbForge Query Builder \cite{dbForgeQueryBuilder} uses a diagram-based interface to select the entities and attributes of the query. In this system, the user can drag and drop the desired tables to the diagram area, and select through checkboxes the attributes needed, that are presented in the database schema diagram (Figure \ref{fig:devartDbForge}). The Figure \ref{fig:approaches_select_data_sources} presents some examples of the techniques referred above to select the entities and attributes of the query.
+Other systems, as Devart dbForge Query Builder \cite{dbForgeQueryBuilder} uses a diagram-based interface to select the entities and attributes of the query. In this system, the user can drag and drop the desired tables to the diagram area, and select through checkboxes the attributes needed, that are presented in the database schema diagram (Figure \ref{fig:devartDbForge}). Figure \ref{fig:approaches_select_data_sources} presents some examples of the techniques referred above to select the entities and attributes of the query.
 
 
 \begin{figure}[htbp]
@@ -66,6 +70,31 @@ Other systems, as Devart dbForge Query Builder \cite{dbForgeQueryBuilder} uses a
   \subcaptionbox{Devart dbForge Query Builder\label{fig:devartDbForge} \cite{dbForgeQueryBuilder}}%
     {\includegraphics[width=0.5\linewidth]{dbforge-data-source}}%
   \caption{Different approaches to select the entities of the query.}
+    \label{fig:approaches_select_data_sources}
+  \end{figure}
+
+  \bigskip
+
+  \textbf{Merge Type:}
+
+
+
+  When data of multiple tables are required, it is necessary to establish how to merge them. Then, the visual language needs to adopt an interaction and representation technique to specify it. When data of multiple tables are required, it is necessary to establish how to merge them. Then, the visual language needs to adopt an interaction and representation technique to specify it. To define a join in Devart dbForge Query Builder \cite{dbForgeQueryBuilder}, the user can only select the attributes’ checkboxes of the different tables and the system generates an inner join automatically. To specify the join kind in this system there is a button on the toolbar to select all rows of one table, another, or both. This option can be used to perform left, right and outer joins \cite{dbForgeMakingJoinsBetweenTables}.
+  
+  Another approach used by some systems, such as Chartio Data Explorer \cite{chartioDataExplorer} and Microsoft Power BI \cite{powerBI}, is a form-based interface to insert a join. In the former, two queries can be merged clicking on a button to popup a form which can be used to select the merge type and the first columns that will be merged using dropdowns \cite{chartioDataExplorer} (Figure \ref{fig:chartioDataExplorerJoin}). Also, if there are null values on the merge related columns, there is an option to include or not the null values match rows \cite{chartioJoiningDataAcrossDatabases}. Similarly, the latter provides a button to merge queries that opens a modal where can be chosen the attributes that will be used on the merge (viewing also a table preview) and the join kind, using a dropdown \cite{powerBIShapeAndCombineData} (Figure \ref{fig:powerBIJoin}).
+  
+  Tableau Prep \cite{tableauPrep} provides two options to start a join between two tables: clicking on a "add join" hover button above the table visual representation with suggestion of related tables, or merge the visual representation of two tables using a drag and drop action. After this selection, the inner join type is selected automatically by the system according to the tables relationship. \cite{tableauAggregateJoinOrUnionData} \cite{tableauAddMoreDataInTheInputStep} However, the user can configure the join in a dedicated section (Figure \ref{fig:tableauJoinPanel}) where it is possible to define the join type using a Venn Diagram, to manage the join clauses using dropdown lists to select the fields, including also some join clause recommendations based on the database schema. Moreover, a summary of the join result that contains counters with the values included and excluded by each table, in a visual way using diagrams is provided. Finally, there is presented a list of the values included and excluded, where the red values represent the values excluded, as well as a preview of the join result \cite{tableauAggregateJoinOrUnionData}.
+
+  \begin{figure}[htbp]
+    \centering
+    \subcaptionbox{Chartio Data Explorer\label{fig:chartioDataExplorerJoin} \cite{chartioDataExplorer}}%
+      {\includegraphics[width=0.4\linewidth]{chartio-data-explorer-join}}%
+    \subcaptionbox{Microsoft Power BI\label{fig:powerBIJoin} \cite{powerBIShapeAndCombineData}}%
+    {\includegraphics[width=0.4\linewidth]{power-bi-join}}%
+    \\
+    \subcaptionbox{Tableau Prep\label{fig:tableauJoinPanel} \cite{tableauAggregateJoinOrUnionData}}%
+      {\includegraphics[width=0.8\linewidth]{tableau-join-panel}}%
+  \caption{Data merging approaches.}
     \label{fig:approaches_select_data_sources}
   \end{figure}
 
