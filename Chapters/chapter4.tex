@@ -52,7 +52,7 @@ Since user interviews suggested that aggregation functions and sorting criteria 
 
 \section{Scope Definition}
 \label{sec:scope_definition}
-The results of the quantitative analysis show that there are in conformity with the qualitative analysis results (user interviews). Both of the analysis, leads that the main priority of the project should be the usability improvement of the visual querying tool interface, since not only is the main concerned pointed out by the users, but also has metrics that sustain that hypothesis. In the set of the queries analysed, around 58.5\% could be totally designed using Aggregates, could be an indication that the lack of SQL expression is not the major problem.
+The results of the quantitative analysis show that there are in conformity with the qualitative analysis results (user interviews). Both of the analysis, leads that the main priority of the project should be the usability improvement of the visual querying tool interface, since not only is the main concerned pointed out by the users, but also has metrics that sustain that hypothesis. In the set of the queries analysed, around 58\% could be totally designed using Aggregates, could be an indication that the lack of SQL expression is not the major problem.
 
 Although the results show a small set of queries that are not supported, these expressiveness problems of the visual language can influential the users to change to the textual language, because many users do not like to use different systems to perform identic tasks. So, as the visual language does not support some features users may want to change to the textual language where can perform all the queries.
 
@@ -60,8 +60,41 @@ Under the circumstances, the results were discussed together with the stakeholde
 
 \section{Proposed Implementation}
 \label{sec:proposed_implementation}
-\textcolor{gray}{Following, will be detailed the intended project, indicating all the problems identified and all the approached that will be adopted.}
+According to the analysis made and the results concluded, the implementation covers an iterative design process to aim the usability of the Aggregates, the component of the OutSystems Platform to build queries visually. The priority improvements of the visual query language expressiveness (IN / NOT IN and DISTINCT) will be included in the project, if possible, depending on the development progress of the usability issues. These are not totally discarded for the scope in this phase of the project because they are important to the product as referred to in the last section. If in the next stages of development it is found that it is possible to address these expressiveness problems without impairing the development related to improving usability, these will be designed and developed, otherwise, the focus will be only the usability improvement.
+
+As mentioned above in Section \ref{subsubsec:current_progress}, the actual visual tool has accommodated the visual query design with the result viewer. Therefore, the aim is to design and evaluate how these two parts of the interface can be changed to improve the usability of the system. In an nutshell, there are two concerns that will be used to guide all the design process: the easiness of constructing queries independently of how many tables or conditions are taking part of that, and the readability of the global query to perceive easily what data of the database the query wants to gather.
+
+Never forgetting these guidelines, the query parts specified in Table X will guide the design process, studying and evaluating solutions to improve the specification method, without harming the query overview readability and the interaction strategies to specify the other parts of the query. 
+
+The design and development process shall be divided into an initial preparation and analysis phase and the iterative design process phase:
+
+\begin{itemize}
+    \item \textbf{Preparation and analysis phase}: before the development of the prototypes, it should be analysed and characterized the users and the tasks of the systems, as well as should be started sketching to bring up ideas that could be starting points to tackle the existing problems. Therefore, this preparation process before the development of the prototypes will include the following tasks:
+    \begin{itemize}
+        \item \textbf{Data Extraction}: although there are results obtained in the interviews and in the quantitative analysis process detailed in section X, also more data about the queries designing using aggregates will be extracted. It could be important to the process to understand the user's usage of the existing visual tool since the results obtained are only about the queries built using the textual language;
+        \item \textbf{User and Task Analysis}: users and tasks of the system will be characterized and classified regarding the concepts presented in section X and the related work about presented in section X, which was studied the interaction of different user types with database systems. This description and classification will be used not only as a reference point throughout the design process but also to define the most important usability attributes trade-off;
+        \item \textbf{Sketching}: the phase where the first sketches of possible solutions will be designed. The most important is the initial exploration of several possibilities to tackle the problems through a low-level and faster approach. As referred in section X it is useful to discover new ideas and transmits them easily, keeping register the first approaches to tackle the problems. At the later phases, the sketched could be useful to remember the starting point of the design process;
+    \end{itemize}
+    \item \textbf{Iterative design}: this method starts with low-level prototypes and in each iteration these are evaluated to be more create higher fidelity prototypes in the next iteration. However, as referred in section X, there are different strategies to reuse or not the prototypes over iterations. In this project, will be adopted an evolutionary strategy where the prototypes developed are used as basis for the next design iteration. Moreover, the design process will include three iterations:
+    \begin{itemize}
+        \item \textbf{Paper Prototype (1st iteration)}: regarding the structure information obtained in user and task analysis, and the main ideas raised on the sketching stage, a first functional paper prototype will be built. The evaluation of the entire concept of the first interaction strategies is the main concern of this phase. Cognitive Walkthrough and Observational Methods of user testing will be the evaluation techniques used in this phase;
+        \item \textbf{Low-fidelity Protoype (2nd iteration)}: using the results of the previous iteration, the idea is to develop a low-fidelity computer prototype on technologies like Balsamiq (FOOTNOTE) or Mockingbird (FOOTNOTE), which although do not create native applications, it is possible to add more visual components and animations more similar with the intended in the final solution. So more aspects can be tested regarding the higher complexity and fidelity of the interface. At this stage, Heuristic Evaluation will be used by experts and more user tests will be performed. The type of users tests to be made will depend on the results obtained in that moment. However, it is likely that not only Observational Methods are performed. Experimental Methods could be necessary to test specific hypothesis or discuss what is the better option between a set of possible implementations. Moreover, Query Methods, like questionnaires, could be valuable as well, to understand the user’s satisfaction;
+        \item \textbf{Final Prototype (3rd iteration)}: computer prototype integrated in the OutSystems Platform. The development process of this prototype is more complex so it was necessary to consider a week to understand and configure the development environment. The development focus will be in the presentation layer of the application due to improve the prototype of the last iteration, using the new results obtained. Being the last prototype and consequently the final result of this project, will be evaluated also by users and experts to summarize the final results of all the design and development process;
+
+    \end{itemize}
+
+\end{itemize}
 
 \section{Work Plan}
 \label{sec:work_plan}
+According to the proposed implementation approach, Figure \ref{fig:work_plan} represents a work plan until the final of the project, scheduling each one of the tasks explained in the previous section throughout the remaining weeks. The tasks are assigned to its respective major phases, and the focus on the writing of the document is principally at the end of each phase or iteration to summarize all the contents addressed meanwhile these periods, although the report can be updated every time it reveals useful.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{workPlan}
+	\caption{Task Scheduling throughout the weeks until the final of the project.}
+	\label{fig:work_plan}
+\end{figure}
+
+
 
