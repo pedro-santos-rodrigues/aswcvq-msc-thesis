@@ -14,7 +14,7 @@
 
 \section{Context} 
 \label{sec:context}
-Nowadays, Information and Computer Systems have been dominating data processing. These fields are genrators of positive impact for personal and business areas presenting a prominent place on any information system. However, well before any electronic system, since people started to count or write, they have needed to store pieces of information. \cite{historyOfDatabases} Thenceforth, for many years, people have used physical information, like paper, to store data, however, with the digital transformation, these resources are less and less used.
+Nowadays, database queries are required not only in computer systems areas but also in most sectors of professional environments or personal demands. This database information gathering claim needs should resort on actual technologies to optimize the time spent and reduce the errors of this query process since the most important is the obtaining of the intended information.
 
 In the decades of the 1960s, Database Management Systems (DBMS) arose, and later at 1970s new management systems that use relational models, designated as Relational Database Management Systems (RDBMS). Moreover, the first Data Query Languages (DQL) appeared, like SQL \cite{sequel_aStructuredEnglishQueryLanguage} which was considered by the ANSI (American National Standards Instituite) and ISO (International Organization for Standardization) as the standard query language \cite{databaseManagementSystems}. These technological evolutions have improved the effectiveness and the efficiency of the querying process. However, to find more specific and complex information on databases  a higher degree of DQL understanting was required. Thus, if from one side the technological evolution and the digital transformation have optimized the data querying process, only a subset of people could use these powerful querying technologies.
 
@@ -42,20 +42,53 @@ The OutSystems platform provides a visual query language that allows users to re
 
 Currently, the OutSystems’ solutions have been applied on digital transformation processes in multiple industries that lead with high quantities of data, in order to accelerate the application development processes, unlocking its value and growth.
 
-To this extent, the already implemented querying tool is not able to deal with a set of scenarios, because it might not be accurate when the domain has a lot of tables involved, or does not support essential advanced constructors. Are part of these constructors not supported clauses like IN, NOT IN, EXISTS, NOT EXISTS, DISTINCT, UNION and the possibility to use subqueries.
+To this extent, the already implemented querying tool is not able to deal with a set of scenarios, because it might not be accurate when the domain has a lot of tables involved, or does not support essential advanced constructors. Are part of these constructors not supported clauses, such as IN, NOT IN, EXISTS, NOT EXISTS, DISTINCT, UNION and the possibility to use subqueries.
 
-Under the above mentioned circumstances, the goal of this thesis is to design and evaluate a new and more powerful Visual Query Interface and User Experience that allows developers to do all these complex data queries in intuitive and efficient way without using SQL.
-
-\section{Research Questions}
-\label{sec:research_questions}
+Accordingly, the following questions were fundamental to analyse and explore the problem and its requirements:
 \begin{itemize}
   \item What query features are supported by the existing OutSystems visual query language?
   \item Why do OutSystems developers often use SQL to perform database queries?
   \item Why are some queries that can be built visually written though SQL instead?
   \item What are the main causes that users point out to use SQL?
-  \item What users are more unsatisfied with the current provided approach to retrieve data?
-  \item Can we enable OutSystems developers to easily do all kinds of database queries without ever using SQL?
+  \item Who are the users more unsatisfied with the current provided visual approach to retrieve data? What are their reasons?
 \end{itemize}
+
+Under the above mentioned circumstances, the goal of this thesis is to design and evaluate a new and more powerful Visual Query Interface and User Experience that allows developers to do all these complex data queries in intuitive and efficient way without using SQL.
+
+\section{Research Questions}
+\label{sec:research_questions}
+The main research question that is being addressed in this dissertation is:
+\begin{center}
+  Can we enable OutSystems developers to easily do all kinds \\ of database queries without ever using SQL?
+\end{center}
+
+Regarding the main question and the spread background of the system target users, it is important to research how can be developed a solution that covers the requirements of all user types with the best usability possible.
+
+The following research questions focus on this usability trade-off which depends on the users and the system particularities:
+
+\medskip
+
+\textbf{Research Question 1:} Has the actual implementation problems to the less experienced users?
+
+\medskip
+
+Considering the visual query interface already implemented, the most complex queries have not been correctly covered to this tool. However, is important to analyse also if novice users had similar problems or others that have an impact on their tasks.
+
+\medskip
+
+\textbf{Research Question 2:} Can experienced users take advantages in using the visual interface to build queries instead of SQL?
+
+\medskip
+
+Since the users more experienced who knows other textual query languages, such as SQL, can use SQL to perform the queries, are advantages for them in the usage of a visual query interface? What are the advantages and disadvantages of this type of approach for these users?
+
+\medskip
+
+\textbf{Research Question 3:} Can be improved the user experience of expert users without reducing the learnability and satisfaction of the system to the less experienced users?
+
+\medskip
+
+The usability attributes trade-off depends on the system's target users expectations and requirements. Thus it is important to take into account if the development to improve the efficiency, effectiveness and satisfaction in expert users does not harm the effectiveness and the learnability of the operations performed for the less experienced users.
 
 \section{Main Expected Contributions}
 \label{sec:main_exp_contributions}
@@ -76,6 +109,6 @@ The remaining chapters of this thesis are organized as follows:
 
 \begin{itemize}
   \item Chapter 2 - \nameref{cha:background}: introduces some design and usability concepts to be used in this work. As well as,  it is provided a context of the OutSystems platform current progress, which explains the system actual point, in the data querying domain, before the study;
-  \item Chapter 3 - \nameref{cha:related_work}: describes and compares the approaches used by other systems to create interfaces which allow to visually build queries, detailing the interaction strategies used. Also, it is analysed the users' interaction with database systems to improve the interfaces' suitability to the target users of the system; 
+  \item Chapter 3 - \nameref{cha:related_work}: analyses the users' interaction with database systems to improve the interfaces' suitability to the target users of the system. Also, are described and compared the approaches used by other systems to create interfaces which allow to visually build queries, detailing the interaction strategies used.
   \item Chapter 4 - \nameref{cha:proposed_solution}: explains the work made in the requirements analysis, including user's interviews and metrics gathering, and the decisions of what are the principal and impactful problems to be tackled. Moreover, it is detailed what will be the design approach and process adopted to develop the solution.
 \end{itemize}
