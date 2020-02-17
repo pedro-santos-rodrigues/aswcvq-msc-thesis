@@ -7,11 +7,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Related Work}
 \label{cha:related_work}
-Since the users are a fundamental component on the study, their relationship with data and what are their expectations to these query systems will be discussed. Moreover, a set of technologies and techniques will be described and compared. This information can turn to be useful to explore solutions, and understand different points of view to manage problems, regarding the project scope. As the project is focused on the improvement of an interface that combines the query design with the query output viewer. 
+Since the users are a fundamental component of the study, their relationship with data and what are their expectations of these query systems will be discussed. Moreover, a set of technologies and techniques will be described and compared. This information can turn to be useful to explore solution, and understand different points of view to manage problems, regarding the project scope. As the project is focused on the improvement of an interface that combines the query design with the query output viewer. 
 
 \section{Query Conceptual Models}
 \label{sec:query_conceptual_models}
-The perception of the user's conceptual model is important to understand how the user reason while interacting with the system the perform the intended actions. A query is built with the aim of gathering data. To transmit what is the intended data, the user needs to think about how it could express the data required in the query.
+The perception of the user's conceptual model is important to understand how the user reason while interacting with the system the perform the intended actions. A query is built to gather data. To transmit what is the intended data, the user needs to think about how it could express the data required in the query.
 
 %The understanding of the user's conceptual model leads to remove the existing gap between what the user wants to query from the database and what system register that the user wants to retrieve.
 
@@ -40,7 +40,7 @@ Comparing the two previous models presented, the Lexical Transformation phase is
 \end{figure}
 
 The query comprehension is one of the important concerns of this work, since it is important to consider if the query representation, no matter if it is visual or textual, indicates clearly what data will be gathering. %TODO: pode ser importante dar exemplos da importancia da comprehension (e.g., para quem vai ler; se o escritor foi diferente do leitor, etc.) 
-Chan \textit{et al.} \cite{anEvaluationOfNoviceEndUserComputingPerformance} have postulated that the query comprehension could be covered by the reverse of the stages included in the Odgen Model. First, the user should identify the data structure and operations, to translate them, in the next step, to the natural language. After this, the user needs to read and understand what data gathering is intended. Moreover, in this evaluation, it was concluded that although data modeling influence query writing, it does not influence the query comprehension. The explanation is provided by the authors: "Both query writing and comprehension require understanding of the query language syntax. This is a component not needed in the data modeling task."
+Chan \textit{et al.} \cite{anEvaluationOfNoviceEndUserComputingPerformance} have postulated that the query comprehension could be covered by the reverse of the stages included in the Odgen Model. First, the user should identify the data structure and operations, to translate them, in the next step, to the natural language. After this, the user needs to read and understand what data gathering is intended. Moreover, in this evaluation, it was concluded that although data modeling influence query writing, it does not influence the query comprehension. The explanation is provided by the authors: "Both query writing and comprehension require an understanding of the query language syntax. This is a component not needed in the data modeling task."
 
 The experience with the data involved is another factor that influences the query comprehension. If novice users do not understand the data involved, they cannot validate if the query result is correct. This situation was analyzed by Robb \textit{et al.} that were distinguished the query process between new users and experienced users (Figure \ref{fig:ex_ante_expectations}). Besides, they were concluded that if the novice users were alerted to the details of the data queried, the query effectiveness will increase.
 
@@ -54,11 +54,28 @@ The experience with the data involved is another factor that influences the quer
 
 \section{Query Formulation Problems}
 \label{sec:query_formulation_problems}
-Since the goal of this work is the improvement of an interface that allows its user to build queries, it is important to summarize what are the problems that usually occur in query formulation. The problems that will be presented are related to SQL queries. However, as the visual tool of this work aims to substitute some functionalities of SQL, the comprehension of the interaction problems that exist in the textual language can be considered and mitigated in the development of the new interface. 
+Since the goal of this work is the improvement of an interface that allows its user to build queries, it is important to summarize a set of significant problems that usually occur in query formulation. The problems that will be presented are related to SQL queries. However, as the visual tool of this work aims to substitute some functionalities of SQL, the comprehension of the interaction problems that exist in the textual language can be considered and mitigated in the development of the new interface. 
 
-The query errors could be syntactic or semantic. The syntactic errors are related to the grammar rules of the language and are detected by the compiler. Therefore, the impact of these errors is reduced since the user can see that the query is incorrect through the compiler alert. The semantic errors are a major concern because they occur when the returned information is not the intended by the user, even if the query does not have compilation errors. \cite{userErrorsInDatabaseQueryComposition} These errors could affect the correctness of the results.
+Lu et al. \cite{aSurveyOnUsageOfSQL} have evaluated the SQL usage in a diverse population, which includes people of different enterprise areas with different levels of experience in the database systems domain. The authors concluded that the comprehension of the queries is difficult, as well as the logical errors are difficult to detect. Moreover, the joins and aggregation functions are the are other problems pointed out.
+
+The query errors could be syntactic or semantic. The \textbf{Syntactic Errors} are related to the grammar rules of the language and are detected by the compiler. Therefore, the impact of these errors is reduced since the user can see that the query is incorrect through the compiler alert. The \textbf{Semantic Errors} are a major concern because they occur when the returned information is not intended by the user, even if the query does not have compilation errors. \cite{userErrorsInDatabaseQueryComposition} These errors could affect the correctness of the results.
 
 The most relevant semantic problems are related with boolean operators of the query and with joins omission.
+
+In SQL, when is necessary to merge data from different tables in one column necessary to specify the merge condition using a join clause. Several studies have demonstrated that the indication of the join clause is one of the most representative semantic errors. \cite{studentsSemanticMistakesInWritingSevenDifferentTypesOfSQLQueries} \cite{aSurveyOnUsageOfSQL} Smeller \cite{userErrorsInDatabaseQueryComposition} has studied what are the cognitive causes that lead the user to forget the join clauses:
+
+\begin{itemize}
+  \item Working memory overload: if the user needs to recall the table and column names, and the conditions necessary after the identification of the join's requirement, the required join clauses could be forgotten in this period;
+  \item Absence of the clue: when the statement that explains what data is required do not present clues for the join necessity;
+  \item Procedural fixedness: when a query that only extracts data from one table is reused for another that requires the join clauses but this join is forgotten;
+  \item Ignorance:  when the user does not know how to merge the tables and specify the join clauses.
+\end{itemize}
+
+The cognitive causes of the problems are important to develop interfaces that could mitigate the existing problems in the query formulation. For instance, if the join clues are provided in the interface, the user does not need to remember them. This approach, which follows one of the usability heuristics presented by Nielsen \cite{usabilityEngineering}, minimizes the user memory load.
+
+A study that evaluated novice programmers' semantic mistakes concluded also that omissions are the principal semantic error, mainly in the WHERE clause. \cite{studentsSemanticMistakesInWritingSevenDifferentTypesOfSQLQueries} Besides, the authors have referred also the problem of working memory overload: "This error may occur when the capacity of a student’s working memory is surpassed".
+
+Another study has analyzed a large dataset of queries composed of university students enrolled in an introductory database course. However, this study is more extensive and includes a list of the principal errors committed by the students. \cite{errorsAndComplicationsInSQLQueryFormulation} Continuing the focus on the semantic errors, the authors have pointed out the following error categories: inconsistent expressions, inconsistent joins, joins omission, duplicate rows, redundant column outputs. \cite{errorsAndComplicationsInSQLQueryFormulation}
 
 %\section{Low-code Development Users}
 %\label{sec:low_code_development_users}
@@ -159,19 +176,23 @@ Tableau Prep \cite{tableauPrep} provides two options to start a join between two
 To represent and manage the filtering criteria of the queries, usually is used text to indicate the logical conditions. However, some systems are trying to optimize the usability, helping the user in the specification process through some autocompletes. These diminish the necessity to remember all the syntax and the name of the functions. 
 Besides, other systems present the logical conditions using a more structured layout, although keeping resorting in a textual representation. An example is Devart dbForge Query Builder \cite{dbForgeQueryBuilder} that represents the WHERE and HAVING clauses in a tree where the user can organize the conditions into groups \cite{dbForgeBuildingWhereOrHavingClause}.
 
-Furthermore, some query systems also allow the user to view the query result, providing a shortcut in the column's name to insert filters. So, the user can change the query while is viewing the results. In this way, the user can apply a filter and view its effect almost immediately. Power BI Query Editor \cite{powerBI} is an example of a system which uses this approach.
+Furthermore, some query systems also allow the user to view the query result, providing a shortcut in the column's name to insert filters. So, the user can change the query while is viewing the results. In this way, the user can apply a filter and view its effect almost immediately. Power BI Query Editor \cite{powerBI} is an example of a system that uses this approach.
 
-Different interfaces can be used to select filters regarding the field data type. The advantages of the graphical interfaces could support the filtering criteria definition. For example, if a filter is applied to constraint dates, then a date input box with a visual calendar can be useful to simplify the date typing. In this way, some softwares, such as Chartio Visual SQL \cite{chartioVisualSQL} and Chartio Data Explorer \cite{chartioDataExplorer}, not only helps in the data typing, but also provide dropdown lists that contain operators that can be applied to the referred data type (e.g. less than, contains, like, etc)  to helps the user in the boolean operator specification \cite{chartioDataExplorer}  \cite{visualSqlActions}.
+Different interfaces can be used to select filters regarding the field data type. The advantages of the graphical interfaces could support the filtering criteria definition. For example, if a filter is applied to constraint dates, then a date input box with a visual calendar can be useful to simplify the date typing. In this way, some software, such as Chartio Visual SQL \cite{chartioVisualSQL} and Chartio Data Explorer \cite{chartioDataExplorer}, not only helps in the data typing, but also provide dropdown lists that contain operators that can be applied to the referred data type (e.g. less than, contains, like, etc)  to helps the user in the boolean operator specification \cite{chartioDataExplorer}  \cite{visualSqlActions}.
 
-Tableau Prep \cite{tableauPrep} follows this in a more strict way, distinguishing between data types when filtering criteria are indicated. It provides different forms depending on the data type. The main difference of this system is that not only provides a more diversity of controls, as integrating range selectors, radio button, and the option to include or exclude fields through an action accessible near its value, but also gives to the user to option to use a calculation form where the interaction style is more textually and more extensible \cite{tableauFilterYourData}.
+Tableau Prep \cite{tableauPrep} follows this more strictly, distinguishing between data types when filtering criteria are indicated. It provides different forms depending on the data type. The main difference of this system is that not only provides a more diversity of controls, as integrating range selectors, radio button, and the option to include or exclude fields through an action accessible near its value, but also gives to the user to option to use a calculation form where the interaction style is more textually and more extensible \cite{tableauFilterYourData}.
 
 \bigskip
 
 \textbf{Sorting Criteria}: 
 
+Usually, in the actual visual query interfaces, the sorting criteria could be indicated in two ways: a right-click action on the column header of the table that represents the query result, or using a form-based interface to define the sort criteria of each entity. Devart dbForge Query Editor \cite{dbForgeQueryBuilder} is a pure example of the first approach. \cite{dbForgeSortingData} Chartio Data Explorer \cite{chartioDataExplorer} adopts the second approach, providing a pop-up form to apply sorting criteria to the query. The user can use this form the select the intended attributes and the criteria to apply. \cite{chartioAdvancedSorting}. Moreover, Chartio Visual SQL \cite{chartioVisualSQL}, Tableau Prep \cite{tableauPrep}, and Microsoft Power BI \cite{powerBI} combines the previous solutions with the possibility to redefine the priority of the sorting criteria, through drag-and-drop actions \cite{visualSqlActions} \cite{tableauSortData} \cite{powerBIShapeAndCombineData}.
+
 \bigskip
 
 \textbf{Aggregation Functions}: 
+
+In order to perform aggregations functions, such as MIN, MAX, COUNT, AVG, SUM, or GROUP BY, some systems provide these functionalities, through interaction with the query result table. 
 
 \bigskip
 
@@ -180,3 +201,8 @@ Tableau Prep \cite{tableauPrep} follows this in a more strict way, distinguishin
 
 \section{Discussion}
 \label{sec:discussion}
+The conceptual models of query writing presented in this chapter will be taken into account along the design of the solution since these are a good baseline to understand how user reason while are interacting with the system to achieve its goals. The system's tasks will be optimized according to the users' conceptual models presented, in order to reduce the semantic errors, as much as possible. Therefore, it was presented the most relevant semantic errors that occur using SQL. In the design of the solution, these errors are part of the problems to solve using a new user interface and user experience. As referred in section \ref{sec:query_formulation_problems}, the semantic errors will be the main concern since these could have a negative impact on the results. The syntactic errors also will be addressed in this work but require less study about the users’ conceptual model. The major concern in this type of errors is to provide the maximum feedback to the user. In that way, the user will understand the error and correct it.
+
+Furthermore, since the design of an interface needs to tackle with the usability attributes trade-off, it is important to characterize and consider the problems of the application's target users. This characterization is essential to define the usability priorities of the interface. The population used in the studies presented in this chapter will be an excellent reference to the target user analysis. The target users of the intended system are low-code developers. Since low-code development has advantages not only for not programmers but to programmers with different levels of expertise, the target users of the system are wide. Thus, the studies that have evaluated a wide diversity of users, such as the evaluation of Lu \textit{et al.} \cite{aSurveyOnUsageOfSQL}, could reveal important results to the work development. Moreover, the studies presented that have analysed students of database systems (\cite{studentsSemanticMistakesInWritingSevenDifferentTypesOfSQLQueries}, \cite{errorsAndComplicationsInSQLQueryFormulation}), could add more important data, since some details only occur if the queries formulated are more complex.
+
+Finally, a set of actual graphical user interfaces used to formulate queries was presented and compared.
