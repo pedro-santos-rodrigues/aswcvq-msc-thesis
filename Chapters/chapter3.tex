@@ -56,7 +56,9 @@ The experience with the data involved is another factor that influences the quer
 \label{sec:query_formulation_problems}
 Since the goal of this work is the improvement of an interface that allows its user to build queries, it is important to summarize what are the problems that usually occur in query formulation. The problems that will be presented are related to SQL queries. However, as the visual tool of this work aims to substitute some functionalities of SQL, the comprehension of the interaction problems that exist in the textual language can be considered and mitigated in the development of the new interface. 
 
+The query errors could be syntactic or semantic. The syntactic errors are related to the grammar rules of the language and are detected by the compiler. Therefore, the impact of these errors is reduced since the user can see that the query is incorrect through the compiler alert. The semantic errors are a major concern because they occur when the returned information is not the intended by the user, even if the query does not have compilation errors. \cite{userErrorsInDatabaseQueryComposition} These errors could affect the correctness of the results.
 
+The most relevant semantic problems are related with boolean operators of the query and with joins omission.
 
 %\section{Low-code Development Users}
 %\label{sec:low_code_development_users}
@@ -64,7 +66,7 @@ Since the goal of this work is the improvement of an interface that allows its u
 \section{Visual Query Composition}
 \label{sec:visual_query_composition}
 
-The first relevant topic to analyse is the visual representation approaches, which can be applied to design an user interface capable to build queries through a visual language. Catarci \textit{et al.} \cite{visualQuerySystemsForDatabases_aSurvey} presented an interesting classification according to the visual formalism which the interface is based on:
+The interfaces to build queries resort on visual representations to communicate with the user. Catarci \textit{et al.} \cite{visualQuerySystemsForDatabases_aSurvey} presented an interesting classification according to the visual formalism which the interface is based on:
 
 \begin{itemize}
     \item \textbf{Form-based}: based on forms, which can be seen as a rectangular grid of other components (subforms, groups of cells, a combination of cells, etc.) that group objects in a named collection regarding its structure. Forms and tables are similar,  but contrary to the tables, forms allow nesting. Thus, forms can be seen as a generalization of tables. In this approach, the relationships can be represented among cells, cells subsets, or even the overall set, providing to the user three information levels; %TODO: example of QBE 
@@ -163,9 +165,17 @@ Different interfaces can be used to select filters regarding the field data type
 
 Tableau Prep \cite{tableauPrep} follows this in a more strict way, distinguishing between data types when filtering criteria are indicated. It provides different forms depending on the data type. The main difference of this system is that not only provides a more diversity of controls, as integrating range selectors, radio button, and the option to include or exclude fields through an action accessible near its value, but also gives to the user to option to use a calculation form where the interaction style is more textually and more extensible \cite{tableauFilterYourData}.
 
-%\bigskip
+\bigskip
 
-%\textbf{Sorting Criteria}: 
+\textbf{Sorting Criteria}: 
+
+\bigskip
+
+\textbf{Aggregation Functions}: 
+
+\bigskip
+
+\textbf{Other Specifications}: 
 
 
 \section{Discussion}
