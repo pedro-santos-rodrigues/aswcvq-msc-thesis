@@ -9,11 +9,57 @@
 \label{cha:related_work}
 Since the users are a fundamental component on the study, their relationship with data and what are their expectations to these query systems will be discussed. Moreover, a set of technologies and techniques will be described and compared. This information can turn to be useful to explore solutions, and understand different points of view to manage problems, regarding the project scope. As the project is focused on the improvement of an interface that combines the query design with the query output viewer. 
 
-\section{Users in Database Query Formulation}
-\label{sec:users_database_query_formulation}
+\section{Query Conceptual Models}
+\label{sec:query_conceptual_models}
+The perception of the user's conceptual model is important to understand how the user reason while interacting with the system the perform the intended actions. A query is built with the aim of gathering data. To transmit what is the intended data, the user needs to think about how it could express the data required in the query.
 
-\section{Low-code Development Users}
-\label{sec:low_code_development_users}
+%The understanding of the user's conceptual model leads to remove the existing gap between what the user wants to query from the database and what system register that the user wants to retrieve.
+
+Some studies have analyzed this reasoning process of the users when was writing queries. Siau \textit{et al.} \cite{effectsOfQueryComplexityAndLearningOnNoviceUserQueryPerformance} have referred that "The semantics communicated through the interface can be classified according to abstraction levels, such as the conceptual and logical levels". Considering a physical level, an interface that involves system details, such as physical storage and access structures, and a logical level that takes into account abstract structures for data and operations. Through an empirical method of evaluation, the conceptual level has revealed a higher accuracy. Also, this abstraction level makes the users more confident in their answers than the physical level or logical levels. Moreover, the time that users need to design the queries is reduced using conceptual levels. \cite{effectsOfQueryComplexityAndLearningOnNoviceUserQueryPerformance}
+
+Reisner \cite{humanFactorStudiesOfDatabaseQueryLanguages} provided a model of query writing from the reading of the query intention in an English statement to the query writing in SQL (Figure \ref{fig:reisner_model}). After understanding what data is required, the user applies two parallel steps. In the \textbf{Template Generation} phase, the user formulates a template identifying the SQL keywords necessary, such as SELECT, FROM, and WHERE. In the other step, called \textbf{Lexical Transformation}, the user identifies the name of the tables and columns involved. Finally, the results of these two steps are combined in the last step, denominated \textbf{Insertion}, in order to produce the final query \cite{humanFactorStudiesOfDatabaseQueryLanguages}. The recall of table and column names represents a significant use of long-term memory, being a concern that should be taken into account \cite{userErrorsInDatabaseQueryComposition}.
+
+In the same field, Odgen \cite{implicationsOfACognitiveModelOfDatabaseQuery} presented a three-stage cognitive model of the query process (Figure \ref{fig:odgen_model}):
+
+\begin{enumerate}
+  \item \textbf{Query Formulation}: according to the existing data, the user specifies, in natural language, what data is required;
+  \item \textbf{Query Translation}: regarding the existing data model, the operations and relations necessary are defined, in order to adapt the natural language request to the pragmatics of the intended query;
+  \item \textbf{Query Writing}: the information of the previous steps is used to built the query, using the syntactic and the semantics of the query language.
+\end{enumerate}
+
+Comparing the two previous models presented, the Lexical Transformation phase is present in the Query Translation phase of the latter model, as well as, Template Generation and insertion are part of the Query Writing phase. \cite{anEvaluationOfNoviceEndUserComputingPerformance} Moreover, although the query writing and comprehension are the focus of this work, it was verified in a comparison between three different models (relational model, extended-entity-relationship model, and object-oriented model) that the data model influence the query writing and comprehension. \cite{anEvaluationOfNoviceEndUserComputingPerformance}
+
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{Reisner Model\label{fig:reisner_model}} %
+    {\includegraphics[width=0.5\linewidth]{reisner-model}}%
+  \subcaptionbox{Odgen Model \label{fig:odgen_model} }%
+    {\includegraphics[width=0.5\linewidth]{odgen-model}}%
+\caption{Models of Query Writing Process.}
+  \label{fig:models_of_query_writing_process}
+\end{figure}
+
+The query comprehension is one of the important concerns of this work, since it is important to consider if the query representation, no matter if it is visual or textual, indicates clearly what data will be gathering. %TODO: pode ser importante dar exemplos da importancia da comprehension (e.g., para quem vai ler; se o escritor foi diferente do leitor, etc.) 
+Chan \textit{et al.} \cite{anEvaluationOfNoviceEndUserComputingPerformance} have postulated that the query comprehension could be covered by the reverse of the stages included in the Odgen Model. First, the user should identify the data structure and operations, to translate them, in the next step, to the natural language. After this, the user needs to read and understand what data gathering is intended. Moreover, in this evaluation, it was concluded that although data modeling influence query writing, it does not influence the query comprehension. The explanation is provided by the authors: "Both query writing and comprehension require understanding of the query language syntax. This is a component not needed in the data modeling task."
+
+The experience with the data involved is another factor that influences the query comprehension. If novice users do not understand the data involved, they cannot validate if the query result is correct. This situation was analyzed by Robb \textit{et al.} that were distinguished the query process between new users and experienced users (Figure \ref{fig:ex_ante_expectations}). Besides, they were concluded that if the novice users were alerted to the details of the data queried, the query effectiveness will increase.
+
+\begin{figure}[htbp]
+  \centering
+    {\includegraphics[width=0.9\linewidth]{ex-ante-expectations}}%
+\caption{New and experienced users’ query processes (extracted from \cite{improvingNewUsersQueryPerformance}).}
+  \label{fig:ex_ante_expectations}
+\end{figure}
+
+
+\section{Query Formulation Problems}
+\label{sec:query_formulation_problems}
+Since the goal of this work is the improvement of an interface that allows its user to build queries, it is important to summarize what are the problems that usually occur in query formulation. The problems that will be presented are related to SQL queries. However, as the visual tool of this work aims to substitute some functionalities of SQL, the comprehension of the interaction problems that exist in the textual language can be considered and mitigated in the development of the new interface. 
+
+
+
+%\section{Low-code Development Users}
+%\label{sec:low_code_development_users}
 
 \section{Visual Query Composition}
 \label{sec:visual_query_composition}
@@ -21,9 +67,9 @@ Since the users are a fundamental component on the study, their relationship wit
 The first relevant topic to analyse is the visual representation approaches, which can be applied to design an user interface capable to build queries through a visual language. Catarci \textit{et al.} \cite{visualQuerySystemsForDatabases_aSurvey} presented an interesting classification according to the visual formalism which the interface is based on:
 
 \begin{itemize}
-    \item \textbf{Form-based}: based on forms, which can be seen as a rectangular grid of other components (subforms, groups of cells, a combination of cells, etc.) that group objects in a named collection regarding its structure. Forms and tables are similar,  but contrary to the tables, forms allow nesting. Thus, forms can be seen as a generalization of tables. In this approach, the relationships can be represented among cells, cells subsets, or even the overall set, providing to the user three information levels;
-    \item \textbf{Diagram-based}: usage of graphical representations, such as graphs, charts and diagrams to better transmit the relationships among data. The aim is to use visual representations to help the understanding of the relationships between concepts which are represented by textual labels;
-    \item \textbf{Icon-based}: as the opposite of the diagram-based, this type of interfaces tries to facilitate the understanding of the concepts instead of relationships. So, are used Icons, which are visual segmented objects to transmit a message or information, using analogies and metaphors with the real-world objects, or even conventions that are used to express no tangible objects, as computer processes;
+    \item \textbf{Form-based}: based on forms, which can be seen as a rectangular grid of other components (subforms, groups of cells, a combination of cells, etc.) that group objects in a named collection regarding its structure. Forms and tables are similar,  but contrary to the tables, forms allow nesting. Thus, forms can be seen as a generalization of tables. In this approach, the relationships can be represented among cells, cells subsets, or even the overall set, providing to the user three information levels; %TODO: example of QBE 
+    \item \textbf{Diagram-based}: usage of graphical representations, such as graphs, charts, and diagrams to better transmit the relationships among data. The aim is to use visual representations to help the understanding of the relationships between concepts which are represented by textual labels;
+    \item \textbf{Icon-based}: as the opposite of the diagram-based, this type of interface tries to facilitate the understanding of the concepts instead of relationships. So, are used Icons, which are visual segmented objects to transmit a message or information, using analogies and metaphors with the real-world objects, or even conventions that are used to express no tangible objects, as computer processes;
     \item \textbf{Hybrid}: these approaches can combine the previous visual formalisms in order to select the best combination of advantages to the application usage domain.
 \end{itemize}
 
