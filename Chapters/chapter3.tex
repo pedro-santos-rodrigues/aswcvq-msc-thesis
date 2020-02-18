@@ -200,6 +200,13 @@ In order to perform aggregations functions, such as MIN, MAX, COUNT, AVG, SUM, o
 
 \textbf{Other Specifications}: 
 
+Regarding the option to add new calculated attributes, all the systems referred above allow inserting calculated attributes to the query, excepting the Devart dbForge Query Editor which does not support. \cite{visualSqlActions} \cite{tableauCalculatedField} \cite{powerBICommonQueryTasks}
+
+The option to show only distinct values is provided in Tableau Prep \cite{tableauPrep}, Microsoft Power BI \cite{powerBI}, and Devart dbForge Query Editor \cite{dbForgeQueryBuilder}, through a button or a checkbox to does not see in the result the duplicated values. However, Chartio Visual SQL \cite{chartioVisualSQL} and Chartio Data Explorer \cite{chartioDataExplorer} does not support a specific interaction method to specify this. Nonetheless, the distinct effect can be applied, using the group by in all the columns of the query.
+
+Some system provides visual options to build queries that contain UNIONs. For example, Chartio Visual SQL \cite{chartioVisualSQL} and Chartio Data Explorer \cite{chartioDataExplorer} provides this option in the same components of the joins. In these systems, when the user chooses the join type, the union is one of the join types available, although there is a different operation in SQL. Tableau Prep \cite{tableauPrep} and Microsoft Power BI \cite{powerBI} present different options between the joins and unions, but the interface and the interaction strategies are similar. \cite{tableauAggregateJoinOrUnionData} \cite{powerBIShapeAndCombineData} 
+
+Moreover, a visual way to perform subqueries is provided by the diagrammatic-based interface of Devart dbForge Query Editor \cite{dbForgeQueryBuilder}, using tabs to alternate between the selected query. Links are used as assistants and shortcuts to view and change between the queries. \cite{dbForgeSubqueriesOverview} \cite{dbForgeSubqueriesInFromClauses}
 
 \section{Discussion}
 \label{sec:discussion}
