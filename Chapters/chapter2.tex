@@ -17,26 +17,26 @@ Although computer systems have been designed by humans, these two parts of human
 
 %\textit{Dix et al.} \cite{humanComputerInteraction} reinforce this too, saying that “HCI involves the design, implementation and evaluation of interactive systems in the context of the user’s task and work”.
 
-\subsection{Interaction Models}
-\label{subsec:interaction_models}
+%\subsection{Interaction Models}
+%\label{subsec:interaction_models}
 
-Therefore, interaction models have been proposed to represent the intention of a user to perform a certain task on a system. One of the most influential is Norman’s model, that characterize the interaction of a user with a system beyond execution-evaluation cycles. \cite{humanComputerInteraction} Thereby, the execution is a flow when the user interacts with the system, and the evaluation phase comprises the presentation and the interpretation of the system output. However, this model only represents the interaction from the users’ point of view. Thereupon, Abowd and Beale \cite{userSystemsAndInterfaces_aUnifyingFrameworkForInteraction} proposed an extension of this model where it is possible to view how the system communicates through the interface.
+%Therefore, interaction models have been proposed to represent the intention of a user to perform a certain task on a system. One of the most influential is Norman’s model, that characterize the interaction of a user with a system beyond execution-evaluation cycles. \cite{humanComputerInteraction} Thereby, the execution is a flow when the user interacts with the system, and the evaluation phase comprises the presentation and the interpretation of the system output. However, this model only represents the interaction from the users’ point of view. Thereupon, Abowd and Beale \cite{userSystemsAndInterfaces_aUnifyingFrameworkForInteraction} proposed an extension of this model where it is possible to view how the system communicates through the interface.
 
-In this approach, represented in Figure \ref{fig:abowdAndBealeModel}, after the user has defined his goal and respective tasks to achieve it, he transmits his intention (articulation) through input language, and after this, that information is translated to system language (performance), ending the execution phase. Secondly, the result of the action executed by the system is presented (presentation) and the user observes it (observation), ending the evaluation phase.
+%In this approach, represented in Figure \ref{fig:abowdAndBealeModel}, after the user has defined his goal and respective tasks to achieve it, he transmits his intention (articulation) through input language, and after this, that information is translated to system language (performance), ending the execution phase. Secondly, the result of the action executed by the system is presented (presentation) and the user observes it (observation), ending the evaluation phase.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=1.75in]{abowdAndBealeModel}
-	\caption{Interaction Model proposed by Abowd and Beale \cite{userInterfacesForAll_newPerspectivesIntoHumanComputerInteraction} (Based on Norman’s Model)}
-	\label{fig:abowdAndBealeModel}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centering
+%	\includegraphics[height=1.75in]{abowdAndBealeModel}
+%	\caption{Interaction Model proposed by Abowd and Beale \cite{userInterfacesForAll_newPerspectivesIntoHumanComputerInteraction} (Based on Norman’s Model)}
+%	\label{fig:abowdAndBealeModel}
+%\end{figure}
 
-These models are useful to understand two concepts that cannot be forgotten when a system is being designed, since these are two effects that designers want to reduce as much as possible, in order to optimize the effectiveness of the human-computer dialogue. Following, these concepts will be described respecting \textit{Dix et al.} \cite{humanComputerInteraction} definition:
+%These models are useful to understand two concepts that cannot be forgotten when a system is being designed, since these are two effects that designers want to reduce as much as possible, in order to optimize the effectiveness of the human-computer dialogue. Following, these concepts will be described respecting \textit{Dix et al.} \cite{humanComputerInteraction} definition:
 
-\begin{itemize}
-    \item \textbf{Gulf of execution}: “Difference between the user’s formulation of the actions to reach the goal and the actions allowed by the system. If the actions allowed by the system correspond to those intended by the user, the interaction will be effective.”
-    \item \textbf{Gulfs of evaluation}: “Distance between the physical representation of the system state and the expectation of the user. If the user can readily evaluate the presentation in terms of his goal, the gulf of evaluation is small.”
-\end{itemize}
+%\begin{itemize}
+%    \item \textbf{Gulf of execution}: “Difference between the user’s formulation of the actions to reach the goal and the actions allowed by the system. If the actions allowed by the system correspond to those intended by the user, the interaction will be effective.”
+%    \item \textbf{Gulfs of evaluation}: “Distance between the physical representation of the system state and the expectation of the user. If the user can readily evaluate the presentation in terms of his goal, the gulf of evaluation is small.”
+%\end{itemize}
 
 \subsection{Main Concepts}
 \label{subsec:main_concepts}
@@ -98,14 +98,15 @@ While sketching techniques are more plentiful, and have a low detail level, bein
 
 However, there are prototypes with different thoroughness degrees, presenting different advantages and disadvantages. Thus, it is important to start the prototyping process with low fidelity prototypes, as paper prototypes, since the objective of these is to evaluate the conceptual model (if the users understand the system), the functionalities presented, the navigation, the screen components distribution, and the terminology used. After the evaluation of these prototypes presents good results, high fidelity prototypes should be used, like computer prototypes. There are a set of available tools to assist in the building process of these prototypes, such as Balsamiq \cite{balsamiq} and Mockingbird \cite{mockingbird}. These different prototype types can detect different issues when tested with users, so it is very important to test prototypes with different granularity levels.
 
-Furthermore, there is another relevant aspect of the prototype designing, that is the scope definition of the prototype. It is important to define what features the prototype undertakes and what is the inherent detail level. Nielsen \cite{usabilityEngineering} describes this as two dimensions of prototyping: horizontal prototyping and vertical prototyping, as demonstrated in Figure \ref{fig:prototypeDimensions}. A vertical prototype is characterized as a prototype to test a restricted part of the system but with real users and circumstances. A horizontal prototype is presented as suitable for test the entire system but in a less realistic approach.
+Furthermore, there is another relevant aspect of the prototype designing, that is the scope definition of the prototype. It is important to define what features the prototype undertakes and what is the inherent detail level. Nielsen \cite{usabilityEngineering} describes this as two dimensions of prototyping: horizontal prototyping and vertical prototyping. %, as demonstrated in Figure \ref{fig:prototypeDimensions}. 
+A vertical prototype is characterized as a prototype to test a restricted part of the system but with real users and circumstances. A horizontal prototype is presented as suitable for test the entire system but in a less realistic approach.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=2.5in]{prototypeDimensions}
-	\caption{The two dimensions of prototyping: Horizontal prototyping keeps the features but eliminates depth of functionality, and vertical prototyping gives full functionality for a few features (extracted from \cite{usabilityEngineering})}
-	\label{fig:prototypeDimensions}
-\end{figure}
+%\begin{figure}[htbp]
+	%\centering
+	%\includegraphics[height=2.5in]{prototypeDimensions}
+	%\caption{The two dimensions of prototyping: Horizontal prototyping keeps the features but eliminates depth of functionality, and vertical prototyping gives full functionality for a few features (extracted from \cite{usabilityEngineering})}
+	%\label{fig:prototypeDimensions}
+%\end{figure}
 
 Finally, regarding the methodology about how to use the prototypes built, Dix et al. \cite{humanComputerInteraction} refer that are three main approaches:
 
@@ -152,18 +153,18 @@ Although there exist methods that do not need the users to evaluate the system u
 	\item \textbf{Query Methods}: these methods focus on what the user thinks about the system, collecting information from interviews or questionnaires to analyse this opinion. One advantage of this method is that it might reveal issues not observed previously complained before, but contrary a lot of cases are not tested, since in the interaction field, many times, the user only finds a problem when it occurs for the first time. So it is not possible to extract concrete information from users that never have passed for this situation.
 \end{itemize}
 
-\bigskip
+%\bigskip
 
-Finally, independently of the evaluation process adopted (through expert analysis or user participation), severity ratings should be attributed to the problems identified in order to define the main priorities and understand which might have a larger impact on the system acceptability. However, although these levels should be attributed by specialists, if they use not only cognitive principles, but also use the results observed from the user testing phase to sustain the classification of the problems detected, the result can be more accurate. 
+%Finally, independently of the evaluation process adopted (through expert analysis or user participation), severity ratings should be attributed to the problems identified in order to define the main priorities and understand which might have a larger impact on the system acceptability. However, although these levels should be attributed by specialists, if they use not only cognitive principles, but also use the results observed from the user testing phase to sustain the classification of the problems detected, the result can be more accurate. 
 
-Besides, the Figure \ref{fig:severityLevels}, extracted from \cite{usabilityEngineering}, displays two influential factors that should be taken into account to attribute a severity level to a problem: how many users are experiencing this problem and what is the impact level on the user.
+%Besides, the Figure \ref{fig:severityLevels}, extracted from \cite{usabilityEngineering}, displays two influential factors that should be taken into account to attribute a severity level to a problem: how many users are experiencing this problem and what is the impact level on the user.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=2in]{severityLevels}
-	\caption{Severity Levels of the Problems based on their impact on the users (extracted from \cite{usabilityEngineering})}
-	\label{fig:severityLevels}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centering
+%	\includegraphics[height=2in]{severityLevels}
+%	\caption{Severity Levels of the Problems based on their impact on the users (extracted from \cite{usabilityEngineering})}
+%	\label{fig:severityLevels}
+%\end{figure}
 
 \subsubsection{Errors Classification}
 \label{subsubsec:errors_classification}

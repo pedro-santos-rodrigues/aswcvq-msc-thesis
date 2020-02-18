@@ -21,16 +21,31 @@ The analysis was complemented with a metric study on queries executed on the Out
 
 Firstly, the data set is composed of 214.400 statements, but only 60.8\% were used in this study since only the queries were important for this context and not other instructions, such as inserts, updates, deletes, and transactions. Since the last set, which includes 125.613 queries, has duplicated queries, these were removed and the final queries set used to extract information comprehends 67.828 queries. The operators and clauses were figured out using a SQL Parser developed in JavaScript \footnote{js-sql-parser repository page: \url{https://github.com/JavaScriptor/js-sql-parser}}.
 
-After the abstract syntax trees of the queries were obtained in a JSON file, these were analysed in a program to count the operators and the clauses that were present in the queries. A first analysis can measure the operators that are not supported by the visual tool, since the textual language is the only way to perform these operations. Figure \ref{fig:aggregates_operations_not_supported_stats} summarizes the number of queries that contain these operations, where the intersection is not null, so there are queries that have two or more of the indicated operations. Thus, each percentage represents the subset of queries that use the operation inside, no matter if they have other operations or not.
+After the abstract syntax trees of the queries were obtained in a JSON file, these were analysed in a program to count the operators and the clauses that were present in the queries. A first analysis can measure the operators that are not supported by the visual tool, since the textual language is the only way to perform these operations. Table \ref{tab:aggregates_operations_not_supported_stats} summarizes the number of queries that contain these operations, where the intersection is not null, so there are queries that have two or more of the indicated operations. Thus, each percentage represents the subset of queries that use the operation inside, no matter if they have other operations or not.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=3in]{ChartOperationsNotSupported}
-	\caption{Number of the queries that contain operations not supported by Aggregates}
-	\label{fig:aggregates_operations_not_supported_stats}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centering
+%	\includegraphics[height=3in]{ChartOperationsNotSupported}
+%	\caption{Number of the queries that contain operations not supported by Aggregates}
+%	\label{fig:aggregates_operations_not_supported_stats}
+%\end{figure}
 
-Furthermore, it was measured how many queries are performed using the textual language but could be designed using Aggregates. Figure \ref{fig:aggregates_supported_vs_not_supported_stats} represents a chart of the results obtained that divide the queries performed in three categories:
+\begin{table}[ht]
+	\caption{Queries that contain operations not supported by Aggregates}
+	\label{tab:aggregates_operations_not_supported_stats}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c|c|c|c|c|c|c|}
+    \cline{2-9}
+    \rowcolor[HTML]{C0C0C0} 
+    \cellcolor[HTML]{FFFFFF}                                 & IN      & NOT IN & EXIST  & NOT EXIST & UNIONS & DISTINCT & SUBQUERIES & Total \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}Queries}    & 7538    & 2697   & 132    & 118       & 2385   & 7987     & 6827       & 67828 \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}Percentage} & 11.11\% & 3.98\% & 0.19\% & 0.17\%    & 3.52\% & 11.78\%  & 10.07\%    & 100\% \\ \hline
+    \end{tabular}
+}
+\end{table}
+
+Furthermore, it was measured how many queries are performed using the textual language but could be designed using Aggregates. Table \ref{tab:aggregates_supported_vs_not_supported_stats} shows the results obtained that divide the queries performed in three categories:
 
 \begin{itemize}
     \item Not Supported: Queries which include operations not supported by Aggregates, such as IN, NOT IN, EXIST, NOT EXIST, Unions, Distincts and Subqueries;
@@ -43,18 +58,27 @@ Furthermore, it was measured how many queries are performed using the textual la
 
 Since user interviews suggested that aggregation functions and sorting criteria were not the main problems. The queries supported by Aggregates were divided to compare the quantitative analysis with the qualitative analysis extracted in interviews. This is important because these operations can be specified using a different interaction technique where the user changes the query when he is interacting with the query result, as mentioned in section \ref{subsubsec:current_progress}. 
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=3in]{SupportedVsNotSupportedAggregates}
-	\caption{Relationship between the queries that could be designed using Aggregates and the queries which this tool does not support (67.828 queries).}
-	\label{fig:aggregates_supported_vs_not_supported_stats}
-\end{figure}
+\begin{table}[ht]
+	\caption{Queries that could be designed using Aggregates and the queries which the tool does not support}
+	\label{tab:aggregates_supported_vs_not_supported_stats}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c|c|c|}
+    \cline{2-5}
+    \rowcolor[HTML]{C0C0C0} 
+    \cellcolor[HTML]{FFFFFF}                                 & Not Supported & Supported (Simpler) & Supported (More Complex) & Total \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}Queries}    & 28130         & 24026               & 15672                    & 67828 \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}Percentage} & 41.5\%        & 35.4\%              & 23.1\%                   & 100\% \\ \hline
+    \end{tabular}
+    }
+\end{table}
+
 
 \section{Scope Definition}
 \label{sec:scope_definition}
 The results of the quantitative analysis show that it is in conformity with the qualitative analysis results (user interviews). Both of the analysis, concludes that the main priority of the project should be the usability improvement of the visual querying tool interface. 
 %since not only is the main concerned pointed out by the users, but also has metrics that sustain that hypothesis. 
-In the set of queries analysed, around 58\% could be designed using Aggregates, is evident that the lack of support of some SQL expressions might not be the main problem.
+In the set of queries analysed, around 58.5\% could be designed using Aggregates, is evident that the lack of support of some SQL expressions might not be the main problem.
 
 Although the results show a small set of queries that are not supported, these expressiveness problems of the visual tool can influence users to change to the textual languages. So, as the visual approach does not support some features users may want to change to the textual language where they can perform all the queries.
 
