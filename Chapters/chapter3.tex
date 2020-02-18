@@ -19,7 +19,7 @@ Some studies have analyzed this reasoning process of the users when was writing 
 
 Reisner \cite{humanFactorStudiesOfDatabaseQueryLanguages} provided a model of query writing from the reading of the query intention in an English statement to the query writing in SQL (Figure \ref{fig:reisner_model}). After understanding what data is required, the user applies two parallel steps. In the \textbf{Template Generation} phase, the user formulates a template identifying the SQL keywords necessary, such as SELECT, FROM, and WHERE. In the other step, called \textbf{Lexical Transformation}, the user identifies the name of the tables and columns involved. Finally, the results of these two steps are combined in the last step, denominated \textbf{Insertion}, in order to produce the final query \cite{humanFactorStudiesOfDatabaseQueryLanguages}. The recall of table and column names represents a significant use of long-term memory, being a concern that should be taken into account \cite{userErrorsInDatabaseQueryComposition}.
 
-In the same field, Odgen \cite{implicationsOfACognitiveModelOfDatabaseQuery} presented a three-stage cognitive model of the query process (Figure \ref{fig:odgen_model}):
+In the same field, Ogden \cite{implicationsOfACognitiveModelOfDatabaseQuery} presented a three-stage cognitive model of the query process (Figure \ref{fig:ogden_model}):
 
 \begin{enumerate}
   \item \textbf{Query Formulation}: according to the existing data, the user specifies, in natural language, what data is required;
@@ -31,16 +31,17 @@ Comparing the two previous models presented, the Lexical Transformation phase is
 
 \begin{figure}[htbp]
   \centering
-  \subcaptionbox{Reisner Model\label{fig:reisner_model}} %
-    {\includegraphics[width=0.5\linewidth]{reisner-model}}%
-  \subcaptionbox{Odgen Model \label{fig:odgen_model} }%
-    {\includegraphics[width=0.5\linewidth]{odgen-model}}%
+  \subcaptionbox{Reisner Model\label{fig:reisner_model} (adapted from \cite{humanFactorStudiesOfDatabaseQueryLanguages})} %
+    {\includegraphics[width=0.9\linewidth]{reisner-model}}%
+    \\
+  \subcaptionbox{Ogden Model \label{fig:ogden_model} (adapted from \cite{implicationsOfACognitiveModelOfDatabaseQuery})}%
+    {\includegraphics[width=0.9\linewidth]{ogden-model}}%
 \caption{Models of Query Writing Process.}
   \label{fig:models_of_query_writing_process}
 \end{figure}
 
 The query comprehension is one of the important concerns of this work, since it is important to consider if the query representation, no matter if it is visual or textual, indicates clearly what data will be gathering. %TODO: pode ser importante dar exemplos da importancia da comprehension (e.g., para quem vai ler; se o escritor foi diferente do leitor, etc.) 
-Chan \textit{et al.} \cite{anEvaluationOfNoviceEndUserComputingPerformance} have postulated that the query comprehension could be covered by the reverse of the stages included in the Odgen Model. First, the user should identify the data structure and operations, to translate them, in the next step, to the natural language. After this, the user needs to read and understand what data gathering is intended. Moreover, in this evaluation, it was concluded that although data modeling influence query writing, it does not influence the query comprehension. The explanation is provided by the authors: "Both query writing and comprehension require an understanding of the query language syntax. This is a component not needed in the data modeling task."
+Chan \textit{et al.} \cite{anEvaluationOfNoviceEndUserComputingPerformance} have postulated that the query comprehension could be covered by the reverse of the stages included in the Ogden Model. First, the user should identify the data structure and operations, to translate them, in the next step, to the natural language. After this, the user needs to read and understand what data gathering is intended. Moreover, in this evaluation, it was concluded that although data modeling influence query writing, it does not influence the query comprehension. The explanation is provided by the authors: "Both query writing and comprehension require an understanding of the query language syntax. This is a component not needed in the data modeling task."
 
 The experience with the data involved is another factor that influences the query comprehension. If novice users do not understand the data involved, they cannot validate if the query result is correct. This situation was analyzed by Robb \textit{et al.} that were distinguished the query process between new users and experienced users (Figure \ref{fig:ex_ante_expectations}). Besides, they were concluded that if the novice users were alerted to the details of the data queried, the query effectiveness will increase.
 
