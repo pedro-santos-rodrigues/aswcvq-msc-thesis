@@ -48,7 +48,7 @@ The experience with the data involved is another factor that influences the quer
 \begin{figure}[htbp]
   \centering
     {\includegraphics[width=1.0\linewidth]{ex-ante-expectations}}%
-\caption{New and experienced users’ query processes (adapted: \cite{improvingNewUsersQueryPerformance}).}
+\caption{New and experienced users’ query processes (source: \cite{improvingNewUsersQueryPerformance}).}
   \label{fig:ex_ante_expectations}
 \end{figure}
 
@@ -156,12 +156,12 @@ Tableau Prep \cite{tableauPrep} provides two options to start a join between two
 \begin{figure}[htbp]
     \centering
     \subcaptionbox{Chartio Data Explorer\label{fig:chartioDataExplorerJoin} (source: \cite{chartioDataExplorer})}%
-      {\includegraphics[width=0.4\linewidth]{chartio-data-explorer-join}}%
+      {\includegraphics[width=0.5\linewidth]{chartio-data-explorer-join}}%
     \subcaptionbox{Microsoft Power BI\label{fig:powerBIJoin} (source: \cite{powerBIShapeAndCombineData})}%
-    {\includegraphics[width=0.4\linewidth]{power-bi-join}}%
+    {\includegraphics[width=0.5\linewidth]{power-bi-join}}%
     \\
-    \subcaptionbox{Tableau Prep\label{fig:tableauJoinPanel} (source: \cite{tableauAggregateJoinOrUnionData})}%
-      {\includegraphics[width=0.8\linewidth]{tableau-join-panel}}%
+    \subcaptionbox{Tableau Prep\label{fig:tableauJoinPanel} (source: \cite{tableauJoinImage})}%
+      {\includegraphics[width=1.0\linewidth]{tableau-join}}%
   \caption{Data merging approaches.}
     \label{fig:approaches_select_data_sources}
 \end{figure}
@@ -201,5 +201,140 @@ The conceptual models of query writing presented in this chapter will be taken i
 
 Furthermore, since the design of an interface needs to tackle with the usability attributes trade-off, it is important to characterize and consider the problems of the application's target users. This characterization is essential to define the usability priorities of the interface. The population used in the studies presented in this chapter will be an excellent reference to the target user analysis. The target users of the intended system are low-code developers. Since low-code development has advantages not only for not programmers but to programmers with different levels of expertise, the target users of the system are wide. Thus, the studies that have evaluated a wide diversity of users, such as the evaluation of Lu \textit{et al.} \cite{aSurveyOnUsageOfSQL}, could reveal important results to the work development. Moreover, the studies presented that have analysed students of database systems (\cite{studentsSemanticMistakesInWritingSevenDifferentTypesOfSQLQueries}, \cite{errorsAndComplicationsInSQLQueryFormulation}), could add more important data, since some details only occur if the queries formulated are more complex.
 
-Finally, a set of actual graphical user interfaces used to formulate queries was presented and compared. The approaches used by other systems are a relevant object study for the design and the development of the new interface. %Table X represents a summary of the database query operations supported by each one of the presented systems.
+Finally, a set of actual graphical user interfaces used to formulate queries was presented and compared. The approaches used by other systems are a relevant object study for the design and the development of the new interface. Table \ref{tab:rw-summary} represents a summary of the database query operations supported by each one of the presented systems.
 
+\begin{table}[tb]
+	\caption{\glspl{VQS} Summary}
+	\label{tab:rw-summary}
+\centering
+\resizebox{\textwidth}{!}{
+  \begin{tabular}{|
+    >{\columncolor[HTML]{C0C0C0}}c |
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{009901}}l |
+    >{\columncolor[HTML]{009901}}l |
+    >{\columncolor[HTML]{009901}}l |
+    >{\columncolor[HTML]{009901}}l |
+    >{\columncolor[HTML]{009901}}l |}
+    \hline
+    \multicolumn{2}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Feature \textbackslash System}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Chartio \\ Data Explorer\end{tabular}}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Chartio \\ Visual SQL\end{tabular}}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Tableau \\ Prep\end{tabular}}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Power BI \\ Query Editor\end{tabular}}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Devart dbForge \\ Query Builder\end{tabular}}} \\ \hline
+    \cellcolor[HTML]{C0C0C0} &
+      Only the required &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{CB0000}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} \\ \cline{2-7} 
+    \cellcolor[HTML]{C0C0C0} &
+      \begin{tabular}[c]{@{}l@{}}All the attributes \\ at once\end{tabular} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{CB0000}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{CB0000}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} \\ \cline{2-7} 
+    \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}c@{}}Tables \\ and\\ Columns\\ Selection\end{tabular}}} &
+      Remove Columns &
+       &
+       &
+       &
+       &
+       \\ \hline
+    \cellcolor[HTML]{C0C0C0} &
+      Inner Join &
+       &
+       &
+       &
+       &
+       \\ \cline{2-7} 
+    \cellcolor[HTML]{C0C0C0} &
+      Left Join &
+       &
+       &
+       &
+       &
+       \\ \cline{2-7} 
+    \cellcolor[HTML]{C0C0C0} &
+      Right Join &
+      \cellcolor[HTML]{CB0000} &
+       &
+       &
+       &
+       \\ \cline{2-7} 
+    \cellcolor[HTML]{C0C0C0} &
+      Full Outer Join &
+       &
+       &
+       &
+       &
+       \\ \cline{2-7} 
+    \cellcolor[HTML]{C0C0C0} &
+      Cross Join &
+       &
+       &
+      \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}l@{}}Using\\ Calculated\\ Attributes\end{tabular} &
+      \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}l@{}}Using\\ Calculated\\ Attributes\end{tabular} &
+      \cellcolor[HTML]{C0C0C0}Textually \\ \cline{2-7} 
+    \cellcolor[HTML]{C0C0C0} &
+      Null Option &
+       &
+       &
+      \cellcolor[HTML]{CB0000} &
+       &
+      \cellcolor[HTML]{CB0000} \\ \cline{2-7} 
+    \multirow{-7}{*}{\cellcolor[HTML]{C0C0C0}\textbf{Merge}} &
+      \begin{tabular}[c]{@{}l@{}}Define Join \\ Condition\end{tabular} &
+       &
+       &
+       &
+      \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}l@{}}Selecting\\ Columns\\ Visually\end{tabular} &
+      \cellcolor[HTML]{C0C0C0}Textually \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Filtering Criteria}} &
+       &
+       &
+       &
+       &
+       \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Sorting Criteria}} &
+       &
+       &
+       &
+       &
+       \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Aggregation \\ Functions\end{tabular}}} &
+       &
+       &
+       &
+       &
+       \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Unions}} &
+       &
+       &
+       &
+       &
+      \cellcolor[HTML]{CB0000} \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Calculated\\ Attributes\end{tabular}}} &
+       &
+       &
+       &
+       &
+      \cellcolor[HTML]{CB0000} \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Distinct}} &
+      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{CB0000} &
+       &
+       &
+       \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Subqueries}} &
+      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{CB0000} &
+       \\ \hline
+    \end{tabular}
+}
+\end{table}
