@@ -186,7 +186,7 @@ The OutSystems Platform has the mission of simplifying and accelerating the deve
 \subsection{Visual Development Environment}
 \label{subsec:visual_development_environment}
 
-Service Studio is the low-code development environment of the platform, which allows the developers to create complete applications using visual elements to perform drag and drop actions. Figure \ref{fig:ss_workspace} presents an overview of the IDE, which highlights the different areas of the workspace.
+Service Studio is the low-code development environment of the platform, which allows the developers to create complete applications using visual elements to perform drag and drop actions. Figure \ref{fig:ss_workspace} presents an overview of the \gls{IDE}, which highlights the different areas of the workspace.
 
 \begin{figure}[htbp]
 	\centering
@@ -228,10 +228,10 @@ Since 2002, which is the release date of the first OutSystems low-code developme
 
 \begin{itemize}
 	\item \textbf{Simple Queries}: visual query builder that allows the creation of some less complex queries, interacting with a graphical user interface;
-	\item \textbf{Advanced Queries}: feature to specify queries textually, using a language based on SQL, but includes some extra syntax to reference variables used of the application development;
+	\item \textbf{Advanced Queries}: feature to specify queries textually, using a language based on \gls{SQL}, but includes some extra syntax to reference variables used of the application development;
 \end{itemize}
 
-Then, since the first versions of the IDE, it is provided two ways to build queries. The first uses the visual language, which does not need so many learning requirements but also diminishes the necessity to remember the entities' name or the language syntax. The second provided relies on SQL, which is the standardized textual query language, known for the developers' majority.
+Then, since the first versions of the \gls{IDE}, it is provided two ways to build queries. The first uses the visual language, which does not need so many learning requirements but also diminishes the necessity to remember the entities' name or the language syntax. The second provided relies on \gls{SQL}, which is the standardized textual query language, known for the developers' majority.
 
 The first simple queries versions have accelerated the query building process finding automatically the relationships between the entities chosen. The main idea is that the developer only needs to select the entities intended and the respective join conditions would appear automatically in the query view interface. After this, it will be possible to change the join type, as well as, to add, edit and remove filtering or sorting conditions. Figure \ref{fig:ss_simpleQuerieOuterJoinHub2} presents a simple query example in Hub Edition 2.0 (2003) when the developer was changing the join type to an Outer Join.
 
@@ -277,7 +277,7 @@ Hereupon, the Aggregate has already been created and its data source specified, 
 
 First, this component of the OutSystems Platform presents two main capabilities, represented visually in two distinct areas: the query design area, and the viewer of the query result. The former, located at the top of the window, is composed of a set of four tabs, where each selection action changes the grey area to the respective form-based interface. The latter is a table-based interface, which is similar to spreadsheets applications, such as Microsoft Excel \cite{microsoftExcel} of Google Sheets \cite{googleSheets} and its principal aim is to provide a direct and visual approach to show the query output.
 
-Focusing on the query design area, the sources tab, illustrated in Figure \ref{fig:aggregates_source_tab}, can be used to add, change or remove the entities of the quey, defining also, the join types between them. There are three join types available: "only with", "with or without", and "with". The respective joins in SQL are: "inner join", "left join", and "full outer join". Additionally, each one appears with a visual representation similar to Venn Diagrams \cite{venn1880diagrams} to be easier to identify which data is selected on each join type. Moreover, it is possible to edit the join condition textually, using the platform expression editor.
+Focusing on the query design area, the sources tab, illustrated in Figure \ref{fig:aggregates_source_tab}, can be used to add, change or remove the entities of the quey, defining also, the join types between them. There are three join types available: "only with", "with or without", and "with". The respective joins in \gls{SQL} are: "inner join", "left join", and "full outer join". Additionally, each one appears with a visual representation similar to Venn Diagrams \cite{venn1880diagrams} to be easier to identify which data is selected on each join type. Moreover, it is possible to edit the join condition textually, using the platform expression editor.
 
 \begin{figure}[htbp]
 	\centering
@@ -286,7 +286,7 @@ Focusing on the query design area, the sources tab, illustrated in Figure \ref{f
 	\label{fig:aggregates_source_tab}
 \end{figure}
 
-The filtering tab can be used to apply filters in the query likewise the WHERE statements in SQL. These filters can be defined through boolean conditions inserted in the expression editor. The conditions are specified textually with the assistance of some auto-completes and shortcuts available in a tree view. 
+The filtering tab can be used to apply filters in the query likewise the WHERE statements in \gls{SQL}. These filters can be defined through boolean conditions inserted in the expression editor. The conditions are specified textually with the assistance of some auto-completes and shortcuts available in a tree view. 
 
 The sort conditions can be added in the sorting tab choosing the "add sort" or the "add dynamic sort" options available. The difference between them is that dynamic sort relies on a variable of the system, contrary to the other that depends only on an entity attribute. To add a sort, the user has to select what entity wants to sort and specify what are the sort criteria, for example, ascending or descending. Moreover, more than one sort can be inserted and they can be ordered to establish the priorities between them.
 
