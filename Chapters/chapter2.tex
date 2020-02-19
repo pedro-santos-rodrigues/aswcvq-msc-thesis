@@ -7,13 +7,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Background}
 \label{cha:background}
-This thesis aims to improve the interface that allows users to build queries in a more efficient and effective way. Therefore, human-computer interaction is a core subject of the work since such an interface can only be improved if its interaction and usability in the user perspective are studied.
+This thesis aims to improve the interface that allows users to build queries in a more efficient and effective way. Therefore, \gls{HCI} is a core subject of the work since such an interface can only be improved if its interaction and usability in the user perspective are studied.
 
-Accordingly, this chapter will introduce key concepts of Human-Computer Interaction, as well as, a brief contextualization of the OutSystems Platform that is indispensable for the comprehension and progression of this study.
+Accordingly, this chapter will introduce key concepts of \gls{HCI}, as well as, a brief contextualization of the OutSystems Platform that is indispensable for the comprehension and progression of this study.
 
 \section{Human-Computer Interaction}
 \label{sec:human_computer_interaction}
-Although computer systems have been designed by humans, these two parts of human-computer interaction do not speak the same language. Nonetheless, these types of systems were created to support, in a transparent way, human tasks and requirements, forgiving careless mistakes. \cite{humanComputerInteraction} Thus, human-computer interaction aims to study the relationship of users and computer systems, in the context of the users’ desired tasks, in order to “unfold and reveal challenges and insights, and to instrument appropriate solutions for alleviating the current obstacles to the access and use of advanced information technologies” \cite{userInterfacesForAll_newPerspectivesIntoHumanComputerInteraction}. 
+Although computer systems have been designed by humans, these two parts of \gls{HCI} do not speak the same language. Nonetheless, these types of systems were created to support, in a transparent way, human tasks and requirements, forgiving careless mistakes. \cite{humanComputerInteraction} Thus, \gls{HCI} aims to study the relationship of users and computer systems, in the context of the users’ desired tasks, in order to “unfold and reveal challenges and insights, and to instrument appropriate solutions for alleviating the current obstacles to the access and use of advanced information technologies” \cite{userInterfacesForAll_newPerspectivesIntoHumanComputerInteraction}. 
 
 %\textit{Dix et al.} \cite{humanComputerInteraction} reinforce this too, saying that “HCI involves the design, implementation and evaluation of interactive systems in the context of the user’s task and work”.
 
@@ -40,7 +40,7 @@ Although computer systems have been designed by humans, these two parts of human
 
 \subsection{Main Concepts}
 \label{subsec:main_concepts}
-The \textbf{Usability} of a system is one of the most important concepts in human-computer interaction, that can not be forgotten on the design process, since its attributes must be taken into account performing also a guidance function through all this process. This concept was standardized in ISO-9241 \cite{iso9241-11_2018} as “extent to which a system, product or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use”.
+The \textbf{Usability} of a system is one of the most important concepts in \gls{HCI}, that can not be forgotten on the design process, since its attributes must be taken into account performing also a guidance function through all this process. This concept was standardized in ISO-9241 \cite{iso9241-11_2018} as “extent to which a system, product or service can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use”.
 
 However, usability is not a single-dimensional property, being always associated with its attributes, that characterize the user accessibility when is using the system into five different points, such as referred by Nielsen \cite{usabilityEngineering}:
 
@@ -52,15 +52,15 @@ However, usability is not a single-dimensional property, being always associated
 	\item \textbf{Satisfaction}: The most subjective attribute of the usability that is related to the overall satisfaction of the user when uses the system. %It could be measured by asking the users about the experience while they are using the system, always searching for subjective answers.
 \end{itemize}
 
-Nonetheless, as mentioned by Nielsen \cite{usabilityEngineering}: \textbf{“it is not always possible to achieve optimal scores for all usability attributes simultaneously”}.
+Nonetheless, as mentioned by Nielsen \cite{usabilityEngineering}: \textbf{“it is not always possible to achieve optimal scores for all usability attributes simultaneously”}. Thus, when a system is designed it is necessary to prioritize what are the most important attributes for the users and the domain where the system will be used and applied. These trade-offs are one of the most challenging tasks of the design processes because it depends on user expectations and their backgrounds, as well as, the problem domain and what are the main focus of the system use. Accordingly, it is fundamental that the design process can focus on target users of the systems. Therefore, the main concepts, processes, and techniques for a design process centered on the users will be described.
 
 %\begin{center}
 %	\textbf{“it is not always possible to achieve optimal scores for all usability %attributes simultaneously”}.
 %\end{center} 
 
-Thus, when a system is designed it is necessary to prioritize what are the most important attributes for the users and the domain where the system will be used and applied. These trade-offs are one of the most challenging tasks of the design processes because it depends on user expectations and their backgrounds, as well as, the problem domain and what are the main focus of the system use.
 
-Accordingly, it is fundamental that the design process can focus on target users of the systems. Therefore, the main concepts, processes, and techniques for a design process centered on the users will be described.
+
+
 
 \subsection{User-centered Design}
 \label{subsec:user_centered_design}
@@ -68,14 +68,14 @@ Before user-centered design principles and methodologies were adopted, the Water
 
 Consequently, it was necessary a new model that has the users included in the development process to verify, along with the development, if the approaches adopted are positive and what is the users' acceptability. Nielsen \cite{iterativeUserInterfaceDesign} reinforces this saying that “user interfaces should be designed iteratively in almost all cases because it is virtually impossible to design a user interface that has no usability problems from the start. Even the best usability experts cannot design perfect user interfaces in a single attempt, so a usability engineering lifecycle should be built around the concept of iteration”.
 
-The Spiral model of iterative design arose as an iteration through design, implementation and evaluation phases where the cost and accuracy increase on each iteration. The first iterations should use low-cost resources, like paper prototypes, and when the results are positive the accuracy should be incremented, changing to high-fidelity prototypes, such as computer prototypes \cite{interactionDesign_beyondHumanComputerInteraction}. An overview of this model is represented in  Figure \ref{fig:spiralModel}.
+The Spiral model of iterative design arose as an iteration through design, implementation and evaluation phases where the cost and accuracy increase on each iteration. The first iterations should use low-cost resources, like paper prototypes, and when the results are positive the accuracy should be incremented, changing to high-fidelity prototypes, such as computer prototypes \cite{interactionDesign_beyondHumanComputerInteraction}. %An overview of this model is represented in  Figure \ref{fig:spiralModel}.
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=1.75in]{spiralModel}
-	\caption{Sprial model of Iterative Design (adapted: \cite{interactionDesign_beyondHumanComputerInteraction})}
-	\label{fig:spiralModel}
-\end{figure}
+%begin{figure}[htbp]
+%	\centering
+%	\includegraphics[height=1.75in]{spiralModel}
+%	\caption{Sprial model of Iterative Design (adapted: \cite{interactionDesign_beyondHumanComputerInteraction})}
+%	\label{fig:spiralModel}
+%\end{figure}
 
 \subsubsection{User and Task Analysis}
 \label{subsubsec:user_and_task_analysis}
@@ -166,16 +166,16 @@ Although there exist methods that do not need the users to evaluate the system u
 %	\label{fig:severityLevels}
 %\end{figure}
 
-\subsubsection{Errors Classification}
-\label{subsubsec:errors_classification}
-The errors that occurred when a user interacts with a system are excellent indicators to designers because the understanding of the reason that led to error situations is a good strategy to classify them. Therefore, errors can be classified as slips and mistakes, as will be presented below according to Dix \textit{et al.} \cite{humanComputerInteraction}:
+%\subsubsection{Errors Classification}
+%\label{subsubsec:errors_classification}
+%The errors that occurred when a user interacts with a system are excellent indicators to designers because the understanding of the reason that led to error situations is a good strategy to classify them. Therefore, errors can be classified as slips and mistakes, as will be presented below according to Dix \textit{et al.} \cite{humanComputerInteraction}:
 
-\begin{itemize}
-	\item \textbf{Slips}: in these types of errors, the user knows how to do the intended task on the system, however, he presses a wrong button or closes one window accidentally. So, he understands the action, but a misaction does not allow that he reaches his goal;
-	\item \textbf{Mistakes}: these errors occur when the user does not understand the system, formulating a wrong goal. An example of a mistake is when the user does not understand the action associated with an icon, performing a not intended action.
-\end{itemize}
+%\begin{itemize}
+%	\item \textbf{Slips}: in these types of errors, the user knows how to do the intended task on the system, however, he presses a wrong button or closes one window accidentally. So, he understands the action, but a misaction does not allow that he reaches his goal;
+%	\item \textbf{Mistakes}: these errors occur when the user does not understand the system, formulating a wrong goal. An example of a mistake is when the user does not understand the action associated with an icon, performing a not intended action.
+%\end{itemize}
 
-Therefore, the strategy to mitigate the problems associated with these two types of errors could be different, as mentioned by Dix \textit{et. al.} \cite{humanComputerInteraction}: “Slips may be corrected by, for instance, better screen design, perhaps putting more space between buttons. However, mistakes need users to have a better understanding of the systems, so it will require far more radical redesign or improved training, perhaps a totally different metaphor for use.”
+%Therefore, the strategy to mitigate the problems associated with these two types of errors could be different, as mentioned by Dix \textit{et. al.} \cite{humanComputerInteraction}: “Slips may be corrected by, for instance, better screen design, perhaps putting more space between buttons. However, mistakes need users to have a better understanding of the systems, so it will require far more radical redesign or improved training, perhaps a totally different metaphor for use.”
 
 
 \section{OutSystems Background}
@@ -197,16 +197,24 @@ Service Studio is the low-code development environment of the platform, which al
 
 Using the widgets and icons provided in the toolbox, the main area is dedicated to designing the applications’ interface and logic. So, in the main area, there are visual elements, which can be set using the properties editor, placed on the bottom right corner of the screen. 
 
-Also, it includes other sections whose main purpose is not the product development, but are related to key actions of the software development process. Therefore, on the window’s top, there is a toolbar which has shortcuts to some of the most common operations, and a green circle button, denominated "1-Click Publish button", to start the automated deployment process provided. In addition, the bottom of the window is dedicated not only to the presentation of messages, errors, and warnings but also to debugging the application.
+Also, it includes other sections whose main purpose is not the product development, but are related to key actions of the software development process. Therefore, on the window’s top, there is a toolbar which has shortcuts to some of the most common operations, and a green circle button, denominated "1-Click Publish button", to start the automated deployment process provided. Besides, the bottom of the window is dedicated not only to the presentation of messages, errors, and warnings but also to debugging the application.
 
 Since the development environment can be used to develop a complete full-stack application, the elements, which can be manipulated in the Service Studio, can be related to different parts of the application. The Application Layer Tabs, which contain a tree view of its elements, are the following:
 
-\begin{itemize}
-	\item \textbf{Processes}: in this section, it is possible to create and manage business processes of the systems through a flow that can be composed by human or automatic activities, time waits, conditional decisions and indications to execute processes. In addition, this section can be used to configure the timers of the application. Then, it is possible to indicate when a timer should start, what is it period and what action should be performed when it is triggered;
-	\item \textbf{Interface}: the purpose of this section is the management of the components related to the visual interface of the final application. It is possible to observe all applications’ screens, as well as, the variables and the actions related to each one. Moreover, flows between the various screens can be also defined. If one screen or action is selected, it will be possible to add new visual components to the interface or assign new elements to the action flow in order to define all the client-side logic of the screen;
-	\item \textbf{Logic}: the area where the core logic of the application could be defined. It includes not only the server actions of the application but also the exceptions specification, the existing user’s roles and also the integration with external services. Although there is a data section on the application layer tabs, which will be described below, the actions which require data querying are managed in this section.
-	\item \textbf{Data}: the database modelling aspects are covered in this section, making possible the creation of diagrams to represent the schema of the database. Moreover, in the tree view of this tab is allowed to establish new entities and static entities in order to define the data model of the application.
-\end{itemize}
+In the \textbf{Processes} tab is possible to create and manage business processes of the systems through a flow that can be composed by human or automatic activities, time waits, conditional decisions and indications to execute processes. In addition, this section can be used to configure the timers of the application. Then, it is possible to indicate when a timer should start, what is it period and what action should be performed when it is triggered.
+
+The \textbf{Interface} tab can be used to manage the components related to the visual interface of the final application. It is possible to observe all applications’ screens, as well as, the variables and the actions related to each one. Moreover, flows between the various screens can be also defined. If one screen or action is selected, it will be possible to add new visual components to the interface or assign new elements to the action flow in order to define all the client-side logic of the screen.
+
+The \textbf{Logic} tab is where the core logic of the application could be defined. It includes not only the server actions of the application but also the exceptions specification, the existing user’s roles and also the integration with external services. Although there is a data section on the application layer tabs, which will be described below, the actions which require data querying are managed in this section.
+
+In the \textbf{Data} section is covered the database modelling, making possible the creation of diagrams to represent the schema of the database. Moreover, in the tree view of this tab is allowed to establish new entities and static entities in order to define the data model of the application.
+
+%\begin{itemize}
+%	\item \textbf{Processes}: in this section, it is possible to create and manage business processes of the systems through a flow that can be composed by human or automatic activities, time waits, conditional decisions and indications to execute processes. In addition, this section can be used to configure the timers of the application. Then, it is possible to indicate when a timer should start, what is it period and what action should be performed when it is triggered;
+%	\item \textbf{Interface}: the purpose of this section is the management of the components related to the visual interface of the final application. It is possible to observe all applications’ screens, as well as, the variables and the actions related to each one. Moreover, flows between the various screens can be also defined. If one screen or action is selected, it will be possible to add new visual components to the interface or assign new elements to the action flow in order to define all the client-side logic of the screen;
+%	\item \textbf{Logic}: the area where the core logic of the application could be defined. It includes not only the server actions of the application but also the exceptions specification, the existing user’s roles and also the integration with external services. Although there is a data section on the application layer tabs, which will be described below, the actions which require data querying are managed in this section.
+%	\item \textbf{Data}: the database modelling aspects are covered in this section, making possible the creation of diagrams to represent the schema of the database. Moreover, in the tree view of this tab is allowed to establish new entities and static entities in order to define the data model of the application.
+%\end{itemize}
 
 \subsection{Visual Data Querying}
 \label{subsec:visual_data_querying}
@@ -216,7 +224,7 @@ The main topic of this work is the improvement of the visual data querying proce
 \subsubsection{Previous Work}
 \label{subsubsec:previous_work}
 
-Since 2002, which is the release date of the first OutSystems low-code development environment, the Hub Edition 1.0, allows two distinct manners to create database queries \cite{whatsNotNewInOutsystems}:
+Since 2002, which is the release date of the first OutSystems low-code development environment, the Hub Edition 1.0, allows two manners to create database queries \cite{whatsNotNewInOutsystems}:
 
 \begin{itemize}
 	\item \textbf{Simple Queries}: visual query builder that allows the creation of some less complex queries, interacting with a graphical user interface;
@@ -229,25 +237,25 @@ The first simple queries versions have accelerated the query building process fi
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[height=3in]{simpleQuerieOuterJoinHub}
+	\includegraphics[height=2.6in]{simpleQuerieOuterJoinHub}
 	\caption{Simple Query example in Hub Edition 2.0 (source: \cite{whatsNewHub2})}
 	\label{fig:ss_simpleQuerieOuterJoinHub2}
 \end{figure}
 
 This visual querying approach continued in the next versions, adding some minor improvements, such as the support to structures in order to store temporary information without changing the entity definition \cite{whatsNewHub22}, and the inclusion of a properties pane to view and change the properties of all query elements in a single window \cite{agilePlatform5}.
 
-However, at the launch of the OutSystems Platform 9 (2013), an entirely new way to manipulate data and express database queries has been released. These new components of the system, called \textbf{Aggregates}, have replaced Simple Queries, promoting a new interaction strategy to query databases, where the main focus is the data, instead of query design. Also, new features have been introduced to improve the expressiveness of the visual query language, namely grouping functions and the ability to add calculated columns easier.
+However, at the launch of the OutSystems Platform 9 (2013), an entirely new way to manipulate data and express database queries has been released. These new components of the system, called \textbf{Aggregates}, have replaced Simple Queries, promoting a new interaction strategy to query databases, where the main focus is the data, instead of query design. Also, new features have been introduced to improve the expressiveness of the \gls{VQL}, namely grouping functions and the ability to add calculated columns easier.
 
 
 \subsubsection{Current Progress}
 \label{subsubsec:current_progress}
 
-Since the implementation of Aggregates, the query process without textual languages is more visual and more focused on the query outcome. Aggregates can be used to query data from the server or mobile local storage, and can be created in the following ways:
+Since the implementation of Aggregates, the query process without textual languages is more visual and more focused on the query outcome. Aggregates can be used to query data from the server or mobile local storage, and can be created in the following ways: ff someone is designing the user interface and wants to present some data gathered from the database (server or local storage), he can right-click on the screen where data will be displayed and select “Fetch Data from Database”; when an action flow is designed, there is an Aggregate icon in the toolbox that can be dragged and dropped to the main area;
 
-\begin{itemize}
-	\item If someone is designing the user interface and wants to present some data gathered from the database (server or local storage), he can right-click on the screen where data will be displayed and select “Fetch Data from Database”;
-	\item When an action flow is designed, there is an Aggregate icon in the toolbox that can be dragged and dropped to the main area;
-\end{itemize}
+%\begin{itemize}
+%	\item If someone is designing the user interface and wants to present some data gathered from the database (server or local storage), he can right-click on the screen where data will be displayed and select “Fetch Data from Database”;
+%	\item When an action flow is designed, there is an Aggregate icon in the toolbox that can be dragged and dropped to the main area;
+%\end{itemize}
 
 When the Aggregate is created, the first step is the data source selection in order to specify what entities should be included in the query. Then, the developer should click in the main area and choose the entities he wants or drag and drop the entities to add them to the query. When an entity is added, all its attributes are automatically included in Aggregate. Since an Aggregate can include one or more entities, added on the beginning or later, if it has more than one, it will be analysed to verify if there are relationships between them. Unless there is a relationship that links them, the Aggregate will request the condition to join them. Otherwise, the entities will be included automatically using an inner join.
 
@@ -280,7 +288,7 @@ Focusing on the query design area, the sources tab, illustrated in Figure \ref{f
 
 The filtering tab can be used to apply filters in the query likewise the WHERE statements in SQL. These filters can be defined through boolean conditions inserted in the expression editor. The conditions are specified textually with the assistance of some auto-completes and shortcuts available in a tree view. 
 
-The sort conditions can be added in the sorting tab choosing the "add sort" or the "add dynamic sort" options available. The difference between them is that dynamic sort relies on a variable of the system, contrary to the other that depends only on an entity attribute. To add a sort, the user has to select what entity wants to sort and specify what are the sort criteria, for example, ascending or descending.  Moreover, more than one sort can be inserted for different entities. Also, the sorts inserted can be ordered to define the priority between them.
+The sort conditions can be added in the sorting tab choosing the "add sort" or the "add dynamic sort" options available. The difference between them is that dynamic sort relies on a variable of the system, contrary to the other that depends only on an entity attribute. To add a sort, the user has to select what entity wants to sort and specify what are the sort criteria, for example, ascending or descending. Moreover, more than one sort can be inserted and they can be ordered to establish the priorities between them.
 
 Finally, the last tab has a different behavior when compared with the rest of the options available in this interface area. The main goal of this feature is the testing of query output when concrete values are assigned to the variables referred to in the query. Thus, it does not contribute to the query design in the same way as the other tabs, presenting only a test purpose in the context of the query result visualization.
 
@@ -293,11 +301,11 @@ Figure \ref{fig:aggregates_filter_sort_test} presents a usage example of the las
 	\label{fig:aggregates_filter_sort_test}
 \end{figure}
 
-On the other side, the area dedicated to viewing the query output provides also some functionalities to design the query while the user is interacting and exploring the query result. Therefore, as represented by an example in Figure \ref{fig:table_right_click_example}, the user can change the query when he performs a right-click on a column or when clicks on the new attribute. The only options in the list presented that does not change the query are the hide options since they just change the result in the presentation layer. So, if the user hides a set of columns, he will not see them in the result table, however, the query did not change. In addition, the user can add other attributes based on the existing ones, so Figure \ref{fig:calculated_attribute_example} shows an example of this functionality.
+On the other side, the area dedicated to viewing the query output provides also some functionalities to design the query while the user is interacting and exploring the query result. Therefore, as represented by an example in Figure \ref{fig:table_right_click_example}, the user can change the query when he performs a right-click on a column or when clicks on the new attribute. The only options in the list presented that does not change the query are the hide options since they just change the result in the presentation layer. So, if the user hides a set of columns, he will not see them in the result table, however, the query did not change. Besides, the user can add other attributes based on the existing ones, so Figure \ref{fig:calculated_attribute_example} shows an example of this functionality.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[height=2.2in]{tableRightClickExample}
+	\includegraphics[height=2.0in]{tableRightClickExample}
 	\caption{Query Design functions while interacting with Query Result}
 	\label{fig:table_right_click_example}
 \end{figure}

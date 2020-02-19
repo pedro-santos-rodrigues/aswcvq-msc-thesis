@@ -179,7 +179,7 @@ Tableau Prep \cite{tableauPrep} follows this more strictly, distinguishing betwe
 
 \textbf{Sorting Criteria}: 
 
-Usually, in the actual visual query interfaces, the sorting criteria could be indicated in two ways: a right-click action on the column header of the table that represents the query result, or using a form-based interface to define the sort criteria of each entity. Devart dbForge Query Editor \cite{dbForgeQueryBuilder} is a pure example of the first approach. \cite{dbForgeSortingData} Chartio Data Explorer \cite{chartioDataExplorer} adopts the second approach, providing a pop-up form to apply sorting criteria to the query. The user can use this form to select the intended attributes and the criteria to apply \cite{chartioAdvancedSorting}. Moreover, Chartio Visual SQL \cite{chartioVisualSQL}, Tableau Prep \cite{tableauPrep}, and Microsoft Power BI \cite{powerBI} combines the previous solutions with the possibility to redefine the priority of the sorting criteria, through drag-and-drop actions \cite{visualSqlActions,tableauSortData,powerBIShapeAndCombineData}.
+Usually, in the actual \glspl{VQI}, the sorting criteria could be indicated in two ways: a right-click action on the column header of the table that represents the query result, or using a form-based interface to define the sort criteria of each entity. Devart dbForge Query Editor \cite{dbForgeQueryBuilder} is a pure example of the first approach. \cite{dbForgeSortingData} Chartio Data Explorer \cite{chartioDataExplorer} adopts the second approach, providing a pop-up form to apply sorting criteria to the query. The user can use this form to select the intended attributes and the criteria to apply \cite{chartioAdvancedSorting}. Moreover, Chartio Visual SQL \cite{chartioVisualSQL}, Tableau Prep \cite{tableauPrep}, and Microsoft Power BI \cite{powerBI} combines the previous solutions with the possibility to redefine the priority of the sorting criteria, through drag-and-drop actions \cite{visualSqlActions,tableauSortData,powerBIShapeAndCombineData}.
 
 \textbf{Aggregation Functions}: 
 
@@ -197,7 +197,7 @@ Moreover, a visual way to perform subqueries is provided by the diagrammatic-bas
 
 \section{Discussion}
 \label{sec:discussion}
-The conceptual models of query writing presented in this chapter will be taken into account along the design of the solution since these are a good baseline to understand how users reason while are interacting with the system to achieve their goals. The system's tasks will be optimized according to the presented users' conceptual models presented, in order to reduce the semantic errors, as much as possible. Therefore, the most relevant semantic errors that occur using SQL were presented. In the design of the solution, these errors are part of the problems to solve using a new user interface and user experience. As referred in section \ref{sec:query_formulation_problems}, the semantic errors will be the main concern since these could have a negative impact on the results. The syntactic errors also will be addressed in this work but require less study about the users’ conceptual model. The major concern in this type of error is to provide the maximum feedback to the user. In that way, the user will understand the error and correct it.
+The conceptual models of query writing presented in this chapter will be taken into account along the design of the solution since these are a good baseline to understand how users reason while are interacting with the system to achieve their goals. The system's tasks will be optimized according to the presented users' conceptual models presented, in order to reduce the semantic errors, as much as possible. Therefore, the most relevant semantic errors that occur using SQL were presented. In the design of the solution, these errors are part of the problems to solve using a new user interface and \gls{UX}. As referred in section \ref{sec:query_formulation_problems}, the semantic errors will be the main concern since these could have a negative impact on the results. The syntactic errors also will be addressed in this work but require less study about the users’ conceptual model. The major concern in this type of error is to provide the maximum feedback to the user. In that way, the user will understand the error and correct it.
 
 Furthermore, since the design of an interface needs to tackle with the usability attributes trade-off, it is important to characterize and consider the problems of the application's target users. This characterization is essential to define the usability priorities of the interface. The population used in the studies presented in this chapter will be an excellent reference to the target user analysis. The target users of the intended system are low-code developers. Since low-code development has advantages not only for not programmers but to programmers with different levels of expertise, the target users of the system are wide. Thus, the studies that have evaluated a wide diversity of users, such as the evaluation of Lu \textit{et al.} \cite{aSurveyOnUsageOfSQL}, could reveal important results to the work development. Moreover, the studies presented that have analysed students of database systems (\cite{studentsSemanticMistakesInWritingSevenDifferentTypesOfSQLQueries}, \cite{errorsAndComplicationsInSQLQueryFormulation}), could add more important data, since some details only occur if the queries formulated are more complex.
 
@@ -211,11 +211,11 @@ Finally, a set of actual graphical user interfaces used to formulate queries was
   \begin{tabular}{|
     >{\columncolor[HTML]{C0C0C0}}c |
     >{\columncolor[HTML]{EFEFEF}}l |
-    >{\columncolor[HTML]{009901}}l |
-    >{\columncolor[HTML]{009901}}l |
-    >{\columncolor[HTML]{009901}}l |
-    >{\columncolor[HTML]{009901}}l |
-    >{\columncolor[HTML]{009901}}l |}
+    >{\columncolor[HTML]{97CB97}}l |
+    >{\columncolor[HTML]{97CB97}}l |
+    >{\columncolor[HTML]{97CB97}}l |
+    >{\columncolor[HTML]{97CB97}}l |
+    >{\columncolor[HTML]{97CB97}}l |}
     \hline
     \multicolumn{2}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Feature \textbackslash System}} &
       \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Chartio \\ Data Explorer\end{tabular}}} &
@@ -225,18 +225,18 @@ Finally, a set of actual graphical user interfaces used to formulate queries was
       \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Devart dbForge \\ Query Builder\end{tabular}}} \\ \hline
     \cellcolor[HTML]{C0C0C0} &
       Only the required &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{CB0000}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} \\ \cline{2-7} 
+      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{A2211E}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       \begin{tabular}[c]{@{}l@{}}All the attributes \\ at once\end{tabular} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{CB0000}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{CB0000}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{009901}} \\ \cline{2-7} 
+      \multicolumn{1}{c|}{\cellcolor[HTML]{A2211E}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{A2211E}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} \\ \cline{2-7} 
     \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}c@{}}Tables \\ and\\ Columns\\ Selection\end{tabular}}} &
       Remove Columns &
        &
@@ -260,7 +260,7 @@ Finally, a set of actual graphical user interfaces used to formulate queries was
        \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       Right Join &
-      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{A2211E} &
        &
        &
        &
@@ -283,9 +283,9 @@ Finally, a set of actual graphical user interfaces used to formulate queries was
       Null Option &
        &
        &
-      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{A2211E} &
        &
-      \cellcolor[HTML]{CB0000} \\ \cline{2-7} 
+      \cellcolor[HTML]{A2211E} \\ \cline{2-7} 
     \multirow{-7}{*}{\cellcolor[HTML]{C0C0C0}\textbf{Merge}} &
       \begin{tabular}[c]{@{}l@{}}Define Join \\ Condition\end{tabular} &
        &
@@ -316,24 +316,24 @@ Finally, a set of actual graphical user interfaces used to formulate queries was
        &
        &
        &
-      \cellcolor[HTML]{CB0000} \\ \hline
+      \cellcolor[HTML]{A2211E} \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Calculated\\ Attributes\end{tabular}}} &
        &
        &
        &
        &
-      \cellcolor[HTML]{CB0000} \\ \hline
+      \cellcolor[HTML]{A2211E} \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Distinct}} &
-      \cellcolor[HTML]{CB0000} &
-      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{A2211E} &
+      \cellcolor[HTML]{A2211E} &
        &
        &
        \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Subqueries}} &
-      \cellcolor[HTML]{CB0000} &
-      \cellcolor[HTML]{CB0000} &
-      \cellcolor[HTML]{CB0000} &
-      \cellcolor[HTML]{CB0000} &
+      \cellcolor[HTML]{A2211E} &
+      \cellcolor[HTML]{A2211E} &
+      \cellcolor[HTML]{A2211E} &
+      \cellcolor[HTML]{A2211E} &
        \\ \hline
     \end{tabular}
 }
