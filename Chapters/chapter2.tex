@@ -13,7 +13,7 @@ Accordingly, this chapter will introduce key concepts of \gls{HCI}, as well as, 
 
 \section{Human-Computer Interaction}
 \label{sec:human_computer_interaction}
-Although computer systems have been designed by humans, these two parts of \gls{HCI} do not speak the same language. Nonetheless, these types of systems were created to support, in a transparent way, human tasks and requirements, forgiving careless mistakes. \cite{humanComputerInteraction} Thus, \gls{HCI} aims to study the relationship of users and computer systems, in the context of the users’ desired tasks, in order to “unfold and reveal challenges and insights, and to instrument appropriate solutions for alleviating the current obstacles to the access and use of advanced information technologies” \cite{userInterfacesForAll_newPerspectivesIntoHumanComputerInteraction}. 
+Although computer systems have been designed by humans, these two parts of \gls{HCI} do not speak the same language. Nonetheless, these types of systems were created to support, in a transparent way, human tasks and requirements, forgiving careless mistakes \cite{humanComputerInteraction}. Thus, \gls{HCI} aims to study the relationship of users and computer systems, in the context of the users’ desired tasks, in order to “unfold and reveal challenges and insights, and to instrument appropriate solutions for alleviating the current obstacles to the access and use of advanced information technologies” \cite{userInterfacesForAll_newPerspectivesIntoHumanComputerInteraction}. 
 
 %\textit{Dix et al.} \cite{humanComputerInteraction} reinforce this too, saying that “HCI involves the design, implementation and evaluation of interactive systems in the context of the user’s task and work”.
 
@@ -47,7 +47,7 @@ However, usability is not a single-dimensional property, being always associated
 \begin{itemize}
 	\item \textbf{Learnability}: How easy is the learning process until a novice user (who has not used the system before) achieves a high-level of proficiency using the system \cite{measuringLearnabilityInHumanComputerInteraction}. %The learnability is higher as the learning process is faster, and the user has to spend less effort to reach his goal. Also, it depends on the tutorials and training provided to users. A system that requires less training has higher learnability than a system that requires more training. The time that a novice user requires to perform some specific tasks can be used to measure learnability. Learnability can be improved using tips while a novice user explores the system doing his first tasks.
 	\item \textbf{Efficiency}: Refers to the productivity level of a user who has already learnt how to use the system. %Efficiency can be measured analysing the time that expert users spent to do specific tasks on the system. This attribute can be improved, for example, adding shortcuts to accelerate the interaction process.
-	\item \textbf{Memorability}: Defines how easy is for a user, that was using a system before but did not use it for a time period, to do his desired tasks on the system. So it’s related to how many times the user has not used the system and the time that the user needs to remember how the system works. Therefore, if a system has good memorability the user does not need much time to remember it, even if it has stopped using it for a long period of time. Memorability can be measured, for example, analysing the interaction process of a user who has been away from the system, while he uses the system again. The use of visual components and metaphors with real-life objects helps, sometimes, the users in this process.
+	\item \textbf{Memorability}: Defines how easy is for a user, that was using a system before but did not use it for a time period, to do his desired tasks on the system. %So it’s related to how many times the user has not used the system and the time that the user needs to remember how the system works. Therefore, if a system has good memorability the user does not need much time to remember it, even if it has stopped using it for a long period of time. Memorability can be measured, for example, analysing the interaction process of a user who has been away from the system, while he uses the system again. The use of visual components and metaphors with real-life objects helps, sometimes, the users in this process.
 	\item \textbf{Errors}: A system not only must have a low error-rate but if an error occurs, the user should be able to recover from that. %Since there are multiple types of errors with different severity levels, catastrophic errors should not occur. This attribute can be measured by the evaluation of the error-rate, taking into account the severity levels of the errors. Furthermore, if a system has errors, that can be reverted and does not have a negative impact on the final result, cannot be forgotten that these errors also harm the efficiency of the system.
 	\item \textbf{Satisfaction}: The most subjective attribute of the usability that is related to the overall satisfaction of the user when uses the system. %It could be measured by asking the users about the experience while they are using the system, always searching for subjective answers.
 \end{itemize}
@@ -188,10 +188,10 @@ The OutSystems Platform has the mission of simplifying and accelerating the deve
 
 Service Studio is the low-code development environment of the platform, which allows the developers to create complete applications using visual elements to perform drag and drop actions. Figure \ref{fig:ss_workspace} presents an overview of the \gls{IDE}, which highlights the different areas of the workspace.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
 	\centering
 	\includegraphics[height=3.1in]{ss_workspace}
-	\caption{Main areas of Service Studio (extracted from\cite{serviceStudioOverview})}
+	\caption{Main areas of Service Studio (source: OutSystems\cite{serviceStudioOverview})}
 	\label{fig:ss_workspace}
 \end{figure}
 
@@ -235,10 +235,10 @@ Then, since the first versions of the \gls{IDE}, it is provided two ways to buil
 
 The first simple queries versions have accelerated the query building process finding automatically the relationships between the entities chosen. The main idea is that the developer only needs to select the entities intended and the respective join conditions would appear automatically in the query view interface. After this, it will be possible to change the join type, as well as, to add, edit and remove filtering or sorting conditions. Figure \ref{fig:ss_simpleQuerieOuterJoinHub2} presents a simple query example in Hub Edition 2.0 (2003) when the developer was changing the join type to an Outer Join.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
 	\centering
 	\includegraphics[height=2.6in]{simpleQuerieOuterJoinHub}
-	\caption{Simple Query example in Hub Edition 2.0 (source: \cite{whatsNewHub2})}
+	\caption{Simple Query example in Hub Edition 2.0 (source: OutSystems \cite{whatsNewHub2})}
 	\label{fig:ss_simpleQuerieOuterJoinHub2}
 \end{figure}
 
@@ -266,11 +266,11 @@ When the Aggregate is created, the first step is the data source selection in or
 	%\label{fig:aggregate_created}
 %\end{figure}
 
-Hereupon, the Aggregate has already been created and its data source specified, so the visual querying process can be started, in a progressive way, seeing at the same time the query output. Figure X demonstrates an Aggregate on the referred state, to be possible to understand the structure of the interface.
+Hereupon, the Aggregate has already been created and its data source specified, so the visual querying process can be started, in a progressive way, seeing at the same time the query output. Figure \ref{fig:aggregate_created} demonstrates an Aggregate on the referred state, to be possible to understand the structure of the interface.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
 	\centering
-	\includegraphics[height=2.7in]{aggregateExampleSource}
+	\includegraphics[height=2.7in]{aggregateExampleSource2}
 	\caption{Aggregate Example}
 	\label{fig:aggregate_created}
 \end{figure}
@@ -279,7 +279,7 @@ First, this component of the OutSystems Platform presents two main capabilities,
 
 Focusing on the query design area, the sources tab, illustrated in Figure \ref{fig:aggregates_source_tab}, can be used to add, change or remove the entities of the quey, defining also, the join types between them. There are three join types available: "only with", "with or without", and "with". The respective joins in \gls{SQL} are: "inner join", "left join", and "full outer join". Additionally, each one appears with a visual representation similar to Venn Diagrams \cite{venn1880diagrams} to be easier to identify which data is selected on each join type. Moreover, it is possible to edit the join condition textually, using the platform expression editor.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
 	\centering
 	\includegraphics[height=1.7in]{aggregatesSourceTab}
 	\caption{Aggregate - Defining Sources}
@@ -294,7 +294,7 @@ Finally, the last tab has a different behavior when compared with the rest of th
 
 Figure \ref{fig:aggregates_filter_sort_test} presents a usage example of the last functionalities mentioned, to create a query to filter and sort dates, regarding the value of a variable.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
 	\centering
 	\includegraphics[height=2.8in]{aggregateFilterSortTest}
 	\caption{Aggregates - Filtering, Sorting and Test Values in an example of querying DueDates after a month indicated in a variable}
@@ -303,14 +303,14 @@ Figure \ref{fig:aggregates_filter_sort_test} presents a usage example of the las
 
 On the other side, the area dedicated to viewing the query output provides also some functionalities to design the query while the user is interacting and exploring the query result. Therefore, as represented by an example in Figure \ref{fig:table_right_click_example}, the user can change the query when he performs a right-click on a column or when clicks on the new attribute. The only options in the list presented that does not change the query are the hide options since they just change the result in the presentation layer. So, if the user hides a set of columns, he will not see them in the result table, however, the query did not change. Besides, the user can add other attributes based on the existing ones, so Figure \ref{fig:calculated_attribute_example} shows an example of this functionality.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
 	\centering
-	\includegraphics[height=2.0in]{tableRightClickExample}
+	\includegraphics[height=2.3in]{tableRightClickExample}
 	\caption{Query Design functions while interacting with Query Result}
 	\label{fig:table_right_click_example}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
 	\centering
 	\includegraphics[height=3in]{calculatedAttributeExample}
 	\caption{Calculated Attribute Insertion}

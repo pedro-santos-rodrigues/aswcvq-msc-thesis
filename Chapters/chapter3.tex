@@ -29,12 +29,12 @@ In the same field, Ogden \cite{implicationsOfACognitiveModelOfDatabaseQuery} pre
 
 Comparing the two previous models, the Lexical Transformation phase is present in the Query Translation phase of the latter model, as well as, Template Generation and insertion are part of the Query Writing phase \cite{anEvaluationOfNoviceEndUserComputingPerformance}. Moreover, although the query writing and comprehension are the focus of this work, it was verified in a comparison between three different models (relational model, extended-entity-relationship model, and object-oriented model) that the data model influence the query writing and comprehension \cite{anEvaluationOfNoviceEndUserComputingPerformance}.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
   \centering
-  \subcaptionbox{Reisner Model\label{fig:reisner_model} (adapted: \cite{humanFactorStudiesOfDatabaseQueryLanguages})} %
+  \subcaptionbox{Reisner Model\label{fig:reisner_model} (adapted: Reisner \cite{humanFactorStudiesOfDatabaseQueryLanguages})} %
     {\includegraphics[width=0.9\linewidth]{reisner-model}}%
     \\
-  \subcaptionbox{Ogden Model \label{fig:ogden_model} (adapted: \cite{implicationsOfACognitiveModelOfDatabaseQuery})}%
+  \subcaptionbox{Ogden Model \label{fig:ogden_model} (adapted: Ogden \cite{implicationsOfACognitiveModelOfDatabaseQuery})}%
     {\includegraphics[width=0.9\linewidth]{ogden-model}}%
 \caption{Models of Query Writing Process.}
   \label{fig:models_of_query_writing_process}
@@ -45,10 +45,10 @@ Chan \textit{et al.} \cite{anEvaluationOfNoviceEndUserComputingPerformance} have
 
 The experience with the data involved is another factor that influences the query comprehension. If novice users do not understand the data involved, they cannot validate if the query result is correct. This situation was analyzed by Robb \textit{et al.} \cite{improvingNewUsersQueryPerformance} that were distinguished the query process between new users and experienced users (Figure \ref{fig:ex_ante_expectations}). Besides, they concluded that if the novice users were alerted to the details of the data queried, the query effectiveness will increase.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
   \centering
     {\includegraphics[width=1.0\linewidth]{ex-ante-expectations}}%
-\caption{New and experienced users’ query processes (source: \cite{improvingNewUsersQueryPerformance}).}
+\caption{New and experienced users’ query processes (source: Robb \textit{et al.} \cite{improvingNewUsersQueryPerformance}).}
   \label{fig:ex_ante_expectations}
 \end{figure}
 
@@ -128,16 +128,16 @@ In the systems referred above the columns are added one by one sequentially, but
 Other systems, as Devart dbForge Query Builder \cite{dbForgeQueryBuilder}, uses a diagram-based interface to select the entities and attributes of the query. In this system, the user can drag and drop the desired tables to the diagram area, and select through checkboxes the intended attributes, that are presented in the database schema diagram (Figure \ref{fig:devartDbForge}).
 
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
     \centering
-    \subcaptionbox{Chartio Data Explorer\label{fig:chartioDataExplorer} (source: \cite{chartioDataExplorer})}%
+    \subcaptionbox{Chartio Data Explorer\label{fig:chartioDataExplorer} (source: Chartio\cite{chartioDataExplorer})}%
       {\includegraphics[width=0.5\linewidth]{chartio-data-explorer-data-source}}%
-    \subcaptionbox{Chartio Visual SQL\label{fig:chartioVisualSQL} (source: \cite{chartioVisualSQL})}%
+    \subcaptionbox{Chartio Visual SQL\label{fig:chartioVisualSQL} (source: Chartio \cite{chartioVisualSQL})}%
       {\includegraphics[width=0.5\linewidth]{chartio-visual-SQL-data-source}}%
       \\
-    \subcaptionbox{Tableau Prep\label{fig:tableauPrep} (source: \cite{tableauPrepHelpWhatsNew})}%
+    \subcaptionbox{Tableau Prep\label{fig:tableauPrep} (source: Tableau \cite{tableauPrepHelpWhatsNew})}%
     {\includegraphics[width=0.5\linewidth]{tableau-data-source}}%
-  \subcaptionbox{Devart dbForge Query Builder\label{fig:devartDbForge} (source: \cite{dbForgeQueryBuilder})}%
+  \subcaptionbox{Devart dbForge Query Builder\label{fig:devartDbForge} (source: Devart \cite{dbForgeQueryBuilder})}%
     {\includegraphics[width=0.5\linewidth]{dbforge-data-source}}%
   \caption{Different approaches to select the entities of the query.}
     \label{fig:approaches_select_data_sources}
@@ -153,14 +153,14 @@ Another approach used by some systems, such as Chartio Data Explorer \cite{chart
   
 Tableau Prep \cite{tableauPrep} provides two options to start a join between two tables: clicking on a "add join" hover button above the table visual representation with the suggestion of related tables, or merge the visual representation of two tables using a drag and drop action. After this selection, the inner join type is selected automatically by the system according to the tables' relationship \cite{tableauAggregateJoinOrUnionData,tableauAddMoreDataInTheInputStep}. However, the user can configure the join in a dedicated section (Figure \ref{fig:tableauJoinPanel}) where it is possible to define the join type using a Venn Diagram, to manage the join clauses using dropdown lists to select the fields, including also some join clause recommendations based on the database schema. Moreover, a summary of the join result that contains counters with the values included and excluded by each table, in a visual way using diagrams is provided. Finally, a list of the values included and excluded, where the red values represent the values excluded is presented, as well as a preview of the join result \cite{tableauAggregateJoinOrUnionData}.
 
-\begin{figure}[htbp]
+\begin{figure}[tb]
     \centering
-    \subcaptionbox{Chartio Data Explorer\label{fig:chartioDataExplorerJoin} (source: \cite{chartioDataExplorer})}%
+    \subcaptionbox{Chartio Data Explorer\label{fig:chartioDataExplorerJoin} (source: Chartio \cite{chartioDataExplorer})}%
       {\includegraphics[width=0.5\linewidth]{chartio-data-explorer-join}}%
-    \subcaptionbox{Microsoft Power BI\label{fig:powerBIJoin} (source: \cite{powerBIShapeAndCombineData})}%
+    \subcaptionbox{Microsoft Power BI\label{fig:powerBIJoin} (source: Microsoft \cite{powerBIShapeAndCombineData})}%
     {\includegraphics[width=0.5\linewidth]{power-bi-join}}%
     \\
-    \subcaptionbox{Tableau Prep\label{fig:tableauJoinPanel} (source: \cite{tableauJoinImage})}%
+    \subcaptionbox{Tableau Prep\label{fig:tableauJoinPanel} (source: Tableau \cite{tableauJoinImage})}%
       {\includegraphics[width=1.0\linewidth]{tableau-join}}%
   \caption{Data merging approaches.}
     \label{fig:approaches_select_data_sources}
@@ -179,11 +179,11 @@ Tableau Prep \cite{tableauPrep} follows this more strictly, distinguishing betwe
 
 \textbf{Sorting Criteria}: 
 
-Usually, in the actual \glspl{VQI}, the sorting criteria could be indicated in two ways: a right-click action on the column header of the table that represents the query result, or using a form-based interface to define the sort criteria of each entity. Devart dbForge Query Editor \cite{dbForgeQueryBuilder} is a pure example of the first approach. \cite{dbForgeSortingData} Chartio Data Explorer \cite{chartioDataExplorer} adopts the second approach, providing a pop-up form to apply sorting criteria to the query. The user can use this form to select the intended attributes and the criteria to apply \cite{chartioAdvancedSorting}. Moreover, Chartio Visual SQL \cite{chartioVisualSQL}, Tableau Prep \cite{tableauPrep}, and Microsoft Power BI \cite{powerBI} combines the previous solutions with the possibility to redefine the priority of the sorting criteria, through drag-and-drop actions \cite{visualSqlActions,tableauSortData,powerBIShapeAndCombineData}.
+Usually, in the actual \glspl{VQI}, the sorting criteria could be indicated in two ways: a right-click action on the column header of the table that represents the query result, or using a form-based interface to define the sort criteria of each entity. Devart dbForge Query Editor \cite{dbForgeQueryBuilder} is a pure example of the first approach \cite{dbForgeSortingData}. Chartio Data Explorer \cite{chartioDataExplorer} adopts the second approach, providing a pop-up form to apply sorting criteria to the query. The user can use this form to select the intended attributes and the criteria to apply \cite{chartioAdvancedSorting}. Moreover, Chartio Visual SQL \cite{chartioVisualSQL}, Tableau Prep \cite{tableauPrep}, and Microsoft Power BI \cite{powerBI} combines the previous solutions with the possibility to redefine the priority of the sorting criteria, through drag-and-drop actions \cite{visualSqlActions,tableauSortData,powerBIShapeAndCombineData}.
 
 \textbf{Aggregation Functions}: 
 
-In order to perform aggregations functions, such as MIN, MAX, COUNT, AVG, SUM, or GROUP BY, some systems provide these functionalities through interaction with the query result table. Devart dbForge Query Editor \cite{dbForgeQueryBuilder} provides this option to create an aggregation function. Moreover, in this editor exists another aggregation dedicated view which contains the aggregation functions in a tree view. In this view, users can group or ungroup the elements present in the window. \cite{dbForgeGroupingDataInGrid}. Microsoft Power BI \cite{powerBI} allows also the users to add aggregations through the right-clicking on the column header, but in this case, it is open a form to enter the intended function and columns \cite{powerBICommonQueryTasks}. Chartio Visual SQL \cite{chartioVisualSQL} and Chartio Data Explorer \cite{chartioDataExplorer} presents a pop-up form where could be selected the columns and the aggregations intended \cite{chartioDataPipelineSteps}. Using a different interaction strategy, in Tableau Prep \cite{tableauPrep}, the user drag and drop the desired columns to a specific area that is divided into two: Grouped Fields and Aggregated Fields. The first is to add the \gls{SQL} corresponding GROUP BY, and the second to add the other aggregation functions, such as COUNT, MIN, MAX, AVG, and SUM.
+In order to perform aggregations functions, such as MIN, MAX, COUNT, AVG, SUM, or GROUP BY, some systems provide these functionalities through interaction with the query result table. Devart dbForge Query Editor \cite{dbForgeQueryBuilder} provides this option to create an aggregation function. Moreover, in this editor exists another aggregation dedicated view which contains the aggregation functions in a tree view. In this view, users can group or ungroup the elements present in the window \cite{dbForgeGroupingDataInGrid}. Microsoft Power BI \cite{powerBI} allows also the users to add aggregations through the right-clicking on the column header, but in this case, it is open a form to enter the intended function and columns \cite{powerBICommonQueryTasks}. Chartio Visual SQL \cite{chartioVisualSQL} and Chartio Data Explorer \cite{chartioDataExplorer} presents a pop-up form where could be selected the columns and the aggregations intended \cite{chartioDataPipelineSteps}. Using a different interaction strategy, in Tableau Prep \cite{tableauPrep}, the user drag and drop the desired columns to a specific area that is divided into two: Grouped Fields and Aggregated Fields. The first is to add the \gls{SQL} corresponding GROUP BY, and the second to add the other aggregation functions, such as COUNT, MIN, MAX, AVG, and SUM.
 
 \textbf{Other Specifications}: 
 
@@ -199,7 +199,7 @@ Moreover, a visual way to perform subqueries is provided by the diagrammatic-bas
 \label{sec:discussion}
 The conceptual models of query writing presented in this chapter will be taken into account along the design of the solution since these are a good baseline to understand how users reason while are interacting with the system to achieve their goals. The system's tasks will be optimized according to the presented users' conceptual models presented, in order to reduce the semantic errors, as much as possible. Therefore, the most relevant semantic errors that occur using \gls{SQL} were presented. In the design of the solution, these errors are part of the problems to solve using a new user interface and \gls{UX}. As referred in section \ref{sec:query_formulation_problems}, the semantic errors will be the main concern since these could have a negative impact on the results. The syntactic errors also will be addressed in this work but require less study about the users’ conceptual model. The major concern in this type of error is to provide the maximum feedback to the user. In that way, the user will understand the error and correct it.
 
-Furthermore, since the design of an interface needs to tackle with the usability attributes trade-off, it is important to characterize and consider the problems of the application's target users. This characterization is essential to define the usability priorities of the interface. The population used in the studies presented in this chapter will be an excellent reference to the target user analysis. The target users of the intended system are low-code developers. Since low-code development has advantages not only for not programmers but to programmers with different levels of expertise, the target users of the system are wide. Thus, the studies that have evaluated a wide diversity of users, such as the evaluation of Lu \textit{et al.} \cite{aSurveyOnUsageOfSQL}, could reveal important results to the work development. Moreover, the studies presented that have analysed students of database systems (\cite{studentsSemanticMistakesInWritingSevenDifferentTypesOfSQLQueries}, \cite{errorsAndComplicationsInSQLQueryFormulation}), could add more important data, since some details only occur if the queries formulated are more complex.
+Furthermore, since the design of an interface needs to tackle with the usability attributes trade-off, it is important to characterize and consider the problems of the application's target users. This characterization is essential to define the usability priorities of the interface. The population used in the studies presented in this chapter will be an excellent reference to the target user analysis. The target users of the intended system are low-code developers. Since low-code development has advantages not only for not programmers but to programmers with different levels of expertise, the target users of the system are wide. Thus, the studies that have evaluated a wide diversity of users, such as the evaluation of Lu \textit{et al.} \cite{aSurveyOnUsageOfSQL}, could reveal important results to the work development. Moreover, the studies presented that have analysed students of database systems \cite{studentsSemanticMistakesInWritingSevenDifferentTypesOfSQLQueries}, \cite{errorsAndComplicationsInSQLQueryFormulation}, could add more important data, since some details only occur if the queries formulated are more complex.
 
 Finally, a set of actual graphical user interfaces used to formulate queries was presented and compared. The approaches used by other systems are a relevant object study for the design and the development of the new interface. Table \ref{tab:rw-summary} represents a summary of the database query operations supported by each one of the presented systems.
 
@@ -211,130 +211,130 @@ Finally, a set of actual graphical user interfaces used to formulate queries was
   \begin{tabular}{|
     >{\columncolor[HTML]{C0C0C0}}c |
     >{\columncolor[HTML]{EFEFEF}}l |
-    >{\columncolor[HTML]{97CB97}}l |
-    >{\columncolor[HTML]{97CB97}}l |
-    >{\columncolor[HTML]{97CB97}}l |
-    >{\columncolor[HTML]{97CB97}}l |
-    >{\columncolor[HTML]{97CB97}}l |}
+    >{\columncolor[HTML]{FFFFFF}}c |
+    >{\columncolor[HTML]{FFFFFF}}c |
+    >{\columncolor[HTML]{FFFFFF}}c |
+    >{\columncolor[HTML]{FFFFFF}}c |
+    >{\columncolor[HTML]{FFFFFF}}c |}
     \hline
     \multicolumn{2}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{Feature \textbackslash System}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Chartio \\ Data Explorer\end{tabular}}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Chartio \\ Visual SQL\end{tabular}}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Tableau \\ Prep\end{tabular}}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Power BI \\ Query Editor\end{tabular}}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Devart dbForge \\ Query Builder\end{tabular}}} \\ \hline
+      \cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Chartio \\ Data Explorer\end{tabular}} &
+      \cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Chartio \\ Visual SQL\end{tabular}} &
+      \cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Tableau \\ Prep\end{tabular}} &
+      \cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Power BI \\ Query Editor\end{tabular}} &
+      \cellcolor[HTML]{9B9B9B}\textbf{\begin{tabular}[c]{@{}c@{}}Devart dbForge \\ Query Builder\end{tabular}} \\ \hline
     \cellcolor[HTML]{C0C0C0} &
       Only the required &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{A2211E}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} \\ \cline{2-7} 
+      \cmark &
+      \cmark &
+      \cmark &
+      \xmark &
+      \cmark \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       \begin{tabular}[c]{@{}l@{}}All the attributes \\ at once\end{tabular} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{A2211E}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{A2211E}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} &
-      \multicolumn{1}{c|}{\cellcolor[HTML]{97CB97}} \\ \cline{2-7} 
+      \xmark &
+      \xmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \cline{2-7} 
     \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}c@{}}Tables \\ and\\ Columns\\ Selection\end{tabular}}} &
       Remove Columns &
-       &
-       &
-       &
-       &
-       \\ \hline
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \hline
     \cellcolor[HTML]{C0C0C0} &
       Inner Join &
-       &
-       &
-       &
-       &
-       \\ \cline{2-7} 
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       Left Join &
-       &
-       &
-       &
-       &
-       \\ \cline{2-7} 
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       Right Join &
-      \cellcolor[HTML]{A2211E} &
-       &
-       &
-       &
-       \\ \cline{2-7} 
+      \xmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       Full Outer Join &
-       &
-       &
-       &
-       &
-       \\ \cline{2-7} 
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       Cross Join &
-       &
-       &
-      \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}l@{}}Using\\ Calculated\\ Attributes\end{tabular} &
-      \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}l@{}}Using\\ Calculated\\ Attributes\end{tabular} &
-      \cellcolor[HTML]{C0C0C0}Textually \\ \cline{2-7} 
+      \cmark &
+      \cmark &
+      \begin{tabular}[c]{@{}c@{}}Using\\ Calculated\\ Attributes\end{tabular} &
+      \begin{tabular}[c]{@{}c@{}}Using\\ Calculated\\ Attributes\end{tabular} &
+      Textually \\ \cline{2-7} 
     \cellcolor[HTML]{C0C0C0} &
       Null Option &
-       &
-       &
-      \cellcolor[HTML]{A2211E} &
-       &
-      \cellcolor[HTML]{A2211E} \\ \cline{2-7} 
+      \cmark &
+      \cmark &
+      \xmark &
+      \cmark &
+      \xmark \\ \cline{2-7} 
     \multirow{-7}{*}{\cellcolor[HTML]{C0C0C0}\textbf{Merge}} &
       \begin{tabular}[c]{@{}l@{}}Define Join \\ Condition\end{tabular} &
-       &
-       &
-       &
-      \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}l@{}}Selecting\\ Columns\\ Visually\end{tabular} &
-      \cellcolor[HTML]{C0C0C0}Textually \\ \hline
+      \cmark &
+      \cmark &
+      \cmark &
+      \begin{tabular}[c]{@{}c@{}}Selecting\\ Columns\\ Visually\end{tabular} &
+      Textually \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Filtering Criteria}} &
-       &
-       &
-       &
-       &
-       \\ \hline
+    \cmark &
+    \cmark &
+    \cmark &
+    \cmark &
+    \cmark \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Sorting Criteria}} &
-       &
-       &
-       &
-       &
-       \\ \hline
+    \cmark &
+    \cmark &
+    \cmark &
+    \cmark &
+    \cmark \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Aggregation \\ Functions\end{tabular}}} &
-       &
-       &
-       &
-       &
-       \\ \hline
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Unions}} &
-       &
-       &
-       &
-       &
-      \cellcolor[HTML]{A2211E} \\ \hline
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \xmark \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{\begin{tabular}[c]{@{}l@{}}Calculated\\ Attributes\end{tabular}}} &
-       &
-       &
-       &
-       &
-      \cellcolor[HTML]{A2211E} \\ \hline
+      \cmark &
+      \cmark &
+      \cmark &
+      \cmark &
+      \xmark \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Distinct}} &
-      \cellcolor[HTML]{A2211E} &
-      \cellcolor[HTML]{A2211E} &
-       &
-       &
-       \\ \hline
+      \xmark &
+      \xmark &
+      \cmark &
+      \cmark &
+      \cmark \\ \hline
     \multicolumn{2}{|l|}{\cellcolor[HTML]{C0C0C0}\textbf{Subqueries}} &
-      \cellcolor[HTML]{A2211E} &
-      \cellcolor[HTML]{A2211E} &
-      \cellcolor[HTML]{A2211E} &
-      \cellcolor[HTML]{A2211E} &
-       \\ \hline
+      \xmark &
+      \xmark &
+      \xmark &
+      \xmark &
+      \cmark \\ \hline
     \end{tabular}
 }
 \end{table}
