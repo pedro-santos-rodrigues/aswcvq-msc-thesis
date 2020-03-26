@@ -45,21 +45,14 @@ The \textbf{Usability} of a system is one of the most important concepts in \gls
 However, usability is not a single-dimensional property, being always associated with its attributes, that characterize the user accessibility when is using the system into five different points, such as referred by Nielsen \cite{usabilityEngineering}:
 
 \begin{itemize}
-	\item \textbf{Learnability}: How easy is the learning process until a novice user (who has not used the system before) achieves a high-level of proficiency using the system \cite{measuringLearnabilityInHumanComputerInteraction}. %The learnability is higher as the learning process is faster, and the user has to spend less effort to reach his goal. Also, it depends on the tutorials and training provided to users. A system that requires less training has higher learnability than a system that requires more training. The time that a novice user requires to perform some specific tasks can be used to measure learnability. Learnability can be improved using tips while a novice user explores the system doing his first tasks.
-	\item \textbf{Efficiency}: Refers to the productivity level of a user who has already learnt how to use the system. %Efficiency can be measured analysing the time that expert users spent to do specific tasks on the system. This attribute can be improved, for example, adding shortcuts to accelerate the interaction process.
-	\item \textbf{Memorability}: Defines how easy is for a user, that was using a system before but did not use it for a time period, to do his desired tasks on the system. %So it’s related to how many times the user has not used the system and the time that the user needs to remember how the system works. Therefore, if a system has good memorability the user does not need much time to remember it, even if it has stopped using it for a long period of time. Memorability can be measured, for example, analysing the interaction process of a user who has been away from the system, while he uses the system again. The use of visual components and metaphors with real-life objects helps, sometimes, the users in this process.
-	\item \textbf{Errors}: A system not only must have a low error-rate but if an error occurs, the user should be able to recover from that. %Since there are multiple types of errors with different severity levels, catastrophic errors should not occur. This attribute can be measured by the evaluation of the error-rate, taking into account the severity levels of the errors. Furthermore, if a system has errors, that can be reverted and does not have a negative impact on the final result, cannot be forgotten that these errors also harm the efficiency of the system.
-	\item \textbf{Satisfaction}: The most subjective attribute of the usability that is related to the overall satisfaction of the user when uses the system. %It could be measured by asking the users about the experience while they are using the system, always searching for subjective answers.
+	\item \textbf{Learnability}: How easy is the learning process until a novice user (who has not used the system before) achieves a high-level of proficiency using the system \cite{measuringLearnabilityInHumanComputerInteraction}. The learnability is higher as the learning process is faster, and the user has to spend less effort to reach his goal. Also, it depends on the tutorials and training provided to users. A system that requires less training has higher learnability than a system that requires more training. The time that a novice user requires to perform some specific tasks can be used to measure learnability. Learnability can be improved using tips while a novice user explores the system doing his first tasks.
+	\item \textbf{Efficiency}: Refers to the productivity level of a user who has already learned how to use the system. Efficiency can be measured analyzing the time that expert users spent to do specific tasks on the system. This attribute can be improved, for example, adding shortcuts to accelerate the interaction process.
+	\item \textbf{Memorability}: Defines how easy is for a user, that was using a system before but did not use it for a time period, to do his desired tasks on the system. So it’s related to how many times the user has not used the system and the time that the user needs to remember how the system works. Therefore, if a system has good memorability the user does not need much time to remember it, even if it has stopped using it for a long period of time. Memorability can be measured, for example, analyzing the interaction process of a user who has been away from the system, while he uses the system again. The use of visual components and metaphors with real-life objects helps, sometimes, the users in this process.
+	\item \textbf{Errors}: A system not only must have a low error-rate but if an error occurs, the user should be able to recover from that. Since there are multiple types of errors with different severity levels, catastrophic errors should not occur. This attribute can be measured by the evaluation of the error-rate, taking into account the severity levels of the errors. Furthermore, if a system has errors, that can be reverted and does not have a negative impact on the final result, cannot be forgotten that these errors also harm the efficiency of the system.
+	\item \textbf{Satisfaction}: The most subjective attribute of the usability that is related to the overall satisfaction of the user when uses the system. It could be measured by asking the users about the experience while they are using the system, always searching for subjective answers.
 \end{itemize}
 
 Nonetheless, as mentioned by Nielsen \cite{usabilityEngineering}: \textbf{“it is not always possible to achieve optimal scores for all usability attributes simultaneously”}. Thus, when a system is designed it is necessary to prioritize what are the most important attributes for the users and the domain where the system will be used and applied. These trade-offs are one of the most challenging tasks of the design processes because it depends on user expectations and their backgrounds, as well as, the problem domain and what are the main focus of the system use. Accordingly, it is fundamental that the design process can focus on target users of the systems. Therefore, the main concepts, processes, and techniques for a design process centered on the users will be described.
-
-%\begin{center}
-%	\textbf{“it is not always possible to achieve optimal scores for all usability %attributes simultaneously”}.
-%\end{center} 
-
-
-
 
 
 \subsection{User-centered Design}
@@ -98,15 +91,15 @@ While sketching techniques are more plentiful, and have a low detail level, bein
 
 However, prototypes may have different thoroughness degrees, presenting different advantages and disadvantages. Thus, it is important to start the prototyping process with low fidelity prototypes, as paper prototypes, since the objective of these is to evaluate the conceptual model (if the users understand the system), the functionalities presented, the navigation, the screen components distribution, and the terminology used. After the evaluation of these prototypes presents good results, high fidelity prototypes should be used, like computer prototypes. There are a set of available tools to assist in the building process of these prototypes, such as Balsamiq \cite{balsamiq} and Mockingbird \cite{mockingbird}. These different prototype types can detect different issues when tested with users, so it is very important to test prototypes with different granularity levels.
 
-Furthermore, there is another relevant aspect of the prototype designing, that is the scope definition of the prototype. It is important to define what features the prototype undertakes and what is the inherent detail level. Nielsen \cite{usabilityEngineering} describes this as two dimensions of prototyping: horizontal prototyping and vertical prototyping. %, as demonstrated in Figure \ref{fig:prototypeDimensions}. 
+Furthermore, there is another relevant aspect of the prototype designing, that is the scope definition of the prototype. It is important to define what features the prototype undertakes and what is the inherent detail level. Nielsen \cite{usabilityEngineering} describes this as two dimensions of prototyping: horizontal prototyping and vertical prototyping, as demonstrated in Figure \ref{fig:prototypeDimensions}. 
 A vertical prototype is characterized as a prototype to test a restricted part of the system but with real users and circumstances. A horizontal prototype is presented as suitable for test the entire system but in a less realistic approach.
 
-%\begin{figure}[htbp]
-	%\centering
-	%\includegraphics[height=2.5in]{prototypeDimensions}
-	%\caption{The two dimensions of prototyping: Horizontal prototyping keeps the features but eliminates depth of functionality, and vertical prototyping gives full functionality for a few features (extracted from \cite{usabilityEngineering})}
-	%\label{fig:prototypeDimensions}
-%\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.5in]{prototypeDimensions}
+	\caption{The two dimensions of prototyping: Horizontal prototyping keeps the features but eliminates depth of functionality, and vertical prototyping gives full functionality for a few features (source: Nielsen \cite{usabilityEngineering})}
+	\label{fig:prototypeDimensions}
+\end{figure}
 
 Finally, regarding the methodology about how to use the prototypes built, Dix et al. \cite{humanComputerInteraction} refer that are three main approaches:
 
@@ -115,8 +108,6 @@ Finally, regarding the methodology about how to use the prototypes built, Dix et
 	\item \textbf{Incremental}: First, the system is separated into different parts, and each part is built, one at a time. So the prototypes are developed separately, regarding its correspondent part, and finally are combined to build the final system;
 	\item \textbf{Evolutionary}: Contrary to the throw-away approach, the prototypes developed are used as the basis for the next iteration of the design.
 \end{itemize}
-
-
 
 
 
@@ -148,34 +139,34 @@ A study made by Desurvire \textit{et al.} \cite{WhatIsGainedAndLostWhenUsingMeth
 Although there exist methods that do not need the users to evaluate the system usability, it is difficult to predict all the behaviors of the users when they interact with a system. Therefore, there are multiple methods to make usability tests with people that are the system's target. Some methods of user testing which can be resourceful on the context of this work, are the following, respecting the terminology used by Dix \textit{et al.} \cite{humanComputerInteraction}:
 
 \begin{itemize}
-	\item \textbf{Observational Methods}: the main principle of these methods is observing users using the system to conclude important usability information about it. %Usually, it is requested to the user to ‘thinks aloud’ since it might be possible to obtain more insights that can be useful, not only to understand why the user might have made an error, but also it can be a good strategy to find starting points for other possible solutions. Moreover, although usually, these tests have a set of predetermined tasks, since it is easier to find the user reaction to the system part the need to be tested, also can be executed tests only by evaluating the normal tasks of the users on their work;
-	\item \textbf{Experimental Methods}: starting from a properly defined test hypothesis, it is selected a set of users to perform an experimental test to verify if the test hypothesis proves to be true or not. %Thus, it is necessary to define previously all the experimental environment, which includes: the test hypothesis that wants to be verified, the users that will perform the test,  and the independent and dependent variables. The dependent variables are the ones that express the result of the test in  function of the independent variables, such as the task execution time or the number of the errors that occurred. The independent variables are chosen by the test designer to produce different conditions for comparison. Examples of independent variables can be the size of an interface component or the use of an interaction technique. This method is very useful to verify through a test hypothesis which of the possible solutions presented (independent variables) have a better performance for the intended application context;
-	\item \textbf{Query Methods}: these methods focus on what the users think about the system, collecting information from interviews or questionnaires to analyze their opinion. %One advantage of this method is that it might reveal issues not observed previously complained before, but contrary a lot of cases are not tested, since in the interaction field, many times, the user only finds a problem when it occurs for the first time. So it is not possible to extract concrete information from users that never have passed for this situation.
+	\item \textbf{Observational Methods}: the main principle of these methods is observing users using the system to conclude important usability information about it. Usually, it is requested to the user to ‘thinks aloud’ since it might be possible to obtain more insights that can be useful, not only to understand why the user might have made an error, but also it can be a good strategy to find starting points for other possible solutions. Moreover, although usually, these tests have a set of predetermined tasks, since it is easier to find the user reaction to the system part the need to be tested, also can be executed tests only by evaluating the normal tasks of the users on their work;
+	\item \textbf{Experimental Methods}: starting from a properly defined test hypothesis, it is selected a set of users to perform an experimental test to verify if the test hypothesis proves to be true or not. Thus, it is necessary to define previously all the experimental environment, which includes: the test hypothesis that wants to be verified, the users that will perform the test,  and the independent and dependent variables. The dependent variables are the ones that express the result of the test in function of the independent variables, such as the task execution time or the number of the errors that occurred. The independent variables are chosen by the test designer to produce different conditions for comparison. Examples of independent variables can be the size of an interface component or the use of an interaction technique. This method is very useful to verify through a test hypothesis which of the possible solutions presented (independent variables) have a better performance for the intended application context;
+	\item \textbf{Query Methods}: these methods focus on what the users think about the system, collecting information from interviews or questionnaires to analyze their opinion. One advantage of this method is that it might reveal issues not observed previously complained before, but contrary a lot of cases are not tested, since in the interaction field, many times, the user only finds a problem when it occurs for the first time. So it is not possible to extract concrete information from users that never have passed for this situation.
 \end{itemize}
 
-%\bigskip
+\bigskip
 
-%Finally, independently of the evaluation process adopted (through expert analysis or user participation), severity ratings should be attributed to the problems identified in order to define the main priorities and understand which might have a larger impact on the system acceptability. However, although these levels should be attributed by specialists, if they use not only cognitive principles, but also use the results observed from the user testing phase to sustain the classification of the problems detected, the result can be more accurate. 
+Finally, independently of the evaluation process adopted (through expert analysis or user participation), severity ratings should be attributed to the problems identified in order to define the main priorities and understand which might have a larger impact on the system acceptability. However, although these levels should be attributed by specialists, if they use not only cognitive principles, but also use the results observed from the user testing phase to sustain the classification of the problems detected, the result can be more accurate. 
 
-%Besides, the Figure \ref{fig:severityLevels}, extracted from \cite{usabilityEngineering}, displays two influential factors that should be taken into account to attribute a severity level to a problem: how many users are experiencing this problem and what is the impact level on the user.
+Besides, the Figure \ref{fig:severityLevels}, extracted from \cite{usabilityEngineering}, displays two influential factors that should be taken into account to attribute a severity level to a problem: how many users are experiencing this problem and what is the impact level on the user.
 
-%\begin{figure}[htbp]
-%	\centering
-%	\includegraphics[height=2in]{severityLevels}
-%	\caption{Severity Levels of the Problems based on their impact on the users (extracted from \cite{usabilityEngineering})}
-%	\label{fig:severityLevels}
-%\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{severityLevels}
+	\caption{Severity Levels of the Problems based on their impact on the users (source: Nielsen \cite{usabilityEngineering})}
+	\label{fig:severityLevels}
+\end{figure}
 
-%\subsubsection{Errors Classification}
-%\label{subsubsec:errors_classification}
-%The errors that occurred when a user interacts with a system are excellent indicators to designers because the understanding of the reason that led to error situations is a good strategy to classify them. Therefore, errors can be classified as slips and mistakes, as will be presented below according to Dix \textit{et al.} \cite{humanComputerInteraction}:
+\subsubsection{Errors Classification}
+\label{subsubsec:errors_classification}
+The errors that occurred when a user interacts with a system are excellent indicators for designers because the understanding of the reason that led to error situations is a good strategy to classify them. Therefore, errors can be classified as slips and mistakes, as will be presented below according to Dix \textit{et al.} \cite{humanComputerInteraction}:
 
-%\begin{itemize}
-%	\item \textbf{Slips}: in these types of errors, the user knows how to do the intended task on the system, however, he presses a wrong button or closes one window accidentally. So, he understands the action, but a misaction does not allow that he reaches his goal;
-%	\item \textbf{Mistakes}: these errors occur when the user does not understand the system, formulating a wrong goal. An example of a mistake is when the user does not understand the action associated with an icon, performing a not intended action.
-%\end{itemize}
+\begin{itemize}
+	\item \textbf{Slips}: in these types of errors, the user knows how to do the intended task on the system, however, he presses a wrong button or closes one window accidentally. So, he understands the action, but a misaction does not allow that he reaches his goal;
+	\item \textbf{Mistakes}: these errors occur when the user does not understand the system, formulating a wrong goal. An example of a mistake is when the user does not understand the action associated with an icon, performing a not intended action.
+\end{itemize}
 
-%Therefore, the strategy to mitigate the problems associated with these two types of errors could be different, as mentioned by Dix \textit{et. al.} \cite{humanComputerInteraction}: “Slips may be corrected by, for instance, better screen design, perhaps putting more space between buttons. However, mistakes need users to have a better understanding of the systems, so it will require far more radical redesign or improved training, perhaps a totally different metaphor for use.”
+Therefore, the strategy to mitigate the problems associated with these two types of errors could be different, as mentioned by Dix \textit{et. al.} \cite{humanComputerInteraction}: “Slips may be corrected by, for instance, better screen design, perhaps putting more space between buttons. However, mistakes need users to have a better understanding of the systems, so it will require far more radical redesign or improved training, perhaps a totally different metaphor for use.”
 
 
 \section{OutSystems Background}
@@ -201,13 +192,13 @@ Also, it includes other sections whose main purpose is not the product developme
 
 Since the development environment can be used to develop a complete full-stack application, the elements, which can be manipulated in the Service Studio, can be related to different parts of the application. The Application Layer Tabs, which contain a tree view of its elements, are the following:
 
-In the \textbf{Processes} tab is possible to create and manage business processes of the systems through a flow that can be composed by human or automatic activities, time waits, conditional decisions and indications to execute processes. In addition, this section can be used to configure the timers of the application. Then, it is possible to indicate when a timer should start, what is it period and what action should be performed when it is triggered.
+In the \textbf{Processes} tab is possible to create and manage business processes of the systems through a flow that can be composed by human or automatic activities, time waits, conditional decisions and indications to execute processes. Also, this section can be used to configure the timers of the application. Then, it is possible to indicate when a timer should start, what is it period and what action should be performed when it is triggered.
 
 The \textbf{Interface} tab can be used to manage the components related to the visual interface of the final application. It is possible to observe all applications’ screens, as well as, the variables and the actions related to each one. Moreover, flows between the various screens can be also defined. If one screen or action is selected, it will be possible to add new visual components to the interface or assign new elements to the action flow in order to define all the client-side logic of the screen.
 
 The \textbf{Logic} tab is where the core logic of the application could be defined. It includes not only the server actions of the application but also the exceptions specification, the existing user’s roles and also the integration with external services. Although there is a data section on the application layer tabs, which will be described below, the actions which require data querying are managed in this section.
 
-In the \textbf{Data} section is covered the database modelling, making possible the creation of diagrams to represent the schema of the database. Moreover, in the tree view of this tab is allowed to establish new entities and static entities in order to define the data model of the application.
+In the \textbf{Data} section is covered the database modeling, making possible the creation of diagrams to represent the schema of the database. Moreover, in the tree view of this tab is allowed to establish new entities and static entities in order to define the data model of the application.
 
 %\begin{itemize}
 %	\item \textbf{Processes}: in this section, it is possible to create and manage business processes of the systems through a flow that can be composed by human or automatic activities, time waits, conditional decisions and indications to execute processes. In addition, this section can be used to configure the timers of the application. Then, it is possible to indicate when a timer should start, what is it period and what action should be performed when it is triggered;
@@ -250,14 +241,14 @@ However, at the launch of the OutSystems Platform 9 (2013), an entirely new way 
 \subsubsection{Current Progress}
 \label{subsubsec:current_progress}
 
-Since the implementation of Aggregates, the query process without textual languages is more visual and more focused on the query outcome. Aggregates can be used to query data from the server or mobile local storage, and can be created in the following ways: ff someone is designing the user interface and wants to present some data gathered from the database (server or local storage), he can right-click on the screen where data will be displayed and select “Fetch Data from Database”; when an action flow is designed, there is an Aggregate icon in the toolbox that can be dragged and dropped to the main area;
+Since the implementation of Aggregates, the query process without textual languages is more visual and more focused on the query outcome. Aggregates can be used to query data from the server or mobile local storage, and can be created in the following ways: 
 
-%\begin{itemize}
-%	\item If someone is designing the user interface and wants to present some data gathered from the database (server or local storage), he can right-click on the screen where data will be displayed and select “Fetch Data from Database”;
-%	\item When an action flow is designed, there is an Aggregate icon in the toolbox that can be dragged and dropped to the main area;
-%\end{itemize}
+\begin{itemize}
+	\item If someone is designing the user interface and wants to present some data gathered from the database (server or local storage), he can right-click on the screen where data will be displayed and select “Fetch Data from Database”;
+	\item When an action flow is designed, there is an Aggregate icon in the toolbox that can be dragged and dropped to the main area;
+\end{itemize}
 
-When the Aggregate is created, the first step is the data source selection in order to specify what entities should be included in the query. Then, the developer should click in the main area and choose the entities he wants or drag and drop the entities to add them to the query. When an entity is added, all its attributes are automatically included in Aggregate. Since an Aggregate can include one or more entities, added on the beginning or later, if it has more than one, it will be analysed to verify if there are relationships between them. Unless there is a relationship that links them, the Aggregate will request the condition to join them. Otherwise, the entities will be included automatically using an inner join.
+When the Aggregate is created, the first step is the data source selection in order to specify what entities should be included in the query. Then, the developer should click in the main area and choose the entities he wants or drag and drop the entities to add them to the query. When an entity is added, all its attributes are automatically included in Aggregate. Since an Aggregate can include one or more entities, added on the beginning or later, if it has more than one, it will be analyzed to verify if there are relationships between them. Unless there is a relationship that links them, the Aggregate will request the condition to join them. Otherwise, the entities will be included automatically using an inner join.
 
 %\begin{figure}[htbp]
 	%\centering
