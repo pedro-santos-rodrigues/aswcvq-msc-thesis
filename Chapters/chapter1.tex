@@ -35,21 +35,24 @@ However, conversely to No-Code approaches, the development through low-code syst
 
 Furthermore, as mentioned by  Amaral \textit{et. al.} \cite{improvingTheDeveloperExperienceWithALowCodeProcessModellingLanguage}, web and mobile applications produced on OutSystems’ technology, have proven an increase in quality. Also, it was concluded that low-code developers are 10.9 times more productive than the standard of \gls{IT} Industry, which does not use these rapid software solutions \cite{outByNumbers2013}. These results reinforce the importance of the improvement of the visual languages used on these platforms.
 
+Since OutSystems aims to accelerate and simplify all phases of the software development process, the principal motivation is the existence of a platform component that accelerates the query building process, reducing also the errors that could occur throughout. Moreover, as a low-code environment,  the interface should keep always simple and intuitive to be understood by all users.
+
 
 \section{Problem Description}
 \label{sec:problem_description}
-The OutSystems platform provides a \gls{VQL} that allows users to retrieve data from databases by simple processes. Besides, with this language, it is possible to perform some operations that are usually supported by textual \glspl{DQL}, namely join, filter, sort, and group operations.
+The OutSystems platform provides a \gls{VQL} that allows users to query data from databases through visual interactions. Using that interface, it is possible to perform some operations that are usually supported by textual \glspl{DQL}, namely join, filter, sort, and aggregation operations.
 
-Currently, the OutSystems’ solutions have been applied to digital transformation processes in multiple industries that deal with high quantities of data, in order to accelerate the application development processes, unlocking its value and growth.
+Although the existing interface turns the process of query formulation more simple and intuitive, it does not support all \gls{SQL} functionalities. Due to that lack of expressiveness, the platform allows its users to formulate queries using SQL. However, as \textit{Catarci et al.} referred \cite{diagrammaticVsTextualQueryLanguages_aComparativeExperiment}, visual languages could give advantages in query formulation for all users, including the ones that are proficient in SQL. Thus, it is important to provide a powerful and consistent interface in order to give users the possibility to accelerate the formulation process, reducing also the rate of errors that may arise. 
+%Currently, the OutSystems’ solutions have been applied to digital transformation processes in multiple industries that deal with high quantities of data, in order to accelerate the application development processes, unlocking its value and growth.
 
-To this extent, the already implemented querying tool is not able to deal with a set of scenarios, because it might not be accurate when the domain has a lot of tables involved or does not support essential advanced constructors. The following \gls{SQL} functionalities are an example of the not supported operations: IN, NOT IN, EXISTS, NOT EXISTS, DISTINCT, UNION and the possibility to use subqueries.
+The principal purpose of this visual interface is to provide a more visual and dynamic tool that accelerates the query formulation process and turns it easier and less error-prone. Accordingly, the existing interface should be a useful and efficient tool for developers. However, OutSystems knew that there were developers that were not using the visual interface, maintaining their preference for SQL. So, it was necessary to verify the main causes that lead users to not use that visual tool. 
 
-Accordingly, the following questions were fundamental to analyze and explore the problem and its requirements: 
+At the beginning of this dissertation, the lack of functionalities (e.g., IN, NOT IN, EXISTS, NOT EXISTS, DISTINCT, UNION and the possibility to use subqueries) was pointed out as a significant factor for users to use SQL. Nevertheless, the first interface explorations revealed impactful usability problems. That is an important point since it could considerably harm users' query formulation process, reducing the value proposition of the system which intends to accelerate the querying process, keeping it more effective and less error-prone. Moreover, there were metric results and user interviews that confirmed the presumption concluded after interface exploration, highlighting the user experience of the interface as the core subject to research and improve.
+
+Beyond the motivation of turning the query building process faster, effective, and less error-prone, the following questions would guide the problem definition process in order to clearly understand the existing problems of the interface:
 
 \begin{itemize}
-  \item What query features are supported by the existing OutSystems visual query language?
-  \item Why do OutSystems developers often use \gls{SQL} to perform database queries?
-  \item Why are some queries that can be built visually written through \gls{SQL} instead?
+  \item Why do OutSystems developers often use \gls{SQL} to formulate database queries?
   \item What are the main causes that users point out to use \gls{SQL}?
   \item Who are the users more unsatisfied with the current provided visual approach to retrieve data? What are their reasons?
 \end{itemize}
@@ -58,7 +61,7 @@ Accordingly, the following questions were fundamental to analyze and explore the
 %What query features are supported by the existing OutSystems visual query language? Why do OutSystems developers often use \gls{SQL} to perform database queries? Why are some queries that can be built visually written through \gls{SQL} instead? What are the main causes that users point out to use \gls{SQL}? Who are the users more unsatisfied with the current provided visual approach to retrieve data? What are their reasons?
 
 
-Under the above mentioned circumstances, the goal of this thesis is to design and evaluate a new and more powerful \gls{VQI} to provide an improved \gls{UX} that allows developers to formulate complex data queries intuitively and efficiently, without using \gls{SQL}.
+Under the above-mentioned circumstances, the goal of this thesis is the design, implementation. and evaluation of a new and more powerful \gls{VQI} to provide an improved \gls{UX} that accelerates the formulation of data queries through a simple and intuitive interface that could be used for users with different backgrounds.
 
 \section{Research Questions}
 \label{sec:research_questions}
