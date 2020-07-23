@@ -11,7 +11,7 @@ The visual interface to formulate queries that was implemented before this disse
 
 \begin{itemize}
     \item \textbf{Study and Analysis:} This was the first approach used to explore the existing problems of the interface. The process started beyond the visualization of two OutSystems tutorials \cite{outsystems_tutorial_aggregates_101, outsystems_tutorial_advanced_aggregates} about visual data querying. This was the first experience using the interface and there were pointed out some problems. As this was the first experience the were found principally issues regarding hidden operations and behaviors that were not clear for users who didn't use to the platform. After that tutorials, there has been made some more explorations using practical examples where there were found other problems related to efficiency and effectiveness of use;
-    \item \textbf{User Interviews:} There were performed some dialogues with a reduced set of novice and expert users to comprehend what are the main issues pointed out. In case of expert users, the causes to use SQL instead of the Visual Interface were registered as well as a set of other \gls{UX} issues. Regarding users who did not have relevant experience either in SQL or OutSystems, it was registered the functionalities more difficult to learn or understand;
+    \item \textbf{User Interviews:} There were performed some dialogues with a reduced set of novice and expert users to comprehend what are the main issues pointed out. In the case of expert users, the causes to use SQL instead of the Visual Interface were registered as well as a set of other \gls{UX} issues. Regarding users who did not have relevant experience either in SQL or OutSystems, it was registered the functionalities more difficult to learn or understand;
     \item \textbf{Community Ideas:} Since OutSystems contains a wide and worldwide Community where users could contribute with suggestions or express their problems or difficulties, all the ideas of the category "Aggregates and Queries" were explored to understand the problems presented. Moreover, the number of likes of each post was registered in order to know what are the problems which had more user reactions; 
     \item \textbf{User Testing:} During the user tests of the existing implementation, there were pointed out some issues by users. Also, other problems were found through the interpretation of user-interface interaction.
 \end{itemize}
@@ -32,5 +32,1293 @@ Furthermore, each issue registered was characterized according to the Nielsen He
     \item Test Values
 \end{itemize}
 
-In that way, it is simple to categorize and prioritize the problems detected. Besides, as mentioned above, if the problem were referred in the OutSystems Community, there were included the respecting posts and their number of likes. Table X represents the result of all problems detected and categorized in accordance with the parameters mentioned:
+In that way, it is simple to categorize and prioritize the problems detected. Besides, as mentioned above, if the problem were referred in the OutSystems Community, there were included the respecting posts and their number of likes. Table X represents the result of all problems detected and categorized under the parameters mentioned:
 
+\begin{longtable}[c]{| L | L | L |}
+    \caption{Taxonomy of Aggregates' Problems - Existing Interface (Last community posts update: May 06, 2020)\label{long}}\\
+   
+    \hline
+    \multicolumn{3}{| c |}{Taxonomy of Aggregates' Problems}\\
+    \hline
+    \cellcolor{gray!50}\textbf{ID} & \cellcolor{gray!50}\textbf{Issue} & \cellcolor{gray!50}\textbf{Description}\\
+    \hline
+    \endfirsthead
+   
+    \hline
+    \multicolumn{3}{|c|}{Continuation of Table \ref{long}}\\
+    \hline
+    \cellcolor{gray!50}\textbf{ID} & \cellcolor{gray!50}\textbf{Issue} & \cellcolor{gray!50}\textbf{Description}\\
+    \hline
+    \endhead
+   
+    \hline \multicolumn{3}{|c|}{{Continued on next page}} \\ \hline
+    \endfoot
+
+    \hline
+    \multicolumn{3}{| c |}{End of Table \ref{long}}\\
+    \hline
+    \endlastfoot
+
+    \cellcolor{gray!25}\textbf{1} & \cellcolor{gray!25}\textbf{Entity misadded (automatic joins deletion)} & \cellcolor{gray!25}\textbf{When the user adds an entity that trigger automatically a new join, if this entity is removed, the entity could also be removed.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{| c |}{Community Ideas}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{Sources and Joins}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{Query Formulation}\\
+    \hline
+    \multicolumn{3}{| c |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{Representation}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{Presentation of Information/Results}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{Task-facilitation}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{User Error Tolerance}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{User Control and Freedom}\\
+    \hline
+    \multicolumn{3}{| c |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \multicolumn{2}{| l |}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate?IsFromAdvancedSearch=True}}} & 25\\
+    \hline
+    \cellcolor{gray!25}\textbf{2} & \cellcolor{gray!25}\textbf{Select multiple sources at once} & \cellcolor{gray!25}\textbf{There are some use cases where this is already possible. However, it should be possible in any use case where the user can add multiple entities.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{| L |}{Study and Analysis, User Interviews, Community Ideas, and User Testing}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{Sources}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{Query Formulation}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{Manipulation}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{Direct Manipulation}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{Task-facilitation}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{Alternatives}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{Flexibility and efficiency of use, and Consistency and standards}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \multicolumn{2}{| l |}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate?IsFromAdvancedSearch=True}}} & 25\\
+    \hline
+    \multicolumn{2}{| l |}{Allow multiple entity selection on first screen of new aggregate\footnote{\url{https://www.outsystems.com/ideas/5417/allow-multiple-entity-selection-on-first-screen-of-new-aggregate?isfromadvancedsearch=true}}} & 6\\
+    \hline
+    \multicolumn{2}{| l |}{Replace data with multiple entities\footnote{\url{https://www.outsystems.com/ideas/7568/replace-data-with-multiple-entities?IsFromAdvancedSearch=True}}} & 1\\
+    \hline
+    \cellcolor{gray!25}\textbf{3} & \cellcolor{gray!25}\textbf{Add the same entity more than once} & \cellcolor{gray!25}\textbf{Allow drag/dropping the same entity more than once (It’s possible using Select Source pop-up but it’s not possible using Drag and Drop.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{Study and Analysis, and Community Ideas}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{Sources}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{Query Formulation}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{Manipulation}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{Direct Manipulation}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{Task-facilitation}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{Alternatives}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{Flexibility and efficiency of use, and User control and freedom}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \multicolumn{2}{| l |}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate?IsFromAdvancedSearch=True}}} & 25\\
+    \hline
+    \cellcolor{gray!25}\textbf{4} & \cellcolor{gray!25}\textbf{Add automatically a static entity even if it is not mandatory} & \cellcolor{gray!25}\textbf{“It's very annoying that every time I drag to an aggregate an entity with a foreign key to a static entity (SE) - even if it's not mandatory -  that static entity is dragged along with it.”}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|c|}{Community Ideas}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{Sources, and Static Entities}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{Query Formulation}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{Manipulation}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{Direct Manipulation}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{Task-facilitation}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{Task/function automation}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{Consistency and standards}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate?IsFromAdvancedSearch=True}}} & 25\\
+    \hline
+    \cellcolor{gray!25}\textbf{5} & \cellcolor{gray!25}\textbf{Join tables with more than one identifier of the same table (other table)} & \cellcolor{gray!25}\textbf{When an entity has several identifiers of same other entity, do the join like currently but with a warning or ask which field to do the join.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|c|}{Study and Analysis, Community Ideas, and User Testing}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{Joins}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{Query Formulation}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{Representation}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{No-message feedback}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{Task-facilitation}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{Keeping the user task on track}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{User control and freedom, and Visibility of System Status}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \multicolumn{2}{| l |}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate?IsFromAdvancedSearch=True}}} & 25\\
+    \hline
+    \multicolumn{2}{| l |}{Join tables with more than one identifier of same other table\footnote{\url{https://www.outsystems.com/ideas/2885/aggregate-join-tables-with-more-than-one-identifier-of-same-other-table?IsFromAdvancedSearch=True}}} & 5\\
+    \hline
+    \cellcolor{gray!25}\textbf{6} & \cellcolor{gray!25}\textbf{Move multiple aggregate columns at the same time} & \cellcolor{gray!25}\textbf{Actually it is possible to reorder one column. Extend this behavior.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{Community Ideas, and User Testing}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{Query Result Table}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{Query Formulation and Query Comprehension}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{Manipulation}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{Direct Manipulation}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{Task-mapping}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{Functionality}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{Flexibility and efficiency of use}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \multicolumn{2}{| l |}{Move multiple aggregate columns at the same time\footnote{\url{https://www.outsystems.com/ideas/6590/move-multiple-aggregate-columns-at-the-same-time?IsFromAdvancedSearch=True}}} & 5\\
+    \hline
+    \cellcolor{gray!25}\textbf{7} & \cellcolor{gray!25}\textbf{Search and focus for particular columns of the query result} & \cellcolor{gray!25}\textbf{There should be an intuitive solution to navigate through the query result columns. That solution should include search fields and vertical scroll lists to improve the user navigation and control.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{8} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Expand hidden columns.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{9} & \cellcolor{gray!25}\textbf{Hide multiple columns with right-click} & \cellcolor{gray!25}\textbf{Actually users can use table of query results to hidden some columns. In addition, they can right-click in an attribute column and select hide. However, if they select multiple columns and right-click in one of them, only one will be selected.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{10} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{If an attribute is lengthy the user cannot see the entry.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{11} & \cellcolor{gray!25}\textbf{Search and navigate between values} & \cellcolor{gray!25}\textbf{Actually users can only select columns. They cannot select rows or cells.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{12} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{It's not possible to see all the results (disable remaining results).}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{13} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Provide more shortcuts.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{14} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Present number of results (rows) of the query result.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{15} & \cellcolor{gray!25}\textbf{Invert members of join operation} & \cellcolor{gray!25}\textbf{As we only have left join (with or without) it would be interesting one button that changes the entity in the left side of the join with the one that is in the right side.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{16} & \cellcolor{gray!25}\textbf{Improve joins readability} & \cellcolor{gray!25}\textbf{Change the visual representation of joins, because could be difficult to users to understand what are the tables joined in the query, principally if there is some nesting.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{17} & \cellcolor{gray!25}\textbf{Delete last joins automatically added if a user want to remove last entity added} & \cellcolor{gray!25}\textbf{When a entity is added, the system analyzes the relationships with other tables. In some cases the system put automatically other entities related with the added. But if the user removes the entity that he had added, the joins automatically added, remain in the aggregate.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{18} & \cellcolor{gray!25}\textbf{Copy and past filters} & \cellcolor{gray!25}\textbf{Could be more efficient to user, to generate a similar filter.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{19} & \cellcolor{gray!25}\textbf{Copy and past joins} & \cellcolor{gray!25}\textbf{Could be more efficient to user, to generate a similar join.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{20} & \cellcolor{gray!25}\textbf{Comments in Filters} & \cellcolor{gray!25}\textbf{Improve the highlighting of comments. It doesn't matter if the commentls will be showed separated or if the comments would have a different color. Just examples...}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{21} & \cellcolor{gray!25}\textbf{Disable filters} & \cellcolor{gray!25}\textbf{Option to disable filter's effect.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{22} & \cellcolor{gray!25}\textbf{Turn filter edition more accessible} & \cellcolor{gray!25}\textbf{Change aggregate filter without openning aggregate.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{23} & \cellcolor{gray!25}\textbf{Change filter without necessity to open the modal of expression editor} & \cellcolor{gray!25}\textbf{Turn the insertion and edition process more faster.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{24} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Increase the readability of filters (text highlighting) withou open expression editor modal.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{25} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Remove aggregate filter if rule is empty.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{26} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Bin button to delete filter is not visible.}}\\ 
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{27} & \cellcolor{gray!25}\textbf{Group by attributes' names are not perceptive} & \cellcolor{gray!25}\textbf{For example if two different entities have attributes called "Name" and a user group by this two attribuytes, they will be presented as "Name1" and "Name2". Moreover, there is not any reference to attribute's entity.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{28} & \cellcolor{gray!25}\textbf{View area of group bys.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{29} & \cellcolor{gray!25}\textbf{When the user clicks in "add attribute" (calculated attribute), set the cursor automatically to value} & \cellcolor{gray!25}\textbf{This is useful to turns the process of adding faster, reducing the user's effort, increasing the pleasant of use.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{30} & \cellcolor{gray!25}\textbf{Inconsistent data formats between filters and test values} & \cellcolor{gray!25}\textbf{"The test values for Aggregate filters requires YYYY-MM-DD, but data in the results is displayed as MM/DD/YYYY. If you enter MM/DD/YYYY into the test values, you get an error."}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{31} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Inconsistent of sorting between aggregate properties and aggregate popup on action.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{32} & \cellcolor{gray!25}\textbf{Aggregates' Search engine.} & \cellcolor{gray!25}\textbf{General query search box.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{33} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Freeze formulation areas while scroll horizontal in query result table.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{34} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Duplicate tables.}}\\ 
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{35} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Duplicate joins.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{36} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Duplicate filters.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{37} & \cellcolor{gray!25}\textbf{Distinct function} & \cellcolor{gray!25}\textbf{Without extending aggregates' expressiveness is the "Group by of all columns of the result".}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{38} & \cellcolor{gray!25}\textbf{Count Distinct function} & \cellcolor{gray!25}\textbf{Expressiveness problem (distinct in all could be "replaced" by group bys, but COUNT DISTINCT cannot be reached using group bys).}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{39} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{Drag and drop input parameters to automatically create filters into Aggregates.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{40} & \cellcolor{gray!25}\textbf{Button to clear all the test values inserted} & \cellcolor{gray!25}\textbf{It could be a good resource if users have many values inserted and they want to clear all. It could be very annoying if they need to clear one at a time.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{41} & \cellcolor{gray!25}\textbf{Add variable into aggregate puts again the entity already inserted} & \cellcolor{gray!25}\textbf{When dragging a variable of type identifier (e.g. CompanyID) the entity Company is added even if it was added before. The only thing that it should add is the filter (if there isn’t one already).}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{42} & \cellcolor{gray!25}\textbf{Query compreension at a glance} & \cellcolor{gray!25}\textbf{To comprehend what data the query will retrive (query structure) the user need to switch between tabs.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{43} & \cellcolor{gray!25}\textbf{"Hide others" bug in group by} & \cellcolor{gray!25}\textbf{When someone clicks on “hide others” above an aggregation column, there is no visible effect (gray columns stay visible).}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{44} & \cellcolor{gray!25}\textbf{Highlight new additions (feedback)} & \cellcolor{gray!25}\textbf{Highlight elements added in last interaction. For example sources, joins, group bys sorts, etc...}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{45} & \cellcolor{gray!25}\textbf{Turn visible query formulation options} & \cellcolor{gray!25}\textbf{Some query formulation options like aggregation functions or calculated attributes are only visible if the user uses accelerators like right-click on columns. As well as possible, try to show these options without pain simplicity of interface. Improve "Recognition, not recall" without harm "Aesthetic and minimalist design".}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{46} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{It's not possible to remove more than one aggregated attribute at the same time.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{47} & \cellcolor{gray!25}\textbf{It's not possible to change aggregation functions} & \cellcolor{gray!25}\textbf{To change an aggregation function (e.g. count, max, etc.) is necessary to remove the attribute and to add again.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{48} & \cellcolor{gray!25}\textbf{Add another join of two tables that are already merged.} & \cellcolor{gray!25}\textbf{When for example already exists a join between A and B with foreign key Key1 and we need to add another join between A and B but with the foreign key Key2, the interface should add automatically the entities twice (e.g., A2 join B using Key2).}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{49} & \cellcolor{gray!25}\textbf{The users don't know that exist hidden attributes} & \cellcolor{gray!25}\textbf{If the users don't have experience using the platform they don't know that some attributes are hidden.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{50} & \cellcolor{gray!25}\textbf{Function symbol of aggregated attributes isn't clickable.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{51} & \multicolumn{2}{| L |}{\cellcolor{gray!25}\textbf{When someone pop out an aggregate the context is lost.}}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+    \hline
+    \cellcolor{gray!25}\textbf{52} & \cellcolor{gray!25}\textbf{No visual identifier to show that is a filter edition option} & \cellcolor{gray!25}\textbf{Reported by a user in an User Test.}\\
+    \hline
+    \textbf{Figured Out} & \multicolumn{2}{|L|}{}\\
+    \hline
+    \textbf{Interface Components Related} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Main Action Hampered} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Usability-ODC Framework Attributes}}\\
+    \hline
+    Artifact Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Artifact Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Category & \multicolumn{2}{| c |}{}\\
+    \hline
+    Task Subcategory & \multicolumn{2}{| c |}{}\\
+    \hline
+    \textbf{Nielsen Heuristics} & \multicolumn{2}{| c |}{}\\
+    \hline
+    \multicolumn{3}{| l |}{\textbf{Community Posts}}\\
+    \hline
+    \multicolumn{2}{| l |}{Post} & Likes\\
+\end{longtable}
