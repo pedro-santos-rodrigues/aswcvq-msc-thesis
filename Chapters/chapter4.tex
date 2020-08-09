@@ -8,19 +8,62 @@
 \chapter{Design}
 \label{cha:design}
 
-As referred, the main goal of this dissertation is the development of an efficient and efficient query formulation visual interface. Being the first phase of solution development, the design process is where all the existing relevant problems were combined and took into account in order to structure the first solution ideas. Firstly, this chapter describes the process used structure the problems of the current visual interface. Secondly, this chapter includes the user and task analysis performed in order to categorize the target users beyond their background, expectations and necessities. Considering the problems registered and users necessities, there will be presented the testing scenarios and the testing methodology used to evaluate the current implementation and the solution prototypes. Finally, the first strategies adopted to improve the visual interaction will be presented in this chapter, describing the sketching and prototyping phase.
+As referred, the main goal of this dissertation is the development of an efficient and effective query formulation visual interface. Being the first phase of solution development, the design process is where all the existing relevant problems were combined and took into account in order to structure the first solution ideas. Firstly, this chapter describes the process used to structure the problems of the current visual interface. Secondly, it was included the user and task analysis performed in order to categorize the target users beyond their background, expectations, and necessities. Considering the problems registered and users' necessities, the testing scenarios and the testing methodology used to evaluate the current implementation and the solution prototypes will be described. Finally, the first strategies adopted to improve the visual interaction will be presented in this chapter, characterizing the sketching and prototyping phase.
 
 \section{Problem Definition}
 \label{sec:problem_definition}
 
-The problem definition not only was the starting point for the design process but also has represented a source for the solution conception. As the actual visual interface has not been having the expected acceptability due to its interaction problems, that problems are what should be solved in the solution. In that way, there were used multiple approaches to collect interaction problems, understanding for each of them what are the tasks involved, and the users harmed. In the following sections, there are described the techniques used to define the problem. 
+The problem definition not only was the starting point for the design process but also has represented a source for the solution conception. As the actual visual interface has not been having the expected acceptability due to its interaction problems, these problems have an impactful role on the solution building process. In that way, multiple approaches were used to collect interaction problems, understanding for each of them what are the tasks involved, and the users harmed. In the following sections, there are described the techniques used to define the problem.
 
-The result of those analyses was combined in a table that characterizes each problem identified of the existing interface. The \nameref{app:taxonomy_of_problems_existing_interface} presents all problems identified. For each problem, it was detailed the interface components involved and the Nielsen Heuristics \cite{nielsen_heuristics} affected. Moreover, the issues were classified according to the artifact and task attributes of a Framework adapted from Usability-ODC Framework \cite{in_process_usability_problem_classification_analysis_improvement}, as well as it was registered how many posts and likes have been related to the problem in the OutSystems Community \cite{outsystems_community}.
+
+Hereinafter, the approaches and strategies used to collect and organize data regarding the existing problems of the interface will be explained. As usability issues depend on interaction with users, it is important to analyze the problems in perspective, considering in each problem the impact on users and what type of users would be most affected.
 
 \subsection{Analysis}
 \label{subsec:analysis}
 
-The exploration and analysis of the query formulation interface was the first method used to comprehend the existing problems.
+The exploration and analysis of the query formulation interface was the first method used to comprehend the existing problems. The process started with the visualization of two OutSystems tutorials \cite{outsystems_tutorial_aggregates_101, outsystems_tutorial_advanced_aggregates} about visual data querying. The tutorial included also some hand-on explanations that provide an initial contextualization of the visual query builder and its functionalities. After that, there were explored other scenarios of query formulation to comprehend the system barriers and difficulties.
+
+As pointed out in \ref{sec:problem_definition}, the lack of some advanced functionalities were observed during that exploration process. However, there were other problems identified that harm the user experience and principally the efficiency and effectiveness of the user task.
+
+First of all, some functionalities were hidden, which damage the learnability of the system due to the lack of the "Recognition rather than recall" principle of the Nielsen Heuristics \cite{nielsen_heuristics}. Notwithstanding that learnability issues harm principally the novice users of all systems, there are peculiarities of this system and its environment that aggravate that problem. In that case, SQL is an alternative to perform the same tasks. Accordingly, if SQL users do not find the intended functionalities in the visual query builder due to its hiddenness, they could use SQL to perform their tasks, stopping to use the visual system.
+
+The hidden functionalities are not only advanced features of query formulation. For instance, there is no visible option in the existing interface to add an aggregation function, such as Group By, SUM, MIN, MAX, AVERAGE, or COUNT. These options are accessible for an exclusive interaction path which requires a right-click on the column header of the attribute where the user intends to apply the aggregation function. Figure \ref{fig:rightClickGroupBy} illustrates an example of the application of an aggregation function. Other options are not always hidden but are not prepared to keep visible owing to some interface components modification. For example, despite the option to add calculated attributes is visible (after all columns of the query result table), if the query result has several columns it is necessary to scroll horizontally until the end to find that option.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.5in]{right-click-group-by}
+	\caption{Hidden option to add an aggregation function, since it is enclosed in a right-click on the query result table column header.}
+	\label{fig:rightClickGroupBy}
+\end{figure}
+
+Furthermore, the interface has not revealed as flexible, efficient, and effective for users that need to formulate queries for professional purposes since there were identified some obstacles that prevent users from accelerating their query formulation process and reduce the rate of queries' errors. Following, there are some examples of the aspects identified through the interface's analysis, that hinder the query formulation and query comprehension, breaking the most valued proposition of the data querying visual approach:
+
+\begin{itemize}
+    \item Search engines: there is no option to efficiently search for an attribute either to look for some data in the query result or to apply some aggregation function (as illustrated in Figure \ref{fig:rightClickGroupBy}). Moreover, there is no general search in all queries, which could be useful when users need to find if some entity or variable is present in the query.
+    \item Hidden columns: in the existing interface, primary and foreign keys are automatically hidden in the query result table since they were not considered as relevant data for the query output. That strategy has been implemented since the start of the interface's implementation to provide a clear output for users without a technical background, considering that they could not understand the meaning of those attributes. However, those attributes are so relevant for the query that there is a possibility to make them visible. Nevertheless, there is no efficient way to expand all hidden columns, which could difficult significantly the comprehension and formulation of all queries do not have a reduced number of entities and attributes. Figure \ref{fig:hiddenAttributes} illustrates how the hidden attributes are presented in the interface.
+    \item Filter edition: In the existing interaction, the user can edit query filters using the expression editor modal, as demonstrated in Figure \ref{fig:aggregateFilterModal}. This modal is useful because it provides some guidance in the expression formulation. Thereby, users, can select the intended language expressions or the entities, attributes, or variables that need without having to recall those names. However, if users do not need that assistance, this interaction strategy could be less efficient due to the time and visual context wasted every time that a modal is opened. In that way, the modal is definitely a good feature but it should not be the only way to edit filters since it could increase the time spent to built queries. Moreover, there is no way to copy and past filter or to read effectively those content since there is no color highlighting in filters expressions.
+    \item Accelerators feedback: this visual query interface has multiple accelerators that turn the query building process faster. Nevertheless, sometimes that automatic mechanisms are silent and users may not comprehend they were applied. For example, when two entities are added and have a relationship between them, the system automatically joins those entities. However, there is no highlight or other visual interaction mechanism that provides feedback to the user and shows him what action was applied.
+    \item Inconsistency problems: some functionalities were accessible through a determined context and option but other alternative options do not have the same behavior;
+    \item Multiple actions at once: sometimes it could be useful to do several actions at once in order to reduce the time spent to build the query. For instance, it should be possible to add multiple entities at once instead of adding one at a time; 
+\end{itemize}
+
+Those are some problems identified before communicating with users to comprehend what are the problems that harm their usage of the system every day to perform their tasks. The list of all problems identified is presented in \nameref{app:taxonomy_of_problems_existing_interface}.
+
+In a nutshell, the first analysis and exploration of the interface lead to conclude that the interface is useful for users without technical background and has implemented good strategies that could optimize the query formulation process even more than SQL if those strategies would be reconsidered and redesigned. Moreover, it was concluded that it is necessary to provide search engines and other accelerators to enhance the efficiency value proposition of the system. The visual system is a great deal if a user is so faster to build queries or even more whether compared to the same query formulation process using SQL.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.0in]{hidden-attributes}
+	\caption{Hidden attributes - primary and foreign keys are hidden by default.}
+	\label{fig:hiddenAttributes}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.5in]{aggregate-filter-modal}
+	\caption{Filter edition modal - example of a filter edition after selection of the intended filter (the first one in that case).}
+	\label{fig:aggregateFilterModal}
+\end{figure}
 
 \subsection{User Interviews}
 \label{subsec:user_interviews}
@@ -34,6 +77,8 @@ The exploration and analysis of the query formulation interface was the first me
 \subsection{Current Implementation Evaluation}
 \label{sec:current_implementation_evaluation}
 
+
+The previous sections have described the strategies used to define the problem of the dissertation as completely as possible. The result of those analyses was combined in a table that characterizes each problem identified of the existing interface. This table is presented in \nameref{app:taxonomy_of_problems_existing_interface} and describes all the problems identified. For each problem, it was detailed the interface components involved and the Nielsen Heuristics \cite{nielsen_heuristics} affected. Moreover, the issues were classified according to the artifact and task attributes of a Framework adapted from Usability-ODC Framework \cite{in_process_usability_problem_classification_analysis_improvement}, as well as it was registered how many posts and likes have been related to the problem in the OutSystems Community \cite{outsystems_community}.
 
 \section{User and Task Analysis}
 \label{sec:user_and_task_analysis}
