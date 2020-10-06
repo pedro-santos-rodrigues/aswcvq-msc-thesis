@@ -173,9 +173,6 @@ Nevertheless, during the tests, users have mentioned other details of the interf
 
 After obtaining a detailed and wide view of the existing problems, the following step was the exploration of how those problems can be solved. As the main goal is the development of an improved interface that gives to the users a solution to manage data queries efficiently, and effectively through intuitive interaction strategies, users are a crucial factor that must be taken into account throughout the entire solution development. Each user has his peculiarities, then the user experience of the solution should be adapted as much as possible to the target users of the query formulation system.
 
-\subsection{User Groups}
-\label{subsec:user_groups}
-
 Considering that users will only use the visual query system if they use the OutSystems Platform, that low-code development context where the query system is inserted cannot be dissociated from the user analysis. Thereby, the user analysis process started by a study to categorize the profile of OutSystems Platform users according to the specificities of the data querying domain.
 
 Since the low-code development paradigm has integrated more people who do not have the strict software engineer profile into software development tasks, the users of the OutSystems Platform do not have the same backgrounds, requirements, and expectations. If, on the one hand, there are OutSystems Developers that have Computer Science academic backgrounds or similar, and experience working with low-level programing language, on the other hand, there are business experts or specialized in other engineering fields that are also developing in OutSystems. In that way, the provided query building experience should be a hybrid approach that covers the traditional software developers demands without turning the development and the language intuitive for people that are not familiarized with classical development patterns, terminologies, or processes.
@@ -196,6 +193,23 @@ Nevertheless, users who have considerable experience using the existing solution
 
 \textbf{Data Tools Expertise: } Besides textual \glspl{DQL}, other tools allow users to manage and visualize data through graphical user interfaces. For instance, spreadsheet applications such as Microsoft Excel \cite{microsoftExcel} and Google Sheets \cite{googleSheets} presents an intuitive interface where users can manage, organize, and edit data. Using these interfaces, users do not need to know how relational databases work since data is presented in tables that could be manipulated directly under simple controls. For this reason, the language used in those systems is frequently less technical, in such a way that is important to consider that these users are expecting direct manipulation of data and simple language to query and manage data.
 
+
+\subsection{User Groups}
+\label{subsec:user_groups}
+
+Being the relational database knowledge a crucial point to frame users' mental model of query formulation, it is important to split up the users who perceive relational databases to the other ones. On the other hand, low-code programming experience can affect how users interact with a visual programming system, thus it is important to study users with experience in low-code development through a different perspective. Considering the aspects mentioned, three user groups were created in order to cluster users that have similar profiles. Thereby, each user could integrate one of the following groups according to their characteristics:
+
+\begin{table}[h]
+    \caption{User Groups}
+    \label{tab:user-groups}
+    \begin{tabular}{|
+    >{\columncolor[HTML]{C0C0C0}} m{3cm} |m{12cm}|}
+    \hline
+    \begin{tabular}[c]{@{}l@{}}Software \\ Developer\end{tabular}   & Software Developer or Engineer who has a solid previous knowledge of programming and databases. These users are familiarized with textual programming languages, such as C\#, SQL, and others. In that way, they cannot abstract their previous knowledge in such a way that communication with these users should be more technical and specific. Finally, this user group is not an expert in low-code development. However, as they have solid programming, logic, and database knowledge, they could develop some applications using low-code if necessary. \\ \hline
+    \begin{tabular}[c]{@{}l@{}}OutSystems \\ Developer\end{tabular} & Independently of their background, these users are experienced in OutSystems. That way, they are proficient and faster in low-code development, regardless of their experience in other traditional software development paradigms. This is your principal characteristic that should be taken into account. \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Citizen \\ Developer\end{tabular}    & Users who do not have an extensive programming or software development background. Even though they are not software developers, they could develop some simple apps using low-code due to its simplicity. As some of these users may not know how relational databases work, they may use other applications, such as Microsoft Excel, Google Sheets, Salesforce, and others to manage data. \\ \hline
+    \end{tabular}
+\end{table}
 
 %Furthermore, users tend to adapt their expectations in consonance with design patterns they found in software which they usually use. That is important because the tools often used to complete programming tasks, such as \glspl{IDE} or powerful Text Editors, have a set of features to facilitate users to reach the intended tasks. For instance, search engines, syntax highlighting, and keyboard accelerators not only assist users to keep their tasks on track, but also reduce the time needed to complete each task. Thereby, these users will feel disappointed if they need to use a query builder interface that does not have these productive features to turn the query formulation process more straightforward and efficient.
 
@@ -233,17 +247,7 @@ Nevertheless, users who have considerable experience using the existing solution
 %-
 
 
-\begin{table}[h]
-    \caption{User Groups}
-    \label{tab:user-groups}
-    \begin{tabular}{|
-    >{\columncolor[HTML]{C0C0C0}} m{3cm} |m{12cm}|}
-    \hline
-    \begin{tabular}[c]{@{}l@{}}Software \\ Developer\end{tabular}   & Software Developer or Engineer who has a good and solid previous knowledge of programming and databases. The principal capabilities of these users are programming languages, such as C\#, SQL, and others. These users cannot abstract their previous knowledge, so communication with these users is more technical and specific. Finally, this user group is not an expert in low-code development. However, as they have solid programming, logic, and database knowledge, probably they could develop some applications using low-code. \\ \hline
-    \begin{tabular}[c]{@{}l@{}}OutSystems \\ Developer\end{tabular} & Independently of their background, these users are experienced in OutSystems. That way, whether or not you know all the basic knowledge, they are proficient and faster in low-code development. This is your principal characteristic that should be taken into account. \\ \hline
-    \begin{tabular}[c]{@{}l@{}}Citizen \\ Developer\end{tabular}    & Users who do not have an extensive programming or software development background, since that is not their main area. Although they could develop some apps outside software development units, this is not their specialty. As some of these users may not know how relational databases work, they may use other applications, such as Microsoft Excel, Google Sheets, Salesforce, and others to manage data. \\ \hline
-    \end{tabular}
-    \end{table}
+
 
 \subsection{Testing Scenarios}
 \label{subsec:testing_scenarios}
