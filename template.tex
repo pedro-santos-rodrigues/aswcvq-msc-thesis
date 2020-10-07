@@ -115,6 +115,9 @@
 \usepackage{xcolor}
 \usepackage{multirow}
 \usepackage{pifont}
+\usepackage{longtable}
+\usepackage{array}
+
 
 %% IMPORTANT (consider removing/commenting)
 %\usepackage{colortbl}    % Use colors in background of table cells
@@ -130,6 +133,8 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}} 
 
 %------------------------------------------------------------------
 % Costumization of some packages
@@ -261,12 +266,15 @@
 \chapterfile{chapter2}
 \chapterfile{chapter3}
 \chapterfile{chapter4}
+\chapterfile{chapter5}
+\chapterfile{chapter6}
+\chapterfile{chapter7}
 
 
 % Text appendixes
 % sintax: \appendixfile{file}
 % Comment if not needed
-%\appendixfile{appendix1}
+\appendixfile{appendix1}
 %\appendixfile{appendix2}
 %\annexfile{annex1}
 
