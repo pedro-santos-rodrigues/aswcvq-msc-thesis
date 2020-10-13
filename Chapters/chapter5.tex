@@ -13,27 +13,44 @@ Taking into account the existing usability problems and the target users' requir
 
 \section{Iterative Design}
 \label{sec:iterative_design}
-Before starting the solution building process, in order to solve the presented problems, an iterative design methodology was defined. Accordingly, it is presented the design strategy adopted, which will be further detailed in \nameref{cha:design_and_implementation}. This methodology uses an iterative design strategy in order to keep a user-centric design, which prioritizes the users' needs according to the mentioned in \ref{subsec:user_centered_design}. Regarding the prototyping method, the evolutionary prototyping principle (described in \ref{subsubsec:sketching_and_prototyping}) was applied, where the last prototype is used as a baseline to develop the prototype of the next iteration.
+Before starting the solution building process, it was planned the phases that will conduct the development to the final solution of this dissertation. Accordingly, it is presented the design strategy adopted, which will be further detailed in \nameref{cha:design_and_implementation}. This methodology uses an iterative design strategy in order to keep a user-centric design, which prioritizes the users' needs according to the mentioned in \ref{subsec:user_centered_design}. Regarding the prototyping method, the evolutionary prototyping principle (described in \ref{subsubsec:sketching_and_prototyping}) was applied, where the last prototype is used as a baseline to develop the prototype of the next iteration.
 
-Therefore, the following phases are the ones included in the methodology used to build iteratively the solution which takes into account the users adoption at the final of each iteration:
+\textbf{Sketching: }The design process started with an initial sketching phase, where the first solution ideas were explored and crafted. This is a favorable technique to contemplate how new ideas could be integrated into the existing interface. The most important aspect was to think about system transversal changes and not about particular details of specific components, since these details could be refined later. The outcome of this phase should set a more concrete idea in what can be inserted in the prototype, even if it is necessary to think more about how to implement it later.
 
-Therefore, the following phases presented were used to iteratively build the solution which took into account the users adoption at the final of each iteration:
+Keeping in mind these concrete ideas explored, it was possible to start to build the prototypes that want to be tested by users. The first decision taken was how many prototypes should be built taking into consideration the resources and time available. As mentioned in \ref{subsubsec:sketching_and_prototyping}, the first prototypes should be low-fidelity prototypes and iteration by iteration this level should increase in order to refine details in the interface. In that way, it was decided to built two prototypes:
+
+%Therefore, the following phases presented were used to iteratively build the solution which took into account the users adoption at the final of each iteration:
 
 \begin{itemize}
-    \item \textbf{Sketching: }The design process started with an initial sketching phase, where the first solution ideas were explored and crafted. This is a favorable technique to contemplate how new ideas could be integrated into the existing interface. The most important aspect is to think about system transversal changes and not about particular details of specific components, since these details can be refined later. The outcome of this phase should set a more concrete idea in what can be inserted in the prototype, even if it is necessary to think more about how to implement it later.
-    \item \textbf{Paper Prototype: }
-    \begin{itemize}
-        \item \textbf{Design: }
-        \item \textbf{Implementation: }
-        \item \textbf{Evaluation: }
-    \end{itemize}
-    \item \textbf{Service Studio Implementation (Final Prototype): }
-    \begin{itemize}
-        \item \textbf{Design: }
-        \item \textbf{Implementation: }
-        \item \textbf{Evaluation: }
-    \end{itemize}
+    \item \textbf{Paper Prototype: } Simple low-fidelity prototype implemented in paper using ruler, square, and writing materials. By this approach, it was possible to implement the first ideas faster and with a low-risk. The main concern of this prototype is the design of the major interface changes, not only in terms of layout but also the changes that might affect users' mental model. In that way, it was possible to evaluate early if the design choices applied should continue to the next iterations or if they should be redesigned.
+    \item \textbf{Service Studio Prototype: } This is the final prototype of this dissertation, that was developed using C\#, Typescript \cite{typescript}, and React \cite{react}, and integrated in the new Design of Service Studio. Through this prototype, the solutions implemented were validated and compared with the previous existing implementation in order to validate if the usability of the system proposed has improved.
 \end{itemize}
+
+In each one of the two above-mentioned prototypes, it was included the following phases: design, implementation, and evaluation. The Design phase was where it was thought how the solution ideas could be applied. The Implementation phase refers to the concrete prototype development process. Finally, in the Evaluation phase the prototypes were tested by final users, according to the testing approach explained below in \ref{sec:testing_scenarios} and \ref{sec:evaluation_technique}.
+
+Regarding evaluation, it was necessary to establish how many users should be tested in each one of the evaluating phases. Nevertheless, these two prototypes were not the only ones tested by final users, since the existing implementation was already tested in order to evaluate the current problems of the system. The data of that analysis is also an opportunity to has a baseline of the development starting point across the solution building. Thereby, the number of users tested in the first prototype is also an important factor.
+
+Nielsen performed some studies to quantify how many users should be testing in a usability study, concluding that 5 users are sufficient for qualitative studies because it is almost possible to get close to the user testing's maximum benefit-cost ratio - "Testing with 5 people lets you find almost as many usability problems as you'd find using many more test participants" \cite{why_you_only_need_to_test_with_5_users} \cite{how_many_test_users_in_a_usability_study}. However, to perform quantitative analysis it is necessary to get at least 20 users in order to get statistical relevance \cite{how_many_test_users_in_a_usability_study}.
+
+According to the studies mentioned, at least 5 users of each user group (described in \ref{sec:target_users}.) should be tested since it would be performed a qualitative analysis to validate how users react to the changes applied and what could be improved in the next phase. Nevertheless, some statistical results should be also retrieved in order to compare in other aspects if the new solution provides improved usability than the existing with the previous one. Hence, it was been tested more users in the previous implementation and in the final prototype in order to obtain also quantitative comparisons. In that way, Table \ref{tab:number_of_users_tested_by_each_user_group_and_solution} shows how many users were tested by each user group and by each solution evaluated.
+
+\begin{table}[tb]
+	\caption{Number of users tested by each user group and by each solution evaluated}
+	\label{tab:number_of_users_tested_by_each_user_group_and_solution}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c|c|c|}
+    \cline{2-5}
+    \rowcolor[HTML]{C0C0C0} 
+    \cellcolor[HTML]{FFFFFF}                                 & Previous Implementation & Paper Prototype & Service Studio Prototype & Total \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}OutSystems Developer}    & 10         & 5               & 10                    & 25 \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}Software Developer} & 10        & 5              & 10                   & 25\ \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}Citizen Developer} & 10        & 5              & 10                   & 25\ \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}Total} & \textbf{30}        & \textbf{15}              & \textbf{30}                   & \textbf{75}\ \\ \hline
+    \end{tabular}
+    }
+\end{table}
+
 
 \section{Testing Scenarios}
 \label{sec:testing_scenarios}
