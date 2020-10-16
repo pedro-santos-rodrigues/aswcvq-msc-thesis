@@ -26,7 +26,7 @@ Keeping in mind these concrete ideas explored, it was possible to start to build
     \item \textbf{Service Studio Prototype: } This is the final prototype of this dissertation, that was developed using C\#, Typescript \cite{typescript}, and React \cite{react}, and integrated in the new Design of Service Studio. Through this prototype, the solutions implemented were validated and compared with the previous existing implementation in order to validate if the usability of the system proposed has improved.
 \end{itemize}
 
-In each one of the two above-mentioned prototypes, it was included the following phases: design, implementation, and evaluation. The Design phase was where it was thought how the solution ideas could be applied. The Implementation phase refers to the concrete prototype development process. Finally, in the Evaluation phase the prototypes were tested by final users, according to the testing approach explained below in \ref{sec:testing_scenarios} and \ref{sec:evaluation_technique}.
+In each one of the two above-mentioned prototypes, it was included the following phases: design, implementation, and evaluation. The Design phase was where it was thought how the solution ideas could be applied. The Implementation phase refers to the concrete prototype development process. Finally, in the Evaluation phase the prototypes were tested by final users, according to the testing approach explained below in \ref{sec:testing_scenarios} and \ref{sec:evaluation_method}.
 
 Regarding evaluation, it was necessary to establish how many users should be tested in each one of the evaluating phases. Nevertheless, these two prototypes were not the only ones tested by final users, since the existing implementation was already tested in order to evaluate the current problems of the system. The data of that analysis is also an opportunity to has a baseline of the development starting point across the solution building. Thereby, the number of users tested in the first prototype is also an important factor.
 
@@ -54,6 +54,47 @@ According to the studies mentioned, at least 5 users of each user group (describ
 
 \section{Testing Scenarios}
 \label{sec:testing_scenarios}
+Given the wide scope of the usability problems identified, there was a necessity to plan a testing approach that could evaluate the most important aspects of the user-interface communication in a short period. Otherwise, each user test would have a longer duration which would not be affordable.
 
-\section{Evaluation Technique}
-\label{sec:evaluation_technique}
+The first point defined was the type of testing scenarios that would be proposed. For that decision, it was taken into account what were the specific aspects that should be improved in the interface usability. As mentioned, not only the optimization of the efficiency, effectiveness, learnability, and user satisfaction of the entire query formulation process was the goal, but also the improvement of the query comprehension. In such a way that it was important to evaluate if users could understand the query purpose (i.e., what data intends to be fetched from the database) as well as the time they required to realize that.
+
+Considering those evaluation requirements, two types of testing scenarios were prepared: scenarios where users explore an existing query built through the visual querying tool and try to realize what is its purpose, and the other ones where users try to formulate it on their own. Through that approach, it was possible to analyze the usability of the interfaces tested for both points of view: comprehension and formulation.
+
+Nevertheless, the complexity of the queries presented acts as a crucial factor when the scenarios were thought out. For example, an interface could be useful and pleasant to use in simple use cases but it could not keep that quality in more complex queries. Accordingly, there was listed the requirements that were considered relevant to be covered by user testing scenarios:
+
+\begin{itemize}
+    \item \textbf{Query Comprehension: }Relevant aspects which should be present in the queries and consequently in the interface to evaluate as extensive as possible queries' comprehension:
+    \begin{itemize}
+        \item \textbf{Interface Elements Exploration: }Include use cases that contain the majority of the query components supported by the system: database entities and joins of different types, filtering and sorting criteria applied to different data types, and other query components added throughout the query formulation process, such as Group Bys, Aggregation Functions (SUM, MIN, MAX, AVG, COUNT) or Calculated Attributes \footnote{These operations were presented in \ref{subsubsec:current_progress}};
+        \item \textbf{Joins Representation: }Representation of different joins in order to analyze if users could successfully identify them. First of all, there was the concert to consider in scenarios joins of different types, such as inner joins or left joins. In addition, the natural joins (i.e., joins where the unique foreign key that references the other table is equals to the other table primary key) were not the only considered. Besides these joins, some queries that contain joins with more advanced conditions were also covered. For instance, when the join between two tables could be made using different foreign keys, as they are multiple relationships between both tables, or when the join condition contains logical operators.
+    \end{itemize}
+    \item \textbf{Query Formulation: }At the same time, the following aspects were considered essential to be approached in user testing scenarios from a query formulation point of view:
+    \begin{itemize}
+        \item \textbf{Add Data Sources and Joins: }Identify the options chosen to add query sources and analyze what are the users' reactions to the system automatisms to simplify the joins specification;
+        \item \textbf{Edit Query Filters: }Evaluate if the query filters edition is intuitive and what barriers could exist in the interfaces regarding this aspect;
+        \item \textbf{Insert Calculated Attributes, Group Bys, and Aggregation Functions: }Check if users could understand the situations they need to use each on of the referred functionalities and if they can discover how to apply them without difficulty.
+        \item \textbf{Use Hidden Columns: }Verify the difficulty felt by users when they need to apply actions in attributes that are not always visible in the interface, either because they are hidden, or because they are not visible due to the lack of available space in the interface (scroll required).
+    \end{itemize}
+\end{itemize}
+
+The aspects mentioned were considered the most relevant to analyze because they allow widespread use of the tool but also cover cases identified as critical in terms of usability, according to the aspects detailed in \ref{sec:problem_definition}.
+
+Nevertheless, the data model could have also a significant impact on user testing results. For instance, if a user does not understand a data model, he could not realize the purpose of a query, even if the query is presented in a simple and readable manner. In that way, the selection of the data model used for user testing was performed attending to the following points:
+
+\begin{itemize}
+    \item \textbf{Simple Business Domain: }If the purpose of the database is to store and manage data that has a simple and practical day-to-day application, it would be simple to understand the data model regardless of the user's background;
+    \item \textbf{Different data types: }A data model that contains a variety of data types it would be useful to analyze if the design approaches chosen could work for all types;
+    \item \textbf{Multiple relationships between two entities: }The interface aims to accelerate and simplify the querying process not only for simple cases. For this reason, it is important to perceive how the interface could support users in cases that there are more than one relationship between two entities. Moreover, \gls{SQL} does not have any particular syntax that helps users in these cases, then there is an improvement opportunity here.
+\end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=3.6in]{data-model}
+	\caption{Data Model used for User Testing Scenarios}
+	\label{fig:dataModel}
+\end{figure}
+
+Accordingly,  \ref{fig:dataModel} illustrates the data model of the database adopted to perform all usability tests.
+
+\section{Evaluation Method}
+\label{sec:evaluation_method}
