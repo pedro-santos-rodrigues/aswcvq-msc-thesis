@@ -5,7 +5,37 @@
 %%
 %% Chapter with example of appendix with a short dummy text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Appendix 2 Lorem Ipsum}
-\label{app:lorem_ipsum2}
+\chapter{User Testing Scenarios}
+\label{app:user_testing_scenarios}
 
-\lipsum[1-5]
+In order to test the usability of the existing interface and its followed prototypes, there were created the following test scenarios in order to evaluate the usability of the system\footnote{\textbf{Note: }The \ref{fig:dataModel} illustrated the relational database diagram of the database used to test the following scenarios.}:
+
+\medskip
+
+\textbf{Query Comprehension 1: }Employees of “Portugal” or “Japan” of departments “Services Support West” or “Services Support East” who have a job position different from “Services Representative” and never have created any notification. The employees must be presented ordered by their last name (descending order).
+
+\medskip
+
+\textbf{Query Modification 1: }Change the existing query to consider only the employees of offices "Australia" or "Japan", their department must be "Marketing" or "Services Support East", and they must have any job position. Moreover, create an attribute to present employees’ full name.
+
+\medskip
+
+\textbf{Query Comprehension 2: }List for each AccountNumber the amount sum of transactions of type “Eating Out”. Moreover, the transaction is only shown if its source account is managed by employees of department “Credit Control” and office “United Kingdom”. Account Numbers are sorted by their amount sum in descending order.
+
+\medskip
+
+\textbf{Query Comprehension 3: }List the number of employees by department and office. The number of employees is presented in descending order.
+
+\medskip
+
+\textbf{Query Formulation 1: }Notifications created by employees who are owners of a set of accounts which, at least, must combinedly average a balance of 20.000 (average of balances of accounts owned by each employee).
+
+\medskip
+
+\textbf{Query Comprehension 4: }List all requests assigned to employees of department “Services Support West” ordered by priority in the first place (“High” first), and secondly by creation date (oldest dates first).
+
+\medskip
+
+\textbf{Query Modification 4: }Considering the previous requests, change the query to show only the ones that were requested by employees from other departments (not the same).
+
+
