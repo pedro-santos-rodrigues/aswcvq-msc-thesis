@@ -172,8 +172,32 @@ As soon as they confirm that they got an overview of the existing entities, the 
 
 Therefore, an evaluation methodology was designed to collect the data required using the same approach for all tested interfaces.
 
-For each user tested, a table, as the example presented in Figure X, was figured out in order to register how much time they required to execute each scenario and how was their effectiveness in the goal achievement was figured out. The classification of the effectiveness was made according to Table \ref{tab:effectiveness_states}.
+For each user tested, a table, as the example presented in Figure \ref{fig:userEvaluationExample}, was figured out in order to register how much time they required to execute each scenario and how was their effectiveness in the goal achievement. The classification of the effectiveness was made according to Table \ref{tab:effectiveness_states}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=1.9in]{user-evaluation-example}
+	\caption{Example a general annotation registered after a usability test.}
+	\label{fig:userEvaluationExample}
+\end{figure}
+
+\begin{table}[tb]
+    \caption{Description of the effectiveness states considered.}
+    \label{tab:effectiveness_states}
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \rowcolor[HTML]{C0C0C0} 
+        \textbf{Legend}                                                                                                 & \textbf{Comprehension}                                                                                                                                                                                                                                                                                                             & \textbf{Modification}                                                  & \textbf{Formulation}                                                                   \\ \hline
+        \cellcolor[HTML]{38761D}{\color[HTML]{FFFFFF} \textbf{Achieved}}                                                & \begin{tabular}[c]{@{}l@{}}When the user mentioned \\ all components of the queries \\ (sources, joins with foreign \\ keys, filters, sorting, aggregation \\ functions). The only thing that \\ would not be considered is if \\ the user didn't refer with or \\ without joins when they were \\ put automatically.\end{tabular} & All modifications                                                      & \begin{tabular}[c]{@{}l@{}}Completely \\ Right\end{tabular}                            \\ \hline
+        \cellcolor[HTML]{F1C232}\textbf{\begin{tabular}[c]{@{}l@{}}Partially \\ Achieved\end{tabular}}                  & \begin{tabular}[c]{@{}l@{}}If the user didn't refer to the \\ foreign key between two tables \\ where there is more than one \\ foreign key between two tables. \\ The another possibility is if the \\ user did not specify only the \\ sorting criteria.\end{tabular}                                                            & \begin{tabular}[c]{@{}l@{}}Forgot to remove\\ some filter\end{tabular} & \begin{tabular}[c]{@{}l@{}}Group data \\ using the \\ wrong \\ identifier\end{tabular} \\ \hline
+        \cellcolor[HTML]{CC0000}{\color[HTML]{FFFFFF} \textbf{\begin{tabular}[c]{@{}l@{}}Not \\ Achieved\end{tabular}}} & Anything else                                                                                                                                                                                                                                                                                                                      & Anything else                                                          & Anything else                                                                          \\ \hline
+        \end{tabular}
+    \end{table}
 
 
+In addition, a text highlighting the most relevant usability test topics, including users' opinions, reactions, expectations and suggestions has been included for each user. Here is registered the most qualitative result of the usability tests, which is not only important for the design of the next iterations but also to assess user satisfaction.
 
-In addition, a text highlighting the most relevant usability test topics, including users' opinions, reactions, expectations and suggestions has been included for each user. Here is recorded the most qualitative result of the usability tests, which is not only important for the design of the next iterations but also to assess user satisfaction.
+
+Furthermore, other important details more specific of each scenario were reported. In the comprehension scenarios, it was assesed the components of the query identified and the means used to perceive it. Regarding the formulation scenarios, the options used to build the query were identified. Even so, it was always recorded when the user manifested difficulty or when exploring other options not supported.
+
+Finally, to gain a more extensive notion and some quantitative metrics about what users felt while they interacted with the interfaces, they were asked to fill in a System Usability Scale (SUS) \cite{system_usability_scale} at the final of the usability test.
