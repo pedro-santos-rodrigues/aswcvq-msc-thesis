@@ -146,10 +146,17 @@ Even though some designs regarding that were elaborated in the sketching phase (
 \begin{itemize}
   \item Difficulty to comprehend faster and with a low-effort what entities were integrated into the query. Being a visual interface, the comprehension of the entities used as source to formulate the query should be easier to understand. However, the potential of the visual interface has not been leveraged, mainly due to the following aspects:
   \begin{itemize} 
-    \item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:ss_existing_layout_sources}, the entity "Sample\_Employee" was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities;
+    \item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:exampleTextualLanguageOverloading}, the entity "Sample\_Employee" was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities;
     \item \textbf{Lack of guidance to understand what entities are related to each other: }As the entities and sources are listed in the interface, the design should help users to understand which entities are joined. For instance, if joins were put between the entities involved, it would be simpler to identify if they were merged through a join operation.
   \end{itemize}
 \end{itemize}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.7in]{example-textual-language-overloading}
+	\caption{Example of the existing textual language overloading - The entity "Sample\_Employee" is represented seven times. }
+	\label{fig:exampleTextualLanguageOverloading}
+\end{figure}
 
 Therefore, the way entities and joins were listed in the sources tab of the existing interface was reconsidered, since it was intended to create a simpler, intuitive, and compact viewing area.
 
@@ -172,7 +179,7 @@ Lastly, the distribution of the formulation options (i.e., the buttons or other 
 
 The main concern was to put these controls near to the area where the content will be displayed. As an example, if there is an area where entities, joins, and attributes are placed together, the related interaction should be accessible near them. In that way, users do not need to find options in other areas of the interface, keeping the user task on track, avoiding them to lose reasoning context.
 
-That design principle was considered advantageus to reduce the user's working memory overload since they could focus in each part of the query without distractions. Moreover, if the controls are near the time the mouse need to move to them is also less, accelerating the query formulation process.
+That design principle was considered advantageous to reduce the user's working memory overload since they could focus in each part of the query without distractions. Moreover, if the controls are near the time the mouse need to move to them is also less, accelerating the query formulation process.
 
 %Falar da divisão e distribuição do layout
 %Falar que tendo em conta o espaço disponível seria necessário encurtar a representação das sources e joins.
@@ -192,7 +199,7 @@ After defining design priorities for the current iteration, the paper prototype 
 
 \medskip
 
-As the reasoning applied in the design phase, the general layout was the first part implemented. 
+As the reasoning applied in the design phase, the general layout was the first part implemented. The main concern at this phase was the definition of the dimensions for each sub-editor.
 
 %Tabela do resultado para cada scenario
 %Filtros e sorting de cada scenario
