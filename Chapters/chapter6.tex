@@ -145,13 +145,34 @@ Even though some designs regarding that were elaborated in the sketching phase (
 
 \begin{itemize}
   \item Difficulty to comprehend faster and with a low-effort what entities were integrated into the query. Being a visual interface, the comprehension of the entities used as source to formulate the query should be easier to understand. However, the potential of the visual interface has not been leveraged, mainly due to the following aspects:
-    %\begin{itemize} 
-      %\item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:ss_existing_layout_sources}, the entity "Sample_Employee" was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities.
-      %\item \textbf{Lack of guidance to understand what entities are related to each other: }As the entities and sources are listed in the interface, the design should help users to understand which entities are joined. For instance, if joins were put between the entities involved, it would be simpler to identify they were merged through a join operation.
-    %\end{itemize}
+  \begin{itemize} 
+    \item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:ss_existing_layout_sources}, the entity "Sample\_Employee" was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities;
+    \item \textbf{Lack of guidance to understand what entities are related to each other: }As the entities and sources are listed in the interface, the design should help users to understand which entities are joined. For instance, if joins were put between the entities involved, it would be simpler to identify if they were merged through a join operation.
+  \end{itemize}
 \end{itemize}
 
-Therefore, the way entities and joins were listed in the tab sources of the previous interface had to be rethought since it was intended to create a simpler, intuitive, and compact viewing area.
+Therefore, the way entities and joins were listed in the sources tab of the existing interface was reconsidered, since it was intended to create a simpler, intuitive, and compact viewing area.
+
+The idea of a tree view which displays all entities and joins used in the query has emerged to tackle the problem mentioned. Through that approach, it would be possible to reduce the entity repetition and to explicitly perceive which entities have a certain entity been joined.
+
+\medskip
+
+\textbf{Query formulation improvements: }
+
+\medskip
+
+%learnability
+Regarding query formulation, there was several users who are not accustomed to the query builder, that had difficulty to discover some functionalities of the system when they tested the existing interface. Thereby, learnability was also considering during the design phase of the first prototype.
+
+As mentioned in \ref{subsec:analysis}, the options to add a new calculated attribute or to apply a group by or an aggregation functions are hidden. These functionalities could be frequently used to apply group data or to add a new column to the output. Therefore, it was concluded that these options should be visible in the sources area. By doing this, not only the options still more visible to the novice users but users have a faster alternative to insert these query components.
+
+%efficiency
+
+Lastly, the distribution of the formulation options (i.e., the buttons or other interface elements that allow users to insert new elements in the query) in the screen was a relevant aspect considered. If the controls of a query component are
+
+The main concern was to put these controls near to the area where the content will be displayed. As an example, if there is an area where entities, joins, and attributes are placed together, the related interaction should be accessible near them. In that way, users do not need to find options in other areas of the interface, keeping the user task on track, avoiding them to lose reasoning context.
+
+That design principle was considered advantageus to reduce the user's working memory overload since they could focus in each part of the query without distractions. Moreover, if the controls are near the time the mouse need to move to them is also less, accelerating the query formulation process.
 
 %Falar da divisão e distribuição do layout
 %Falar que tendo em conta o espaço disponível seria necessário encurtar a representação das sources e joins.
