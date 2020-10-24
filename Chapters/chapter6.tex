@@ -146,7 +146,7 @@ Even though some designs regarding that were elaborated in the sketching phase (
 \begin{itemize}
   \item Difficulty to comprehend faster and with a low-effort what entities were integrated into the query. Being a visual interface, the comprehension of the entities used as source to formulate the query should be easier to understand. However, the potential of the visual interface has not been leveraged, mainly due to the following aspects:
   \begin{itemize} 
-    \item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:exampleTextualLanguageOverloading}, the entity "Sample\_Employee" was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities;
+    \item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:exampleTextualLanguageOverloading}, the entity $"Sample\_Employee"$ was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities;
     \item \textbf{Lack of guidance to understand what entities are related to each other: }As the entities and sources are listed in the interface, the design should help users to understand which entities are joined. For instance, if joins were put between the entities involved, it would be simpler to identify if they were merged through a join operation.
   \end{itemize}
   \item The users who are not familiarized with relational databases and the terminology used to join tables pointed out that the existing view is complex and difficult to understand,
@@ -155,7 +155,7 @@ Even though some designs regarding that were elaborated in the sketching phase (
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.7in]{example-textual-language-overloading}
-	\caption{Example of the existing textual language overloading - The entity "Sample\_Employee" is represented seven times. }
+	\caption{Example of the existing textual language overloading - The entity $"Sample\_Employee"$ is represented seven times. }
 	\label{fig:exampleTextualLanguageOverloading}
 \end{figure}
 
@@ -308,13 +308,11 @@ Therefore, the exploration of a new sources and joins representation was an exce
 	\label{fig:paperFkSelect}
 \end{figure}
 
-Consequently, it was studied how to solve the problem. 
-
 Nevertheless, the foreign key is not the only aspect that could be specified in the join condition. As in SQL, the existing query builder allows user to edit manually the join condition, for example to add more restrictions using logical operators.
 
 In these cases, not only is it important to continue to allow the conditions editing in the new interface but the conditions already edited should also be highlighted in such a way that users who open the query for the first time perceive that the condition of these joins is different. 
 
-The strategy applied in the paper prototype to maintain the interface simple, clear, and intuitive while highlighting the relevant aspects was to put only the function icon in the simple join conditions, and the other ones has their difference explicitly represented after. Figure \ref{fig:paperComprehension1Sources} represents the sources of a query with a join condition edited. In this case the join condition between $"Sample_Employee"$ and $"Sample_Notification"$ was changed since the goal is to fetch the employees who have never created notifications. Accordingly, a simplification took place to represent only the differentiating factor instead of the full condition which is:
+The strategy applied in the paper prototype to maintain the interface simple, clear, and intuitive while highlighting the relevant aspects was to put only the function icon in the simple join conditions, and the other ones has their difference explicitly represented after. Figure \ref{fig:paperComprehension1Sources} represents the sources of a query with a join condition edited. In this case the join condition between $"Sample\_Employee"$ and $"Sample\_Notification"$ was changed since the goal is to fetch the employees who have never created notifications. Accordingly, a simplification took place to represent only the differentiating factor instead of the full condition which is:
 
 \begin{center}
   \verb|"Sample_Employee.Id = Sample_Notification.CreatedBy and| 
@@ -330,7 +328,66 @@ The strategy applied in the paper prototype to maintain the interface simple, cl
 \end{figure}
 
 Through that approach, users will see entities and joins of the query without information overloading which could allow them to perceive easily and faster the purpose of the query. Even if the join condition is hidden, they could click on the function icon and an expression editor will appear where it is possible to see and edit the join condition selected.
-%Esta foi consid
+
+\medskip
+
+\textbf{New alternatives to add and search for attributes:}
+
+\medskip
+
+The last improved aspect during the development of this paper prototype was regarding the addition of new attributes. In accordance with the mentioned in the last section, there was a demand to provide other alternatives to add calculated attributes as well as group bys or aggregation functions.
+
+Considering the concern to insert these alternatives strategically in easily and fast accessible places and the necessity to improve the visibility of these options to improve the learnability of novice users, the following options were applied:
+
+\begin{itemize}
+  \item \textbf{Click and right-click in the attributes exhibited in the Sources sub-editor: }The list of the attributes of each entity was added into each entity represented in the Sources of the query. On the one hand, if users click in an attribute, they would see the data related into the query result preview (according to the sketch already presented in Figure \ref{fig:sketchAttributeSearch}). On the other hand, if they right-click in an attribute, they would see the same context menu that they already could see when they right-click on the result table headers. Therefore they could apply operations using that alternative, as exemplified in Figure \ref{fig:paperAttributeRightClick}.
+  \item \textbf{Two new visible buttons to add attributes: }In the footer of the Sources View, two buttons were added:
+    \begin{itemize}
+      \item \textbf{Aggregation / Group By: }Clicking in this button the user could choose an attribute and the one of the following operations to group the data of its attribute: Group by, Sum, Average, Max, Min, or Count. Figure \ref{fig:paperAddAggregation} shows this new formulation area.
+      \item \textbf{Calculated Attribute: }When the user selects this option the interface will show an expression edition area similar to the existing one to indicate the formula of the new attribute. Figure \ref{fig:paperAddCalculatedAttribute} shows this alternative to add a new calculated attribute.
+    \end{itemize}
+\end{itemize}
+
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=2.4in]{paper-attribute-right-click}
+	\caption{Alternative provided to open the attribute context menu.}
+	\label{fig:paperAttributeRightClick}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=2.4in]
+  {paper-add-aggregation}
+	\caption{New sub-editor into the sources view to add aggregation functions and group bys.}
+	\label{fig:paperAddAggregation}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=2.4in]
+  {paper-add-calculated-attribute}
+	\caption{New sub-editor into the sources view to add calculated attributes.}
+	\label{fig:paperAddCalculatedAttribute}
+\end{figure}
+
+In order to improve the query readability and the consistency of the interface, these attributes, added to the query, were put into the sources view as exemplified in Figure \ref{fig:paperAggregatedAttribute}.
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=2.4in]
+  {paper-aggregated-attribute}
+	\caption{Sources of a query where a group by and a SUM aggregation function were applied.}
+	\label{fig:paperAggregatedAttribute}
+\end{figure}
+
+\medskip
+
+\textbf{Digital Paper Prototype: }
+
+\medskip
+
 
 
 
