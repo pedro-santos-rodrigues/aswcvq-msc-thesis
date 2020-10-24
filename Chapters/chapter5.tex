@@ -58,9 +58,9 @@ To compare the different phases, all tests were performed using the same testing
 \label{sec:testing_scenarios}
 Given the wide scope of the usability problems identified, a plan of the testing approach was required in order to evaluate the most important aspects of the user-interface communication, given the short period available to test the users. Following the plan, it was possible to keep the testing focus on the prioritized details in a feasible way.
 
-The first topic defined was the type of testing scenarios that would be proposed. For this decision, it was taken into account specific aspects that should be improved in the interface usability. As mentioned, optimization of the efficiency, effectiveness, learnability, as well as user satisfaction of the entire query formulation process was the main goal, but also the improvement of the query comprehension. So, it was important to evaluate if users could understand the query purpose (i.e., what data was intended to be fetched from the database) as well as the time they required to realize that.
+Firstly, it was defined the type of testing scenarios that would be presented. For that decision, it was taken into account the specific aspects that should be improved in the interface usability. As mentioned, not only the optimization of the efficiency, effectiveness, learnability, and user satisfaction of the entire query formulation process was the goal, but also the improvement of the query comprehension. In such a way that it was important to evaluate if users could understand the query purpose (i.e., what data intends to be fetched from the database) as well as the time they required to realize that.
 
-Considering those evaluation requirements, two types of testing scenarios were prepared: scenarios where users explore an existing query with the purpose to find the fetched information, and the other one where users would try to formulate a new query on their own. Through this approach, it was possible to analyze the usability of the interfaces on the following points of view: comprehension and formulation
+Considering those evaluation requirements, two types of testing scenarios were prepared: scenarios where users explore an existing query and try to realize what was its purpose, and the other ones where users try to formulate it on their own. Through that approach, it was possible to analyze the usability of the interfaces tested for both points of view: comprehension and formulation.
 
 Nevertheless, the complexity of the queries presents a crucial factor when the scenarios were thought out. For example, an interface could be useful and pleasant to use in simple use cases but it could lead to a decrease of that quality in more complex queries. Accordingly, is was listed the requirements that were considered relevant to be covered by user testing scenarios:
 
@@ -112,7 +112,7 @@ Nevertheless, there was several results to be obtained from the user testing sce
 
 %Considering the short period available to test all mentioned requirements, the aspects considered essential to be present in the use cases explored were combined in a table in order to distribute them along a set of scenarios. Figure X 
 
-Therefore, Table \ref{tab:scenarios_complexity} was used to assign organize the complexity of each scenario and check what aspects would e tested in each one.
+Therefore, Table \ref{tab:scenarios_complexity} was used to assign organize the complexity of each scenario and check the aspects that would be tested in each one.
 
 \textbf{Table \ref{tab:scenarios_complexity} clarifications regarding the factors integrated in testing scenarios: }
 \begin{itemize}
@@ -156,7 +156,7 @@ Therefore, Table \ref{tab:scenarios_complexity} was used to assign organize the 
     \end{table}
 
 
-All scenarios are detailed in \nameref{app:user_testing_scenarios}, including for each scenario, the description of the testing scenario proposed and the main points taken into account throughout the tests performed. Due to the complexity of the exercise proposed, the last two scenarios (Comprehension 4 and Modification 4) were not tested with Citizen Developers.
+All scenarios were detailed in \nameref{app:user_testing_scenarios}, which includes the description of each testing scenario proposed and the main points taken into account throughout the tests performed. Due to the complexity of each scenario, the last two scenarios (Comprehension 4 and Modification 4) were not tested with Citizen Developers, those users were only tested in 5 scenarios while the other user types were tested in 7.
 
 %\textbf{User Testing Scenarios:}
 %Accordingly, there were created the following test scenarios in order to evaluate the usability of the system, taking also into account the aspects more relevant above mentioned:
@@ -164,11 +164,11 @@ All scenarios are detailed in \nameref{app:user_testing_scenarios}, including fo
 %In order to built scenarios that not only have different complexity levels but also approach the aspects that should be tested, there 
 \section{Evaluation Method}
 \label{sec:evaluation_method}
-Having all testing scenarios established, it was necessary to plan how to identify the user, evaluate its interaction with the system, and collect qualitative and quantitative results throughout the usability tests.
+Having all testing scenarios established, it was necessary to plan how to identify the users, which enables an accurate evaluation of the interaction with the system, allowing the gathering of qualitative and quantitative results throughout the usability tests.
 
-First of all, users filled a survey in order to perceive what are their background regarding software development, relational databases, and data management and visualization tools. The answers were used to realize what are their user profiles according to the user groups defined in \ref{subsec:user_groups}.
+All users tested, started by filling a survey in order to perceive what were their background regarding software development, relational databases, and data management and visualization tools. The answers were used to detect their profiles according to the user groups defined in \ref{subsec:user_groups}.
 
-After perceiving what are the most appropriate user group for the user in question, the data model is presented focusing the most relevant aspects for the tests. In that way, it is explained how the entities of the model are related with each other and the attributes most used in scenarios are highlighted.
+After perceiving the user's profile, the data model was presented. In that way, it is explained how the entities of the model are related with each other and the most used attributes in the scenarios are highlighted. As soon as they confirm that they understood the overview of the existing entities, the testing process starts. 
 
 As soon as they confirm that they got an overview of the existing entities, the testing process starts. However, following users' reasoning and opinions while they interact with the interface was not considered sufficient to collect all results necessary.
 
@@ -197,11 +197,11 @@ For each user tested, a table, as the example presented in Figure \ref{fig:userE
     \end{table}
 
 
-In addition, a text highlighting the most relevant usability test topics, including users' opinions, reactions, expectations and suggestions has been included for each user. Here is registered the most qualitative result of the usability tests, which is not only important for the design of the next iterations but also to assess user satisfaction.
+In addition, a text highlighting the most relevant usability test topics, including users' opinions, reactions, expectations and suggestions has been included for each user. It was registered the qualitative result of the usability tests, which are not only important for the design of the next iterations but also to assess users' satisfaction.
 
 
-Furthermore, other important details more specific of each scenario were reported. In the comprehension scenarios, it was assesed the components of the query identified and the means used to perceive it. Regarding the formulation scenarios, the options used to build the query were identified. Even so, it was always recorded when the user manifested difficulty or when exploring other options not supported.
+Furthermore, other important details of each scenario were reported. In the comprehension scenarios, it was assessed the correct components of the query identified and the means used to perceive the solution. Regarding the formulation scenarios, the options used to build the query were identified and also the difficulties and the exploration of not supported options.
 
-Finally, to gain a more extensive notion and some quantitative metrics about what users felt while they interacted with the interfaces, they were asked to fill in a System Usability Scale (SUS) \cite{system_usability_scale} at the final of the usability test.
+Finally, to gain a more extensive notion and some quantitative metrics about the interaction with the interfaces, the users were asked to fill in a System Usability Scale (SUS) \cite{system_usability_scale} as their final task in the usability test.
 
-This was the process used to test all interfaces addressed in this dissertation: the existing interface of Aggregates, the paper prototype, and the final prototype which was integrated into Service Studio (the Visual \gls{IDE} of the OutSystems Platform). The next chapter will describe the design and implementation process of each prototype built, but also how they were tested using the methodology referred.
+The process detailed in this chapter were used in all interfaces tested and addressed in this dissertation: the existing interface of Aggregates, the paper prototype, and the final prototype which was integrated into Service Studio (the Visual \gls{IDE} of the OutSystems Platform). The next chapter will describe the design and implementation process of each prototype built, but also how they were tested using the methodology referred.
