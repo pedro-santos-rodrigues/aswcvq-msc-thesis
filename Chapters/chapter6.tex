@@ -149,6 +149,7 @@ Even though some designs regarding that were elaborated in the sketching phase (
     \item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:exampleTextualLanguageOverloading}, the entity "Sample\_Employee" was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities;
     \item \textbf{Lack of guidance to understand what entities are related to each other: }As the entities and sources are listed in the interface, the design should help users to understand which entities are joined. For instance, if joins were put between the entities involved, it would be simpler to identify if they were merged through a join operation.
   \end{itemize}
+  \item The users who are not familiarized with relational databases and the terminology used to join tables pointed out that the existing view is complex and difficult to understand,
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -191,7 +192,7 @@ That design principle was considered advantageous to reduce the user's working m
 \subsection{Implementation}
 \label{subsec:paper_prototype_implementation}
 
-After defining design priorities for the current iteration, the paper prototype implementation has launched. In this phase, the pieces of the prototype were built progressively considering the key points presented before and refining some details whenever necessary.
+After defining priorities for the current design iteration, the paper prototype implementation has launched. In this phase, the pieces of the prototype were built progressively considering the key points presented before and refining some details whenever necessary.
 
 \medskip
 
@@ -199,13 +200,146 @@ After defining design priorities for the current iteration, the paper prototype 
 
 \medskip
 
-As the reasoning applied in the design phase, the general layout was the first part implemented. The main concern at this phase was the definition of the dimensions for each sub-editor.
+As the reasoning applied in the design phase, the general layout was the first part implemented. The main concern at this phase was the definition of the dimensions for each sub-editor. In order to ensure that the design will be properly integrated into the Service Studio, it was created a sketched background image of the \gls{IDE} using a function of Balsamiq \cite{balsamiq} to convert the Service Studio screenshot to a black and white line drawing version \cite{balsamiq_using_images_and_assets}. As a result, it was possible to perceive if the design done would combine with the system where its is integrated without increasing the fidelity level of the prototype.
+
+After that, the main areas of the interface were elaborated until reaching the general layout that can be observed in Figure \ref{fig:paperPrototypeGeneralLayout}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=3.0in]{paper-prototype-general-layout}
+	\caption{Paper Prototype general layout.}
+	\label{fig:paperPrototypeGeneralLayout}
+\end{figure}
+
+\medskip
+
+\textbf{Query Result Table:}
+
+\medskip
+
+The next step was the design of the query result tables necessary to show the result preview of the query built. It was designed tables for all user testing scenarios to provide a real context to users when they tested the prototype. 
+
+In order to accelerate the process of the table design in paper, it was used the same Balsamiq functionality used fro background to transform the table of the existing interface into a low-fidelity design. 
+
+However, the headers of the table were redesigned manually to improve the readability of the table. Basically, in the existing table, the user needs to apply more effort to understand where start the data from an entity and where there is data from another entity. In that way, the entity reference in table header were merged to give to the user an easier perception that all the attributes below belong to the entity above. Figure \ref{fig:queryResultTableComparison} compares the existing one to an example of one of the tables built.
+
+\begin{figure}[tb]
+  \centering
+  \subcaptionbox{Existing Interface\label{fig:queryResultTableComparisonExisting}}%
+    {\includegraphics[width=0.9\linewidth]{query-result-table-existing}}%
+    \\
+  \subcaptionbox{Paper Prototype\label{fig:queryResultTableComparisonPaper}}%
+  {\includegraphics[width=0.9\linewidth]{query-result-table-paper}}%
+\caption{Comparison between the existing query result table and the designed for the Paper Prototype.}
+  \label{fig:queryResultTableComparison}
+\end{figure}
+
+\medskip
+
+\textbf{Filters and Sorting: }
+
+\medskip
+
+Regarding filters and sorting, it was decided to not apply major changes since there were other problems considered as most relevant. Even though the filters edition could be faster using accelerators such as copy and paste or the possibility to edit each filter in line instead of opening always the expression editor, these problems as well as other similar problems mentioned in \nameref{app:taxonomy_of_problems_existing_interface} were not tackled. The reason to disconsider these improvements in the prototyping phase was that there are straighforward improvements that have a low-risk associated since they might not affect negativle the user's experience. That way, it was given focus to the designs parts that should be rigorously tested by users to ensure that riskier changes are improving the usability of the interface.
+
+Accordingly, concerning filters, it was only added some syntax highlighting to each one of the conditions presented in order to reduce the time required to understand the conditions. Figure \ref{fig:filtersAndSortingComparison} presents an example of Filters and Sorting design in the paper prototype.
+
+\begin{figure}[tb]
+  \centering
+  \subcaptionbox{Existing Interface\label{fig:filtersAndSortingExisting}}%
+    {\includegraphics[width=0.9\linewidth]{existing-filters-sorting}}%
+    \\
+  \subcaptionbox{Paper Prototype\label{fig:filtersAndSortingPaper}}%
+  {\includegraphics[width=0.9\linewidth]{paper-filters-sorting}}%
+\caption{Comparison between the existing filters and sorting sub-editors and the ones designed for the Paper Prototype.}
+  \label{fig:filtersAndSortingComparison}
+\end{figure}
+
+\medskip
+
+\textbf{Sources View: }
+
+\medskip
+
+As referred before, the design of the sources view was considered one of the most impactful aspects to improve the query builder usability. The restructuration design of this element was reasoned as a crutial section of the interface that could leverge the usability of the system. 
+
+A new approach to represent sources and joins was built progressively. The first aspect approached was the creation of a hierarquical view similar to a tree view which gives to the user the perception of what entities are related with each other. Figure \ref{fig:simpleSourcesTree} shown an example of a tree built at that stage.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.7in]{simple-sources-tree}
+	\caption{First stage of the design of a new representation approach to display sources and joins.}
+	\label{fig:simpleSourcesTree}
+\end{figure}
+
+Notwithstanding the visual simplicity achieved, that representation is insufficient since it not represents the join conditions. However, if join conditions were just included near to the join type, the interface would be overloaded again and it would still poor readability.
+
+Furthermore, the usability tests of the existing interface have revealed that often users tended to misunderstand the queries that had joins with specific characteristics. In particular, in cases where queries had joins with conditions that contained logical operators or when the join between the two tables could be done through different attributes.
+
+Through practical examples it is easier to understand the dimension of the problem. For example, considering the data model presented in Figure \ref{fig:dataModel}, if a user wants to query the employees and their departments, he will add the two entities and the visual query builder will build automatically the join condition:
+
+\begin{center}
+  \verb|"Sample_Employee.Office = Sample_Office.Id"|
+\end{center}
+
+This automatism is useful and turns the query formulation process more simple and efficient. However, there are cases where the join needs to be specified as the case is no so straighforward. For instance, considering the same data model, if a user wants to query the employees who are owners of accounts, the join condition has to merge the two entities $"Sample\_Employee"$ and $"Sample\_Account"$ using the foreign key $"Owner"$ and not the two other availables: $"CreatedBy"$ and $"Manager"$. In this case the condition required to build this query is:
+
+\begin{center}
+  \verb|"Sample_Employee.Id = Sample_Account.Owner"|
+\end{center}
+
+In these cases, the join condition, which in many cases is not so important as just covers the general case and it was generated automatically by the system, represents an important aspect of the query. However, as illustrated in the example of Figure \ref{fig:comprehension2JoinsExisting}, the existing interface represents all joins equally.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.2in]{comprehension-2-joins-existing}
+	\caption{Example of joins representation in the existing interface in a query where the foreign key used to join is an important detail.}
+	\label{fig:comprehension2JoinsExisting}
+\end{figure}
+
+When users tested the existing interface with cases similar to the one presented, two relevant usability problems were detected. On the one hand, when users tried to comprehend the query, most of them did not pay attention to this detail, not mentioning the foreign keys used. On the other hand, when they need to formulate queries that contemplates these cases, several users, even the most experienced using this query builder, did not select the intended foreign key. This behavior is normal since the system just assume one of the foreign keys and generate the join, without asking user what attribute he wants to use to join the two entities.
+
+Therefore, the exploration of a new sources and joins representation was an excellent opportunity to tackle this problem. In that way, the existing tree view of sources was rebuilt in order to integrate also the foreign key used to build each of the presented joins. Moreover, when two entities are added and the join between them can be done through different keys, the system starts asking the user which key he wants to use. Figure \ref{fig:paperFkSelect} illustrates how this idea was transposed to the paper prototype.
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=1.4in]{paper-fk-selection}
+	\caption{Example of the new foreign key selection and representation applied in the Paper Prototype.}
+	\label{fig:paperFkSelect}
+\end{figure}
+
+Consequently, it was studied how to solve the problem. 
+
+Nevertheless, the foreign key is not the only aspect that could be specified in the join condition. As in SQL, the existing query builder allows user to edit manually the join condition, for example to add more restrictions using logical operators.
+
+In these cases, not only is it important to continue to allow the conditions editing in the new interface but the conditions already edited should also be highlighted in such a way that users who open the query for the first time perceive that the condition of these joins is different. 
+
+The strategy applied in the paper prototype to maintain the interface simple, clear, and intuitive while highlighting the relevant aspects was to put only the function icon in the simple join conditions, and the other ones has their difference explicitly represented after. Figure \ref{fig:paperComprehension1Sources} represents the sources of a query with a join condition edited. In this case the join condition between $"Sample_Employee"$ and $"Sample_Notification"$ was changed since the goal is to fetch the employees who have never created notifications. Accordingly, a simplification took place to represent only the differentiating factor instead of the full condition which is:
+
+\begin{center}
+  \verb|"Sample_Employee.Id = Sample_Notification.CreatedBy and| 
+  \\
+  \verb|Sample_Notification.Id = NullIdentifier()"|
+\end{center}
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=1.4in]{paper-comprehension-1-sources}
+	\caption{Example of the sources of a query that has a join with a condition edited.}
+	\label{fig:paperComprehension1Sources}
+\end{figure}
+
+Through that approach, users will see entities and joins of the query without information overloading which could allow them to perceive easily and faster the purpose of the query. Even if the join condition is hidden, they could click on the function icon and an expression editor will appear where it is possible to see and edit the join condition selected.
+%Esta foi consid
+
+
 
 %Tabela do resultado para cada scenario
 %Filtros e sorting de cada scenario
 
 %New sources design
 %-Falar sobre as chaves estrangeiras e a simplificação dos joins
+%-Novas formas the inserir atributos
 %-Apresentar solução proposta
 
 % It is important to refer the implementation complexity of the prototype in InVision due to the interface complexity.
