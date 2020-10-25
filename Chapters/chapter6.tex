@@ -343,7 +343,7 @@ Considering the concern to insert these alternatives strategically in easily and
   \item \textbf{Click and right-click in the attributes exhibited in the Sources sub-editor: }The list of the attributes of each entity was added into each entity represented in the Sources of the query. On the one hand, if users click in an attribute, they would see the data related into the query result preview (according to the sketch already presented in Figure \ref{fig:sketchAttributeSearch}). On the other hand, if they right-click in an attribute, they would see the same context menu that they already could see when they right-click on the result table headers. Therefore they could apply operations using that alternative, as exemplified in Figure \ref{fig:paperAttributeRightClick}.
   \item \textbf{Two new visible buttons to add attributes: }In the footer of the Sources View, two buttons were added:
     \begin{itemize}
-      \item \textbf{Aggregation / Group By: }Clicking in this button the user could choose an attribute and the one of the following operations to group the data of its attribute: Group by, Sum, Average, Max, Min, or Count. Figure \ref{fig:paperAddAggregation} shows this new formulation area.
+      \item \textbf{Aggregation / Group By: }Clicking in this button the user could choose an attribute and one of the following operations to group the data of its attribute: Group by, Sum, Average, Max, Min, or Count. Figure \ref{fig:paperAddAggregation} shows this new formulation area.
       \item \textbf{Calculated Attribute: }When the user selects this option the interface will show an expression edition area similar to the existing one to indicate the formula of the new attribute. Figure \ref{fig:paperAddCalculatedAttribute} shows this alternative to add a new calculated attribute.
     \end{itemize}
 \end{itemize}
@@ -422,6 +422,35 @@ In total, 291 images were created and multiple interactions between them were co
 
 \subsection{Evaluation}
 \label{subsec:paper_prototype_evaluation}
+
+Completed the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. In that way, the aim, at this stage, was to map the improved aspects  and the details which require a redesign in the following phase.
+
+In general, the new sub-editors layout applied was accepted positively by the users, even in the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, some minutes after, that see all query structure in a short visualization area above its result preview was useful. Other feedback pointed out by some users was that it could be useful to resize the dimensions of each sub-editor area.
+
+%TODO: Colocar uma footnote para Background.currentProgress, onde existir uma imagem que demonstre como é que os group bys são atualmente representados.
+Regarding the query result preview, some users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied. Even though it was difficult to distinguish the two elements of the query result, since it was used a low-fidelity design which presented a low expressiveness in terms of color, this constraint will be taken into account in the next design iteration since more styling and color resources will be available.
+
+As predicted in the design and implementation phases of this prototype, the completely redesigned sources editor evoked different points of view and interesting feedback for the next iteration design phase.
+
+Therefore, the following points describe the information collected with respect to the users' comprehension of this new representation:
+
+\begin{itemize}
+  \item Some users misinterpreted the joins of some queries due to the indentation used to represent them. For instance, in the example shown in Figure \ref{fig:paperPrototypeExample}, some users indicated that "Office" was joined with "Department", when "Office" was joined with "Employee";
+  \item Some users did not manage to understand what the foreign key label was, until they need to select one of them in the formulation scenario. That way, the representation of this element should be reevaluated to make it more clear;
+  \item Regarding the join conditions simplification, it was identified an increased awareness to perceive that there were two representations of join conditions, as shown in Figure \ref{fig:paperComprehension1Sources}. However, the majority of users did not manage to understand the meaning of this different visual representation, which intended to differentiate joins automatically generated from the ones manually edited.
+\end{itemize}
+
+Furthermore, the following aspects were concluded from observing users trying to formulate queries:
+
+\begin{itemize}
+  \item As expected, the foreign key selection method presented in Figure \ref{fig:paperFkSelect} has optimized the effectiveness of the formulation scenario. Since users were asked to choose between the existing foreign key, they have selected the correct one.
+  \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, in part, the results have enhanced, but some drawback aspects were identified. Users who have never used the system, found these features easily since the two buttons became visible in the interface. However, they continue to make confusion when they needed to use a calculated attribute and an aggregation function.
+\end{itemize}
+
+Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation showed how entities are related with each other.
+
+
+
 %Comparison with Current Implementation Evaluation
 
 %Quantos utilizadores foram testados
@@ -429,7 +458,24 @@ In total, 291 images were created and multiple interactions between them were co
 
 %Explicar resultados mais importantes
 %-Verificar os outros resultados
-%-Melhoria da sources view visto que os utilizadores não perceberam que se tratava da chave estrangeira
+%-Melhoria da sources view visto que os utilizadores não perceberam que se tratava da chave estrangeira.
+%Para além disso houve quem não achasse clara a apresentação devida à identação utilizada. (Por exemplo confundiram que tabela se relaciona com qual. Utilizar o exemplo do Comprehension 1 para justificar)
+
+%-No geral o problema da leitura do left join com null manteve-se
+
+%-Confundiram quando é que devia ser adicionado um calculated attribute e uma aggregation function.
+
+%V-Alguns utilizadores referiram que o tamanho dos sub editores devia ser resizable
+
+%-Divide add aggregation / group by into two different buttons
+
+%-Some users said that the sources view is confusing at the first place but after some scenarios when he said that is easy.
+
+%-Deveria ser apresentada uma maior distinção entre os atributos que estão no output e aqueles que não estão.
+
+%-Tentaram expandir a source para adicionar joins.
+
+%-Houve quem referisse que com esta interface existiu menos necessidade de observar o data  model
 
 \section{Service Studio Implementation}
 \label{sec:service_studio_implementation}
