@@ -447,9 +447,7 @@ Furthermore, the following aspects were concluded from observing users trying to
   \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, in part, the results have enhanced, but some drawback aspects were identified. Users who have never used the system, found these features easily since the two buttons became visible in the interface. However, they continue to make confusion when they needed to use a calculated attribute and an aggregation function.
 \end{itemize}
 
-Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation showed how entities are related with each other.
-
-
+Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation showed how entities were related with each other.
 
 %Comparison with Current Implementation Evaluation
 
@@ -480,10 +478,50 @@ Finally, some users referred that they felt a reduced necessity to confer the Da
 \section{Service Studio Implementation}
 \label{sec:service_studio_implementation}
 
+As mentioned in \ref{subsec:visual_development_environment}, the Service Studio is the \gls{IDE} integrated in the OutSystems Platform that allows users to build full applications using the low-code programming paradigm.
+
+The last iteration of the design process, and consequently, the final prototype elaborated in this dissertation, was a functional prototype of the query builder completely integrated into the code of the Service Studio.
+
+Nevertheless, Service Studio was getting a major facelift to achieve a new revamped and refreshed design. Even though the new Service Studio design was not been released yet when the development of the final prototype of this dissertation started, it was decided to start the development from this stage. In that way, the interface of the query builder developed could be easily integrated later on the OutSystems Platform. Figure \ref{fig:aggregateNewDesign} illustrates the design used as the starting point for the final prototype development. As can be observed, is a redesigned version of the previous Service Studio design illustrated before in Figures \ref{fig:ss_workspace} and \ref{fig:aggregate_created}.
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {aggregate-new-design}
+	\caption{The new design of the Service Studio and its Visual Query Builder.}
+	\label{fig:aggregateNewDesign}
+\end{figure}
+
+Despite the new design of all interface elements and components, the core behaviors and interactions of the interface remained, so the same design and implementation intentions to be applied in this new phase of development were maintained.
+
 \subsection{Design}
 \label{subsec:service_studio_design}
 
+Following the same methodology used in the Paper Prototype, the building process of this solution started with the design phase. In this phase, the paper prototype evaluation outcomes were deliberated in order to define and prioritize the aspects to be tackled in the final prototype.
+
+First of all, the source code of the Service Studio was explored in order to plan the development that could be done in the time available. As explained in the presentation of the paper prototype, the development aspects were planned according to their impact on the final interface. Ideas that fundamentaly alter the experience of using the interface will be considered a priority, since the most important is to perceive how users reacted to that changes, when testing the interface. Minor features and enhancements could also be considered as future work if the interface evaluated had positive results.
+
+Considering the performed evaluation of the Paper Prototype, the sources editor was taken into account as the main focus of the design phase of the Final Prototype. As referred, during the usability tests of the paper prototype, the sources view has revealed positive results, but it was concluded that it should be refined regarding some aspects, mainly the joins representation which were not completely clear for a set of users.
+
+Nevertheless, in order to implement the new interface representation of entities and joins, a considerable implementation effort would be required. The visualization area requires a personalized hierarquical view that should be built from scratch, since there is no similar element in the rest of the Service Studio.
+
+Accordingly, before implementing any idea, a robust design should be established in order to avoid wasting implementation time on doing and redoing ideas. Therefore, it was performed more designs, regarding this region of the interface, using the product design system components. Basically, it was used the Figma \ cite {figma}, which is a design tool where all the new Service Studio components were designed, to explore concrete options to represent sources and solve the problems found when users tested the Paper Prototype. By this means, it was possible to obtain an high-fidelity design faster and perceive what solution could most fit the existing requirements.
+
+After exploring multiple alternatives, the options illustrated in Figure \ref{fig:sourcesFigma} were considered the most valuable. The main difference between them is the way the joins are represented. In \nameref{fig:sourcesFigmaA}, the join is represented in a single line placed between the two entities involved. In \nameref{fig:sourcesFigmaB}, the join condition is represented after the the second entity involved in the join. Lastly, in \nameref{fig:sourcesFigmaC}, the second entity is presented on the right of the join kind.
 %figma mock ups for sources tree view
+
+\begin{figure}[tb]
+  \centering
+  \subcaptionbox{Option A\label{fig:sourcesFigmaA}}%
+    {\includegraphics[height=2.5in]{sources-figma-1}}%
+  \subcaptionbox{Option B\label{fig:sourcesFigmaB}}%
+    {\includegraphics[height=2.5in]{sources-figma-2}}%
+    \\
+  \subcaptionbox{Option C\label{fig:sourcesFigmaC}}%
+  {\includegraphics[width=0.5\linewidth]{sources-figma-3}}%
+\caption{High-fidelity design ideas built in Figma to present the sources of the query.}
+  \label{fig:sourcesFigma}
+\end{figure}
 
 \subsection{Implementation}
 \label{subsec:service_studio_implementation}
