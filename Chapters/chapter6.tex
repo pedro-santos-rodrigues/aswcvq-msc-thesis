@@ -508,7 +508,6 @@ Nevertheless, in order to implement the new interface representation of entities
 Accordingly, before implementing any idea, a robust design should be established in order to avoid wasting implementation time on doing and redoing ideas. Therefore, it was performed more designs, regarding this region of the interface, using the product design system components. Basically, it was used the Figma \ cite {figma}, which is a design tool where all the new Service Studio components were designed, to explore concrete options to represent sources and solve the problems found when users tested the Paper Prototype. By this means, it was possible to obtain an high-fidelity design faster and perceive what solution could most fit the existing requirements.
 
 After exploring multiple alternatives, the options illustrated in Figure \ref{fig:sourcesFigma} were considered the most valuable. The main difference between them is the way the joins are represented. In \nameref{fig:sourcesFigmaA}, the join is represented in a single line placed between the two entities involved. In \nameref{fig:sourcesFigmaB}, the join condition is represented after the the second entity involved in the join. Lastly, in \nameref{fig:sourcesFigmaC}, the second entity is presented on the right of the join kind.
-%figma mock ups for sources tree view
 
 \begin{figure}[tb]
   \centering
@@ -523,8 +522,30 @@ After exploring multiple alternatives, the options illustrated in Figure \ref{fi
   \label{fig:sourcesFigma}
 \end{figure}
 
+In order to decide an option the following topics were taken into account:
+
+\begin{itemize}
+  \item \textbf{Reading flow: } The reading flow of the entities and joins were considered important, especially due to the presentation of the join kind. As this was presented in natural language, users should manage to read  sequentially the first entity, the join, and the second entity in a fluid way. Due to the arrangement adopted, the \nameref{fig:sourcesFigmaC} was considered the most clear regarding this aspect since the second entity is placed in the right side of the join kind. In that way, the users reading affordance will unconsciously help them to understand the reading flow, according to the reading pattern from the left to the right;
+  \item \textbf{Width and height required: }The space each option would occupy was important to analyze the accommodation in the interface. Comparing the options presented, it can be concluded that the \nameref{fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB} would require more height, and the \nameref{fig:sourcesFigmaC} more width;
+  \item \textbf{Emphasis: }The used representation may end up giving more prominence to certain elements even though if it was not built for this purpose. Accordingly, it was verified the aspects of the interface which would stand out at a first glance. In \nameref{sub@fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB}, joins are more highlighted since there are specific lines to represent them. Conversely, in the \nameref{sub@fig:sourcesFigmaC} the join is presented in the same line of an entity, which makes entities standed out, in general. Therefore, the \nameref{sub@fig:sourcesFigmaC} was considered the most appropriated to highlight entities at a first sight.
+\end{itemize}
+
+Reflecting on the topics presented, and evaluating the advantages and disadvantages of each option, the \nameref{fig:sourcesFigmaC} was elected since it provide a clear readability and highlights the entities used in the query. Despite it requires more width space in the interface, mainly if there are multiple joins nested, this disadvantages could be mitigated in the future if the join conditions would be simplified or represented in a different way.
+
+Regarding the remaining elements of the interface, the design approaches applied in the Paper Prototype improved the usability of the interface. As a result, the design concerning filters, sorting and the query result table have followed the ideas already detailed in \ref{sec:paper_prototype}.
+
+
 \subsection{Implementation}
 \label{subsec:service_studio_implementation}
+Having defined the intended design of the final prototype, the development of this new data querying interface integrated in the Service Studio code started. %As mentioned, the code is implemented in
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {sources-components-structure}
+	\caption{Structure of the React components created to dispose the sources.}
+	\label{fig:sourcesComponentsStructure}
+\end{figure}
 
 \subsection{Evaluation}
 \label{subsec:service_studio_evaluation}
