@@ -13,7 +13,7 @@ Taking into account the existing usability problems and the target users' requir
 
 \section{Iterative Design}
 \label{sec:iterative_design}
-Before starting the solution building process, the phases were planned for the sake of the development of the final solution. Accordingly, it will be presented the design strategy adopted, which will be further detailed in \nameref{cha:design_and_implementation}. The chosen methodology uses an iterative design strategy in order to keep a user-centric design, which prioritizes the users' needs according to the mentioned in \ref{subsec:user_centered_design}. Regarding the prototyping method, the evolutionary prototyping principle (described in \ref{subsubsec:sketching_and_prototyping}) was applied, where the last prototype was used as a baseline to develop the prototype of the next iteration.
+Before starting the solution building process, the phases were planned for the sake of the development of the final solution. Accordingly, the design strategy adopted, which will be further detailed in \nameref{cha:design_and_implementation}, will be briefly presented. The chosen methodology uses an iterative design strategy in order to keep a user-centric design, which prioritizes the users' needs according to the mentioned in \ref{subsec:user_centered_design}. Regarding the prototyping method, the evolutionary prototyping principle (described in \ref{subsubsec:sketching_and_prototyping}) was applied, where the last prototype was used as a baseline to develop the prototype of the next iteration.
 
 \textbf{Sketching: }The design process started with an initial sketching phase, where the first solution ideas were explored and drafted. In this technique, the integration of new ideas into the existing interface is favored given the fact it is an interactive process where the ideas are tested progressively. The most important aspect was to think about system transversal changes and not about particular details of specific components, since these details could be refined later. The outcome of this phase sets a more concrete idea of what can be inserted in the prototype, even if it is necessary to think more about how to implement it later.
 
@@ -28,9 +28,9 @@ In each one of the two above-mentioned prototypes, it was included the following
 
 Regarding evaluation, it was necessary to establish how many users should be tested in each evaluating phase. In these phases, not only the two mentioned prototypes were considered, but also the evaluation of the existing interface mentioned in \ref{sec:current_implementation_evaluation}. 
 
-The data of that analysis is also an opportunity to has a baseline of the development starting point across the solution building. Thereby, the number of users tested in the first prototype is also an important factor.
+The data extracted from the evaluation of the existing interface provide an opportunity to compare the existing usability against the usability of the final solution. Thereby, the number of users tested in the first prototype is also an important factor.
 
-Nielsen performed some studies quantifing how many users should be tested in a usability study, leading to the conclusion that 5 users were a sufficient number for a qualitative studies since it is possible to get the maximum benefit-cost ratio - "Testing with 5 people lets you find almost as many usability problems as you'd find using many more test participants" \cite{why_you_only_need_to_test_with_5_users} \cite{how_many_test_users_in_a_usability_study}. However, to perform quantitative analysis it is necessary to get at least 20 users in order to get statistical relevance \cite{how_many_test_users_in_a_usability_study}.
+Nielsen performed some studies quantifying how many users should be tested in a usability study, leading to the conclusion that 5 users were a sufficient number for qualitative studies since it is possible to get the maximum benefit-cost ratio - "Testing with 5 people lets you find almost as many usability problems as you'd find using many more test participants" \cite{why_you_only_need_to_test_with_5_users} \cite{how_many_test_users_in_a_usability_study}. However, to perform quantitative analysis it is necessary to get at least 20 users in order to get statistical relevance \cite{how_many_test_users_in_a_usability_study}.
 
 According to the studies mentioned, at least 5 users of each user group (described in \ref{sec:target_users}.) should be tested since only a qualitative analysis will be performed to validate user's interaction with the applied changes. Nevertheless, some statistical results should be also subject of analysis in order to compare if the new solution provide improved usability than the existing version. Hence, it was decided to test more users in the existing implementation and in the final prototype in order to obtain enough elements to conduct a quantitative analysis. In that way, Table \ref{tab:number_of_users_tested_by_each_user_group_and_solution} shows how many users were tested by each user group and by each solution evaluated.
 
@@ -62,7 +62,7 @@ Firstly, it was defined the type of testing scenarios that would be presented. F
 
 Considering those evaluation requirements, two types of testing scenarios were prepared: scenarios where users explore an existing query and try to realize what was its purpose, and the other ones where users try to formulate it on their own. Through that approach, it was possible to analyze the usability of the interfaces tested for both points of view: comprehension and formulation.
 
-Nevertheless, the complexity of the queries presents a crucial factor when the scenarios were thought out. For example, an interface could be useful and pleasant to use in simple use cases but it could lead to a decrease of that quality in more complex queries. Accordingly, is was listed the requirements that were considered relevant to be covered by user testing scenarios:
+Nevertheless, the complexity of the queries presents a crucial factor when the scenarios were thought out. For example, an interface could be useful and pleasant to use in simple use cases but it could lead to a decrease of that quality in more complex queries. Accordingly, the requirements that were considered relevant to be covered by user testing scenarios are listed below:
 
 \begin{itemize}
     \item \textbf{Query Comprehension: }Relevant aspects that should be present in the queries and consequently in the interface to evaluate, as extensive as possible, queries' comprehension:
@@ -108,11 +108,11 @@ After choosing the data model used as support for the usability tests, the list 
 
 Through that approach, it was possible to keep the focus on different aspects according to the scenario used. On the one hand, the comprehension scenarios give the focus to the query readability, which promote a global exploration of the query components and gave the opportunity to understand if users clearly identified the purpose of each interface section. On the other hand, modification and formulation scenarios were used to understand if users could built queries through the interface presented.
 
-Nevertheless, there was several results to be obtained from the user testing scenarios and it was difficult reach an approach to test all aspects related to the existing problems in a short period. Since the testing requirements presented above must be integrated in the scenarios, a strategy was used to distribute the different requirements among the different scenarios in order to evaluate them all in a fluid and natural way for the user. 
+Nevertheless, there was several results to be obtained from the user testing scenarios and it was difficult to reach an approach to test all aspects related to the existing problems in a short period. Since the testing requirements presented above must be integrated in the scenarios, a strategy was used to distribute the different requirements among the different scenarios in order to evaluate them all in a fluid and natural way for the user. 
 
 %Considering the short period available to test all mentioned requirements, the aspects considered essential to be present in the use cases explored were combined in a table in order to distribute them along a set of scenarios. Figure X 
 
-Therefore, Table \ref{tab:scenarios_complexity} was used to assign organize the complexity of each scenario and check the aspects that would be tested in each one.
+Therefore, Table \ref{tab:scenarios_complexity} was used to assign and organize the complexity of each scenario and check the aspects that would be tested in each one.
 
 \textbf{Table \ref{tab:scenarios_complexity} clarifications regarding the factors integrated in testing scenarios: }
 \begin{itemize}
@@ -168,11 +168,11 @@ Having all testing scenarios established, it was necessary to plan how to identi
 
 All users tested, started by filling a survey in order to perceive what are their background regarding software development, relational databases, and data management and visualization tools. The answers were used to detect their profiles according to the user groups defined in \ref{subsec:user_groups}.
 
-After perceiving the user's profile, the data model was presented. In that way, it is explained how the entities of the model are related with each other and the most used attributes in the scenarios are highlighted. As soon as they confirm that they understood the overview of the existing entities, the testing process starts. 
+After perceiving the user's profile, the data model was presented, focusing on the most relevant aspects for the tests. In that way, it was explained how the entities of the model were related with each other and the most used attributes in the scenarios were highlighted. As soon as users confirmed that they understood the overview of the existing entities, the testing process started. 
 
-As soon as they confirm that they got an overview of the existing entities, the testing process starts. However, following users' reasoning and opinions while they interact with the interface was not considered sufficient to collect all results necessary.
+As soon as they confirm that they got an overview of the existing entities, the testing process starts. However, following users' reasoning and opinions while they interact with the interface was not considered sufficient to collect all necessary results.
 
-Therefore, an evaluation methodology was designed to collect the data required using the same approach for all tested interfaces.
+Therefore, an evaluation methodology was designed to collect the required data using the same approach for all tested interfaces.
 
 For each user tested, a table, as the example presented in Figure \ref{fig:userEvaluationExample}, was figured out in order to register how much time they required to execute each scenario and how was their effectiveness in the goal achievement. The classification of the effectiveness was made according to Table \ref{tab:effectiveness_states}.
 

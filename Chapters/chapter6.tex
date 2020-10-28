@@ -9,19 +9,19 @@
 \chapter{Design and Implementation}
 \label{cha:design_and_implementation}
 
-The design process adopted was an iterative design approach to build iteratively the solution according to the users' acceptance and feedback retrieved by users test in each iteration. Throughout this chapter, it is detailed all design and implementation decisions considered in order to reach the final prototype.
+The design process adopted was an iterative design approach to build iteratively the solution according to the users' acceptance and feedback retrieved during users test in each iteration. Throughout this chapter, it is detailed all design and implementation decisions considered in order to reach the final prototype.
 
 \section{Sketching}
 \label{sec:sketching}
 
-Before starting the development of the interface prototypes which were tested with users, it was performed some sketches in order to organize and explore ideas to tackle the existing usability problems. The most important to reach in the final of this phase was not a functional or complete interface, but some practical ideas that could be applied in the following prototypes.
+Before starting the development of the interface prototypes which were tested with users, some sketches were performed in order to organize and explore ideas to tackle the existing usability problems. The most important to reach in the final of this phase was not a functional or complete interface, but some practical ideas that could be applied in the following prototypes.
 
 Considering the extensive list of problems identified, prioritization was an important aspect taken into account throughout all design phases. The first problem explored was the difficulty to comprehend what is the database query purpose.
 
 In the existing interface, users do not have a unique and clear view that facilitates the comprehension of what data could be fetched from the database through the query presented. As illustrated in Figure \ref{fig:example_of_query_representation}, the user can only see some components of the query at a time, due to the usage of tabs to individualize each type of query components. In addition, as can be observed in Figure \ref{fig:ss_existing_layout}, when users open the query, only the query output preview was shown. That was considered a problem in the analysis of the interface for two different points of view:
 
 \begin{itemize}
-    \item When the existing interface was tested with users who do not usually use the Platform, they do not easily find out the existence of the tabs and tried to perceive the query purpose only observing the data preview. Besides not being an effective understanding technique, it can be even more difficult when the output contains several columns;
+    \item When the existing interface was tested with users who do not usually use the Platform, they did not easily find out the existence of the tabs and tried to perceive the query purpose only observing the data preview. Besides not being an effective understanding technique, it can be even more difficult when the output contains several columns;
     \item The users accustomed to this data tool revealed that is cumbersome to open and navigate between tabs in order to understand the query.
 \end{itemize}
 
@@ -62,7 +62,7 @@ Regardless of the option, the layouts presented have in a single view the most i
 
 Beyond the disposition of the different interface views and components, other features were sketched in order to think more about it and structure concrete ideas to implement it.
 
-The existing interface has no mechanism that allows the user to easily find the data of an entity or attribute. The attributes included in the query were not represented in any region of the interface beyond the query result table. Thereby, the unique way to find out the attribute is looking for in each table header, using the horizontal scroll, until the intended attribute is found. That process is cumbersome and slow, so that there was sketched an alternative that includes the attributes in the sources view. Consequently, users can click on attributes and the attribute will be highlighted automatically in the query result preview, as illustrated in Figure \ref{fig:sketchAttributeSearch}. Also, the idea of a search engine was considered, so that users can search for an entity or attribute faster.
+The existing interface has no mechanism that allows the user to easily find the data of an entity or attribute. The attributes included in the query were not represented in any region of the interface beyond the query result table. Thereby, the unique way to find out the attribute is looking for in each table header, using the horizontal scroll, until the intended attribute is found. That process is cumbersome and slow, so that an alternative which includes the attributes in the sources view was sketched. Consequently, users can click on an attribute and the attribute will be highlighted automatically in the query result preview, as illustrated in Figure \ref{fig:sketchAttributeSearch}. Also, the idea of a search engine was considered, so that users can search for an entity or attribute faster.
 
 \begin{figure}[htbp]
 	\centering
@@ -85,7 +85,7 @@ Furthermore, different approaches more compact and functional were explored to d
   \label{fig:sketchJoins}
 \end{figure}
 
-Lastly, it was sketched an idea to accelerate the searching process of a specific element inside the query. Therefore, the sketch represented in Figure \ref{fig:sketchGeneralSearch} demonstrates an idea taken into account to find all references of an entity. This general search could allow users to find entities, joins, filters, or other query elements faster.
+Lastly, an idea to accelerate the searching process of a specific element inside the query was sketched. Therefore, the sketch represented in Figure \ref{fig:sketchGeneralSearch} demonstrates an idea taken into account to find all references of an entity. This general search could allow users to find entities, joins, filters, or other query elements faster.
 
 \begin{figure}[htbp]
 	\centering
@@ -114,9 +114,9 @@ The building process of this low-fidelity prototype started with a design phase 
 
 \medskip
 
-Taking into account the sketches mentioned in the last section, the first question evaluated was which rearrangement of the sub-editors and the result preview views would be implemented in the next phase. In order to take action in this regard, there was a point in the visual query builder background considered. As mentioned in \ref{subsubsec:previous_work}, this querying interface was completely redesigned seven years ago, which had a negative repercussion on users since they were accustomed to the previous interface. Therefore, there was a concern to change the interface without removing the main points that characterize and identifies it. In such a way that users would not feel using a completely new interface but an improved version of the existing one.
+Taking into account the sketches mentioned in the last section, the first question evaluated was which rearrangement of the sub-editors and the result preview views would be implemented in the next phase. In order to take action in this regard, there was a point in the visual query builder background considered. As mentioned in \ref{subsubsec:previous_work}, this querying interface was completely redesigned seven years ago, which had a negative repercussion on users since they were accustomed to the previous interface. Therefore, there was a concern to change the interface without removing the main points that characterize and identify it. In such a way that users would not feel using a completely new interface but an improved version of the existing one.
 
-Comparing the two options sketched (Figure \ref{fig:sketch_wireframes}) with the existing interface (Figure \ref{fig:example_of_query_representation}), the \nameref{fig:sketch_wireframe_a} is the most similar because the editors area keeps on the top region of the interface and the query result data below. For this reason, this arrangement would be considered in the next phase.
+Comparing the two sketched options (Figure \ref{fig:sketch_wireframes}) with the existing interface (Figure \ref{fig:example_of_query_representation}), the \nameref{fig:sketch_wireframe_a} is the most similar because the editors area keeps on the top region of the interface and the query result data below. For this reason, this arrangement would be considered in the next phase.
 
 Having chosen where would take place the edition area of the interface, the second aspect taken into consideration was how to organize its sub-editors. This decision was taken bearing in mind what each query aspect represents in the user's mental model when they formulate queries as well as the physical space of the interface they could occupy.
 
