@@ -449,7 +449,7 @@ Furthermore, the following aspects were concluded from observing users trying to
 
 Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation showed how entities were related with each other.
 
-%Comparison with Current Implementation Evaluation
+%Comparison with Existing Interface Evaluation
 
 %Quantos utilizadores foram testados
 %Dada a população utilizada só foram feitas análises qualitativas como meio de obter feedback construtivo para a próxima iteração.
@@ -478,7 +478,7 @@ Finally, some users referred that they felt a reduced necessity to confer the Da
 \section{Service Studio Implementation}
 \label{sec:service_studio_implementation}
 
-As mentioned in \ref{subsec:visual_development_environment}, the Service Studio is the \gls{IDE} integrated in the OutSystems Platform that allows users to build full applications using the low-code programming paradigm.
+As mentioned in \ref{subsec:visual_development_environment}, Service Studio is the \gls{IDE} integrated in the OutSystems Platform that allows users to build full applications using the low-code programming paradigm.
 
 The last iteration of the design process, and consequently, the final prototype elaborated in this dissertation, was a functional prototype of the query builder completely integrated into the code of the Service Studio.
 
@@ -487,7 +487,7 @@ Nevertheless, Service Studio was getting a major facelift to achieve a new revam
 \begin{figure}[htbp]
 	\centering
   \includegraphics[height=3.0in]
-  {aggregate-new-design}
+  {aggregate-new-design-2}
 	\caption{The new design of the Service Studio and its Visual Query Builder.}
 	\label{fig:aggregateNewDesign}
 \end{figure}
@@ -499,7 +499,7 @@ Despite the new design of all interface elements and components, the core behavi
 
 Following the same methodology used in the Paper Prototype, the building process of this solution started with the design phase. In this phase, the paper prototype evaluation outcomes were deliberated in order to define and prioritize the aspects to be tackled in the final prototype.
 
-First of all, the source code of the Service Studio was explored in order to plan the development that could be done in the time available. As explained in the presentation of the paper prototype, the development aspects were planned according to their impact on the final interface. Ideas that fundamentaly alter the experience of using the interface will be considered a priority, since the most important is to perceive how users reacted to that changes, when testing the interface. Minor features and enhancements could also be considered as future work if the interface evaluated had positive results.
+First of all, the source code of the Service Studio was explored in order to plan the development that could be done in the time available. As explained in the presentation of the paper prototype, the development aspects were planned according to their impact on the final interface. Ideas that fundamentally alter the experience of using the interface will be considered a priority, since the most important is to perceive how users reacted to that changes when testing the interface. Minor features and enhancements could also be considered as future work if the interface evaluated had positive results.
 
 Considering the performed evaluation of the Paper Prototype, the sources editor was taken into account as the main focus of the design phase of the Final Prototype. As referred, during the usability tests of the paper prototype, the sources view has revealed positive results, but it was concluded that it should be refined regarding some aspects, mainly the joins representation which were not completely clear for a set of users.
 
@@ -530,14 +530,51 @@ In order to decide an option the following topics were taken into account:
   \item \textbf{Emphasis: }The used representation may end up giving more prominence to certain elements even though if it was not built for this purpose. Accordingly, it was verified the aspects of the interface which would stand out at a first glance. In \nameref{sub@fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB}, joins are more highlighted since there are specific lines to represent them. Conversely, in the \nameref{sub@fig:sourcesFigmaC} the join is presented in the same line of an entity, which makes entities standed out, in general. Therefore, the \nameref{sub@fig:sourcesFigmaC} was considered the most appropriated to highlight entities at a first sight.
 \end{itemize}
 
-Reflecting on the topics presented, and evaluating the advantages and disadvantages of each option, the \nameref{fig:sourcesFigmaC} was elected since it provide a clear readability and highlights the entities used in the query. Despite it requires more width space in the interface, mainly if there are multiple joins nested, this disadvantages could be mitigated in the future if the join conditions would be simplified or represented in a different way.
+Reflecting on the topics presented, and evaluating the advantages and disadvantages of each option, the \nameref{fig:sourcesFigmaC} was elected since it provide a clear readability and highlights the entities used in the query. Despite it requires more width space in the interface, mainly if there are multiple joins nested, these disadvantages could be mitigated in the future if the join conditions would be simplified or represented in a different way.
 
 Regarding the remaining elements of the interface, the design approaches applied in the Paper Prototype improved the usability of the interface. As a result, the design concerning filters, sorting and the query result table have followed the ideas already detailed in \ref{sec:paper_prototype}.
 
 
 \subsection{Implementation}
 \label{subsec:service_studio_implementation}
-Having defined the intended design of the final prototype, the development of this new data querying interface integrated in the Service Studio code started. %As mentioned, the code is implemented in
+Bearing in mind the ideas explores in the paper prototype and their evaluation with users as well as the high-fidelity design ideas built in Figma, the system, which is implemented in React \cite{react}, Typescript \cite{typescript} and C\#, were redesigned in some aspects.
+
+\medskip
+
+
+\textbf{General layout:}
+
+\medskip
+
+Following the methodology used in the previous prototype, the first stage of the development process was the substitution of the tabs by an equivalent edition area with the three components visible at once (sources, filters, and sorting), as can be observed in Figure \ref{fig:withoutTabs}. Also, the existing scroll problem identified, illustrated in Figure \ref{fig:horizontalScrollBug}, (i.e., when users wanted to scroll the table horizontally to see the columns in overflow, the edition area above disappears) was solved. As a result, they can see all the components of the edition area and the information in the query result table at the same time. This change was important to reduce the users' working memory overload since they have the information they need visible.
+
+%figure scroll problem
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=2.0in]
+  {horizontal-scroll-bug}
+	\caption{Horizontal scroll problem in the existing interface: when users use scroll the see the columns at the right side, the editors are not fixed above.}
+	\label{fig:horizontalScrollBug}
+\end{figure}
+
+%figure new sections (edit in figma to be easier)
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=2.8in]
+  {without-tabs}
+	\caption{Interface after removed the tabs and expanded them in three areas visible at the same time.}
+	\label{fig:withoutTabs}
+\end{figure}
+
+\medskip
+
+\textbf{Sources View:}
+
+\medskip
+
+As approached in the previous section, the sources and joins editor was completely redesigned. Since the design elaborated for this interface area presents multiple components using some indentation and nesting, the React components were structured before starting the implementation of this view, using the organization shown in Figure \ref{fig:sourcesComponentsStructure}, in order to guarantee the feasibility of the arrangement created.
 
 \begin{figure}[htbp]
 	\centering
@@ -547,6 +584,193 @@ Having defined the intended design of the final prototype, the development of th
 	\label{fig:sourcesComponentsStructure}
 \end{figure}
 
+The $"SourcesAndJoinsEditor"$ is the parent component that contains all query sources. This component includes two areas: a list of  $"DataSetAttribute"$, which are the attributes of the query result added throughout the query formulation, such as aggregated attributes, group bys, or calculated attributes, and a component $"Sources"$ that represents all entities and joins of the query.
+
+As the presentation of the entities and joins depends on the joins and the entities involved in the query, due to the indentation and nesting applied whenever an entity is joined with another already presented above, it was necessary to create some logic in the $"Sources"$ component to present the entities with the design intended.
+
+Therefore, the $"Sources"$ renders the first entity added to the query, and after that, it iterates along the joins of the query to represent the ones that are related to the entity already rendered. For each join related to the entity already represented, it is represented the join specification (join kind and join condition) and it is verified if the entity joined to the previous one is related to more entities. In those cases, other $"Sources"$ is rendered to represent the remaining sources. Figure \ref{fig:withoutJoinSimplification} exemplifies the result of the interface implemented at this stage. 
+
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {without-join-simplification}
+	\caption{Structure of the React components created to dispose the sources.}
+	\label{fig:withoutJoinSimplification}
+\end{figure}
+
+Nevertheless, as referred in \ref{subsec:paper_prototype_implementation}, the join conditions generated automatically by the system were simplified. In those cases, where the join condition just specified that the primary key of an entity is equal to the foreign key of the other entity, it was designed a simplified version of the join condition where only the foreign key is represented. If the join between the two entities could be made through different foreign keys, the foreign key used is presented in a dropdown which allow users to change to other key. An example of a query with these dropdowns is presented in Figure \ref{fig:changeForeignKeyDropdown}. Through that approach, user not only can change that query aspect faster but also the data model could be perceived without consulting it directly, since the dropdown is an indicator that there are multiple attributes that could be used to join the two entities.
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {change-foreign-key-dropdown}
+	\caption{Example of a query were there are joins that could be applied using different foreign keys to merge the two entities, so the user can use the dropdown to choose the intended one.}
+	\label{fig:changeForeignKeyDropdown}
+\end{figure}
+
+Furthermore, for users who open a query already created, it is important to perceive if any join condition was edited manually before in order to mitigate miscomprehensions of the query purpose. In that way, it was decided to represent the entire condition for these joins whose condition was edited manually, in order to differentiate them from the ones which the system generated automatically. Figure \ref{fig:finalC1} demonstrates an example of a query where a join condition were edited manually.
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {final-c1}
+	\caption{Example of a query that contains a join condition edited manually: The join condition between $"Sample\_Employee"$ and $"Sample\_Notification"$ was edited so this condition was not simplified as the other ones.}
+	\label{fig:finalC1}
+\end{figure}
+
+%Modal
+
+Finally on this point concerning the foreign keys of the joins, there was a problem in the existing interface which could lead users to make semantic errors while they are formulating queries that uses entities which could be joined using different foreign keys. As explained in \ref{subsec:paper_prototype_implementation}, the existing interface did not ask users which foreign key he wants to use. Consequently, the idea adopted in the paper prototype (Figure \ref{fig:paperFkSelect}), which has leverage the results onf the user testing in a positive way, continued to this phase, where a modal appears in these cases to ask user which attribute he wants to use to merge the entities, as demonstrated in Figure \ref{fig:foreignKeyModal}.
+
+%Figure chave estrangeira modal
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=2.5in]
+  {foreign-key-modal}
+	\caption{Modal that asks user which foreign key attribute he wants to use to merge the two entities. In the example illustrated, the user has already added $"Sample\_Notification"$ and $"Sample\_Employee"$, and when he added $"Sample_Account"$ the interface showed the modal presented since there are three references of employees on the account entity: $"CreatedBy"$, $"Manager"$, and $"Owner"$.}
+	\label{fig:foreignKeyModal}
+\end{figure}
+
+Moreover, the $"Source"$ component was changed to present every entity as a tree node which contains the name and icon of each attribute as a child. Besides, not only a context menu that is available when users right-click in each entity attribute was added, as Figure \ref{fig:finalNewRightClick} exemplifies, but also the option to click on the attribute to highlight it on the query result preview. In that way, there is a possibility to find and add query options easier since the table auto-redirect to the intended attribute, and users can right-click on them to apply aggregation functions, group bys, filters, sorting, or even to hide it.
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {final-new-right-click}
+	\caption{Attributes of each entity and interactions accessible using the right click to trigger the context menu.}
+	\label{fig:finalNewRightClick}
+\end{figure}
+
+\medskip
+
+\textbf{New alternatives to add and search for attributes:}
+
+\medskip
+
+Nevertheless, these options are interesting alternatives to access these functionalities of the query builder, but adding also a visible function will improve the adoption of new users when they try to use the system. As stated before, these options were added in the Paper Prototype, as illustrated in \ref{fig:paperAddAggregation} and \ref{fig:paperAddCalculatedAttribute}. However, as mentioned in \ref{subsec:paper_prototype_evaluation}, some users were confused if they would need to add a calculated attribute or an aggregated attribute. Consequently, the button labels were changed to provide a more imperative and informative message related to the action accessible through each button. In that way, "Add Aggregation / Group By" was changed to "Group Data" and "Add Calculated Attribute" was changed to "Group Data", to reinforce that using the "Group Data" button users can combine data of an attribute merging its rows, and in the other, they can add a new attribute calculated from the existing ones to the query result. Besides, tooltips were added to each button in order to clarify the users who were confused about what function they intend. Figure \ref{fig:newButtonsTooltips} illustrates the two buttons and the respective tooltips added.
+
+%Figure with two sub figures to show the tooltips of the two buttons (group data and new attribute).
+
+\begin{figure}[tb]
+  \centering
+  \subcaptionbox{New Attribute\label{fig:groupDataTooltip}}%
+    {\includegraphics[height=1.3in]{group-data-tooltip}}%
+  \subcaptionbox{Group Data\label{fig:newAttributeTooltip}}%
+    {\includegraphics[height=1.3in]{new-attribute-tooltip}}%
+\caption{Tooltips of the two new buttons added.}
+  \label{fig:newButtonsTooltips}
+\end{figure}
+
+When users click on the "Group Data" button the area, the interface shows a new area where the user can select the attribute and the functions he could apply to the attribute according to the attribute data type. Figure \ref{fig:groupDataEditor} demonstrates this new functionality of the system. This option is advantageous not only for users not familiarized with the system who can see a visible option to group data, but also is it provided a faster way to add multiple group bys or aggregation functions, since in a short area of the interface users can group data of several attributes without the need to search horizontally through the table of the query result.
+
+%Figure illustrating the group data area
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {group-data-editor}
+	\caption{New alternative to group data.}
+	\label{fig:groupDataEditor}
+\end{figure}
+
+The "New Attribute" button added allows users to add calculated attributes in the same way they could add it before using the button available at the right side of all columns (in most times hidden due to the overflow). However, this button not only is more visible but also is more accessible.
+
+The attributes added through these two buttons over the query formulation process are presented in sources, as illutstrated in Figure \ref{fig:finalStructuredAttributes}. This representation is advantageus since users can read more information about how those attributes were added because there are visible information about the attributes and the formulas used to insert them.
+
+%Figure illustrating how calculated attributes and aggregated attributes are represented in the interface. Put squares and identifications of the parts in FIGMA
+
+\begin{figure}[htbp]
+	\centering
+  \includegraphics[height=3.0in]
+  {final-structured-attributes}
+	\caption{Example of a query that contains a group by ($"Id"$), an aggregation function ($"BalanceAvg"$) and a calculated attribute ($"EmployeeFullName"$).}
+	\label{fig:finalStructuredAttributes}
+\end{figure}
+
+In the same way, the query result table headers of these attributes were changed not only to improve their readability but also to maintain the consistency with the new area visible in sources. Figure \ref{fig:groupHeadersComparison} compares the header representation of an aggregated attribute, a group by, and a calculated attribute in the existing interface to the new one. As can be observed, the reference of the source attribute used to group data was added to the group bys and aggregation function, since before it was difficult to perceive what attributes were grouped in the query. Moreover, the function symbol of aggregation functions was removed since no formula is inserted in these attributes and several users tried to click on the function symbol to open some formula.
+
+\begin{figure}[tb]
+  \centering
+  \subcaptionbox{Existing Interface\label{fig:existingGroupHeaders}}%
+    {\includegraphics[height=1.5in]{existing-group-headers}}%
+  \subcaptionbox{Service Studio Prototype\label{fig:finalGroupHeaders}}%
+    {\includegraphics[height=1.5in]{final-group-headers}}%
+\caption{Comparison between the table headers of the existing interface and the new ones (two group bys and one aggregated attribute, from the left to the right).}
+  \label{fig:groupHeadersComparison}
+\end{figure}
+
+
 \subsection{Evaluation}
 \label{subsec:service_studio_evaluation}
+
+\section{Results Analysis}
+\label{sec:results_analysis}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.2in]{total-effectiveness-comparison}
+	\caption{Effectiveness Comparison between the existing interface and the final prototype.}
+	\label{fig:totalEffectivenessComparison}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.0in]{add-calculated-attribute-comparison}
+	\caption{Effectiveness Comparison between the existing interface and the final prototype.}
+	\label{fig:addCalculatedAttributeComparison}
+\end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \subcaptionbox{Add calculated attribute\label{fig:addCalculatedAttributeComparison}}%
+      {\includegraphics[width=0.5\linewidth]{add-calculated-attribute-comparison}}%
+    \subcaptionbox{Foreign key selection\label{fig:foreignKeySelectionComparison}}%
+    {\includegraphics[width=0.5\linewidth]{foreign-key-selection-comparison}}%
+    \\
+    \subcaptionbox{Left join with null readability\label{fig:leftJoinWithNullComparison}}%
+      {\includegraphics[width=0.5\linewidth]{left-join-with-null-readability-comparison}}%
+    \subcaptionbox{Foreign key readability\label{fig:foreignKeyReadabilityComparison}}%
+    {\includegraphics[width=0.5\linewidth]{foreign-key-readability-comparison}}%
+    \caption{Comparison of the effectiveness between the Existing Interface and the Final Prototype, regarging specific use cases.}
+    \label{fig:specificComparisons}
+  \end{figure}
+
+\begin{figure}[tb]
+    \centering
+    \subcaptionbox{Existing Interface\label{fig:susChartExistingInterface}}%
+      {\includegraphics[width=1.0\linewidth]{sus-chart-existing-interface}}%
+      \\
+    \subcaptionbox{Final Prototype\label{fig:susChartFinalPrototype}}%
+    {\includegraphics[width=1.0\linewidth]{sus-chart-final-prototype}}%
+  \caption{Comparison of the System Usability Scale results (SUS) between the Existing Interface and the Final Prototype.}
+    \label{fig:susChartComparison}
+  \end{figure}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+    \caption{Average and Standard Deviation of the System Usability Scale (SUS) results.}
+	\label{tab:sus_results}
+    \begin{tabular}{@{}|m{6cm}R{1.7cm}R{1.7cm}R{1.7cm}R{1.7cm}|@{}}
+    \toprule
+                                                                                               & \multicolumn{2}{l}{\textbf{Average}}                                                                                                           & \multicolumn{2}{l|}{\textbf{Standard Deviation}}                                                                                                \\ \cmidrule(l){2-5} 
+    \multirow{-2}{*}{\textbf{Question}}                                                        & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Existing Interface}} & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{E6E6E6}\textbf{Final Prototype}} & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Existing Interface}} & \multicolumn{1}{m{1.7cm}|}{\cellcolor[HTML]{E6E6E6}\textbf{Final Prototype}} \\ \midrule
+    I think that I would like to use this system frequently.                                   & \cellcolor[HTML]{EFEFEF}3.34                                            & \cellcolor[HTML]{E6E6E6}4.33                                         & \cellcolor[HTML]{EFEFEF}0.99                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+    I found the system unnecessarily complex.                                                  & \cellcolor[HTML]{EFEFEF}2.88                                            & \cellcolor[HTML]{E6E6E6}1.90                                         & \cellcolor[HTML]{EFEFEF}1.08                                            & \cellcolor[HTML]{E6E6E6}0.79                                          \\ \midrule
+    I thought the system was easy to use.                                                      & \cellcolor[HTML]{EFEFEF}3.44                                            & \cellcolor[HTML]{E6E6E6}4.07                                         & \cellcolor[HTML]{EFEFEF}0.93                                            & \cellcolor[HTML]{E6E6E6}0.73                                          \\ \midrule
+    I think that I would need the support of a technical person to be able to use this system. & \cellcolor[HTML]{EFEFEF}2.94                                            & \cellcolor[HTML]{E6E6E6}2.20                                         & \cellcolor[HTML]{EFEFEF}1.22                                            & \cellcolor[HTML]{E6E6E6}1.14                                          \\ \midrule
+    I found the various functions in this system were well integrated.                         & \cellcolor[HTML]{EFEFEF}3.00                                            & \cellcolor[HTML]{E6E6E6}4.30                                         & \cellcolor[HTML]{EFEFEF}0.94                                            & \cellcolor[HTML]{E6E6E6}0.64                                          \\ \midrule
+    I thought there was too much inconsistency in this system.                                 & \cellcolor[HTML]{EFEFEF}2.44                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.20                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+    I would imagine that most people would learn to use this system very quickly.              & \cellcolor[HTML]{EFEFEF}3.63                                            & \cellcolor[HTML]{E6E6E6}4.13                                         & \cellcolor[HTML]{EFEFEF}1.02                                            & \cellcolor[HTML]{E6E6E6}0.85                                          \\ \midrule
+    I found the system very cumbersome to use.                                                 & \cellcolor[HTML]{EFEFEF}2.34                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.08                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+    I felt very confident using the system.                                                    & \cellcolor[HTML]{EFEFEF}3.25                                            & \cellcolor[HTML]{E6E6E6}4.00                                         & \cellcolor[HTML]{EFEFEF}1.20                                            & \cellcolor[HTML]{E6E6E6}0.93                                          \\ \midrule
+    I needed to learn a lot of things before I could get going with this system.               & \cellcolor[HTML]{EFEFEF}2.81                                            & \cellcolor[HTML]{E6E6E6}2.43                                         & \cellcolor[HTML]{EFEFEF}1.13                                            & \cellcolor[HTML]{E6E6E6}1.12                                          \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
 

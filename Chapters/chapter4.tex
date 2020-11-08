@@ -6,18 +6,48 @@
 %% Chapter with introduciton
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%Before chapter reordering:
+%Taking into account the existing usability problems and the target users' requirements and expectations, a methodology was essential in order to design, implement, and evaluate solutions throughout the development process. Therefore, this chapter will present the multiple phases and techniques carried out since the first sketches to the final evaluations.
 
 \chapter{Methodologies}
 \label{cha:methodologies}
-Taking into account the existing usability problems and the target users' requirements and expectations, a methodology was essential in order to design, implement, and evaluate solutions throughout the development process. Therefore, this chapter will present the multiple phases and techniques carried out since the first sketches to the final evaluations.
+Since the problem approached in this dissertation required a reformulation of the visual interface used to query data, the methodology used to design, implement and evaluate each phase of the solution development was regarded as a key factor to keep the right focus until reach the final stage. 
+
+In that way, this chapter will present an overview of the methodology adopted as well as how users were integrated into the process in order to maintain a user-centered design approach.
+
+\section{Problem Exploration}
+\label{sec:problem_exploration}
+
+Even though there was a general idea of the problems of the existing interface, a complete plan was designed to perform a deep exploration of these problems. The main concern was to obtain a global and complete view of the problems through different gathering strategies in order to examine the problem from different perspectives rather than using only a subset of users or data, which could bias the problems' perception.
+
+%The first stage contemplated was a deep exploration of the problems of the existing interface. Although there was a general idea of the existing usability problems of the interface, a plan following different gathering strategies was thought to examine the problem from different perspectives rather than using only a subset of users or data, which could bias the problems' perception.
+
+Firstly, the existing problems were identified in a wide sense from the perspective of a user who does not have context about how the query builder works, in order to realize the difficulties that new users who tried to start using the interface could feel. After that, other gathering techniques were applied in order to perceive also the problems felt by expert users and progressively understand the most detailed aspects of the problems presented. Therefore, the methods presented below, which will be further detailed in \ref{sec:problem_definition}, were applied, in this order, to obtain a wide and diverse view of the existing problems. 
+
+\begin{itemize}
+    \item \textbf{Analysis: } Visualization of the OutSystems tutorials regarding data querying and self-exploration of the interface in order to analyze and identify a preliminary set of preliminary problems;
+    \item \textbf{User Interviews: } Simple and direct dialogues with end-users of the OutSystems platform to listen their opinion concerning the query builder. The main aim was to notice in which reasons they use it, what are their major difficulties using it, or even the struggles or barriers which make them to not use it; 
+    \item \textbf{Data Analysis: } Analysis of the queries formulated in \gls{SQL} through the OutSystems Platform extensibility feature which allow developers to add queries in \gls{SQL} to perceive if \gls{SQL} is used only for advanced used cases not supported by the visual query, or if it is often used to cover simple use cases;
+    \item \textbf{Community Ideas: } Exploration of the discussions in the forums of the OutSystems Community regarding data querying to aggregate more information about problems users feel and suggestions to improve it;
+    \item \textbf{Existing Interface Evaluation: } Usability tests to the existing interface in order to visualize directly how users interact with the system as well as what they feel when trying to understand and formulate database queries using the visual query builder. The results of this problem information gathering would promote also important results to validate the further prototypes since it would be possible to compare the usability of the new prototypes with the existing interface.
+\end{itemize}
+
+\section{User Analysis}
+\label{sec:user_analysis}
+As mentioned, an user-centered design approach was applied and hence an analysis of the target users of the system, which will be further presented in \ref{sec:target_users}, was performed to perceive and categorize the users who use the query builder.
+
+In that way, the topics that could most branch out the users' requirements and expectations were pointed out to perceive how users could be divided into different groups. These groups were used throughout the design process to characterize the target users of the system. Each group represents a subset of the system's users, which should be separated from the remaining ones due to their user's profiles. Henceforth, all usability tests were performed in an equitable manner with users of all groups in order to obtain a representative sample of the end-users of the system.
+
 
 \section{Iterative Design}
 \label{sec:iterative_design}
-Before starting the solution building process, the phases were planned for the sake of the development of the final solution. Accordingly, the design strategy adopted, which will be further detailed in \nameref{cha:design_and_implementation}, will be briefly presented. The chosen methodology uses an iterative design strategy in order to keep a user-centric design, which prioritizes the users' needs according to the mentioned in \ref{subsec:user_centered_design}. Regarding the prototyping method, the evolutionary prototyping principle (described in \ref{subsubsec:sketching_and_prototyping}) was applied, where the last prototype was used as a baseline to develop the prototype of the next iteration.
+After comprehending the existing problems and the target users of the system, the phases for the sake of the design and development of the final solution were planned. Accordingly, the design strategy adopted, which will be further detailed in Chapter \ref{cha:design_and_implementation}, will be briefly presented. The chosen methodology used an iterative design strategy in order to keep a user-centric design, which prioritizes the users' needs according to the mentioned in \ref{subsec:user_centered_design}.
+
+%Nevertheless, there was the demand to deeply analyze the problem reach a more complete defined list of the requirements.
 
 \textbf{Sketching: }The design process started with an initial sketching phase, where the first solution ideas were explored and drafted. In this technique, the integration of new ideas into the existing interface is favored given the fact it is an interactive process where the ideas are tested progressively. The most important aspect was to think about system transversal changes and not about particular details of specific components, since these details could be refined later. The outcome of this phase sets a more concrete idea of what can be inserted in the prototype, even if it is necessary to think more about how to implement it later.
 
-Keeping in mind the ideas explored in the sketching phase, it is possible to start to build the prototypes that will be tested by users. The first decision taken was how many prototypes should be built taking into consideration the resources and time available. As mentioned in \ref{subsubsec:sketching_and_prototyping}, the first prototypes should be low-fidelity prototypes, and iteration by iteration, this level should increase in order to refine details in the interface. In that way, it was decided to build two prototypes:
+Keeping in mind the ideas explored in the sketching phase, it is possible to start to build the prototypes that will be tested by users. The evolutionary prototyping principle (described in \ref{subsubsec:sketching_and_prototyping}) was applied. Accordingly, the last prototype was used as a baseline to develop the prototype of the next iteration. As mentioned in \ref{subsubsec:sketching_and_prototyping}, the first prototypes should be low-fidelity prototypes, and iteration by iteration, this level should increase in order to refine details in the interface. In that way, it was decided to build two prototypes:
 
 \begin{itemize}
     \item \textbf{Paper Prototype: } Simple low-fidelity prototype implemented in paper using a ruler, a set square, and writing materials. Through that approach, it is possible to implement the first ideas faster and reduce the risk of adoption failure, since the implemented ideas were already tested. The main concern of this type of prototype is that the design of the major interface changes might affect users mental model which enables the early detection of which choices should continue to the next iterations or if they need to be redesigned.
@@ -26,7 +56,7 @@ Keeping in mind the ideas explored in the sketching phase, it is possible to sta
 
 In each one of the two above-mentioned prototypes, it was included the following phases: design, implementation, and evaluation. In the Design phase solution ideas that could be applied were set up as well as the priorities to be tackled in the prototype. The Implementation phase refers to the concrete prototype development process. Finally, in the Evaluation phase, the prototypes were tested by end-users, according to the testing approach further explained in \ref{sec:testing_scenarios} and \ref{sec:evaluation_method}.
 
-Regarding evaluation, it was necessary to establish how many users should be tested in each evaluating phase. In these phases, not only the two mentioned prototypes were considered, but also the evaluation of the existing interface mentioned in \ref{sec:current_implementation_evaluation}. 
+Regarding evaluation, it was necessary to establish how many users should be tested in each evaluating phase. In these phases, not only the two mentioned prototypes were considered, but also the evaluation of the existing interface mentioned in \ref{sec:existing_interface_evaluation}. 
 
 The data extracted from the evaluation of the existing interface provide an opportunity to compare the existing usability against the usability of the final solution. Thereby, the number of users tested in the first prototype is also an important factor.
 
@@ -79,7 +109,7 @@ Nevertheless, the complexity of the queries presents a crucial factor when the s
     \end{itemize}
 \end{itemize}
 
-The aspects mentioned were considered the most relevant to analyze since they allow a widespread use of the tool but they also cover multiple cases identified as critical in terms of usability, according to the aspects detailed in \ref{sec:problem_definition}.
+The aspects mentioned were considered the most relevant to analyze since they allow a widespread use of the tool but they also cover multiple cases identified as critical in terms of usability, according to the aspects further detailed in \ref{sec:problem_definition}.
 
 Nevertheless, the data model could have also a significant impact on user testing results. For instance, if a user does not understand the data model, he could miss the purpose of the query, even if the query is presented in a simple and readable manner. In that way, the selection of the data model used for user testing was performed attending to the following points:
 
@@ -204,4 +234,22 @@ Furthermore, other important details of each scenario were reported. In the comp
 
 Finally, to gain a more extensive notion and some quantitative metrics about the interaction with the interfaces, the users were asked to fill in a System Usability Scale (SUS) \cite{system_usability_scale} as their final task in the usability test.
 
-The process detailed in this chapter was used in all interfaces tested and addressed in this dissertation: the existing interface of Aggregates, the paper prototype, and the final prototype which was integrated into Service Studio (the Visual \gls{IDE} of the OutSystems Platform). The next chapter will describe the design and implementation process of each prototype built, but also how they were tested using the methodology referred.
+The process detailed in this chapter was used in all interfaces tested and addressed in this dissertation: the existing interface of Aggregates, the paper prototype, and the final prototype which was integrated into Service Studio (the Visual \gls{IDE} of the OutSystems Platform). 
+
+\section{Summary}
+\label{sec:summary}
+Figure \ref{fig:methodologyOverview} summarizes the methodology described in this chapter, from the problem definition to the final prototype implemented. As can be observed, there were two major phases throughout this dissertation:
+
+\begin{itemize}
+    \item \textbf{Requirements and Analysis: } The stage where the problem was defined as well as the target users of the system were identified and classified into different groups according to their requirements and expectations. The output of these two analyses was taken into account to prepare the user testing environment so that the scenarios and the evaluation method were defined;
+    \item \textbf{Design and Implementation: } The process to reach the redesigned interface, from the first sketchings to the final prototype integrated into the Service Studio code. The results of each phase were taken into account in the following phase, in order to evaluate the design choices made gradually.
+\end{itemize}
+
+Finally, the results of the user testing of the final prototype were compared against the results obtained when users tested the existing interface in order to measure the success of the prototype built.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.6in]{methodology-overview}
+	\caption{Methodology Overview}
+	\label{fig:methodologyOverview}
+\end{figure}
