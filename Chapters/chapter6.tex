@@ -333,7 +333,7 @@ Through that approach, users will be able to identify entities and joins of the 
 
 The last improved aspect during the development of this paper prototype was regarding the addition of new attributes. In accordance with the mentioned in the last section, there was a demand to provide other alternatives to add calculated attributes as well as group bys or aggregation functions.
 
-Considering the concern to insert strategically these alternatives, in easily and fast accessible places, it was necessiry to improve the visibility of these options to improve the learnability of novice users. The following options were applied:
+Considering the concern to insert strategically these alternatives, in easily and fast accessible places, it was necessary to improve the visibility of these options to improve the learnability of novice users. The following options were applied:
 
 \begin{itemize}
   \item \textbf{Click and right-click in the attributes exhibited in the Sources sub-editor: }The list of the attributes of each entity was added into each entity represented in the Sources of the query. On the one hand, if users click in an attribute, they would see the data related into the query result preview (according to the sketch already presented in Figure \ref{fig:sketchAttributeSearch}). On the other hand, if they right-click in an attribute, they would see the same context menu that they already could see when they right-click on the result table headers. Therefore they could apply operations using that alternative, as exemplified in Figure \ref{fig:paperAttributeRightClick}.
@@ -404,7 +404,7 @@ Therefore, for each scenario, it was required to build multiple images since eac
 	\label{fig:invisionInteractionExample}
 \end{figure}
 
-In total, 291 images were created and multiple interactions between them were configured in order to reach a prototype that could be tested in all scenarios defined in the Appendix \ref{app:user_testing_scenarios} - \nameref{app:user_testing_scenarios} \cite{invision_managing_interactions}.
+In total, 291 images were created and, multiple interactions between them were configured, in order to reach a prototype that could be tested in all scenarios defined in the Appendix \ref{app:user_testing_scenarios} - \nameref{app:user_testing_scenarios} \cite{invision_managing_interactions}
 
 %Tabela do resultado para cada scenario
 %Filtros e sorting de cada scenario
@@ -419,12 +419,12 @@ In total, 291 images were created and multiple interactions between them were co
 \subsection{Evaluation}
 \label{subsec:paper_prototype_evaluation}
 
-Completed the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. In that way, the aim, at this stage, was to map the improved aspects  and the details which require a redesign in the following phase.
+After completing the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
 
-In general, the new sub-editors layout applied was accepted positively by the users, even in the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, some minutes after, that see all query structure in a short visualization area above its result preview was useful. Other feedback pointed out by some users was that it could be useful to resize the dimensions of each sub-editor area.
+In general, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that see all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
 
 %TODO: Colocar uma footnote para Background.currentProgress, onde existir uma imagem que demonstre como é que os group bys são atualmente representados.
-Regarding the query result preview, some users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied. Even though it was difficult to distinguish the two elements of the query result, since it was used a low-fidelity design which presented a low expressiveness in terms of color, this constraint will be taken into account in the next design iteration since more styling and color resources will be available.
+Regarding the query result preview, some users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied. Even though it was difficult to distinguish the two elements of the query result, since it was used a low expressiveness in terms of color, this constraint will be taken into account in the next design iteration since more styling and color resources will be available.
 
 As predicted in the design and implementation phases of this prototype, the completely redesigned sources editor evoked different points of view and interesting feedback for the next iteration design phase.
 
@@ -436,11 +436,11 @@ Therefore, the following points describe the information collected with respect 
   \item Regarding the join conditions simplification, it was identified an increased awareness to perceive that there were two representations of join conditions, as shown in Figure \ref{fig:paperComprehension1Sources}. However, the majority of users did not manage to understand the meaning of this different visual representation, which intended to differentiate joins automatically generated from the ones manually edited.
 \end{itemize}
 
-Furthermore, the following aspects were concluded from observing users trying to formulate queries:
+Furthermore, the following aspects were captured from observing users trying to formulate queries:
 
 \begin{itemize}
-  \item As expected, the foreign key selection method presented in Figure \ref{fig:paperFkSelect} has optimized the effectiveness of the formulation scenario. Since users were asked to choose between the existing foreign key, they have selected the correct one.
-  \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, in part, the results have enhanced, but some drawback aspects were identified. Users who have never used the system, found these features easily since the two buttons became visible in the interface. However, they continue to make confusion when they needed to use a calculated attribute and an aggregation function.
+  \item As expected, the foreign key selection method presented in Figure \ref{fig:paperFkSelect} has optimized the effectiveness of the formulation scenario. Since users were asked to choose between the existing foreign key, they were able to select the correct one;
+  \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, the results have enhanced, but some drawback aspects were identified. Users who have never used the system, found these features easy since the two buttons became visible in the interface. However, they continue to make misunderstand when they needed to use a calculated attribute or the aggregation function.
 \end{itemize}
 
 Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation showed how entities were related with each other.
@@ -474,11 +474,9 @@ Finally, some users referred that they felt a reduced necessity to confer the Da
 \section{Service Studio Implementation}
 \label{sec:service_studio_implementation}
 
-As mentioned in \ref{subsec:visual_development_environment}, Service Studio is the \gls{IDE} integrated in the OutSystems Platform that allows users to build full applications using the low-code programming paradigm.
+As mentioned in \ref{subsec:visual_development_environment}, Service Studio is the \gls{IDE} integrated in the OutSystems Platform that allows users to build full applications using the low-code programming paradigm. In that way, the last iteration of the design process, and consequently, the final prototype elaborated in this dissertation, was a functional prototype of the query builder completely integrated into the code of the Service Studio.
 
-The last iteration of the design process, and consequently, the final prototype elaborated in this dissertation, was a functional prototype of the query builder completely integrated into the code of the Service Studio.
-
-Nevertheless, Service Studio was getting a major facelift to achieve a new revamped and refreshed design. Even though the new Service Studio design was not been released yet when the development of the final prototype of this dissertation started, it was decided to start the development from this stage. In that way, the interface of the query builder developed could be easily integrated later on the OutSystems Platform. Figure \ref{fig:aggregateNewDesign} illustrates the design used as the starting point for the final prototype development. As can be observed, is a redesigned version of the previous Service Studio design illustrated before in Figures \ref{fig:ss_workspace} and \ref{fig:aggregate_created}.
+Nevertheless, Service Studio was getting a major facelift to achieve a new revamped and refreshed design. Even though the new Service Studio design has not been released yet, the development of the final prototype was decided to be done using the new Service Studio look. In that way, the interface of the query builder developed could be easily integrated later on the OutSystems Platform. Figure \ref{fig:aggregateNewDesign} illustrates the design used as the starting point for the final prototype development. As can be observed, is a redesigned version of the previous Service Studio design illustrated before in Figures \ref{fig:ss_workspace} and \ref{fig:aggregate_created}
 
 \begin{figure}[htbp]
 	\centering
@@ -495,15 +493,15 @@ Despite the new design of all interface elements and components, the core behavi
 
 Following the same methodology used in the Paper Prototype, the building process of this solution started with the design phase. In this phase, the paper prototype evaluation outcomes were deliberated in order to define and prioritize the aspects to be tackled in the final prototype.
 
-First of all, the source code of the Service Studio was explored in order to plan the development that could be done in the time available. As explained in the presentation of the paper prototype, the development aspects were planned according to their impact on the final interface. Ideas that fundamentally alter the experience of using the interface will be considered a priority, since the most important is to perceive how users reacted to that changes when testing the interface. Minor features and enhancements could also be considered as future work if the interface evaluated had positive results.
+First of all, the source code of the Service Studio was explored in order to plan the development that could be done in the available time. As explained in the presentation of the paper prototype, the development aspects were planned according to their impact on the final interface. Ideas that fundamentally alter the experience of using the interface will be considered a priority, since, is primarily important to perceive how users react to those changes when testing the interface. Minor features and enhancements could also be considered as future work if the new interface solution evaluation show positive results.
 
-Considering the performed evaluation of the Paper Prototype, the sources editor was taken into account as the main focus of the design phase of the Final Prototype. As referred, during the usability tests of the paper prototype, the sources view has revealed positive results, but it was concluded that it should be refined regarding some aspects, mainly the joins representation which were not completely clear for a set of users.
+Taking into account the evaluation of the Paper Prototype, the sources editor was considered the main focus of the design phase of the Final Prototype. As referred, during the usability tests of the paper prototype, the sources view has revealed positive results, but it was concluded that it should be refined regarding some aspects, mainly the joins representation which were not completely clear for a set of users.
 
-Nevertheless, in order to implement the new interface representation of entities and joins, a considerable implementation effort would be required. The visualization area requires a personalized hierarquical view that should be built from scratch, since there is no similar element in the rest of the Service Studio.
+Nevertheless, in order to implement the new interface representation of entities and joins, a considerable implementation effort would be required. The visualization area requires a personalized hierarchical view that should be built from scratch, since there is no similar element in the rest of the Service Studio.
 
-Accordingly, before implementing any idea, a robust design should be established in order to avoid wasting implementation time on doing and redoing ideas. Therefore, it was performed more designs, regarding this region of the interface, using the product design system components. Basically, it was used the Figma \ cite {figma}, which is a design tool where all the new Service Studio components were designed, to explore concrete options to represent sources and solve the problems found when users tested the Paper Prototype. By this means, it was possible to obtain an high-fidelity design faster and perceive what solution could most fit the existing requirements.
+Accordingly, before implementing any idea, a robust design should be established in order to avoid wasting implementation time on doing and redoing ideas. Therefore, it was performed more designs, regarding the sources editor of the interface, using the product design system components. Basically, it was used the Figma \ cite {figma}, which is a design tool where all the new Service Studio components were designed, to explore concrete options to represent sources and solve the problems found when users tested the Paper Prototype. By this means, it was possible to obtain a high-fidelity design faster and perceive what solution could most fit the existing requirements.
 
-After exploring multiple alternatives, the options illustrated in Figure \ref{fig:sourcesFigma} were considered the most valuable. The main difference between them is the way the joins are represented. In \nameref{fig:sourcesFigmaA}, the join is represented in a single line placed between the two entities involved. In \nameref{fig:sourcesFigmaB}, the join condition is represented after the the second entity involved in the join. Lastly, in \nameref{fig:sourcesFigmaC}, the second entity is presented on the right of the join kind.
+After exploring multiple alternatives, the options illustrated in Figure \ref{fig:sourcesFigma} were considered the most valuable. The main difference between them is the way joins are represented. In \nameref{fig:sourcesFigmaA}, the join is represented in a single line placed between the two entities involved. In \nameref{fig:sourcesFigmaB}, the join condition is represented after the the second entity involved in the join. Lastly, in \nameref{fig:sourcesFigmaC}, the second entity is presented on the right of the join kind.
 
 \begin{figure}[tb]
   \centering
@@ -518,22 +516,22 @@ After exploring multiple alternatives, the options illustrated in Figure \ref{fi
   \label{fig:sourcesFigma}
 \end{figure}
 
-In order to decide an option the following topics were taken into account:
+In order to decide an option, the following topics were taken into account:
 
 \begin{itemize}
-  \item \textbf{Reading flow: } The reading flow of the entities and joins were considered important, especially due to the presentation of the join kind. As this was presented in natural language, users should manage to read  sequentially the first entity, the join, and the second entity in a fluid way. Due to the arrangement adopted, the \nameref{fig:sourcesFigmaC} was considered the most clear regarding this aspect since the second entity is placed in the right side of the join kind. In that way, the users reading affordance will unconsciously help them to understand the reading flow, according to the reading pattern from the left to the right;
-  \item \textbf{Width and height required: }The space each option would occupy was important to analyze the accommodation in the interface. Comparing the options presented, it can be concluded that the \nameref{fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB} would require more height, and the \nameref{fig:sourcesFigmaC} more width;
-  \item \textbf{Emphasis: }The used representation may end up giving more prominence to certain elements even though if it was not built for this purpose. Accordingly, it was verified the aspects of the interface which would stand out at a first glance. In \nameref{sub@fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB}, joins are more highlighted since there are specific lines to represent them. Conversely, in the \nameref{sub@fig:sourcesFigmaC} the join is presented in the same line of an entity, which makes entities standed out, in general. Therefore, the \nameref{sub@fig:sourcesFigmaC} was considered the most appropriated to highlight entities at a first sight.
+  \item \textbf{Reading flow: } The flow of the entities and joins was considered important, especially due to the representation of the join kind. As this was presented in natural language, users should manage to read sequentially, first the entity, than the join, and after the second entity, all in a fluid way. Due to the arrangement adopted, the \nameref{fig:sourcesFigmaC} was considered the most clear regarding this aspect since the second entity is placed in the right side of the join kind. In that way, the users reading affordance will unconsciously help them to understand the reading flow, since becomes more natural due to the similarities with natural languages;
+  \item \textbf{Width and height required: }The space that each option would occupy was important to analyze for the accommodation in the interface. Comparing the options presented, it can be concluded that the \nameref{fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB} would require more height, and the \nameref{fig:sourcesFigmaC} more width;
+  \item \textbf{Emphasis: }The used representation may end up giving more prominence to certain elements even though they were not built for that purpose. Accordingly, it was verified the aspects of the interface which would stand out at a first glance. In \nameref{sub@fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB}, joins are more highlighted since there are specific lines to represent them. Conversely, in the \nameref{sub@fig:sourcesFigmaC} the join is presented in the same line of an entity, which makes entities standed out, in general. Therefore, the \nameref{sub@fig:sourcesFigmaC} was considered the most appropriated to highlight entities at a first sight.
 \end{itemize}
 
-Reflecting on the topics presented, and evaluating the advantages and disadvantages of each option, the \nameref{fig:sourcesFigmaC} was elected since it provide a clear readability and highlights the entities used in the query. Despite it requires more width space in the interface, mainly if there are multiple joins nested, these disadvantages could be mitigated in the future if the join conditions would be simplified or represented in a different way.
+Reflecting on the topics presented, the evaluation of the advantages and disadvantages of each option was conducted, the \nameref{fig:sourcesFigmaC} was elected, as preferred, since it provides a clear readability and highlights the entities used in the query. Despite it requires more width space in the interface, mainly if there are multiple joins nested, these disadvantages could be mitigated in the future if the join conditions would be simplified or represented in a different way.
 
 Regarding the remaining elements of the interface, the design approaches applied in the Paper Prototype improved the usability of the interface. As a result, the design concerning filters, sorting and the query result table have followed the ideas already detailed in \ref{sec:paper_prototype}.
 
 
 \subsection{Implementation}
 \label{subsec:service_studio_implementation}
-Bearing in mind the ideas explores in the paper prototype and their evaluation with users as well as the high-fidelity design ideas built in Figma, the system, which is implemented in React \cite{react}, Typescript \cite{typescript} and C\#, were redesigned in some aspects.
+Bearing in mind the ideas explored in the paper prototype, and taking in account the evaluation performed with users, as well as, the high-fidelity design ideas built in Figma, the system started to be implemented in React \cite{react}, Typescript \cite{typescript} and C\#.
 
 \medskip
 
