@@ -9,19 +9,19 @@
 \chapter{Design and Implementation}
 \label{cha:design_and_implementation}
 
-The design process adopted was an iterative design approach to build iteratively the solution according to the users' acceptance and feedback retrieved during users test in each iteration. Throughout this chapter, it is detailed all design and implementation decisions considered in order to reach the final prototype.
+The design process adopted was an iterative design approach to build iteratively the solution according to the users' acceptance and feedback retrieved by users test in each iteration. Throughout this chapter, the design and implementation decisions taken in order to reach the final prototype are detailed.
 
 \section{Sketching}
 \label{sec:sketching}
 
-Before starting the development of the interface prototypes which were tested with users, some sketches were performed in order to organize and explore ideas to tackle the existing usability problems. The most important to reach in the final of this phase was not a functional or complete interface, but some practical ideas that could be applied in the following prototypes.
+Before starting the development of the interface prototypes, which will be future tested with users, some sketches were performed, in order to organize and explore ideas to tackle the existing usability problems. The primary goal expected to attain at the end of this phase is not a functional or complete interface, but a practical idea of what that could be designed in the following prototypes.
 
-Considering the extensive list of problems identified, prioritization was an important aspect taken into account throughout all design phases. The first problem explored was the difficulty to comprehend what is the database query purpose.
+Considering the extensive list of problems identified, prioritization was an important aspect taken into account throughout all design phases. The first problem explored was the difficulty to comprehend the database query purpose.
 
-In the existing interface, users do not have a unique and clear view that facilitates the comprehension of what data could be fetched from the database through the query presented. As illustrated in Figure \ref{fig:example_of_query_representation}, the user can only see some components of the query at a time, due to the usage of tabs to individualize each type of query components. In addition, as can be observed in Figure \ref{fig:ss_existing_layout}, when users open the query, only the query output preview was shown. That was considered a problem in the analysis of the interface for two different points of view:
+In the existing interface, users do not have a unique and clear view, which can facilitate the comprehension of what data could be fetched from the database through the query presented. As illustrated in Figure \ref{fig:example_of_query_representation}, the users can only see some components of the query at a time, due to the existence of tabs to individualize each type of query components (i.e., a tab for source, filter and sort options). In addition, as can be observed in Figure \ref{fig:ss_existing_layout}, when users open the query, only the query output preview was shown. That was considered a problem in the analysis of the interface for two different points of view:
 
 \begin{itemize}
-    \item When the existing interface was tested with users who do not usually use the Platform, they did not easily find out the existence of the tabs and tried to perceive the query purpose only observing the data preview. Besides not being an effective understanding technique, it can be even more difficult when the output contains several columns;
+    \item When the existing interface was tested with users who do not usually use the Platform, they could not easily find the tabs, which increased the chances of guessing wrongly the query purpose, since they have only observed the query output preview. Besides not being an effective understanding technique, it can be even more difficult when the output contains several columns;
     \item The users accustomed to this data tool revealed that is cumbersome to open and navigate between tabs in order to understand the query.
 \end{itemize}
 
@@ -40,13 +40,13 @@ In the existing interface, users do not have a unique and clear view that facili
     \label{fig:example_of_query_representation}
 \end{figure}
 
-Therefore, the designing of a new general layout where it is possible to view the most important query components at once was considered a major requirement. A solid improvement regarding that, could optimize not only the time and effort required to comprehend queries but also to formulate them, since all information is more visible and accessible.
+Therefore, the designing of a new general layout, where it is possible to view the most important query components at once, was considered a major requirement. A solid improvement regarding this component, could optimize not only the time and effort required to comprehend queries but also to formulate them, since all information is more visible and accessible.
 
-There was also a concern to build a layout that does not compromise the system usability for more complex cases, such as queries that contain a relevant number of entities or conditions.
+From other prespective, there was also the concern to build a layout that would not compromise the system usability for more complex cases, such as queries that contain a relevant number of entities or conditions.
 
-Accordingly, some wireframes were sketched in order to percept how the query components could be jointly combined in a unique view. Figure \ref{fig:sketch_wireframes} illustrates the two options elected from multiple approaches explored.
+Accordingly, some wireframes were sketched in order to perceive how the query components could be jointly combined in a unique view. Figure \ref{fig:sketch_wireframes} illustrates the two options elected from multiple approaches explored.
 
-In both options, there are two principal areas in the interface as it was before: the query editor area and the preview of the query result. However, it was explored two new manners to display all information of editors jointly with the query result preview. In \nameref{fig:sketch_wireframe_a}, the sub-editors remain in the top area and the query result preview below. The \nameref{fig:sketch_wireframe_b} illustrates another possibility sketched where all editors are presented on the left side of the screen and the visualization of the results are presented on the right side.
+In both options, there are two principal areas in the interface as presented in the current version of the interface: the query editor area and the preview of the query result. Yet, two new manners were explored to display all information of editors jointly with the query result preview. In \nameref{fig:sketch_wireframe_a}, the sub-editors remained in the top area and the query result preview below. The \nameref{fig:sketch_wireframe_b} illustrates another sketched possibility where all editors were presented on the left side of the screen and the visualization of the results presented on the right side.
 
 \begin{figure}[tb]
   \centering
@@ -60,9 +60,7 @@ In both options, there are two principal areas in the interface as it was before
 
 Regardless of the option, the layouts presented have in a single view the most important aspects to understand what query is built.
 
-Beyond the disposition of the different interface views and components, other features were sketched in order to think more about it and structure concrete ideas to implement it.
-
-The existing interface has no mechanism that allows the user to easily find the data of an entity or attribute. The attributes included in the query were not represented in any region of the interface beyond the query result table. Thereby, the unique way to find out the attribute is looking for in each table header, using the horizontal scroll, until the intended attribute is found. That process is cumbersome and slow, so that an alternative which includes the attributes in the sources view was sketched. Consequently, users can click on an attribute and the attribute will be highlighted automatically in the query result preview, as illustrated in Figure \ref{fig:sketchAttributeSearch}. Also, the idea of a search engine was considered, so that users can search for an entity or attribute faster.
+The existing interface does not have any mechanisms that allows the user to easily find an entity or attribute. The attributes included in the query are not represented in any region of the interface beyond the query result table. Thereby, the unique way to find out the attribute is to look for it in the table header of the query output, using the horizontal scroll. That process is cumbersome and slow, so an alternative was sketched in order to include the attribute in the sources view. The users could click on the attributes and the attribute would be automatically highlighed in the query result preview, as illustrated in Figure \ref{fig:sketchAttributeSearch}. The idea of a search engine was also considered to prompt users to search for an entity or attribute.
 
 \begin{figure}[htbp]
 	\centering
@@ -71,7 +69,7 @@ The existing interface has no mechanism that allows the user to easily find the 
 	\label{fig:sketchAttributeSearch}
 \end{figure}
 
-Furthermore, different approaches more compact and functional were explored to display the joins used in the query. Figure \ref{fig:sketchJoins} shows the idea sketched to represent joins in three different lists: a simple list of all join operations inside the query, and two other ones aggregated by the entities involved by the join kind.
+Furthermore, other approaches, more compact and functional, were also explored in order to display the joins used in the query. Figure \ref{fig:sketchJoins} shows the sketched ideas to represent joins: a simple list of all join operations inside the query, and two other ones aggregated by the entities involved by the join kind.
 
 \begin{figure}[tb]
   \centering
@@ -85,7 +83,7 @@ Furthermore, different approaches more compact and functional were explored to d
   \label{fig:sketchJoins}
 \end{figure}
 
-Lastly, an idea to accelerate the searching process of a specific element inside the query was sketched. Therefore, the sketch represented in Figure \ref{fig:sketchGeneralSearch} demonstrates an idea taken into account to find all references of an entity. This general search could allow users to find entities, joins, filters, or other query elements faster.
+Lastly, an idea to accelerate the searching process of a specific element inside the query was sketched. The sketch represented in Figure \ref{fig:sketchGeneralSearch} exhibits an idea, taken into account, to find all references of an entity. This general search would allow users to find entities, joins, filters, or other query elements faster.
 
 \begin{figure}[htbp]
 	\centering
@@ -94,19 +92,17 @@ Lastly, an idea to accelerate the searching process of a specific element inside
 	\label{fig:sketchGeneralSearch}
 \end{figure}
 
-Although the sketched ideas may not be applied to the final prototype since they depend on the whole iterative design process that started afterward, they were important to move the focus from problem definition to solution design.
-
 
 \section{Paper Prototype}
 \label{sec:paper_prototype}
-The interactive design process of the solution started in its entirety with the first prototype developed: the paper prototype. The main goal of this phase is the building of a functional prototype implemented in paper using a ruler, a set square, and writing materials, in order to create faster and with a low-risk level a prototype that could be testes by users.
+The interactive design process started entirety with the first prototype developed: the paper prototype. The main goal of this phase was to build a functional prototype using paper, ruler, try square, and writing materials, in order to create faster and with a low-risk level (i.e., reduced implementation effort spent) a prototype that could be tested by users.
 
-However, due to the COVID-19 pandemic, the prototype was adapted since it was not possible to test the prototype in person. Accordingly, the prototype was scanned and the interactions were configured using the digital product design platform InVision \cite{invision}.
-% Do not forget to refer that due to COVID-19 the Paper Prototype was scanned and mounted as a low-fidelity prototype using InVision App.
+However, due to the COVID-19 pandemic, the prototype was virtually adapted, since it was not possible to test the prototype in person. Accordingly, the prototype was scanned and the interactions were configured using the digital product design platform InVision \cite{invision}.
+% Do not forget to refer that due to COVID-19 the Paper Prototype was scanned and assembled as a low-fidelity prototype using InVision App.
 
 \subsection{Design}
 \label{subsec:paper_prototype_design}
-The building process of this low-fidelity prototype started with a design phase where brainstorming took place in order to establish the design priorities for the paper prototype as well as concrete ideas to apply the solutions thought.
+The building process of this low-fidelity prototype started with the design phase, where a brainstorming of ideas, explored previously, took place, in order to establish the design priorities for the paper prototype as well as concrete ideas to apply in the solutions.
 
 \medskip
 
@@ -114,13 +110,13 @@ The building process of this low-fidelity prototype started with a design phase 
 
 \medskip
 
-Taking into account the sketches mentioned in the last section, the first question evaluated was which rearrangement of the sub-editors and the result preview views would be implemented in the next phase. In order to take action in this regard, there was a point in the visual query builder background considered. As mentioned in \ref{subsubsec:previous_work}, this querying interface was completely redesigned seven years ago, which had a negative repercussion on users since they were accustomed to the previous interface. Therefore, there was a concern to change the interface without removing the main points that characterize and identify it. In such a way that users would not feel using a completely new interface but an improved version of the existing one.
+Taking into account the sketches mentioned in the last section, the first question evaluated was which rearrangement of the sub-editors and the result preview views would be implemented in the next phase. In order to take action in this regard, there was a point in the visual query builder background considered. As mentioned in \ref{subsubsec:previous_work}, this querying interface was completely redesigned seven years ago, which had a negative repercussion on users since they were accustomed to the previous interface. Therefore, there was a concern to change the interface without removing the main points that characterize and identifies it. In that way, the goal was to ensure that users consider the new interface as an improved version of the existing one, instead of a completely different interface.
 
-Comparing the two sketched options (Figure \ref{fig:sketch_wireframes}) with the existing interface (Figure \ref{fig:example_of_query_representation}), the \nameref{fig:sketch_wireframe_a} is the most similar because the editors area keeps on the top region of the interface and the query result data below. For this reason, this arrangement would be considered in the next phase.
+Comparing the two options sketched (Figure \ref{fig:sketch_wireframes}) with the existing interface (Figure \ref{fig:example_of_query_representation}), the \nameref{fig:sketch_wireframe_a} is the most similar because the editors area keeps on the top region of the interface and the query result data below. For this reason, this arrangement was considered to be presented in the next phase.
 
-Having chosen where would take place the edition area of the interface, the second aspect taken into consideration was how to organize its sub-editors. This decision was taken bearing in mind what each query aspect represents in the user's mental model when they formulate queries as well as the physical space of the interface they could occupy.
+Having chosen where would take place the edition area of the interface, the second aspect taken into consideration was how to organize its sub-editors. This decision was taken, bearing in mind, what each query aspect represents in the user's mental model when they formulate queries as well as the physical space of the interface they could occupy.
 
-In this regard, it was thought about what are the order of the query elements that arise in user thinking. This reasoning was performed taking into consideration the formulation using \gls{SQL} since one of the main goals is the improvement of the interface experience for users that are proficient in \gls{SQL}. According to the conceptual models presented in \ref{sec:query_conceptual_models}, the first aspect the user thinks, after understanding what data is required, is how to translate them to the query language. In \gls{SQL}, the core statements are presented in the following order:
+In this regard, it was thought about what were the order by each query elements arise in user thinking. This reasoning was performed taking into consideration the formulation using \gls{SQL} since one of the main goals is the improvement of the interface experience for users that are proficient in \gls{SQL}. According to the conceptual models presented in \ref{sec:query_conceptual_models}, the first aspect the user thinks, after understanding what data is required, was assessed to be how to translate them to the query language. In \gls{SQL}, the core statements are presented in the following order:
 
 \begin{enumerate}
   \item \textbf{SELECT: }Indicates which attributes will be selected to be present in the query output table;
@@ -131,7 +127,7 @@ In this regard, it was thought about what are the order of the query elements th
 
 In this visual query building tool users do not select attributes because there is an optimizing background task that will inspect where the query is used and only select the attributes that will be used. Therefore, in this system, the information specified through the SELECT statement will not be specified by the user.
 
-However, the three other aspects of the query are clearly specified by users in three different interface areas: Sources, Filters, and Sorting respectively. Accordingly, the arrangement chosen to display these three sub-editors follows this logic. The query edition area were divided into two columns. The left side was elected to represent the sources of the query and the right side lists the filters and sorting criteria.
+However, the three other aspects of the query are clearly specified by users in three different interface areas: Sources, Filters, and Sorting respectively. Accordingly, the arrangement chosen to display these three sub-editors, the following logic was considered: the query edition area were divided into two columns, the left side was elected to represent the sources of the query and the right side lists the filters and sorting criteria.
 
 \medskip
 
@@ -144,12 +140,12 @@ Nevertheless, the way entities and joins were presented in the interface, in the
 Even though some designs regarding that were elaborated in the sketching phase (Figure \ref{fig:sketchJoins}), it was concluded that the main issues remain:
 
 \begin{itemize}
-  \item Difficulty to comprehend faster and with a low-effort what entities were integrated into the query. Being a visual interface, the comprehension of the entities used as source to formulate the query should be easier to understand. However, the potential of the visual interface has not been leveraged, mainly due to the following aspects:
+  \item Difficulty to comprehend, fast and with a low-effort, what entities were integrated into the query. Being a visual interface, the comprehension of the entities used as source to formulate the query should be easier to understand. However, the potential of the visual interface has not been leveraged, mainly due to the following aspects:
   \begin{itemize} 
     \item \textbf{Textual language overloading: }Not only all join conditions were completely presented in full-textual way, but also the same entity could be written in a repeated way. For example, in the example shown in Figure \ref{fig:exampleTextualLanguageOverloading}, the entity $"Sample\_Employee"$ was presented seven times to indicate that the query uses this entity and this entity was joined with three other entities;
     \item \textbf{Lack of guidance to understand what entities are related to each other: }As the entities and sources are listed in the interface, the design should help users to understand which entities are joined. For instance, if joins were put between the entities involved, it would be simpler to identify if they were merged through a join operation.
   \end{itemize}
-  \item The users who are not familiarized with relational databases and the terminology used to join tables pointed out that the existing view is complex and difficult to understand,
+  \item The users who are not familiarized with relational databases and the terminology used to join tables pointed out that the existing view is complex and difficult to understand.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -170,17 +166,17 @@ The idea of a tree view which displays all entities and joins used in the query 
 \medskip
 
 %learnability
-Regarding query formulation, there was several users who are not accustomed to the query builder, that had difficulty to discover some functionalities of the system when they tested the existing interface. Thereby, learnability was also considering during the design phase of the first prototype.
+Regarding query formulation, there was several users who are not accustomed to the query builder, meaning that they appeared to have difficulty to discover some functionalities of the system when they were testing the existing interface. Thereby, learnability was also considering during the design phase of the first prototype.
 
-As mentioned in \ref{subsec:analysis}, the options to add a new calculated attribute or to apply a group by or an aggregation functions are hidden. These functionalities could be frequently used to apply group data or to add a new column to the output. Therefore, it was concluded that these options should be visible in the sources area. By doing this, not only the options still more visible to the novice users but users have a faster alternative to insert these query components.
+As mentioned in \ref{subsec:analysis}, the options to add a new calculated attribute or to apply a group by or aggregation functions were hidden. These functionalities could be frequently used, thus it was concluded that these options should be visible in the sources area. By doing this, not only the options were still visible to the novice users but users could have a faster alternative to insert these query components.
 
 %efficiency
 
-Lastly, the distribution of the formulation options (i.e., the buttons or other interface elements that allow users to insert new elements in the query) in the screen was a relevant aspect considered. If the controls of a query component are
+Lastly, the distribution of the formulation options (i.e., the buttons or other interface elements that allow users to insert new elements in the query) in the screen was a relevant aspect considered.
 
 The main concern was to put these controls near to the area where the content will be displayed. As an example, if there is an area where entities, joins, and attributes are placed together, the related interaction should be accessible near them. In that way, users do not need to find options in other areas of the interface, keeping the user task on track, avoiding them to lose reasoning context.
 
-That design principle was considered advantageous to reduce the user's working memory overload since they could focus in each part of the query without distractions. Moreover, if the controls are near the time the mouse need to move to them is also less, accelerating the query formulation process.
+That design principle was considered advantageous to reduce the user's working memory overload since they could focus in each part of the query without distractions. Moreover, if the controls are near, the time the mouse need to move to them, is also reduced, accelerating the query formulation process.
 
 %Falar da divisão e distribuição do layout
 %Falar que tendo em conta o espaço disponível seria necessário encurtar a representação das sources e joins.
@@ -217,11 +213,11 @@ After that, the main areas of the interface were elaborated until reaching the g
 
 \medskip
 
-The next step was the design of the query result tables necessary to show the result preview of the query built. It was designed tables for all user testing scenarios to provide a real context to users when they tested the prototype. 
+The next step was the design of the query result tables which shows the result preview of the query built. An outuput result table was designed in order to provide, in all user testing scenarios, a real context to users when they tested the prototype.
 
-In order to accelerate the process of the table design in paper, it was used the same Balsamiq functionality used fro background to transform the table of the existing interface into a low-fidelity design. 
+In order to accelerate the process of the table design in paper, it was used the same Balsamiq functionality used for background, to transform the table of the existing interface into a low-fidelity design.
 
-However, the headers of the table were redesigned manually to improve the readability of the table. Basically, in the existing table, the user needs to apply more effort to understand where start the data from an entity and where there is data from another entity. In that way, the entity reference in table header were merged to give to the user an easier perception that all the attributes below belong to the entity above. Figure \ref{fig:queryResultTableComparison} compares the existing one to an example of one of the tables built.
+However, the headers of the table were redesigned manually to improve the readability of the table to optimize the understanding of where data of an entity starts from data of another entity. In that way, the entity reference in the table header were merged to give to the user an easier perception that all the attributes below belong to the entity above. Figure \ref{fig:queryResultTableComparison} compares the existing one to an example of one of the tables built.
 
 \begin{figure}[tb]
   \centering
@@ -240,7 +236,7 @@ However, the headers of the table were redesigned manually to improve the readab
 
 \medskip
 
-Regarding filters and sorting, it was decided to not apply major changes since there were other problems considered as most relevant. Even though the filters edition could be faster using accelerators such as copy and paste or the possibility to edit each filter in line instead of opening always the expression editor, these problems as well as other similar problems mentioned in the Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface} were not tackled. The reason to disconsider these improvements in the prototyping phase was that there are straighforward improvements that have a low-risk associated since they might not affect negativle the user's experience. That way, it was given focus to the designs parts that should be rigorously tested by users to ensure that riskier changes are improving the usability of the interface.
+Regarding filters and sorting, it was decided to not apply major changes since there were other problems considered as more relevant. Even though the filters edition could be faster using accelerators such as copy and paste or the possibility to edit each filter in the line, instead of opening the expression editor, these problems, as well as other similar problems, mentioned in the Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface}, were not tackled. The reason to disconsider these improvements in the prototyping phase was that there are straightforward improvements that have a low-risk of affecting negatively the user's experience. In that way, it the focus was to the design parts that should be rigorously tested by users to ensure that riskier changes are improving the usability of the interface.
 
 Accordingly, concerning filters, it was only added some syntax highlighting to each one of the conditions presented in order to reduce the time required to understand the conditions. Figure \ref{fig:filtersAndSortingComparison} presents an example of Filters and Sorting design in the paper prototype.
 
@@ -272,9 +268,9 @@ A new approach to represent sources and joins was built progressively. The first
 	\label{fig:simpleSourcesTree}
 \end{figure}
 
-Notwithstanding the visual simplicity achieved, that representation is insufficient since it not represents the join conditions. However, if join conditions were just included near to the join type, the interface would be overloaded again and it would still poor readability.
+Notwithstanding the visual simplicity achieved was insufficient since it not represents the join conditions. However, if join conditions were just included near to the join type, the interface would be overloaded again and it would still poor readability.
 
-Furthermore, the usability tests of the existing interface have revealed that often users tended to misunderstand the queries that had joins with specific characteristics. In particular, in cases where queries had joins with conditions that contained logical operators or when the join between the two tables could be done through different attributes.
+Furthermore, the usability tests of the existing interface showed that users tended to misunderstand the queries that display joins with specific characteristics. In particular, in cases where queries had joins with conditions that contained logical operators or when the join between the two tables could be done through different attributes.
 
 Through practical examples it is easier to understand the dimension of the problem. For example, considering the data model presented in Figure \ref{fig:dataModel}, if a user wants to query the employees and their departments, he will add the two entities and the visual query builder will build automatically the join condition:
 
@@ -282,7 +278,7 @@ Through practical examples it is easier to understand the dimension of the probl
   \verb|"Sample_Employee.Office = Sample_Office.Id"|
 \end{center}
 
-This automatism is useful and turns the query formulation process more simple and efficient. However, there are cases where the join needs to be specified as the case is no so straighforward. For instance, considering the same data model, if a user wants to query the employees who are owners of accounts, the join condition has to merge the two entities $"Sample\_Employee"$ and $"Sample\_Account"$ using the foreign key $"Owner"$ and not the two other availables: $"CreatedBy"$ and $"Manager"$. In this case the condition required to build this query is:
+This automatism is useful and turns the query formulation process more simple and efficient. However, there are cases where the join needs to be specified. For instance, considering the same data model, if a user wants to query the employees who are owners of accounts, the join condition has to merge the two entities $"Sample\_Employee"$ and $"Sample\_Account"$ using the foreign key $"Owner"$ and not the two other available alternatives: $"CreatedBy"$ and $"Manager"$. In this case the condition required to build this query is:
 
 \begin{center}
   \verb|"Sample_Employee.Id = Sample_Account.Owner"|
@@ -297,9 +293,9 @@ In these cases, the join condition, which in many cases is not so important as j
 	\label{fig:comprehension2JoinsExisting}
 \end{figure}
 
-When users tested the existing interface with cases similar to the one presented, two relevant usability problems were detected. On the one hand, when users tried to comprehend the query, most of them did not pay attention to this detail, not mentioning the foreign keys used. On the other hand, when they need to formulate queries that contemplates these cases, several users, even the most experienced using this query builder, did not select the intended foreign key. This behavior is normal since the system just assume one of the foreign keys and generate the join, without asking user what attribute he wants to use to join the two entities.
+When users tested the existing interface with cases similar to the one presented, two relevant usability problems were detected. On the one hand, when users tried to comprehend the query, most of them did not pay attention to this detail, not mentioning the foreign keys used. On the other hand, when they need to formulate queries that contemplates these cases, several users, even the most experienced using this query builder, did not select the intended foreign key. This behavior was considered normal since the system just assumes one of the foreign keys and generate the join, without asking user what attribute he would want to use to join the two entities.
 
-Therefore, the exploration of a new sources and joins representation was an excellent opportunity to tackle this problem. In that way, the existing tree view of sources was rebuilt in order to integrate also the foreign key used to build each of the presented joins. Moreover, when two entities are added and the join between them can be done through different keys, the system starts asking the user which key he wants to use. Figure \ref{fig:paperFkSelect} illustrates how this idea was transposed to the paper prototype.
+Therefore, the exploration of a new sources and joins representation was an excellent opportunity to tackle this problem. In that way, the existing tree view of sources was designed in order to integrate also the foreign key used to build each of the presented joins. Moreover, when two entities are added and the join between them can be done through different keys, the system starts asking the user which key he wants to use. Figure \ref{fig:paperFkSelect} illustrates how this idea was transposed to the paper prototype.
 
 \begin{figure}[htbp]
 	\centering
@@ -327,7 +323,7 @@ The strategy applied in the paper prototype to maintain the interface simple, cl
 	\label{fig:paperComprehension1Sources}
 \end{figure}
 
-Through that approach, users will see entities and joins of the query without information overloading which could allow them to perceive easily and faster the purpose of the query. Even if the join condition is hidden, they could click on the function icon and an expression editor will appear where it is possible to see and edit the join condition selected.
+Through that approach, users will be able to identify entities and joins of the query without information overloading, allowing them to perceive easily and faster the purpose of the query. Even if the join condition is hidden, the user could click on the function icon and the expression editor would appear making possible to see and edit the join condition selected.
 
 \medskip
 
@@ -337,14 +333,14 @@ Through that approach, users will see entities and joins of the query without in
 
 The last improved aspect during the development of this paper prototype was regarding the addition of new attributes. In accordance with the mentioned in the last section, there was a demand to provide other alternatives to add calculated attributes as well as group bys or aggregation functions.
 
-Considering the concern to insert these alternatives strategically in easily and fast accessible places and the necessity to improve the visibility of these options to improve the learnability of novice users, the following options were applied:
+Considering the concern to insert strategically these alternatives, in easily and fast accessible places, it was necessiry to improve the visibility of these options to improve the learnability of novice users. The following options were applied:
 
 \begin{itemize}
   \item \textbf{Click and right-click in the attributes exhibited in the Sources sub-editor: }The list of the attributes of each entity was added into each entity represented in the Sources of the query. On the one hand, if users click in an attribute, they would see the data related into the query result preview (according to the sketch already presented in Figure \ref{fig:sketchAttributeSearch}). On the other hand, if they right-click in an attribute, they would see the same context menu that they already could see when they right-click on the result table headers. Therefore they could apply operations using that alternative, as exemplified in Figure \ref{fig:paperAttributeRightClick}.
   \item \textbf{Two new visible buttons to add attributes: }In the footer of the Sources View, two buttons were added:
     \begin{itemize}
-      \item \textbf{Aggregation / Group By: }Clicking in this button the user could choose an attribute and one of the following operations to group the data of its attribute: Group by, Sum, Average, Max, Min, or Count. Figure \ref{fig:paperAddAggregation} shows this new formulation area.
-      \item \textbf{Calculated Attribute: }When the user selects this option the interface will show an expression edition area similar to the existing one to indicate the formula of the new attribute. Figure \ref{fig:paperAddCalculatedAttribute} shows this alternative to add a new calculated attribute.
+      \item \textbf{Aggregation / Group By: }Clicking in this button the user could choose an attribute and apply the following operations to group the data of the attribute: Group by, Sum, Average, Max, Min, or Count. Figure \ref{fig:paperAddAggregation} shows this new formulation area.
+      \item \textbf{Calculated Attribute: }When the user selects this option the interface will show an expression edition area similar to the existing one (as exemplified in Figure \ref{fig:calculated_attribute_example}) to indicate the formula of the new attribute. Figure \ref{fig:paperAddCalculatedAttribute} shows this alternative to add a new calculated attribute.
     \end{itemize}
 \end{itemize}
 
