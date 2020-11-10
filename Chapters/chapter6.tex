@@ -540,7 +540,7 @@ Bearing in mind the ideas explored in the paper prototype, and taking in account
 
 \medskip
 
-Following the methodology used in the previous prototype, the first stage of the development process was the substitution of the tabs by an equivalent edition area with the three components visible at once (sources, filters, and sorting), as can be observed in Figure \ref{fig:withoutTabs}. Also, the existing scroll problem identified, illustrated in Figure \ref{fig:horizontalScrollBug}, (i.e., when users wanted to scroll the table horizontally to see the columns in overflow, the edition area above disappears) was solved. As a result, they can see all the components of the edition area and the information in the query result table at the same time. This change was important to reduce the users' working memory overload since they have the information they need visible.
+Following the methodology used in the previous prototype, the first stage of the development process was to switch the tabs by an equivalent edition area with the three components visible at once (sources, filters, and sorting), as can be observed in Figure \ref{fig:withoutTabs}. Also, the existing scroll problem identified, illustrated in Figure \ref{fig:horizontalScrollBug}, (i.e., when users wanted to scroll the table horizontally to see the columns in overflow, the edition area above disappears) was solved. As a result, they are able to see all the components of the edition area and the information in the query result table at the same time. This change was important to reduce the users' working memory overload since they have the information they need visible.
 
 %figure scroll problem
 
@@ -568,7 +568,7 @@ Following the methodology used in the previous prototype, the first stage of the
 
 \medskip
 
-As approached in the previous section, the sources and joins editor was completely redesigned. Since the design elaborated for this interface area presents multiple components using some indentation and nesting, the React components were structured before starting the implementation of this view, using the organization shown in Figure \ref{fig:sourcesComponentsStructure}, in order to guarantee the feasibility of the arrangement created.
+As approached in the section above, the sources and joins editor has been completely redesigned. Since the design elaborated for this interface area presents multiple components using some indentation and nesting, the React components were structured before the implementation, they were organized, as shown in Figure \ref{fig:sourcesComponentsStructure}, in order to guarantee the feasibility of the arrangement created.
 
 \begin{figure}[htbp]
 	\centering
@@ -582,7 +582,7 @@ The $"SourcesAndJoinsEditor"$ is the parent component that contains all query so
 
 As the presentation of the entities and joins depends on the joins and the entities involved in the query, due to the indentation and nesting applied whenever an entity is joined with another already presented above, it was necessary to create some logic in the $"Sources"$ component to present the entities with the design intended.
 
-Therefore, the $"Sources"$ renders the first entity added to the query, and after that, it iterates along the joins of the query to represent the ones that are related to the entity already rendered. For each join related to the entity already represented, it is represented the join specification (join kind and join condition) and it is verified if the entity joined to the previous one is related to more entities. In those cases, other $"Sources"$ is rendered to represent the remaining sources. Figure \ref{fig:withoutJoinSimplification} exemplifies the result of the interface implemented at this stage. 
+Therefore, the $"Sources"$ renders the first entity added to the query, and after that, it iterates along the joins of the query to represent the ones that are related to the entity already rendered. For each join related to an entity, it is presented the join specification (i.e. join kind and join condition), however when the join is being generated, it is verifies if the entity joined to the previous one is related to more entities. In those cases, other $"Sources"$ is rendered to represent the remaining sources. Figure \ref{fig:withoutJoinSimplification} exemplifies the result of the interface implemented at this stage.
 
 
 \begin{figure}[htbp]
@@ -593,7 +593,7 @@ Therefore, the $"Sources"$ renders the first entity added to the query, and afte
 	\label{fig:withoutJoinSimplification}
 \end{figure}
 
-Nevertheless, as referred in \ref{subsec:paper_prototype_implementation}, the join conditions generated automatically by the system were simplified. In those cases, where the join condition just specified that the primary key of an entity is equal to the foreign key of the other entity, it was designed a simplified version of the join condition where only the foreign key is represented. If the join between the two entities could be made through different foreign keys, the foreign key used is presented in a dropdown which allow users to change to other key. An example of a query with these dropdowns is presented in Figure \ref{fig:changeForeignKeyDropdown}. Through that approach, user not only can change that query aspect faster but also the data model could be perceived without consulting it directly, since the dropdown is an indicator that there are multiple attributes that could be used to join the two entities.
+Nevertheless, as referred in \ref{subsec:paper_prototype_implementation}, the join conditions which were generated automatically by the system were simplified. In those cases, the join conditions, on the existing interface, presented the primary key of an entity equal to a foreign key of the other entity, however since the characteristics of this formulation shown drawbacks for the users fully comprehension, it was designed a simplified version of the join condition. In this simplified version, only the foreign key is presented. If the join between the two entities could be made through different foreign keys, the foreign key used is presented in a dropdown, which allows users to change to another key if they intend. An example of a query with these dropdowns is presented in Figure \ref{fig:changeForeignKeyDropdown}. Through that approach, users not only can change that query aspect faster but also the data model could be perceived without consulting it directly, since the dropdown is an indicator that there are multiple attributes that could be used to join the two entities.
 
 \begin{figure}[htbp]
 	\centering
@@ -603,7 +603,7 @@ Nevertheless, as referred in \ref{subsec:paper_prototype_implementation}, the jo
 	\label{fig:changeForeignKeyDropdown}
 \end{figure}
 
-Furthermore, for users who open a query already created, it is important to perceive if any join condition was edited manually before in order to mitigate miscomprehensions of the query purpose. In that way, it was decided to represent the entire condition for these joins whose condition was edited manually, in order to differentiate them from the ones which the system generated automatically. Figure \ref{fig:finalC1} demonstrates an example of a query where a join condition were edited manually.
+Furthermore, for users who open a query already created, it is important to perceive if any join condition was edited manually before in order to mitigate miscomprehensions of the query purpose. In that way, it was decided to represent distinctively, the conditions for these joins, whose condition was edited manually, in order to differentiate them from the ones generated automatically. Figure \ref{fig:finalC1} shows an example of a query where a join condition was edited manually.
 
 \begin{figure}[htbp]
 	\centering
@@ -615,7 +615,7 @@ Furthermore, for users who open a query already created, it is important to perc
 
 %Modal
 
-Finally on this point concerning the foreign keys of the joins, there was a problem in the existing interface which could lead users to make semantic errors while they are formulating queries that uses entities which could be joined using different foreign keys. As explained in \ref{subsec:paper_prototype_implementation}, the existing interface did not ask users which foreign key he wants to use. Consequently, the idea adopted in the paper prototype (Figure \ref{fig:paperFkSelect}), which has leverage the results onf the user testing in a positive way, continued to this phase, where a modal appears in these cases to ask user which attribute he wants to use to merge the entities, as demonstrated in Figure \ref{fig:foreignKeyModal}.
+Finally on this point concerning the foreign keys of the joins, there was a problem in the existing interface which could lead users to make semantic errors while they are formulating queries that uses entities which could be joined using different foreign keys. As explained in \ref{subsec:paper_prototype_implementation}, the existing interface did not ask users which foreign key he wants to use. Consequently, the idea adopted in the paper prototype (Figure \ref{fig:paperFkSelect}), which had leveraged the results for the user testing in a positive way, continued to this phase, where a modal appears in cases where there are multiple foreign keys, asking user which attribute he would want to use to merge the entities, as demonstrated in Figure \ref{fig:foreignKeyModal}.
 
 %Figure chave estrangeira modal
 
@@ -627,7 +627,7 @@ Finally on this point concerning the foreign keys of the joins, there was a prob
 	\label{fig:foreignKeyModal}
 \end{figure}
 
-Moreover, the $"Source"$ component was changed to present every entity as a tree node which contains the name and icon of each attribute as a child. Besides, not only a context menu that is available when users right-click in each entity attribute was added, as Figure \ref{fig:finalNewRightClick} exemplifies, but also the option to click on the attribute to highlight it on the query result preview. In that way, there is a possibility to find and add query options easier since the table auto-redirect to the intended attribute, and users can right-click on them to apply aggregation functions, group bys, filters, sorting, or even to hide it.
+Moreover, the $"Source"$ component was changed to present every entity as a tree node which contains the name and icon of each attribute as a child. Besides, not only a context menu, available when users right-click in each entity attribute, was added, as Figure \ref{fig:finalNewRightClick} exemplifies, but also an option to click on the attribute to highlight it on the query result preview. In that way, there is a possibility to find and add query options easier, since the table auto-direct the user to the intended attribute, promoting a more quick right-click on the attribute to apply aggregation functions, group bys, filters, sorting, or even to hide it.
 
 \begin{figure}[htbp]
 	\centering
@@ -643,7 +643,7 @@ Moreover, the $"Source"$ component was changed to present every entity as a tree
 
 \medskip
 
-Nevertheless, these options are interesting alternatives to access these functionalities of the query builder, but adding also a visible function will improve the adoption of new users when they try to use the system. As stated before, these options were added in the Paper Prototype, as illustrated in \ref{fig:paperAddAggregation} and \ref{fig:paperAddCalculatedAttribute}. However, as mentioned in \ref{subsec:paper_prototype_evaluation}, some users were confused if they would need to add a calculated attribute or an aggregated attribute. Consequently, the button labels were changed to provide a more imperative and informative message related to the action accessible through each button. In that way, "Add Aggregation / Group By" was changed to "Group Data" and "Add Calculated Attribute" was changed to "Group Data", to reinforce that using the "Group Data" button users can combine data of an attribute merging its rows, and in the other, they can add a new attribute calculated from the existing ones to the query result. Besides, tooltips were added to each button in order to clarify the users who were confused about what function they intend. Figure \ref{fig:newButtonsTooltips} illustrates the two buttons and the respective tooltips added.
+Nevertheless, these options not only are interesting alternatives to access these functionalities of the query builder, but also add a visible way to access these options, which will improve the adoption of new users when they try to use the system. As stated before, these options were added in the Paper Prototype, as illustrated in \ref{fig:paperAddAggregation} and \ref{fig:paperAddCalculatedAttribute}. However, as mentioned in \ref{subsec:paper_prototype_evaluation}, some users did not understand if they would need to add a calculated attribute or an aggregated attribute. Consequently, the button labels were changed to provide a more imperative and informative message related to the action accessible through each button. In that way, "Add Aggregation / Group By" was changed to "Group Data" and "Add Calculated Attribute" was changed to "New Attribute", to reinforce that using the "Group Data" button users can combine data of an attribute merging its rows, and in "New Attribute", they can add a new attribute calculated from the existing ones to the query result. Besides, tooltips were also added to each button in order to clarify the users who were confused about what function they intend. Figure \ref{fig:newButtonsTooltips} illustrates the two buttons and the respective tooltips added.
 
 %Figure with two sub figures to show the tooltips of the two buttons (group data and new attribute).
 
@@ -657,7 +657,7 @@ Nevertheless, these options are interesting alternatives to access these functio
   \label{fig:newButtonsTooltips}
 \end{figure}
 
-When users click on the "Group Data" button the area, the interface shows a new area where the user can select the attribute and the functions he could apply to the attribute according to the attribute data type. Figure \ref{fig:groupDataEditor} demonstrates this new functionality of the system. This option is advantageous not only for users not familiarized with the system who can see a visible option to group data, but also is it provided a faster way to add multiple group bys or aggregation functions, since in a short area of the interface users can group data of several attributes without the need to search horizontally through the table of the query result.
+When a user click on the "Group Data" button the area, the interface shows a new area where the user can select the attribute and the functions he could apply to the attribute according to the attribute data type. Figure \ref{fig:groupDataEditor} demonstrates this new designed functionality of the system. This option is advantageous not only for users who are not familiarized with the system, who can see a visible option to group data, but also is it provides a faster way to add multiple group bys or aggregation functions since in a short area of the interface users can group data of several attributes without the need to search horizontally through the query result.
 
 %Figure illustrating the group data area
 
@@ -669,9 +669,9 @@ When users click on the "Group Data" button the area, the interface shows a new 
 	\label{fig:groupDataEditor}
 \end{figure}
 
-The "New Attribute" button added allows users to add calculated attributes in the same way they could add it before using the button available at the right side of all columns (in most times hidden due to the overflow). However, this button not only is more visible but also is more accessible.
+The "New Attribute" button allows users to add calculated attributes in the same way they could add it before using the button available at the right side of all columns (in most times hidden due to the overflow). However, this button not only is more visible but also is more accessible.
 
-The attributes added through these two buttons over the query formulation process are presented in sources, as illutstrated in Figure \ref{fig:finalStructuredAttributes}. This representation is advantageus since users can read more information about how those attributes were added because there are visible information about the attributes and the formulas used to insert them.
+The attributes added through these two buttons over the query formulation process are presented in the "Sources" tab, as illustrated in Figure \ref{fig:finalStructuredAttributes}. This representation is advantageous since users can read more information about how those attributes were added because there are visible information about the attributes and the formulas used to insert them.
 
 %Figure illustrating how calculated attributes and aggregated attributes are represented in the interface. Put squares and identifications of the parts in FIGMA
 
