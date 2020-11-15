@@ -76,7 +76,7 @@ The main research question that is being addressed in this dissertation is:
   Can we enable OutSystems developers to easily do complex \\ database queries without ever using \gls{SQL}?
 \end{center}
 
-Regarding the main question and the diverse background of the system target users, it is important to research how can be developed a solution that covers the requirements of all user types with the best usability possible.
+Regarding the main question and the diverse background of the system target users, it is important to research how can be developed a solution that covers the requirements of all user types with the improved usability possible.
 
 The following research questions focus on this usability trade-off which depends on the users and the system particularities:
 
@@ -105,17 +105,15 @@ Since the users more experienced who know other textual query languages, such as
 
 The usability attributes trade-off depends on the system's target users' expectations and requirements. Thus it is important to take into account if the development to improve the efficiency, effectiveness, and satisfaction of expert users does not harm the effectiveness and the learnability of the operations performed for the less experienced users.
 
-\section{Main Expected Contributions}
-\label{sec:main_exp_contributions}
-This work aims to provide a set of contributions not only as scientific research but also as additional value to OutSystems. Thus, a summary of the main expected contributions for this project are presented below:
+\section{Contributions}
+\label{sec:contributions}
+As a result of the work developed throughout this dissertation, there are the following contributions:
 
 \begin{itemize}
-  \item A synthesization of the design concepts, including relevant interaction and conceptual models, usability definitions, guidelines and principles, and a description of the processes to evaluate the \gls{HCI} in the context of a software analysis;
-  \item Provide a state-of-the-art about what are the most significant \glspl{VQS}, presenting also a comparison of visual representation techniques and interaction strategies used, as well as other important features proper for this study;
-  \item A description of the analysis made to identify what are the most impactful problems regarding the existing \gls{VQI}, which includes user interviews and data analysis;
-  \item Design and implementation of a new graphical user interface prototype that tries to improve the existing solution to visually build queries. This prototype expects to fix some predominant problems selected as the most relevant to solve;
-  \item An usability evaluation of the prototype developed through the use of user tests;
-  \item Increase the number of users that prefer using the visual query interface instead of SQL.
+  \item A detailed study of the usability problems of the interface based on different research methods: self-exploration and analysis of the existing interface, user interviews, quantitative data analysis, ideas posted on the worldwide OutSystems developers community, and usability tests of the existing interface;
+  \item Designed and implemented a new visual querying interface built using an iterative design process with two iterations: a paper prototype and a final prototype completely integrated in the OutSystems Platform;
+  \item Evaluated the new interface through several usability tests with specific user testing scenarios and compared the effectiveness, efficiency, satisfaction users have using the new interface against they had using the previous one;
+  \item State-of-the-art study of the major problems associated to the query formulation tasks and the visual query interface approaches used to formulate queries visually without textual query languages.
 \end{itemize} 
 
 \section{Document Structure}
@@ -124,7 +122,10 @@ This work aims to provide a set of contributions not only as scientific research
 The remaining chapters of this thesis are organized as follows:
 
 \begin{itemize}
-  \item Chapter 2 - \nameref{cha:background}: introduces some design and usability concepts to be used in this work. Besides, it is provided a context of the OutSystems Platform current progress, which explains the functionalities of the existing data querying tool;
-  \item Chapter 3 - \nameref{cha:related_work}: analyses the users' interaction with database systems to improve the interfaces' suitability to the target users of the system. Also, approaches used by other systems to create interfaces that allow to visually build queries, are described and compared, detailing the interaction strategies used.
-  \item Chapter 4 - \nameref{cha:proposed_solution}: explains the work made in the requirements analysis, including user's interviews and metrics gathering, and the decisions of what are the principal and impactful problems to be tackled. Moreover, the design approach and process adopted to develop the solution will be detailed.
+  \item Chapter \ref{cha:background} - \nameref{cha:background}: introduces some design and usability concepts to be used in this work. Besides, it is provided a context of the OutSystems Platform current progress, which explains the functionalities of the existing data querying tool;
+  \item Chapter \ref{cha:related_work} - \nameref{cha:related_work}: analyses the users' interaction with database systems to improve the interfaces' suitability to the target users of the system. Also, approaches used by other systems to create interfaces that allow to visually build queries, are described and compared, detailing the interaction strategies used.
+  \item Chapter \ref{cha:methodologies} - \nameref{cha:methodologies}: presents the methodology planned to design, implement and evaluate the solution built in the context of this dissertation, including the problem exploration process, the user analysis, the iterative design, the testing scenarios and the evaluation approach adopted;
+  \item Chapter \ref{cha:requirements_and_analysis} - \nameref{cha:requirements_and_analysis}: summarizes the processes used to deeply understand the problem and the difficulties users of the system have in order to provide also in this chapter a collection of the major usability problems of the interface;
+  \item Chapter \ref{cha:design_and_implementation} - \nameref{cha:design_and_implementation}: describes the entirely solution conception process from the first sketches to the implementation of the final prototype. For each prototype it is described the design, implementation and evaluation phase.
+  \item Chapter \ref{cha:conclusions_and_future_work} - \nameref{cha:conclusions_and_future_work}: includes the final remarks of the results obtained through this dissertations and the aspects that should be approached in the future.
 \end{itemize}

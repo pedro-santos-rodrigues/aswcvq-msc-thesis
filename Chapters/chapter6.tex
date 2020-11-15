@@ -419,7 +419,7 @@ In total, 291 images were created and, multiple interactions between them were c
 \subsection{Evaluation}
 \label{subsec:paper_prototype_evaluation}
 
-After completing the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. The testing methodology used was the same used to test the existing interface evaluation, described in \ref{sec:existing_interface_evaluation}. Accordingly, the Zoom \cite{zoom} meeting solution was used to share the screen, showing the Paper Prototype built in InVision \cite{invision}, thus users managed to interact with the prototype using the Zoom remote control feature. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
+After completing the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. The testing methodology used was the same used to test the existing interface evaluation, described in \ref{sec:existing_interface_evaluation}. Accordingly, the Zoom \cite{zoom} meeting solution was used to share and record the screen, showing the Paper Prototype built in InVision \cite{invision}, thus users managed to interact with the prototype using the Zoom remote control feature. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
 
 As a general result, by observing users using the interface, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that seeing all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
 
@@ -834,6 +834,38 @@ In the same way, the query result table headers of these attributes were changed
 \subsection{Evaluation}
 \label{subsec:service_studio_evaluation}
 
+The final evaluation phase elaborated in the context of this dissertation was the usability tests of the final prototype, using the same methodology and testing scenarios used to test the existing interface and the paper prototype. Accordingly, the Final Prototype was tested with 30 users (10 users of each user group) under a remote environment supported by the Zoom \cite{zoom} meeting solution and its feature of sharing and recording the presenter's screen.
+
+In that way, the users tried to accomplish the tasks integrated in the testing scenarios (detailed in Appendix \ref{app:user_testing_scenarios}) and all this interaction process was analyzed in order to perceive the difficulties they had as well as to register usability metrics that could allow to characterize the success of the prototype built and compare it with the previous visual querying solution.
+
+%General overview
+
+The users who use to the previous interface, have reacted positively to the new interface layout without tabs and the three areas always visible. They reinforced that in the previous interface it was very cumbersome to interpreter or formulate query using the tabs since they did not have a query overview anytime.
+
+%Leitura sources view
+
+In general, users who have some relational database foundations managed to comprehend effortlessly the new sources view, which presents all entities in a tree and promotes a more simple and compact view of the entities and joins included in the query, and pointed out that the arrangement used allow to perceive faster the query purpose since it is possible to visualize which entities are related with each other.
+
+The changes applied to the foreign key used in the joins generated automatically have impacted positively the users' success rate performing scenarios that contain these cases. For example, as Table \ref{tab:finalPrototypeForeignKeyIdentification} details, the 58.89\% of users have identified the foreign keys used to merge tables that could be linked using different attributes. On the other hand, the modal added to ask user which foreign key he intend to use when there are multiple available options to create the automatic join, have improved the effectiveness of the join insertion for these cases. For instance, Table \ref{tab:finalPrototypeForeignKeySelection} demonstrates the effectiveness of the join specification of the F1 scenario where is necessary to join two entities using a specific foreign key and these two entities have three relationships linking each other. As it can be observed, the results are very positive since 96.67\% of users have joined the two entities used the required foreign key. In that way, this change of the interface have leveraged the guidance that the interface could give to users reaching their goals, mainly in these cases where a distraction could lead to query the wrong data, turning the interface less error-prone.
+
+Nevertheless, the approach used to distinguish the joins generated automatically to the ones that were edited manually and have a more complex condition have not relevead positive results. As Table \ref{tab:finalPrototypeLeftJoinNull} presents, in the use case used to present a join edited manually, only 16.67\% of users have successfully interpreter the join purpose.
+
+
+%Relational database knowledge / Success 
+
+Regarding the operations which were identified as difficult to find by users who have never used the query builder neither visualize any tutorial video concerning it (add group by, aggregation function or calculated attributes), the majority of users managed to find intuitively the options to access this functions in the scenarios they needed it.
+
+As presented in table \ref{tab:finalPrototypeCalculatedAttribute}, 83.33\% of users added calculated attributes when necessary without difficulties and no user did not manage to add it. At the same way, users have less dificulties to apply aggregation functions and group bys, since the two buttons were visible in the interface and they found them easily. In that way, the main cause for users did not manage to group data was the lack of relational database knowledge.
+
+%TODO Probably, chart of relational database knowledge and F1 success
+
+The new functionality added that allow users to search for a specific attribute and apply operations using the attributes tree was not found intuitively. Several users thought that the "triangle" buttons to expand the attributes of an entity were to add information regarding the join of the entity and the nested one.
+
+However, after ending the test, this functionality was demonstrated to the users and they revelead that is very useful although they did not discover the feature by themselves. In that way, it is necessary to add some introduction to indicate that this functionality is available or study other representation that could be more intuitive for users.
+
+In conclusion, Table \ref{tab:effectiveness_final_prototype} summarizes the average of the success of each user group in each scenario as well as the total average. OutSystems Developers achieved 81.43\% of the scenarios, Software Developers 68.57\%, and Citizen Developers 50\%. Considering all user groups, 66.67\% of the scenarios were completely achieved and 7.90\% have not completely achieved due to the lack of some pecularities. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in Appendix \ref{app:user_testing_scenarios} and in section \ref{sec:target_users} respectively.
+
+
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
@@ -851,20 +883,6 @@ In the same way, the query result table headers of these attributes were changed
 
 
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[tb]
-  \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Final Prototype usability tests - 30 users)}
-    \label{tab:finalPrototypeLeftJoinNull}
-  \begin{tabular}{@{}m{5.4cm}rrr@{}}
-  \toprule
-  \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identiy} & \multicolumn{1}{l}{Did not seen the Join} \\ \midrule
-  OutSystems Developer                                  & 30.00\%                        & 70.00\%                                & 0.00\%                                    \\
-  Software Developer                                    & 20.00\%                        & 70.00\%                                & 10.00\%                                   \\
-  Citizen Developer                                     & 0.00\%                         & 90.00\%                                & 10.00\%                                   \\
-  Total                                                 & 16.67\%                        & 76.67\%                                & 6.67\%                                    \\ \bottomrule
-  \end{tabular}
-  \end{table}
 
 
 % Please add the following required packages to your document preamble:
@@ -896,6 +914,22 @@ In the same way, the query result table headers of these attributes were changed
   Total                          & 96.67\%                      & 0.00\%                             & 3.33\%                                   \\ \bottomrule
   \end{tabular}
   \end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Final Prototype usability tests - 30 users)}
+    \label{tab:finalPrototypeLeftJoinNull}
+  \begin{tabular}{@{}m{5.4cm}rrr@{}}
+  \toprule
+  \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identiy} & \multicolumn{1}{l}{Did not seen the Join} \\ \midrule
+  OutSystems Developer                                  & 30.00\%                        & 70.00\%                                & 0.00\%                                    \\
+  Software Developer                                    & 20.00\%                        & 70.00\%                                & 10.00\%                                   \\
+  Citizen Developer                                     & 0.00\%                         & 90.00\%                                & 10.00\%                                   \\
+  Total                                                 & 16.67\%                        & 76.67\%                                & 6.67\%                                    \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
 
 \begin{figure}[htbp]
 	\centering
