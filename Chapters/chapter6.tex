@@ -419,31 +419,166 @@ In total, 291 images were created and, multiple interactions between them were c
 \subsection{Evaluation}
 \label{subsec:paper_prototype_evaluation}
 
-After completing the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
+After completing the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. The testing methodology used was the same used to test the existing interface evaluation, described in \ref{sec:existing_interface_evaluation}. Accordingly, the Zoom \cite{zoom} meeting solution was used to share the screen, showing the Paper Prototype built in InVision \cite{invision}, thus users managed to interact with the prototype using the Zoom remote control feature. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
 
-In general, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that see all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
+As a general result, by observing users using the interface, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that seeing all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
 
-%TODO: Colocar uma footnote para Background.currentProgress, onde existir uma imagem que demonstre como é que os group bys são atualmente representados.
-Regarding the query result preview, some users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied. Even though it was difficult to distinguish the two elements of the query result, since it was used a low expressiveness in terms of color, this constraint will be taken into account in the next design iteration since more styling and color resources will be available.
+Regarding the query result preview, some users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied.\footnote{As mentioned in section \ref{subsubsec:current_progress} and exemplified in Figure \ref{fig:aggregations_example}, the query output preview not only presents the attributes that belong to the query output but also a preview of the data related to the aggregated attributes.} 
+Even though it was difficult to distinguish the two elements of the query result, since it was used a low expressiveness in terms of color, this constraint will be taken into account in the next design iteration since more styling and color resources will be available.
 
-As predicted in the design and implementation phases of this prototype, the completely redesigned sources editor evoked different points of view and interesting feedback for the next iteration design phase.
+As predicted in the design and implementation phases of this prototype, the completely redesigned sources editor triggered different points of view and interesting feedback for the next iteration design phase.
 
 Therefore, the following points describe the information collected with respect to the users' comprehension of this new representation:
 
 \begin{itemize}
   \item Some users misinterpreted the joins of some queries due to the indentation used to represent them. For instance, in the example shown in Figure \ref{fig:paperPrototypeExample}, some users indicated that "Office" was joined with "Department", when "Office" was joined with "Employee";
-  \item Some users did not manage to understand what the foreign key label was, until they need to select one of them in the formulation scenario. That way, the representation of this element should be reevaluated to make it more clear;
-  \item Regarding the join conditions simplification, it was identified an increased awareness to perceive that there were two representations of join conditions, as shown in Figure \ref{fig:paperComprehension1Sources}. However, the majority of users did not manage to understand the meaning of this different visual representation, which intended to differentiate joins automatically generated from the ones manually edited.
+  \item Some users did not manage to understand what the foreign key label was, until they need to select one of them in the formulation scenario. That way, the representation of this element should be reevaluated to make it more clear. Nevertheless, the results concerning the identification of the foreign key, presented in Table \ref{tab:paperPrototypeForeignKeyIdentification}, are positive since considering all user groups 77.78\% of users have identified correctly the foreign key in the causes that entities could be joined using different attributes. Therefore, although the positive results, the lack of intuitiveness regarding the foreign key presentation perceived by users when they observed the interface at the first sight was considered as an aspect to improve in the following design iteration;
+  \item Regarding the join conditions simplification, it was identified an increased awareness, when compared to the existing interface, to perceive that there were two representations of join conditions, as shown in Figure \ref{fig:paperComprehension1Sources}. The majority of users did not manage to understand the meaning of these different visual representations, which intended to differentiate joins automatically generated from the ones manually edited, as Table \ref{tab:paperPrototypeLeftJoinNull} points out since only 26.67\% of users have identified clearly the join purpose.
 \end{itemize}
+
+%TODO: Tables left join with foreign key identification, selection
+%Conclude about results with comparing with the previous interface
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Readability of the foreign keys used to join entities that could be joined using different attributes. (Paper Prototype usability tests - 15 users)}
+    \label{tab:paperPrototypeForeignKeyIdentification}
+  \begin{tabular}{@{}lrrr@{}}
+  \toprule
+  \textbf{Foreign Key Identification} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identify} & \multicolumn{1}{l}{Did not see the Join} \\ \midrule
+  OutSystems Developer                & 86.67\%                        & 13.33\%                              & 0.00\%                                   \\
+  Software Developer                  & 66.67\%                        & 33.33\%                              & 0.00\%                                   \\
+  Citizen Developer                   & 80.00\%                        & 20.00\%                              & 0.00\%                                   \\
+  Total                               & 77.78\%                        & 22.22\%                              & 0.00\%                                   \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Paper Prototype usability tests - 15 users)}
+    \label{tab:paperPrototypeLeftJoinNull}
+  \begin{tabular}{@{}m{5.4cm}rrr@{}}
+  \toprule
+  \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identify} & \multicolumn{1}{l}{Did not see the Join} \\ \midrule
+  OutSystems Developer                                  & 40.00\%                        & 60.00\%                              & 0.00\%                                   \\
+  Software Developer                                    & 20.00\%                        & 80.00\%                              & 0.00\%                                   \\
+  Citizen Developer                                     & 20.00\%                        & 80.00\%                              & 0.00\%                                   \\
+  Total                                                 & 26.67\%                        & 73.33\%                              & 0.00\%                                   \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
 
 Furthermore, the following aspects were captured from observing users trying to formulate queries:
 
 \begin{itemize}
-  \item As expected, the foreign key selection method presented in Figure \ref{fig:paperFkSelect} has optimized the effectiveness of the formulation scenario. Since users were asked to choose between the existing foreign key, they were able to select the correct one;
-  \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, the results have enhanced, but some drawback aspects were identified. Users who have never used the system, found these features easy since the two buttons became visible in the interface. However, they continue to make misunderstand when they needed to use a calculated attribute or the aggregation function.
+  \item As expected, the foreign key selection method presented in Figure \ref{fig:paperFkSelect} has optimized the effectiveness of the formulation scenario. Since users were asked to choose between the existing foreign key, they were able to select the correct one. The results presented in Table \ref{tab:paperPrototypeForeignKeySelection} illustrates the effect of the improvement made in the interface since all users have selected the correct foreign key to indicate the properly join the formulation case that was necessary to add a join to merge two entities that could be joined using three different foreign keys;
+  \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, the results have enhanced, but some drawback aspects were identified. Users who have never used the system, found these features easy since the two buttons became visible in the interface. However, they continue to make misunderstand when they needed to use a calculated attribute or the aggregation function:
+  \begin{itemize}
+    \item Insert Calculated Attribute: The users' acceptance to the new options provided to insert calculated attributes was positive. Not only users who not have already used the query builder have less difficulty to create new attributes, since only 20\% of Software Developers and 40\% of Citizen Developers had difficulty to find the options and the remaining ones managed to added it intuitively, as detailed in Table \ref{tab:paperPrototypeCalculatedAttribute}, but also the new options provided were used by OutSystems Developers who are accustomed to use the previous query builder interface. As Table \ref{tab:paperPrototypeOptionCalculatedAttribute} demonstrates, the new button added on the bottom of the sources view was used by 86.67\% of users. Besides, even 80\% of the OutSystems Developers, who knew the existence of a button on the final of the query result table, preferred to use the new option to add the attribute, so that the acceptance of that changes was positive not only to mitigate learnabilty problems of users who had not found the option before in the existing interface, but also for expert users that preferred this option more accessible.
+  \end{itemize}
 \end{itemize}
 
-Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation showed how entities were related with each other.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Paper Prototype usability tests - 15 users)}
+  \label{tab:paperPrototypeForeignKeySelection}
+  \begin{tabular}{@{}lrrr@{}}
+  \toprule
+  \textbf{Foreign Key Selection} & \multicolumn{1}{l}{Selected} & \multicolumn{1}{l}{Did not Select} & \multicolumn{1}{l}{Did not Add the Join} \\ \midrule
+  OutSystems Developer           & 100.00\%                     & 0.00\%                             & 0.00\%                                   \\
+  Software Developer             & 100.00\%                     & 0.00\%                             & 0.00\%                                   \\
+  Citizen Developer              & 100.00\%                     & 0.00\%                             & 0.00\%                                   \\
+  Total                          & 100.00\%                     & 0.00\%                             & 0.00\%                                   \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Success rate of users when they needed to add a calculated attribute. (Paper Prototype usability tests - 15 users)}
+  \label{tab:paperPrototypeCalculatedAttribute}
+  \begin{tabular}{@{}m{5cm}rrr@{}}
+  \toprule
+  \textbf{Insert Calculated Attribute} & \multicolumn{1}{l}{Added Successfully} & \multicolumn{1}{l}{Difficulty to Add} & \multicolumn{1}{l}{Could not Add} \\ \midrule
+  OutSystems Developer                 & 100.00\%                               & 0.00\%                                & 0.00\%                            \\
+  Software Developer                   & 80.00\%                                & 20.00\%                               & 0.00\%                            \\
+  Citizen Developer                    & 60.00\%                                & 40.00\%                               & 0.00\%                            \\
+  Total                                & 80.00\%                                & 20.00\%                               & 0.00\%                            \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Options used by users to insert the calculated attribute in the context of the M1 scenario. (Paper Prototype usability tests - 15 users)}
+  \label{tab:paperPrototypeOptionCalculatedAttribute}
+  \begin{tabular}{@{}m{4.4cm}R{3.1cm}R{3.1cm}R{3.1cm}@{}}
+  \toprule
+  \textbf{Option used to insert the calculated attribute} & \multicolumn{1}{m{3.1cm}}{Add button on the bottom of the Sources View} & \multicolumn{1}{m{3.1cm}}{Right click in the attributes tree (Sources View)} & \multicolumn{1}{m{3.1cm}}{Add button on the result table (after all attributes)} \\ \midrule
+  OutSystems Developer                                    & 80.00\%                                                          & 0.00\%                                                                & 20.00\%                                                                   \\
+  Software Developer                                      & 100.00\%                                                         & 0.00\%                                                                & 0.00\%                                                                    \\
+  Citizen Developer                                       & 80.00\%                                                          & 20.00\%                                                               & 0.00\%                                                                    \\
+  Total                                                   & 86.67\%                                                          & 6.67\%                                                                & 6.67\%                                                                    \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation shown how entities were related with each other
+
+In conclusion, the general success results of the 15 users performing the scenarios proposed, presented in Table \ref{tab:effectiveness_paper_prototype}, were positive although the improvement topics already stated. Therefore, the design implemented in the paper prototype was considerable favourable to optimize the usability of the interface for the different user groups analyzed. In that way, the following prototyping iteration will take into account the feedback users provided in this evaluation stage as well as the results obtained.
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Success Rate of the scenarios by user group when users tested the paper prototype (15 users).}
+    \label{tab:effectiveness_paper_prototype}
+  \begin{tabular}{llrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  \textbf{C1}               & OutSystems Developer & 60.00\%                                                           & 0.00\%                                                                  & 40.00\%                                                       \\
+                            & Software Developer   & 100.00\%                                                          & 0.00\%                                                                  & 0.00\%                                                        \\
+                            & Citizen Developer    & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\
+                            & \textbf{Total}       & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\ \hline
+  \textbf{M1}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 83.33\%                                                       \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 80.00\%                                                       \\
+                            & Citizen Developer    & 0.00\%                                                            & 0.00\%                                                                  & 60.00\%                                                       \\
+                            & \textbf{Total}       & 0.00\%                                                            & 0.00\%                                                                  & 75.00\%                                                       \\ \hline
+  \textbf{C2}               & OutSystems Developer & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                            & Software Developer   & 0.00\%                                                            & 40.00\%                                                                 & 60.00\%                                                       \\
+                            & Citizen Developer    & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                            & \textbf{Total}       & 0.00\%                                                            & 26.67\%                                                                 & 73.33\%                                                       \\ \hline
+  \textbf{C3}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Citizen Developer    & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & \textbf{Total}       & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\ \hline
+  \textbf{F1}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Citizen Developer    & 60.00\%                                                           & 0.00\%                                                                  & 40.00\%                                                       \\
+                            & \textbf{Total}       & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\ \hline
+  \textbf{C4}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                            & \textbf{Total}       & 0.00\%                                                            & 10.00\%                                                                 & 90.00\%                                                       \\ \hline
+  \textbf{M4}               & OutSystems Developer & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & \textbf{Total}       & 10.00\%                                                           & 0.00\%                                                                  & 90.00\%                                                       \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Total}            & OutSystems Developer & 11.43\%                                                           & 2.86\%                                                                  & 85.71\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & Software Developer   & 14.29\%                                                           & 8.57\%                                                                  & 77.14\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & Citizen Developer    & 28.00\%                                                           & 4.00\%                                                                  & 68.00\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & \textbf{Total}       & \textbf{17.90\%}                                                  & \textbf{5.14\%}                                                         & \textbf{76.95\%}                                              \\ \hline
+  \end{tabular}
+  \end{table}
+
 
 %Comparison with Existing Interface Evaluation
 
@@ -676,14 +811,14 @@ The attributes added through these two buttons over the query formulation proces
 %Figure illustrating how calculated attributes and aggregated attributes are represented in the interface. Put squares and identifications of the parts in FIGMA
 
 \begin{figure}[htbp]
-	\centering
+	\centering 
   \includegraphics[height=3.0in]
   {final-structured-attributes}
 	\caption{Example of a query that contains a group by ($"Id"$), an aggregation function ($"BalanceAvg"$) and a calculated attribute ($"EmployeeFullName"$).}
 	\label{fig:finalStructuredAttributes}
 \end{figure}
 
-In the same way, the query result table headers of these attributes were changed not only to improve their readability but also to maintain the consistency with the new area visible in sources. Figure \ref{fig:groupHeadersComparison} compares the header representation of an aggregated attribute, a group by, and a calculated attribute in the existing interface to the new one. As can be observed, the reference of the source attribute used to group data was added to the group bys and aggregation function, since before it was difficult to perceive what attributes were grouped in the query. Moreover, the function symbol of aggregation functions was removed since no formula is inserted in these attributes and several users tried to click on the function symbol to open some formula.
+In the same way, the query result table headers of these attributes were changed not only to improve their readability but also to maintain the consistency with the new area visible in sources. Figure \ref{fig:groupHeadersComparison} compares the header representation of an aggregated attribute, a group by, and a calculated attribute in the existing interface to the new one. As can be observed, the reference of the source attribute used to group data was added to the group bys and aggregation function, since before it was difficult to perceive which attributes were grouped in the query. Moreover, the function symbol of aggregation functions was removed since no formula is inserted in these attributes and several users tried to click on the function symbol to open some formula.
 
 \begin{figure}[tb]
   \centering
@@ -698,6 +833,123 @@ In the same way, the query result table headers of these attributes were changed
 
 \subsection{Evaluation}
 \label{subsec:service_studio_evaluation}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Success rate of users when they needed to add a calculated attribute. (Final Prototype usability tests - 30 users)}
+    \label{tab:finalPrototypeCalculatedAttribute}
+  \begin{tabular}{@{}lrrr@{}}
+  \toprule
+  \textbf{Insert Calculated Attribute} & \multicolumn{1}{l}{Added Successfully} & \multicolumn{1}{l}{Difficulty to Add} & \multicolumn{1}{l}{Could not Add} \\ \midrule
+  OutSystems Developer                 & 100.00\%                               & 0.00\%                                & 0.00\%                            \\
+  Software Developer                   & 70.00\%                                & 30.00\%                               & 0.00\%                            \\
+  Citizen Developer                    & 80.00\%                                & 20.00\%                               & 0.00\%                            \\
+  Total                                & 83.33\%                                & 16.67\%                               & 0.00\%                            \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Final Prototype usability tests - 30 users)}
+    \label{tab:finalPrototypeLeftJoinNull}
+  \begin{tabular}{@{}m{5.4cm}rrr@{}}
+  \toprule
+  \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identiy} & \multicolumn{1}{l}{Did not seen the Join} \\ \midrule
+  OutSystems Developer                                  & 30.00\%                        & 70.00\%                                & 0.00\%                                    \\
+  Software Developer                                    & 20.00\%                        & 70.00\%                                & 10.00\%                                   \\
+  Citizen Developer                                     & 0.00\%                         & 90.00\%                                & 10.00\%                                   \\
+  Total                                                 & 16.67\%                        & 76.67\%                                & 6.67\%                                    \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Readability of the foreign keys used to join entities that could be joined using different attributes. (Final Prototype usability tests - 30 users)}
+    \label{tab:finalPrototypeForeignKeyIdentification}
+  \begin{tabular}{@{}lrrr@{}}
+  \toprule
+  \textbf{Foreign Key Identification} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identify} & \multicolumn{1}{l}{Did not See the Join} \\ \midrule
+  OutSystems Developer                & 86.67\%                        & 13.33\%                              & 0.00\%                                   \\
+  Software Developer                  & 50.00\%                        & 50.00\%                              & 0.00\%                                   \\
+  Citizen Developer                   & 40.00\%                        & 40.00\%                              & 20.00\%                                  \\
+  Total                               & 58.89\%                        & 34.44\%                              & 6.67\%                                   \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Final Prototype usability tests - 30 users)}
+    \label{tab:finalPrototypeForeignKeySelection}
+  \begin{tabular}{@{}lrrr@{}}
+  \toprule
+  \textbf{Foreign Key Selection} & \multicolumn{1}{l}{Selected} & \multicolumn{1}{l}{Did not Select} & \multicolumn{1}{l}{Did not Add the Join} \\ \midrule
+  OutSystems Developer           & 90.00\%                      & 0.00\%                             & 10.00\%                                  \\
+  Software Developer             & 100.00\%                     & 0.00\%                             & 0.00\%                                   \\
+  Citizen Developer              & 100.00\%                     & 0.00\%                             & 0.00\%                                   \\
+  Total                          & 96.67\%                      & 0.00\%                             & 3.33\%                                   \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.0in]{effectiveness-final-prototype-user-group}
+	\caption{Average of the sucess rate of all scenarios by each user group (Final Prototype usability tests - 30 users).}
+	\label{fig:effectivenessFinalPrototypeUserGroup}
+\end{figure}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Success Rate of the scenarios by user group when users tested the Final Prototype (30 users).}
+    \label{tab:effectiveness_final_prototype}
+  \begin{tabular}{llrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  \textbf{C1}               & OutSystems Developer & 70.00\%                                                           & 0.00\%                                                                  & 30.00\%                                                       \\
+                            & Software Developer   & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\
+                            & Citizen Developer    & 100.00\%                                                          & 0.00\%                                                                  & 0.00\%                                                        \\
+                            & \textbf{Total}       & 83.33\%                                                           & 0.00\%                                                                  & 16.67\%                                                       \\ \hline
+  \textbf{M1}               & OutSystems Developer & 0.00\%                                                            & 10.00\%                                                                 & 90.00\%                                                       \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Citizen Developer    & 10.00\%                                                           & 0.00\%                                                                  & 90.00\%                                                       \\
+                            & \textbf{Total}       & 3.33\%                                                            & 3.33\%                                                                  & 93.33\%                                                       \\ \hline
+  \textbf{C2}               & OutSystems Developer & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                            & Software Developer   & 20.00\%                                                           & 40.00\%                                                                 & 40.00\%                                                       \\
+                            & Citizen Developer    & 20.00\%                                                           & 40.00\%                                                                 & 40.00\%                                                       \\
+                            & \textbf{Total}       & 13.33\%                                                           & 33.33\%                                                                 & 53.33\%                                                       \\ \hline
+  \textbf{C3}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Citizen Developer    & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\
+                            & \textbf{Total}       & 6.67\%                                                            & 0.00\%                                                                  & 93.33\%                                                       \\ \hline
+  \textbf{F1}               & OutSystems Developer & 10.00\%                                                           & 10.00\%                                                                 & 80.00\%                                                       \\
+                            & Software Developer   & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\
+                            & Citizen Developer    & 60.00\%                                                           & 0.00\%                                                                  & 40.00\%                                                       \\
+                            & \textbf{Total}       & 30.00\%                                                           & 3.33\%                                                                  & 66.67\%                                                       \\ \hline
+  \textbf{C4}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 30.00\%                                                                 & 70.00\%                                                       \\
+                            & \textbf{Total}       & 0.00\%                                                            & 15.00\%                                                                 & 85.00\%                                                       \\ \hline
+  \textbf{M4}               & OutSystems Developer & 10.00\%                                                           & 0.00\%                                                                  & 90.00\%                                                       \\
+                            & Software Developer   & 30.00\%                                                           & 0.00\%                                                                  & 70.00\%                                                       \\
+                            & \textbf{Total}       & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Total}            & OutSystems Developer & 12.86\%                                                           & 5.71\%                                                                  & 81.43\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & Software Developer   & 21.43\%                                                           & 10.00\%                                                                 & 68.57\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & Citizen Developer    & 42.00\%                                                           & 8.00\%                                                                  & 50.00\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & \textbf{Total}       & \textbf{25.43\%}                                                  & \textbf{7.90\%}                                                         & \textbf{66.67\%}                                              \\ \hline
+  \end{tabular}
+  \end{table}
 
 \section{Results Analysis}
 \label{sec:results_analysis}

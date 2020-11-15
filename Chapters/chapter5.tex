@@ -190,11 +190,11 @@ Regarding the learnability of the system, the results confirmed the lack of visi
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Success rate of users in the scenario they needed to add a calculated attribute.}
+    \caption{Success rate of users when they needed to add a calculated attribute. (Existing interface usability tests - 30 users)}
     \label{tab:existingInterfaceCalculatedAttribute}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
-    \textbf{Insert Calculated Attribute} & \multicolumn{1}{l}{Added Successfully} & \multicolumn{1}{l}{Difficulty to Add} & \multicolumn{1}{l}{Did not Add} \\ \midrule
+    \textbf{Insert Calculated Attribute} & \multicolumn{1}{l}{Added Successfully} & \multicolumn{1}{l}{Difficulty to Add} & \multicolumn{1}{l}{Could not Add} \\ \midrule
     OutSystems Developer                 & 91.67\%                                & 8.33\%                                & 0.00\%                          \\
     Software Developer                   & 20.00\%                                & 80.00\%                               & 0.00\%                          \\
     Citizen Developer                    & 20.00\%                                & 60.00\%                               & 20.00\%                         \\
@@ -212,11 +212,11 @@ For instance, the scenario C1, which includes a join between $"Sample\_Employee"
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null.}
+    \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Existing interface usability tests - 30 users)}
     \label{tab:existingInterfaceLeftJoinNull}
     \begin{tabular}{@{}m{5.4cm}rrr@{}}
     \toprule
-    \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identified} & \multicolumn{1}{l}{Did not see the Join} \\ \midrule
+    \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identify} & \multicolumn{1}{l}{Did not see the Join} \\ \midrule
     OutSystems Developer                                  & 16.67\%                        & 83.33\%                                & 0.00\%                                   \\
     Software Developer                                    & 10.00\%                        & 40.00\%                                & 50.00\%                                  \\
     Citizen Developer                                     & 0.00\%                         & 50.00\%                                & 50.00\%                                  \\
@@ -233,7 +233,7 @@ From a query formulation point of view, only 36.67\% of the users selected the i
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Readability of the foreign keys used to join entities that could be joined using different attributes.}
+    \caption{Readability of the foreign keys used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
     \label{tab:existingInterfaceForeignKeyIdentification}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -249,7 +249,7 @@ From a query formulation point of view, only 36.67\% of the users selected the i
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes.}
+    \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
     \label{tab:existingInterfaceForeignKeySelection}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -268,7 +268,7 @@ Finally, it was summarized metrics to evaluate the users' performance regarding 
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[tb]
-    \caption{Success Rate of the scenarios by user group}
+    \caption{Success Rate of the scenarios by user group when users tested the existing interface (30 users).}
     \label{tab:effectiveness_existing_interface}
     \begin{tabular}{@{}llrrr@{}}
     \toprule
@@ -322,7 +322,7 @@ Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the differe
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.0in]{effectiveness-existing-interface-user-group}
-	\caption{Average of the sucess rate of all scenarios by each user group.}
+	\caption{Average of the sucess rate of all scenarios by each user group (Existing interface usability tests - 30 users).}
 	\label{fig:effectivenessExistingInterfaceUserGroup}
 \end{figure}
 
@@ -331,13 +331,16 @@ The information about the background of each user regarding SQL and OutSystems w
 \begin{figure}[tb]
     \centering
     \subcaptionbox{"Have you used a query language (SQL or other)?"\label{fig:existingInterfaceSqlSuccessRate}}%
-      {\includegraphics[height=2.5in]{existing-interface-sql-sucess-rate}}%
+      {\includegraphics[height=3.0in]{existing-interface-sql-sucess-rate}}%
       \\
     \subcaptionbox{"Have you already used OutSystems?"\label{fig:existingInterfaceOutsystemsSuccessRate}}%
-      {\includegraphics[height=2.5in]{existing-interface-outsystems-success-rate}}%
-  \caption{Percentage of scenarios not achieved by the answers given by users regarding their SQL and Outsystems capabilities.}
+      {\includegraphics[height=3.0in]{existing-interface-outsystems-success-rate}}%
+    \caption{Comparison between the users' profile characteristics of the users have not achieved scenarios. The charts illustrates the percentage of scenarios not achieved in average for the users who answered the represented in the horizontal axis to the question presented in the caption. (Existing interface usability tests - 30 users). 
+      }
     \label{fig:existingInterfaceSqlOutsystemsSuccessRate}
   \end{figure}
+
+%Percentage of scenarios not achieved, when users tested the existing interface, by the answers given by users regarding their SQL and Outsystems capabilities.
 
 During the tests, users have mentioned other details of the interface that could be a useful input for the next design iterations. In that way, that feedback was also taken into account and registered as all the other issues identified. Thereby, Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface} includes also all problems identified during the user testing process of the existing visual query interface.
 

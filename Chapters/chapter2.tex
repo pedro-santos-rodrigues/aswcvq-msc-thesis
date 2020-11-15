@@ -210,7 +210,7 @@ In the \textbf{Data} section is covered the database modeling, making possible t
 \subsection{Visual Data Querying}
 \label{subsec:visual_data_querying}
 
-The main topic of this work is the improvement of the visual data querying process on the low-code development of applications, using OutSystems. Consequently, the headway of visual querying components of the platform is an essential factor to properly understand the entire project. Regarding the last version of the OutSystems platform, the actual visual data querying tool, which is the starting point of this study, will be described.
+The main topic of this work is the improvement of the visual data querying process on the low-code development of applications, using OutSystems. Consequently, the headway of visual querying components of the platform is an essential factor to properly understand the dissertation. Regarding the last version of the OutSystems platform, the actual visual data querying tool, which is the starting point of this study, will be described.
 
 \subsubsection{Previous Work}
 \label{subsubsec:previous_work}
@@ -248,7 +248,9 @@ Since the implementation of Aggregates, the query process without textual langua
 	\item When an action flow is designed, there is an Aggregate icon in the toolbox that can be dragged and dropped to the main area;
 \end{itemize}
 
-When the Aggregate is created, the first step is the data source selection in order to specify what entities should be included in the query. Then, the developer should click in the main area and choose the entities he wants or drag and drop the entities to add them to the query. When an entity is added, all its attributes are automatically included in Aggregate. Since an Aggregate can include one or more entities, added on the beginning or later, if it has more than one, it will be analyzed to verify if there are relationships between them. Unless there is a relationship that links them, the Aggregate will request the condition to join them. Otherwise, the entities will be included automatically using an inner join.
+When the Aggregate is created, the first step is the data source selection in order to specify which entities should be included in the query. Then, the developer should click in the main area and choose the entities he wants or drag and drop the entities to add them to the query. When an entity is added, all its attributes are automatically included in Aggregate. 
+
+Since an Aggregate can include one or more entities, added on the beginning or later, if it has more than one, it will be analyzed to verify if there are relationships between them. If the entities are related, according do the database model defined, then the system uses the existing relationship to automatically formulate the join between them. Basically, if the relationship between the two entities is mandatory, (i.e., the foreign key that is an identifier of the other entity is mandatory) then an inner join is added automatically, otherwise a left join is added. For the cases there is no relationship which links the two entities added, then the Aggregate will allow users to specify the join condition manually.
 
 %\begin{figure}[htbp]
 	%\centering
@@ -292,7 +294,7 @@ Figure \ref{fig:aggregates_filter_sort_test} presents a usage example of the las
 	\label{fig:aggregates_filter_sort_test}
 \end{figure}
 
-On the other side, the area dedicated to viewing the query output provides also some functionalities to design the query while the user is interacting and exploring the query result. Therefore, as represented by an example in Figure \ref{fig:table_right_click_example}, the user can change the query when he performs a right-click on a column or when clicks on the new attribute. The only options in the list presented that does not change the query are the hide options since they just change the result in the presentation layer. So, if the user hides a set of columns, he will not see them in the result table, however, the query did not change. Besides, the user can add other attributes based on the existing ones, so Figure \ref{fig:calculated_attribute_example} shows an example of this functionality.
+On the other side, the area dedicated to viewing the query output provides also some functionalities to design the query while the user is interacting and exploring the query result. Therefore, as represented by an example in Figure \ref{fig:table_right_click_example}, the user can change the query when he performs a right-click on a column or when clicks on the new attribute. The only options in the list presented that does not change the query are the hide options since they just change the result in the presentation layer. So, if the user hides a set of columns, he will not see them in the result preview visualization area, however, the query output did not change. Besides, the user can add other attributes based on the existing ones, so Figure \ref{fig:calculated_attribute_example} shows an example of this functionality.
 
 \begin{figure}[tb]
 	\centering
@@ -308,6 +310,15 @@ On the other side, the area dedicated to viewing the query output provides also 
 	\label{fig:calculated_attribute_example}
 \end{figure}
 
+When a group by or an aggregation function (COUNT, SUM, MAX, MIN, AVERAGE) is applied through the context menu exemplified in Figure \ref{fig:table_right_click_example} the data is aggregated automatically and is presented as the example shown in Figure \ref{fig:aggregations_example} illustrates. The aggregated attributes resulted from the application of these operations are the ones that belong to the query output as well as occur in SQL. However, the query output preview of Aggregates represents also in a different color a preview of the corresponding data in the right side. For example, in Figure \ref{fig:aggregations_example}, it was counted the number of employees (COUNT) by each office and department (2 Group Bys applied), but it is possible to read at the right side of these three first columns the data that was aggregated.
+
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=3in]{existing-interface-aggregations-example}
+	\caption{Representation of the attributes aggregated through Group By operations or other aggregation functions (COUNT, SUM, MAX, MIN, AVERAGE)}
+	\label{fig:aggregations_example}
+\end{figure}
 
 % \begin{figure}[htbp]
 % 	\centering
