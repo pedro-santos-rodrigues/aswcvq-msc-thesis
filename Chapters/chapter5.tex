@@ -164,11 +164,182 @@ In summary, beyond the necessity of new advanced functionalities, the developers
 
 \subsection{Existing Interface Evaluation}
 \label{sec:existing_interface_evaluation}
+The last phase of the problem definition was the usability tests to the existing visual query interface, which were performed with two main goals:
 
-In order to analyze users' behavior while they are interacting with the visual query interface, testing scenarios were prepared to evaluate usability attributes of the interface.\footnote{This evaluation process is described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_technique}.} The main purpose of this evaluation was the analysis of the current effectiveness, efficiency, and learnability of the system to compare them with the proposed solution. 
+\begin{enumerate}
+    \item \textbf{Identify problems:} Explore more usability problems that could exist in the interface, by directly observing users interacting with it, under the tasks defined in the prepared testing scenarios (detailed in \ref{app:user_testing_scenarios});
+    \item \textbf{Gather usability metrics:} Record users' insights about the system as well as the difficulties they had to perform the proposed tasks. This information is going to be processed leading to the attainment of qualitative information to characterize the general opinion of users but also quantitative usability metrics regarding the completeness of the tasks, the time they required to perform it, the operations or elements they did not understand, and their satisfaction using the system.
+\end{enumerate}
+
+By this means, 30 users have performed usability tests in a remote environment using Zoom \cite{zoom}, where the visual query builder of Service Studio was tested using the remote control functionality of this meeting platform. Besides, each user allowed to record the session in order to further collect usability metrics and analyze the feedback provided.
+
+The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development:\footnote{A complete definition of each user group is provided in the section \ref{sec:target_users}.}
+
+\begin{itemize}
+    \item \textbf{OutSystems Developer: }users who have relevant experience developing software using OutSystems;
+    \item \textbf{Software Developer: }users who have programming knowledge and know \gls{SQL} but are not accustomed to build software using low-code platforms;
+    \item \textbf{Citizen Developer. }users who are not proficient in any programming language neither in low-code development. Fundamentally, these users are more accustomed to data management tools such as spreadsheet applications.
+\end{itemize}
+
+
+As mentioned in \ref{sec:evaluation_method}, the testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios defined in Appendix \ref{app:user_testing_scenarios} - \nameref{app:user_testing_scenarios}.
+
+Regarding the learnability of the system, the results confirmed the lack of visibility of some functionalities have undermined users to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute, there was a set of users who had difficulty to find how to create it due to the hiddenness of the option, as stated in \ref{cha:requirements_and_analysis}. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
+
+%Tabela de sucesso de inserção dos calculated attributes.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+    \caption{Success rate of users in the scenario they needed to add a calculated attribute.}
+    \label{tab:existingInterfaceCalculatedAttribute}
+    \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    \textbf{Insert Calculated Attribute} & \multicolumn{1}{l}{Added Successfully} & \multicolumn{1}{l}{Difficulty to Add} & \multicolumn{1}{l}{Did not Add} \\ \midrule
+    OutSystems Developer                 & 91.67\%                                & 8.33\%                                & 0.00\%                          \\
+    Software Developer                   & 20.00\%                                & 80.00\%                               & 0.00\%                          \\
+    Citizen Developer                    & 20.00\%                                & 60.00\%                               & 20.00\%                         \\
+    Total                                & 43.89\%                                & 49.44\%                               & 6.67\%                          \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+Furthermore, the users revealed difficulty to apply group bys or aggregation functions. In the formulation scenario F1, the users needed to apply one group by and one average aggregation function in order to reach the task goal. The results revealed that only around 40\% of the users managed to group the required data in this scenario, which confirms the problems pointed out in \ref{cha:requirements_and_analysis} about the lack of visibility of these functionalities.
+
+On the other hand, the tests revealed some problems concerning the effectiveness reaching the intended result. Although the value proposition of the visual interface is to empower users on understanding and formulating queries, it was identified occasions where users misinterpreter the represented queries or made slips in query formulation cases.
+
+For instance, the scenario C1, which includes a join between $"Sample\_Employee"$ and $"Sample\_Notification"$ with the intend of fetching only the employees who have never created any notification, demonstrated that the representation used was misleading users to correctly interpret the query. Observing the results presented in Table \ref{tab:existingInterfaceLeftJoinNull}, regardless of their groups, all users did not manage to entirely understand this join, even the users who are accustomed to use the visual query builder (OutSystems Developers).
+
+%Table os success C1 join
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+    \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null.}
+    \label{tab:existingInterfaceLeftJoinNull}
+    \begin{tabular}{@{}m{5.4cm}rrr@{}}
+    \toprule
+    \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identified} & \multicolumn{1}{l}{Did not see the Join} \\ \midrule
+    OutSystems Developer                                  & 16.67\%                        & 83.33\%                                & 0.00\%                                   \\
+    Software Developer                                    & 10.00\%                        & 40.00\%                                & 50.00\%                                  \\
+    Citizen Developer                                     & 0.00\%                         & 50.00\%                                & 50.00\%                                  \\
+    Total                                                 & 8.89\%                         & 57.78\%                                & 33.33\%                                  \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+In addition, the users have also exhibited other problems regarding the comprehension and formulation of the queries which contain joins between two entities that could be made using different foreign keys. For example, considering the data model presented in  Figure\ref{fig:dataModel}, an account has three foreign keys referencing employees: creators, managers and owners of the account. In those cases it is important to easily perceive which foreign key was used to made each join between the two entities. In this respect, only 15.93\% of the users identified this join aspect, which revealed that the interface was not supporting users to further comprehend the query's details. 
+
+From a query formulation point of view, only 36.67\% of the users selected the intended foreign key when they added entities that could be joined using different attributes. Tables \ref{tab:existingInterfaceForeignKeyIdentification} and \ref{tab:existingInterfaceForeignKeySelection} detail the results regarding the query aspect described. It was concluded that the interface was not properly guiding users throughtout the data querying process and neither facilitating their work in these specific cases.
+
+%Table regarding the foreign keys reading and selection
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+    \caption{Readability of the foreign keys used to join entities that could be joined using different attributes.}
+    \label{tab:existingInterfaceForeignKeyIdentification}
+    \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    \textbf{Foreign Key Identification} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identify} & \multicolumn{1}{l}{Did not See the Join} \\ \midrule
+    OutSystems Developer                & 27.78\%                        & 72.22\%                              & 0.00\%                                   \\
+    Software Developer                  & 20.00\%                        & 36.67\%                              & 43.33\%                                  \\
+    Citizen Developer                   & 0.00\%                         & 35.00\%                              & 65.00\%                                  \\
+    Total                               & 15.93\%                        & 47.96\%                              & 36.11\%                                  \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+    \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes.}
+    \label{tab:existingInterfaceForeignKeySelection}
+    \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    \textbf{Foreign Key Selection} & \multicolumn{1}{l}{Selected} & \multicolumn{1}{l}{Did not Select} & \multicolumn{1}{l}{Did not Add Join} \\ \midrule
+    OutSystems Developer           & 50.00\%                      & 50.00\%                            & 0.00\%                               \\
+    Software Developer             & 40.00\%                      & 40.00\%                            & 20.00\%                              \\
+    Citizen Developer              & 20.00\%                      & 40.00\%                            & 40.00\%                              \\
+    Total                          & 36.67\%                      & 43.33\%                            & 20.00\%                              \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_existing_interface} represents the average of the success of each user group in each scenario as well as the total average. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in Appendix \ref{app:user_testing_scenarios} and in section \ref{sec:target_users} respectively.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+    \caption{Success Rate of the scenarios by user group}
+    \label{tab:effectiveness_existing_interface}
+    \begin{tabular}{@{}llrrr@{}}
+    \toprule
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \midrule
+    \textbf{C1}               & OutSystems Developer & 91.67\%                                                           & 0.00\%                                                                  & 8.33\%                                                        \\
+                              & Software Developer   & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\
+                              & Citizen Developer    & 100\%                                                             & 0.00\%                                                                  & 0.00\%                                                        \\
+                              & \textbf{Total}       & 90.63\%                                                           & 0.00\%                                                                  & 9.38\%                                                        \\ \midrule
+    \textbf{M1}               & OutSystems Developer & 0.00\%                                                            & 16.67\%                                                                 & 83.33\%                                                       \\
+                              & Software Developer   & 10.00\%                                                           & 10.00\%                                                                 & 80.00\%                                                       \\
+                              & Citizen Developer    & 30.00\%                                                           & 10.00\%                                                                 & 60.00\%                                                       \\
+                              & \textbf{Total}       & 12.50\%                                                           & 12.50\%                                                                 & 75.00\%                                                       \\ \midrule
+    \textbf{C2}               & OutSystems Developer & 0.00\%                                                            & 91.67\%                                                                 & 8.33\%                                                        \\
+                              & Software Developer   & 60.00\%                                                           & 30.00\%                                                                 & 10.00\%                                                       \\
+                              & Citizen Developer    & 90.00\%                                                           & 10.00\%                                                                 & 0.00\%                                                        \\
+                              & \textbf{Total}       & 46.88\%                                                           & 46.88\%                                                                 & 6.25\%                                                        \\ \midrule
+    \textbf{C3}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                              & Software Developer   & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                              & Citizen Developer    & 50.00\%                                                           & 10.00\%                                                                 & 40.00\%                                                       \\
+                              & \textbf{Total}       & 16.63\%                                                           & 9.38\%                                                                  & 75.00\%                                                       \\ \midrule
+    \textbf{F1}               & OutSystems Developer & 50.00\%                                                           & 0.00\%                                                                  & 50.00\%                                                       \\
+                              & Software Developer   & 70.00\%                                                           & 20.00\%                                                                 & 10.00\%                                                       \\
+                              & Citizen Developer    & 80.00\%                                                           & 10.00\%                                                                 & 10.00\%                                                       \\
+                              & \textbf{Total}       & 65.63\%                                                           & 9.38\%                                                                  & 25.00\%                                                       \\ \midrule
+    \textbf{C4}               & OutSystems Developer & 0.00\%                                                            & 41.67\%                                                                 & 58.33\%                                                       \\
+                              & Software Developer   & 30.00\%                                                           & 60.00\%                                                                 & 10.00\%                                                       \\
+                              & \textbf{Total}       & 13.64\%                                                           & 50.00\%                                                                 & 36.36\%                                                       \\ \midrule
+    \textbf{M4}               & OutSystems Developer & 41.67\%                                                           & 0.00\%                                                                  & 58.33\%                                                       \\
+                              & Software Developer   & 100.00\%                                                          & 0.00\%                                                                  & 0.00\%                                                        \\
+                              & \textbf{Total}       & 68.18\%                                                           & 0.00\%                                                                  & 31.82\%                                                       \\ \midrule
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{Total}            & OutSystems Developer & 26.19\%                                                           & 21.43\%                                                                 & 52.38\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & Software Developer   & 50.00\%                                                           & 20.00\%                                                                 & 30.00\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & Citizen Developer    & 70.00\%                                                           & 8.00\%                                                                  & 22.00\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & \textbf{Total}       & \textbf{45.10\%}                                                  & \textbf{17.65\%}                                                        & \textbf{37.25\%}                                              \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+%In order to analyze users' behavior while they are interacting with the visual query interface, testing scenarios were prepared to evaluate usability attributes of the interface.\footnote{This evaluation process is described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_method}.} The main purpose of this evaluation was the analysis of the current effectiveness, efficiency, and learnability of the system to compare them with the proposed solution. 
+
+Even though there were negative results, it is visible how the SQL knowledge and the experience using the OutSystems platform impacted the success rate. The percentage of scenarios which were not achieved by Citizen Developers was 70\%. When comparing this value with the value of Software Developers, who have in general more SQL knowledge, the not achieved scenarios represented 50\%. In that way, there was a significant difference between these two type of users, meaning that, the existing interface is highly dependent on the users' SQL knowledge. Lastly, if the results of the Software Developers are compared with the OutSystems Developers results, it can be observed that the not achieved percentage decreases from 50\% to 26.19\%, revealing also that users who are accustomed to using the interface had a superior success rate.
+
+Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the difference of the effectiveness according to the user group, where it is highly visible the usability problems of the interface which are preventing users to reach the tasks' goals, allowing to conclude that for users who use the query builder for the first time, the learnability curve could be flattened if the user has SQL knowledge.
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2.0in]{effectiveness-existing-interface-user-group}
+	\caption{Average of the sucess rate of all scenarios by each user group.}
+	\label{fig:effectivenessExistingInterfaceUserGroup}
+\end{figure}
+
+The information about the background of each user regarding SQL and OutSystems were filled in the survey, asked before starting the tests. Analyzing the relation between the SQL knowledge and the OutSystems experience with the scenarios success results, presented in Figure \ref{fig:existingInterfaceSqlOutsystemsSuccessRate}, led to concluded that in average, a user who never or almost never have used a query language did not achieve 80\% and 67\%, respectively, of scenarios' goals.
+
+\begin{figure}[tb]
+    \centering
+    \subcaptionbox{"Have you used a query language (SQL or other)?"\label{fig:existingInterfaceSqlSuccessRate}}%
+      {\includegraphics[height=2.5in]{existing-interface-sql-sucess-rate}}%
+      \\
+    \subcaptionbox{"Have you already used OutSystems?"\label{fig:existingInterfaceOutsystemsSuccessRate}}%
+      {\includegraphics[height=2.5in]{existing-interface-outsystems-success-rate}}%
+  \caption{Percentage of scenarios not achieved by the answers given by users regarding their SQL and Outsystems capabilities.}
+    \label{fig:existingInterfaceSqlOutsystemsSuccessRate}
+  \end{figure}
 
 During the tests, users have mentioned other details of the interface that could be a useful input for the next design iterations. In that way, that feedback was also taken into account and registered as all the other issues identified. Thereby, Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface} includes also all problems identified during the user testing process of the existing visual query interface.
-
 
 \section{Target Users}
 \label{sec:target_users}
