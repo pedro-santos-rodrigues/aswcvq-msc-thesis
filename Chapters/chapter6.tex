@@ -1053,4 +1053,96 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} summarizes the aver
     \end{tabular}
     \end{table}
 
+\medskip
 
+\textbf{Analysis of Variance (ANOVA)}
+
+\medskip
+
+An one-way analysis of variance (ANOVA) was performed to determine if there is statistically significant differences between the users success rate using the existing interface and the final prototype.
+
+\textbf{Achived Scenarios:}
+
+Accordingly, the first ANOVA was used to determine the differences between the achived scenarios (stats presented in table \ref{tab:statistical_summary_achieved}) in the existing interface and the final prototype.
+
+\begin{center}
+  H0 - "There is no significant difference between the achieved scenarios rate in the existing interface and in the final prototype"
+\end{center}
+
+A one-way between subjects ANOVA was conducted (table \ref{tab:anova_achieved} to compare if the mean between the samples is equal. In a 5\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests (p-value = 1.24E-06 < 0,05). Therefore, it can be concluded that there is a statistically significant difference in terms of the achieved scenarios between the existing interface and the final prototype tests.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Summary of the statistically data regarding the \textbf{achieved scenarios} in the existing interface and in the final prototype.}
+	\label{tab:statistical_summary_achieved}
+  \begin{tabular}{@{}m{5cm}rrrr@{}}
+  \toprule
+  \textbf{Groups}                                   & \multicolumn{1}{l}{\textbf{Count}} & \multicolumn{1}{l}{\textbf{Sum}} & \multicolumn{1}{l}{\textbf{Average}} & \multicolumn{1}{l}{\textbf{Variance}} \\ \midrule
+  Achieved scenarios rate on the existing interface & 30                        & 10.4857                 & 0.3495                      & 0.0519                       \\
+  Achieved scenarios rate on the final prototype    & 30                        & 20.0000                 & 0.6667                      & 0.0511                       \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Analysis of Variance (ANOVA) of the \textbf{scenarios achieved} in the existing interface and in the final prototype.}
+	\label{tab:anova_achieved}
+  \begin{tabular}{@{}lllllll@{}}
+  \toprule
+  \textbf{Source of Variation} & \textbf{SS}                & \textbf{df}            & \textbf{MS}                & \textbf{F}                  & \textbf{P-value}             & \textbf{F crit}            \\ \midrule
+  Between Groups               & \multicolumn{1}{r}{1.5087} & \multicolumn{1}{r}{1}  & \multicolumn{1}{r}{1.5087} & \multicolumn{1}{r}{29.2874} & \multicolumn{1}{r}{1.24E-06} & \multicolumn{1}{r}{4.0069} \\
+  Within Groups                & \multicolumn{1}{r}{2.9878} & \multicolumn{1}{r}{58} & \multicolumn{1}{r}{0.0515} &                             &                              &                            \\ \midrule
+  \textbf{Total}               & 4.4965                     & 59                     &                            &                             &                              &                            \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+\textbf{Not achieved scenarios:}
+
+The second ANOVA was used to determine the differences between the not achieved scenarios (stats presented in table \ref{tab:statistical_summary_not_achieved}) in the existing interface and the final prototype.
+
+\begin{center}
+  H0 - "There is no significant difference between the not achieved scenarios rate in the existing interface and in the final prototype"
+\end{center}
+
+A one-way between subjects ANOVA was conducted (table \ref{tab:anova_not_achieved} to compare if the mean between the samples is equal. In a 5\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests (p-value = 5.08E-05 < 0,05). Therefore, it can be concluded that there is a statistically significant difference in terms of the not achieved scenarios between the existing interface and the final prototype tests.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Summary of the statistically data regarding the \textbf{not achieved scenarios} in the existing interface and in the final prototype.}
+	\label{tab:statistical_summary_not_achieved}
+  \begin{tabular}{@{}m{5cm}rrrr@{}}
+  \toprule
+  \textbf{Groups}                                       & \multicolumn{1}{l}{\textbf{Count}} & \multicolumn{1}{l}{\textbf{Sum}} & \multicolumn{1}{l}{\textbf{Average}} & \multicolumn{1}{l}{\textbf{Variance}} \\ \midrule
+  Not Achieved scenarios rate on the existing interface & 30                                 & 14.7143                          & 0.4905                               & 0.0516                                \\
+  Not Achieved scenarios rate on the final prototype    & 30                                 & 7.6286                           & 0.2543                               & 0.0358                                \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+
+  % Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Analysis of Variance (ANOVA) of the \textbf{scenarios not achieved} in the existing interface and in the final prototype.}
+	\label{tab:anova_not_achieved}
+  \begin{tabular}{@{}lrrllll@{}}
+  \toprule
+  \textbf{Source of Variation} & \multicolumn{1}{l}{\textbf{SS}} & \multicolumn{1}{l}{\textbf{df}} & \textbf{MS}                & \textbf{F}                  & \textbf{P-value}             & \textbf{F crit}            \\ \midrule
+  Between Groups               & 0.8837                          & 1                               & \multicolumn{1}{r}{0.8368} & \multicolumn{1}{r}{19.1610} & \multicolumn{1}{r}{5.08E-05} & \multicolumn{1}{r}{4.0069} \\
+  Within Groups                & 2.5330                          & 58                              & \multicolumn{1}{r}{0.0437} &                             &                              &                            \\ \midrule
+  \textbf{Total}               & 3.3697                          & 59                              &                            &                             &                              &                            \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+  \begin{figure}[tb]
+    \centering
+    \subcaptionbox{Existing Interface\label{fig:durationDiagramExistingInterface}}%
+      {\includegraphics[width=1.0\linewidth]{duration-diagram-existing-interface}}%
+      \\
+    \subcaptionbox{Final Prototype\label{fig:durationDiagramExistingInterface}}%
+    {\includegraphics[width=1.0\linewidth]{duration-diagram-final-prototype}}%
+  \caption{Comparison of the timed used by each scenario in the existing interface and in the final prototype.}
+    \label{fig:comparison_duration}
+  \end{figure}
