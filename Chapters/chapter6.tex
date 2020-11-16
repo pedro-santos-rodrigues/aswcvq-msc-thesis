@@ -995,13 +995,6 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} summarizes the aver
 	\label{fig:totalEffectivenessComparison}
 \end{figure}
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=2.0in]{add-calculated-attribute-comparison}
-	\caption{Effectiveness Comparison between the existing interface and the final prototype.}
-	\label{fig:addCalculatedAttributeComparison}
-\end{figure}
-
 \begin{figure}[tb]
     \centering
     \subcaptionbox{Add calculated attribute\label{fig:addCalculatedAttributeComparison}}%
@@ -1059,17 +1052,21 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} summarizes the aver
 
 \medskip
 
-An one-way analysis of variance (ANOVA) was performed to determine if there is statistically significant differences between the users success rate using the existing interface and the final prototype.
+Two one-way analysis of variance (ANOVA) were performed to determine if there are statistically significant differences between the mean users' success rate and the mean users' fail rate, using the existing interface and the final prototype.
 
-\textbf{Achived Scenarios:}
-
-Accordingly, the first ANOVA was used to determine the differences between the achived scenarios (stats presented in table \ref{tab:statistical_summary_achieved}) in the existing interface and the final prototype.
+\textbf{Achieved Scenarios:} Accordingly, the first ANOVA was computed to determine if the users' success rate (based on the percentage of achieved scenarios - stats presented in table \ref{tab:statistical_summary_achieved}) means are statistically different between the existing interface and the final prototype.
 
 \begin{center}
-  H0 - "There is no significant difference between the achieved scenarios rate in the existing interface and in the final prototype"
+  H0 - "There is no significant difference between the mean of achieved scenarios rate, in the existing interface and in the final prototype"
 \end{center}
 
-A one-way between subjects ANOVA was conducted (table \ref{tab:anova_achieved} to compare if the mean between the samples is equal. In a 5\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests (p-value = 1.24E-06 < 0,05). Therefore, it can be concluded that there is a statistically significant difference in terms of the achieved scenarios between the existing interface and the final prototype tests.
+A one-way ANOVA, between subjects, was conducted (table \ref{tab:anova_achieved} to compare if the mean between the samples are equal. In a 95\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests ($p-value = 1.24E-06 < 0,05$). Therefore, it can be concluded that there is a statistically significant difference in terms of the achieved scenarios between the existing interface and the final prototype tests.
+
+Regarding the effect size, which is a measure for ANOVA that indicates the proportion of variance accounted by a factor, measuring how different the means really are. Since the ANOVA performed was a one-way ANOVA, the effect size is given by the eta-squared ($\eta^2$), calculated using the following formula:
+
+\[ \eta^2 = \frac{SS_{between}}{SS_{between} + SS_{within}} \]
+
+Comparing the average of the success rate obtained by users in the existing interface, which was $\approx 0.3495$, with the one obtaining when users tested the final prototype, which was $\approx 0.6667$, it can be concluded that not only there is a statistical difference, as proved by the ANOVA analysis, but also the effect size, which is $\approx 0.3355 > 0.14$ indicates that there is a large effect. Thereby, the probability of a user achieve a higher success rate in the final prototype than in the existing interface is corroborated.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
@@ -1099,14 +1096,22 @@ A one-way between subjects ANOVA was conducted (table \ref{tab:anova_achieved} t
   \end{table}
 
 \textbf{Not achieved scenarios:}
+Since the method used to classify the success rate of the users while they performed the usability tests were not only yes or no answers but three types (achieved, partially achieved, and not achieved), the opposite of the achieved analysis is not the not achieved. In that way, other ANOVA analysis was performed concerning the not achieved scenarios in order to 
+measure if users could formulate and comprehend queries in a most effective way using the final prototype than with the existing interface way even if they made some mistakes. \footnote{If the mean of the not achieved scenarios is statistically different and lower, the users could achieved and partially achieved scenarios with a higher probability in the final prototype than using the existing interface.} 
 
-The second ANOVA was used to determine the differences between the not achieved scenarios (stats presented in table \ref{tab:statistical_summary_not_achieved}) in the existing interface and the final prototype.
+Therefore, the second ANOVA was used to determine the differences between the not achieved scenarios (stats presented in table \ref{tab:statistical_summary_not_achieved}) in the existing interface and the final prototype.
 
 \begin{center}
-  H0 - "There is no significant difference between the not achieved scenarios rate in the existing interface and in the final prototype"
+  H0 - "There is no significant difference between the mean of not achieved scenarios rate, in the existing interface and in the final prototype"
 \end{center}
 
-A one-way between subjects ANOVA was conducted (table \ref{tab:anova_not_achieved} to compare if the mean between the samples is equal. In a 5\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests (p-value = 5.08E-05 < 0,05). Therefore, it can be concluded that there is a statistically significant difference in terms of the not achieved scenarios between the existing interface and the final prototype tests.
+A one-way ANOVA, between subjects, was conducted (table \ref{tab:anova_not_achieved} to compare if the mean between the samples are equal. In a 95\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests ($p-value = 5.08E-05 < 0,05$). Therefore, it can be concluded that there is a statistically significant difference in terms of the not achieved scenarios between the existing interface and the final prototype tests.
+
+Comparing the average of the success rate obtained by users in the existing interface, which was $\approx 0.4905$, with the one obtaining when users tested the final prototype, which was $\approx 0.2543$, it can be concluded that not only there is a statistical difference, as proved by the ANOVA analysis, but also the effect size, which is $\approx 0.2586 > 0.14$ indicates that there is a large effect. Thereby, the probability of a user not achieve the given scenarios in the final prototype is lower than in the existing interface. 
+
+It was also verified that in the existing interface the average of the achieved scenarios ($\approx 0.3495$) was lower than the average of the not achieved scenarios ($\approx 0.4905$), but in the final prototype the average of the achieve scenarios ($\approx 0.6667$) was superior of the average of the not achieved scenarios ($\approx 0.2543$). By this means, users managed to most successfully comprehend and formulate queries using the final prototype than using the existing interface.
+
+
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
