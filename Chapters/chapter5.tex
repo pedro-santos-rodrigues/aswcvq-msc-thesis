@@ -227,7 +227,7 @@ For instance, the scenario C1, which includes a join between $"Sample\_Employee"
 
 In addition, the users have also exhibited other problems regarding the comprehension and formulation of the queries which contain joins between two entities that could be made using different foreign keys. For example, considering the data model presented in  Figure\ref{fig:dataModel}, an account has three foreign keys referencing employees: creators, managers and owners of the account. In those cases it is important to easily perceive which foreign key was used to made each join between the two entities. In this respect, only 15.93\% of the users identified this join aspect, which revealed that the interface was not supporting users to further comprehend the query's details. 
 
-From a query formulation point of view, only 36.67\% of the users selected the intended foreign key when they added entities that could be joined using different attributes. Tables \ref{tab:existingInterfaceForeignKeyIdentification} and \ref{tab:existingInterfaceForeignKeySelection} detail the results regarding the query aspect described. It was concluded that the interface was not properly guiding users throughtout the data querying process and neither facilitating their work in these specific cases.
+From a query formulation point of view, only 36.67\% of the users selected the intended foreign key when they added entities that could be joined using different attributes. Tables \ref{tab:existingInterfaceForeignKeyIdentification} and \ref{tab:existingInterfaceForeignKeySelection} detail the results regarding the query aspect described. It was concluded that the interface was not properly guiding users throughout the data querying process and neither facilitating their work in these specific cases.
 
 %Table regarding the foreign keys reading and selection
 % Please add the following required packages to your document preamble:
@@ -261,20 +261,20 @@ From a query formulation point of view, only 36.67\% of the users selected the i
     \end{tabular}
     \end{table}
 
-Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_existing_interface} represents the average of the success of each user group in each scenario as well as the total average. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in Appendix \ref{app:user_testing_scenarios} and in section \ref{sec:target_users} respectively.
+Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency, and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_existing_interface} represents the average of the success of each user group in each scenario as well as the total average. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in Appendix \ref{app:user_testing_scenarios} and in section \ref{sec:target_users} respectively.
 
 
 
 %In order to analyze users' behavior while they are interacting with the visual query interface, testing scenarios were prepared to evaluate usability attributes of the interface.\footnote{This evaluation process is described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_method}.} The main purpose of this evaluation was the analysis of the current effectiveness, efficiency, and learnability of the system to compare them with the proposed solution. 
 
-Even though there were negative results, it is visible how the SQL knowledge and the experience using the OutSystems platform impacted the success rate. The percentage of scenarios which were not achieved by Citizen Developers was 70\%. When comparing this value with the value of Software Developers, who have in general more SQL knowledge, the not achieved scenarios represented 50\%. In that way, there was a significant difference between these two type of users, meaning that, the existing interface is highly dependent on the users' SQL knowledge. Lastly, if the results of the Software Developers are compared with the OutSystems Developers results, it can be observed that the not achieved percentage decreases from 50\% to 26.19\%, revealing also that users who are accustomed to using the interface had a superior success rate.
+Even though there were negative results, it is visible how the SQL knowledge and the experience using the OutSystems platform impacted the success rate. The percentage of scenarios which were not achieved by Citizen Developers was 70\%. When comparing this value with the value of Software Developers, who have in general more SQL knowledge, the not achieved scenarios represented 50\%. In that way, there was a significant difference between these two types of users, meaning that, the existing interface is highly dependent on the users' SQL knowledge. Lastly, if the results of the Software Developers are compared with the OutSystems Developers results, it can be observed that the not achieved percentage decreases from 50\% to 27.14\%, revealing also that users who are accustomed to using the interface had a superior success rate.
 
 Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the difference of the effectiveness according to the user group, where it is highly visible the usability problems of the interface which are preventing users to reach the tasks' goals, allowing to conclude that for users who use the query builder for the first time, the learnability curve could be flattened if the user has SQL knowledge.
 
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[height=2.0in]{effectiveness-existing-interface-user-group}
+	\includegraphics[height=2.4in]{effectiveness-existing-interface-user-group}
 	\caption{Average of the sucess rate of all scenarios by each user group (Existing interface usability tests - 30 users).}
 	\label{fig:effectivenessExistingInterfaceUserGroup}
 \end{figure}

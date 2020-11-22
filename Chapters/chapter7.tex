@@ -10,25 +10,43 @@
 \chapter{Conclusions and Future Work}
 \label{cha:conclusions_and_future_work}
 
-This chapter figures out a wide perspective and consideration of all points approached in this dissertation as well as the results achieved, reinforcing also what could be improved in the future.
+This chapter figures out a wide perspective on all of the points approached in this dissertation, as well as, the results achieved, reinforcing also what could be improved in the future.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-The low-code development paradigm has accelerated software development and extended this industry to people with different backgrounds due to the usage of visual programming languages. Sharing the same vision, \glspl{VQI} arose in order to facilitate the data querying process turning it easier to lean, more efficient, and less error-prone.
+The low-code development paradigm has accelerated software development and extended this industry to people with different backgrounds, due to the usage of visual programming languages. Sharing the same vision, \glspl{VQI} arose in order to facilitate the data querying process, turning it easier to learn, more efficient, and less error-prone.
 
-In this dissertation, the \gls{VQI} integrated into the OutSystems low-code development platform was studied due to the low level of the users' acceptance and satisfaction of this platform component. Notwithstanding the lack of some \gls{SQL} features in the visual query building solution, a large set of usability problems were identified through users' interviews, quantitative analysis, issues reported in the OutSystems Community, and usability tests.
+In this dissertation, the \gls{VQI} integrated into the OutSystems low-code development platform was studied due to the low level of the users' acceptance and satisfaction on this platform component. Notwithstanding the lack of some \gls{SQL} features in the visual query building solution, the large set of usability problems identified were the main topics addressed in this dissertation.
 
-In a nutshell, the interface had different usability problems that were avoiding users to take advantage of the main advantages of a visual query language: easiness to learn, acceleration of the querying process, reduction of the errors which could occur during this process. 
+In a nutshell, the interface had different usability problems that were avoiding users to exploit the main advantages of a visual query language: easiness to learn, acceleration of the querying process, and reduction of the errors which could occur during this process. 
 
-Hence, all problems were detailed and categorized as the target users of the system were divided into groups according to their requirements and expectations in order to grant the solution built would have a positive effect on all users. Moreover, it was prepared a design and evaluation method that would make it possible to build the most appropriate solution to cover the problems identified and to improve the experience of the target users.
+Hence, all problems were detailed and categorized as well of the target users of the system who were divided into groups, according to their requirements and expectations. By this means, the solution could be built, by having users in mind (following a user-centered design approach), in order to have a positive effect on all users. Moreover, it was prepared a design and evaluation method that would make it possible to build the most appropriate solution to cover the problems identified and to improve the experience of the target users.
 
-Firstly, a paper prototype was built to explore the first ideas and test with users in order to validate if the design choices made were forwarding the solution in the right direction to solve the problems users felt in the existing interface.
+Firstly, a paper prototype was built to explore the first ideas and test with users, in order to validate if the design choices made were forwarding the solution in the right direction to solve the problems that users felt the most in the existing interface.
 
-Secondly, the information obtained from the evaluation of the paper prototype was used to refine details and implement a new prototype integrated into the OutSystems Platform which aimed to mitigate some learnability problems in the interface and reducing the errors users could make while they are building their queries.
+Secondly, the information obtained from the evaluation of the paper prototype was used to refine details and implement a new prototype, integrated into the OutSystems Platform, with the aim to mitigate some learnability problems in the interface and reducing the errors that users mainly made while they were building their queries.
 
-The existing interface and the final prototype were both tested with 30 users, using the same method and testing scenarios in order to compare the success of the design changes applied in the interface. The new interface 
+The existing interface and the final prototype were both tested with 30 users, using the same method and testing scenarios in order to compare the success of the changes in design, applied in the interface. With the changes applied to the new interface, users have increased around 84\% the task completion rate, which means the new interface has significant improvements regarding effectiveness.
+
+Furthermore, users spent less time, on average, to complete each one of the testing scenarios proposed. Also, they have reported through a System Usability Scale \cite{system_usability_scale} that the system was more consistent and more pleasant to use.
+
+The main goal stated for this dissertation was the mitigation of the current problems in the visual query interface, which has been blocking users to completely take advantage of the \glspl{VQI} value proposition, leading to a low users' acceptance of this visual query builder.
+
+Since the potential of these interfaces establishes a reduced previous knowledge, the possibility to accelerate the query building process, and the reduction of errors users could make, due to the lack of technical knowledge or because they do not remember important details in some queries, the results showed there was a significant improvement in all these three components.
 
 
 \section{Future Work}
 \label{sec:future_work}
+
+Although the prototype build has leveraged the potential of the visual query interface in all dimensions (i.e., learnability, effectiveness, and efficiency), some aspects should be further improved in order to optimize even more the \gls{UX} success metrics of this interface:
+
+\begin{enumerate}
+    \item Learnability: despite the evident improvement noticed, regarding learnability in the new interface, since new users had less difficulties to find how to apply the query operations they needed. However, there is still a correlation between the relational databases knowledge and how users prospect the easiness of use of the system. The join operations used in the visual interface, to combine columns from one or more tables, are the same used in relational databases, which come from relational algebra. Accordingly, the users who have never used a relational database have more difficulty to understand how these merging functions work. In that way, this dependency should be further mitigated trying a new design approach that could be intuitive for users without these relational algebra foundations, maintaining the productivity level provided for technical users. Moreover, users still do not understand the joins with more difficult conditions, thus the join condition should be improved, to not only show a textual expression, but resorting on more visual elements that could turn the readability simpler and accessible for everyone, independently of the users' background;
+    \item Efficiency/Productivity: the new designed interface has improved the efficiency of use due to the new rearrangement of the different areas and components in the interface. However, as mentioned before, the accelerators and other productivity features, as search engines and keyboard shortcuts, were not implemented as the tests performed could not test this type of features, since users had no previous training or adaptation period before testing the interface. Regardless, it was proven that the most restructuring changes made have increased the efficiency levels even without these boosters. In that way, if these accelerators were also implemented, there was a significant prospection to increase the productivity metrics;
+    \item Efficiency comparison with \gls{SQL}: the time users need to formulate queries is a relevant topic. If a user is faster formulating a query in \gls{SQL} than using the visual query interface, he might prefer to use \gls{SQL} even if the visual query builder helps him making fewer mistakes. Although the efficiency of the interface built is superior to the one of the previous query builder, a different case study should be further approached in order to evaluate if users with similar database knowledge are faster using SQL or the visual query interface. In order to make this comparison, as believable as possible, the accelerators mentioned should be implemented and users should test the interface after a learning and adaptation period, and not as users who tried the interface for the first time during the test, as occurred in the usability tests performed in this dissertation.
+    
+
+The idea and prototype proposed in this dissertation triggered the start of a new project at OutSystems that aims to explore the solution presented and explore how to improve also, the aspects mentions that should be further improved. The goal is to cleary define a roadmap to invest in the development of these improvements and release of a new visual query builder to the low-code platform.
+
+\end{enumerate}
