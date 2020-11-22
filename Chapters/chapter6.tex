@@ -1098,9 +1098,9 @@ It was also verified that in the existing interface the average of the achieved 
 
 \subsection{Efficiency}
 \label{subsec:efficiency}
-The time users spent in each scenario when they tested the existing interface and the final prototype were also evaluated in order to compare the efficiency usability attribute of the final prototype against the one of the existing interface. Figure \ref{fig:comparison_duration} and Table {tab:duration-stats} presents the statistical data extracted to analyze the distribution of the time elapsed in each scenario and their skewness along the different quartiles.
+The time users spent in each scenario when they tested the existing interface and the final prototype were also evaluated in order to compare the efficiency usability attribute of the final prototype against the one of the existing interface. Figure \ref{fig:box-plots-duration} and Table \ref{tab:duration-stats} presents the statistical data extracted to analyze the distribution of the time elapsed in each scenario and their skewness along the different quartiles.
 
-Comparing the results regarding comprehension scenarios, the median has decreased at least 34\% with the exception of the C4 where the median has increased 20 seconds from the existing interface to the final prototype tests. The difference between the first and the third quartil has also become shorter in the comprehension scenarios excluding the case of the C3 where this difference has slightly increased (2.67\%). 
+As detailed in Table \ref{tab:duration-stats-comparison}, the comparison of the results regarding comprehension scenarios shown that the median has decreased at least 34\% with the exception of the C4 where the median has increased 20 seconds from the existing interface to the final prototype tests. The difference between the first and the third quartil has also become shorter in the comprehension scenarios excluding the case of the C3 where this difference has slightly increased (2.67\%). 
 
 Also noteworthy was the results about the C1 scenario. As it was the first scenario tested in usability tests, the time users needed to perform the intended task reflected also the time needed to explore the system for the first time to understand the way it works. In this scenario, the median has decreased 33.98\% and the difference between the first and the third quartiles 52.50\%, which means that users required less time to understand the interface. In that way, not only users who explored the interface for the first time were faster in the new prototype, but also the users who are already accustomed to use the existing interface were faster reaching the task's goal in the new interface.
 
@@ -1119,7 +1119,7 @@ In a nutshell, the analysis of the time spent in each scenario pointed out diffe
     \centering
     \includegraphics[width=1.0\textwidth]{duration-box-plots}
     \caption{Box plots of the time used by users in each scenario in the existing interface (E) and in the final prototype (F).}
-    \label{fig:comparison_duration}
+    \label{fig:box-plots-duration}
   \end{figure}
 
 % Please add the following required packages to your document preamble:
@@ -1147,17 +1147,83 @@ In a nutshell, the analysis of the time spent in each scenario pointed out diffe
   \end{tabular}
   \end{table}
 
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Comparison of the time elapsed in each scenario between the tests of the existing interface and the tests of the final prototype.}
+	\label{tab:duration-stats-comparison}
+  \begin{tabular}{@{}
+  >{\columncolor[HTML]{FFFFFF}}l 
+  >{\columncolor[HTML]{FFFFFF}}r 
+  >{\columncolor[HTML]{FFFFFF}}r 
+  >{\columncolor[HTML]{FFFFFF}}r 
+  >{\columncolor[HTML]{FFFFFF}}r @{}}
+  \toprule
+  Scenario & \multicolumn{1}{l}{\cellcolor[HTML]{FFFFFF}Median Difference} & \multicolumn{1}{l}{\cellcolor[HTML]{FFFFFF}Percentage} & \multicolumn{1}{l}{\cellcolor[HTML]{FFFFFF}Q3-Q1 Difference} & \multicolumn{1}{l}{\cellcolor[HTML]{FFFFFF}Percentage} \\ \midrule
+  C1       & -0:01:01                                                      & -33.98\%                                               & -0:01:32                                                     & -52.50\%                                               \\ \midrule
+  M1       & -0:00:19                                                      & -8.76\%                                                & -0:00:53                                                     & -26.30\%                                               \\ \midrule
+  C2       & 0:00:20                                                       & 11.40\%                                                & 0:00:03                                                      & 2.65\%                                                 \\ \midrule
+  C3       & -0:00:36                                                      & -44.10\%                                               & -0:00:04                                                     & -8.65\%                                                \\ \midrule
+  F1       & -0:00:18                                                      & -4.08\%                                                & -0:00:02                                                     & -0.67\%                                                \\ \midrule
+  C4       & -0:00:43                                                      & -42.71\%                                               & -0:01:01                                                     & -133.33\%                                              \\ \midrule
+  M4       & -0:01:05                                                      & -29.35\%                                               & -0:01:27                                                     & -42.40\%                                               \\ \bottomrule
+  \end{tabular}
+  \end{table}
 
 
 
 \subsection{Satisfaction}
 \label{subsec:satisfaction}
+After completing all the testing scenarios users filled in an u System Usability Survey (SUS) \cite{system_usability_scale}, where they attributed a number from 1 to 5 to each one of the sentences presented in Table \ref{tab:sus_results} and Figure \ref{fig:susChartComparison}.
 
-\medskip
+The satisfaction of the users increased in all questions. The users reacted positively to the changes implemented into the prototype revealing that the system was more pleasant and simple to use as well as more consistent than the previous interface. Namely, the questions below were the ones with the most significant average improvement:
 
-\textbf{SUS}
+\begin{itemize}
+  \item "I thought there was too much inconsistency in this system" (improved 44.58\%)
+  \item I found the system very cumbersome to use" (43.88\%)
+  \item "I found the various functions in this system were well integrated" (40.0\%)
+  \item "I found the system unnecessarily complex" (33.80\%)
+  \item "I think that I would like to use this system frequently" (27.35\%) 
+\end{itemize}
 
-\medskip
+However, although the questions regarding learnability have improved in comparison to the existing interface, they do not show as relevant as the remaining questions.
+
+Since the system learnability could be highly affected by the users' background, the information retrieved from the users' profile survey was analyzed in order to perceive if there is some degree of correlation between the technical knowledge and the satisfaction using the interface.
+
+Therefore, a study was performed in order to evaluate if the  relational databases knowledge could have a significant impact into the users' opinion about how visual query builder is easy to use.
+
+In that way, a Kendall's Tau-a correlation was performed to determine the correlation between the relational database knowledge and the perception about how easy is to use the system. It was considered the 30 users who tested the existing interface and the 30 users who tested the final prototype. 
+
+\begin{center}
+  H0 = "There is no correlation between the relational databases knowledge and the interface ease of use"
+\end{center}
+
+Table \ref{tab:kendall-test} presents the values necessary to calculate this correlation value. 
+
+In a 95\% confidence interval, the null hypothesis was rejected for both cases, the existing interface and the final prototype, which means that users with more relational databases knowledge were more likely to find the system easy to use.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Kendall's Tau-a significance test.}
+	\label{tab:kendall-test}
+  \begin{tabular}{@{}lrr@{}}
+  \toprule
+  \textbf{Kendall's Tau-a}                              & \multicolumn{1}{l}{\textbf{Existing Interface}} & \multicolumn{1}{l}{\textbf{Final Prototype}} \\ \midrule
+  $\alpha$                                                 & 0.05                                            & 0.05                                         \\ \midrule
+  Sample size                                           & 30                                              & 30                                           \\ \midrule
+  Combinatorial                                         & 435                                             & 435                                          \\ \midrule
+  Number of discordant pairs                            & 104                                             & 52                                           \\ \midrule
+  Number of concordant pairs                            & 331                                             & 383                                          \\ \midrule
+  Tau ($\tau$)                                                   & 0.5218                                          & 0.7609                                       \\ \midrule
+  Tau-Critical                                          & 0.218                                           & 0.218                                        \\ \midrule
+  \textbf{Significant? (Tau \textgreater Tau-Critical)} & \textbf{Yes}                                    & \textbf{Yes}                                 \\ \bottomrule
+  \end{tabular}
+  \end{table}
+
+In conclusion, all the analysis and comparisons made between the existing interface and the final prototype built in this dissertation shown that there was considering improvements regarding the task completion rate and in the time users need to comprehend the queries the interface illustrates. However, there are opportunity in terms of efficiency, mainly for formulation tasks and the relational databases foundations are important to find the system easy to use.
 
 \begin{figure}[tb]
   \centering
@@ -1182,15 +1248,15 @@ In a nutshell, the analysis of the time spent in each scenario pointed out diffe
   \toprule
                                                                                              & \multicolumn{2}{l}{\textbf{Average}}                                                                                                           & \multicolumn{2}{l|}{\textbf{Standard Deviation}}                                                                                                \\ \cmidrule(l){2-5} 
   \multirow{-2}{*}{\textbf{Question}}                                                        & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Existing Interface}} & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{E6E6E6}\textbf{Final Prototype}} & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Existing Interface}} & \multicolumn{1}{m{1.7cm}|}{\cellcolor[HTML]{E6E6E6}\textbf{Final Prototype}} \\ \midrule
-  I think that I would like to use this system frequently.                                   & \cellcolor[HTML]{EFEFEF}3.34                                            & \cellcolor[HTML]{E6E6E6}4.33                                         & \cellcolor[HTML]{EFEFEF}0.99                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
-  I found the system unnecessarily complex.                                                  & \cellcolor[HTML]{EFEFEF}2.88                                            & \cellcolor[HTML]{E6E6E6}1.90                                         & \cellcolor[HTML]{EFEFEF}1.08                                            & \cellcolor[HTML]{E6E6E6}0.79                                          \\ \midrule
-  I thought the system was easy to use.                                                      & \cellcolor[HTML]{EFEFEF}3.44                                            & \cellcolor[HTML]{E6E6E6}4.07                                         & \cellcolor[HTML]{EFEFEF}0.93                                            & \cellcolor[HTML]{E6E6E6}0.73                                          \\ \midrule
-  I think that I would need the support of a technical person to be able to use this system. & \cellcolor[HTML]{EFEFEF}2.94                                            & \cellcolor[HTML]{E6E6E6}2.20                                         & \cellcolor[HTML]{EFEFEF}1.22                                            & \cellcolor[HTML]{E6E6E6}1.14                                          \\ \midrule
-  I found the various functions in this system were well integrated.                         & \cellcolor[HTML]{EFEFEF}3.00                                            & \cellcolor[HTML]{E6E6E6}4.30                                         & \cellcolor[HTML]{EFEFEF}0.94                                            & \cellcolor[HTML]{E6E6E6}0.64                                          \\ \midrule
-  I thought there was too much inconsistency in this system.                                 & \cellcolor[HTML]{EFEFEF}2.44                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.20                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
-  I would imagine that most people would learn to use this system very quickly.              & \cellcolor[HTML]{EFEFEF}3.63                                            & \cellcolor[HTML]{E6E6E6}4.13                                         & \cellcolor[HTML]{EFEFEF}1.02                                            & \cellcolor[HTML]{E6E6E6}0.85                                          \\ \midrule
-  I found the system very cumbersome to use.                                                 & \cellcolor[HTML]{EFEFEF}2.34                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.08                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
-  I felt very confident using the system.                                                    & \cellcolor[HTML]{EFEFEF}3.25                                            & \cellcolor[HTML]{E6E6E6}4.00                                         & \cellcolor[HTML]{EFEFEF}1.20                                            & \cellcolor[HTML]{E6E6E6}0.93                                          \\ \midrule
-  I needed to learn a lot of things before I could get going with this system.               & \cellcolor[HTML]{EFEFEF}2.81                                            & \cellcolor[HTML]{E6E6E6}2.43                                         & \cellcolor[HTML]{EFEFEF}1.13                                            & \cellcolor[HTML]{E6E6E6}1.12                                          \\ \bottomrule
+  I think that I would like to use this system frequently.                                   & \cellcolor[HTML]{EFEFEF}3.40                                            & \cellcolor[HTML]{E6E6E6}4.33                                         & \cellcolor[HTML]{EFEFEF}1.00                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+  I found the system unnecessarily complex.                                                  & \cellcolor[HTML]{EFEFEF}2.87                                            & \cellcolor[HTML]{E6E6E6}1.90                                         & \cellcolor[HTML]{EFEFEF}1.01                                            & \cellcolor[HTML]{E6E6E6}0.79                                          \\ \midrule
+  I thought the system was easy to use.                                                      & \cellcolor[HTML]{EFEFEF}3.40                                            & \cellcolor[HTML]{E6E6E6}4.07                                         & \cellcolor[HTML]{EFEFEF}0.97                                            & \cellcolor[HTML]{E6E6E6}0.73                                          \\ \midrule
+  I think that I would need the support of a technical person to be able to use this system. & \cellcolor[HTML]{EFEFEF}2.97                                            & \cellcolor[HTML]{E6E6E6}2.20                                         & \cellcolor[HTML]{EFEFEF}1.27                                            & \cellcolor[HTML]{E6E6E6}1.14                                          \\ \midrule
+  I found the various functions in this system were well integrated.                         & \cellcolor[HTML]{EFEFEF}3.07                                            & \cellcolor[HTML]{E6E6E6}4.30                                         & \cellcolor[HTML]{EFEFEF}0.91                                            & \cellcolor[HTML]{E6E6E6}0.64                                          \\ \midrule
+  I thought there was too much inconsistency in this system.                                 & \cellcolor[HTML]{EFEFEF}2.40                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.22                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+  I would imagine that most people would learn to use this system very quickly.              & \cellcolor[HTML]{EFEFEF}3.60                                            & \cellcolor[HTML]{E6E6E6}4.13                                         & \cellcolor[HTML]{EFEFEF}1.04                                            & \cellcolor[HTML]{E6E6E6}0.85                                          \\ \midrule
+  I found the system very cumbersome to use.                                                 & \cellcolor[HTML]{EFEFEF}2.37                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.13                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+  I felt very confident using the system.                                                    & \cellcolor[HTML]{EFEFEF}3.30                                            & \cellcolor[HTML]{E6E6E6}4.00                                         & \cellcolor[HTML]{EFEFEF}1.24                                            & \cellcolor[HTML]{E6E6E6}0.93                                          \\ \midrule
+  I needed to learn a lot of things before I could get going with this system.               & \cellcolor[HTML]{EFEFEF}2.73                                            & \cellcolor[HTML]{E6E6E6}2.43                                         & \cellcolor[HTML]{EFEFEF}1.11                                           & \cellcolor[HTML]{E6E6E6}1.12                                          \\ \bottomrule
   \end{tabular}
   \end{table}
