@@ -1098,18 +1098,54 @@ It was also verified that in the existing interface the average of the achieved 
 
 \subsection{Efficiency}
 \label{subsec:efficiency}
+The time users spent in each scenario when they tested the existing interface and the final prototype were also evaluated in order to compare the efficiency usability attribute of the final prototype against the one of the existing interface. Figure \ref{fig:comparison_duration} and Table {tab:duration-stats} presents the statistical data extracted to analyze the distribution of the time elapsed in each scenario and their skewness along the different quartiles.
+
+Comparing the results regarding comprehension scenarios, the median has decreased at least 34\% with the exception of the C4 where the median has increased 20 seconds from the existing interface to the final prototype tests. The difference between the first and the third quartil has also become shorter in the comprehension scenarios excluding the case of the C3 where this difference has slightly increased (2.67\%). 
+
+Also noteworthy was the results about the C1 scenario. As it was the first scenario tested in usability tests, the time users needed to perform the intended task reflected also the time needed to explore the system for the first time to understand the way it works. In this scenario, the median has decreased 33.98\% and the difference between the first and the third quartiles 52.50\%, which means that users required less time to understand the interface. In that way, not only users who explored the interface for the first time were faster in the new prototype, but also the users who are already accustomed to use the existing interface were faster reaching the task's goal in the new interface.
+
+Furthermore, the median time spent in the last comprehension scenario performed by users in the usability tests has decreased 42.71\% and the difference between the first and the third quartiles 133\%, which indicates that after exploring the interface through some scenarios users were able to be more faster to comprehend the query. Thereby, the interface revealed promising results in terms of productivity essentially after passing the initial learning phase.
+
+From the edition and formulation point of view, the results revealed that in the first modification scenario the median has decreased 8.76\% and the difference between the first and the third quartiles 26.30\%. This result demonstrates the success of improving the visibility of the option to add new attributes which made that new users spent less time searching for this option, leading to this variance decrease.
+
+The formulation scenario does not have represented a huge difference in terms of efficiency in opposite of the values presented before regarding effectiveness. The median has decreased 4.0\% and the difference between first and the third quartiles 0.67\%. However, as stated before, there was positive results in terms of effectiveness which confirms the changes applied in the interface have helped users to reach the formulation goals but there is a lack of some training and some accelerators to improve this values. Besides, the usability tests were made without any previous learning, then users used the final prototype at the first time which could impact negatively the efficiency metrics. Regardless of, at least maintain the efficiency results when comparing the interface, without implementing some accelerators as shortcuts or search engines and without previous training, with the existing interface, is a positive indicator, since the tests included users accustomed to use the existing interface. In that way, if they needed the same time to use the interface they do not know, when they would start using the interface more regularly the efficiency tends to improve.
+
+The time needed to complete the last modification scenario (M4) has decreased also in the final prototype. The median has decreased 29.35\% and the difference between the first and the third quartiles 42.40\%.
+
+In a nutshell, the analysis of the time spent in each scenario pointed out different indicators of the potential of this interface in the efficiency optimization, even without the implementation of the accelerators and the user adaptation which would even promote faster times to complete users' tasks.
 
 
-  \begin{figure}[tb]
+  \begin{figure}[htbp]
     \centering
-    \subcaptionbox{Existing Interface\label{fig:durationDiagramExistingInterface}}%
-      {\includegraphics[width=1.0\linewidth]{duration-diagram-existing-interface}}%
-      \\
-    \subcaptionbox{Final Prototype\label{fig:durationDiagramExistingInterface}}%
-    {\includegraphics[width=1.0\linewidth]{duration-diagram-final-prototype}}%
-  \caption{Comparison of the timed used by each scenario in the existing interface and in the final prototype.}
+    \includegraphics[width=1.0\textwidth]{duration-box-plots}
+    \caption{Box plots of the time used by users in each scenario in the existing interface (E) and in the final prototype (F).}
     \label{fig:comparison_duration}
   \end{figure}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Statistical information about the time users elapsed in each scenario in the existing interface and in the final prototype.}
+	\label{tab:duration-stats}
+  \begin{tabular}{@{}llrrrrr@{}}
+  \toprule
+  Scenario & Interface          & \multicolumn{1}{l}{Min} & \multicolumn{1}{l}{Q1} & \multicolumn{1}{l}{Median} & \multicolumn{1}{l}{Q3} & \multicolumn{1}{l}{Max} \\ \midrule
+  C1       & Existing Interface & 0:01:01                 & 0:01:56                & 0:03:00                    & 0:04:50                & 0:09:03                 \\
+           & Final Prototype    & 0:00:57                 & 0:01:23                & 0:01:59                    & 0:03:15                & 0:07:43                 \\ \midrule
+  M1       & Existing Interface & 0:01:18                 & 0:02:20                & 0:03:37                    & 0:05:41                & 0:11:17                 \\
+           & Final Prototype    & 0:01:31                 & 0:02:33                & 0:03:18                    & 0:05:01                & 0:08:33                 \\ \midrule
+  C2       & Existing Interface & 0:01:00                 & 0:02:02                & 0:02:51                    & 0:04:05                & 0:05:03                 \\
+           & Final Prototype    & 0:01:04                 & 0:02:09                & 0:03:11                    & 0:04:12                & 0:07:38                 \\ \midrule
+  C3       & Existing Interface & 0:00:28                 & 0:01:03                & 0:01:21                    & 0:01:50                & 0:02:52                 \\
+           & Final Prototype    & 0:00:21                 & 0:00:32                & 0:00:45                    & 0:01:39                & 0:03:24                 \\ \midrule
+  F1       & Existing Interface & 0:03:26                 & 0:05:59                & 0:07:21                    & 0:09:44                & 0:14:16                 \\
+           & Final Prototype    & 0:02:58                 & 0:04:48                & 0:07:03                    & 0:09:15                & 0:12:25                 \\ \midrule
+  C4       & Existing Interface & 0:00:35                 & 0:01:27                & 0:01:40                    & 0:02:13                & 0:03:31                 \\
+           & Final Prototype    & 0:00:33                 & 0:00:45                & 0:00:57                    & 0:01:10                & 0:03:22                 \\ \midrule
+  M4       & Existing Interface & 0:00:15                 & 0:02:10                & 0:03:42                    & 0:05:34                & 0:14:12                 \\
+           & Final Prototype    & 0:00:18                 & 0:02:18                & 0:02:37                    & 0:04:11                & 0:07:35                 \\ \bottomrule
+  \end{tabular}
+  \end{table}
 
 
 
