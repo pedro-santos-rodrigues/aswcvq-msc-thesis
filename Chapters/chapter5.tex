@@ -42,8 +42,8 @@ Furthermore, the interface has not revealed to be flexible, efficient, and effec
 \begin{itemize}
     \item Search engines: there is no option to efficiently search for an attribute neither to look for some data in the query result or to apply some aggregation function (as illustrated in Figure \ref{fig:rightClickGroupBy}). Moreover, there is no general search in all queries, which could be useful when users need to find if some entity or variable is present in the query.
     \item Hidden columns: in the existing interface, primary and foreign keys are automatically hidden in the query result table since they are considered not relevant data for the query output. That strategy has been implemented since the first release of the interface to provide the most clear output for users with lack of technical background, assuming that they could not understand the meaning of those attributes. Since those attributes may contain relevant information, it is possible to unhide them. However, it must be highlighted that there is no efficient way to expand all hidden columns at once, difficulting significantly the comprehension and formulation of all queries who do not have a reduced number of entities and attributes. Figure \ref{fig:hiddenAttributes} illustrates how the hidden attributes are presented in the interface.
-    \item Filter edition: the adaptability of existing query filters is possible using the expression editor modal, as demonstrated in Figure \ref{fig:aggregateFilterModal}. This modal is useful because it provides some guidance in the expression formulation. Users, can select the intended language expressions or the entities, attributes, or variables that need without having to recall those names. However, if users do not need that assistance, the interaction strategy implemented could led to time and visual context wastefulness every time that a modal is opened. It should be noted that the modal is definitely a good feature but it should not be the unique way to edit filters since it can increase the time spent to built queries unnecessarily. Moreover, there is no way to copy and past filter or to read effectively the content since there is no color highlighting in filters expressions.
-    \item Accelerators feedback: this visual query interface has multiple accelerators that turn the query building process faster. Nevertheless, sometimes the automatic mechanisms are silent and users may not comprehend they were applied. For example, when two entities are added and are related, the system automatically joins those entities. However, there is no highlight or other visual interaction mechanism that provides feedback to the user and shows him what action were applied in the aggregation output.
+    \item Filter edition: the adaptability of existing query filters is possible using the expression editor modal, as demonstrated in Figure \ref{fig:aggregateFilterModal}. This modal is useful because it provides some guidance in the expression formulation. Users, can select the intended language expressions or the entities, attributes, or variables that need without having to recall those names. However, if users do not need that assistance, the interaction strategy implemented could led to time and visual context wastefulness every time that a modal is opened. It should be noted that the modal is definitely a good feature but it should not be the unique way to edit filters since it can increase the time spent to built queries unnecessarily. Moreover, there is no way to copy and past filter or to read effectively the content since there is no color highlighting in filters' expressions.
+    \item Accelerators feedback: this visual query interface has multiple accelerators that turn the query building process faster. Nevertheless, sometimes the automatic mechanisms are silent and users may not comprehend they were applied. For example, when two entities are added and are related, the system automatically joins those entities. However, there is no highlight or other visual interaction mechanism that provides feedback to the user and shows him which action was applied in the aggregation output.
     \item Inconsistency problems: some functionalities were accessible through a determined context and option but other alternative options do not have the same behavior. For instance, in some use cases it is not possible to add a new entity to the query using drag and drop but if the user click in another add button the entity is added.
     \item Multiple actions at once: sometimes it could be useful to do several actions at once in order to reduce the time spent to build the query. For instance, it should be possible to add multiple entities at once instead of adding one at a time; 
 \end{itemize}
@@ -173,14 +173,17 @@ By this means, 30 users have performed usability tests in a remote environment u
 
 The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development:\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
 
+
 \begin{itemize}
     \item \textbf{OutSystems Developer: }users who have relevant experience developing software using OutSystems;
     \item \textbf{Software Developer: }users who have programming knowledge and know \gls{SQL} but are not accustomed to build software using low-code platforms;
     \item \textbf{Citizen Developer. }users who are not proficient in any programming language neither in low-code development. Fundamentally, these users are more accustomed to data management tools such as spreadsheet applications.
 \end{itemize}
 
+The detailed information about the usability test participants' profile are presented in Table \ref{tab:survey_profile_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
 
-The testing process started with a brief explanation of the data model used across the tests, as detailed in section \ref{sec:evaluation_method}. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios already presented in section \ref{sec:testing_scenarios}.
+
+The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the evaluation method adopted and the testing scenarios planned were already described in sections \ref{sec:evaluation_method} and \ref{sec:testing_scenarios} respectively.
 
 Regarding the learnability of the system, the results confirmed the lack of visibility of some functionalities have undermined users to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute, there was a set of users who had difficulty to find how to create it due to the hiddenness of the option. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
 
@@ -212,7 +215,7 @@ For instance, the scenario C1, which includes a join between $"Sample\_Employee"
 \begin{table}[tb]
     \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Existing interface usability tests - 30 users)}
     \label{tab:existingInterfaceLeftJoinNull}
-    \begin{tabular}{@{}m{5.4cm}rrr@{}}
+    \begin{tabular}{@{}C{5.4cm}rrr@{}}
     \toprule
     \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identify} & \multicolumn{1}{l}{Did not see the Join} \\ \midrule
     OutSystems Developer                                  & 16.67\%                        & 83.33\%                                & 0.00\%                                   \\
@@ -259,9 +262,24 @@ From a query formulation point of view, only 36.67\% of the users selected the i
     \end{tabular}
     \end{table}
 
-Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency, and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_existing_interface} represents the average of the success of each user group in each scenario as well as the total average. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively.
+Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency, and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_summary_existing_interface} represents the average of the success of each user group for all scenarios performed. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively. The detailed results of each scenario are detailed in Table \ref{tab:effectiveness_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
 
-
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+    \caption{Average of the success rate of all scenarios by user group (Existing Interface usability tests - 30 users).}
+    \label{tab:effectiveness_summary_existing_interface}
+    \begin{tabular}{lrrr}
+    \hline
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+    OutSystems Developer & 27.14\%                                                           & 20.00\%                                                                  & 52.86\%                                                       \\
+    Software Developer   & 50.00\%                                                           & 20.00\%                                                                  & 30.00\%                                                       \\
+    Citizen Developer    & 70.00\%                                                           & 8.00\%                                                                  & 22.00\%                                                       \\
+    \textbf{Total}       & \textbf{46.84\%}                                                  & \textbf{16.84\%}                                                         & \textbf{36.32\%}                                              \\ \hline
+    \end{tabular}
+    \end{table}
 
 %In order to analyze users' behavior while they are interacting with the visual query interface, testing scenarios were prepared to evaluate usability attributes of the interface.\footnote{This evaluation process is described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_method}.} The main purpose of this evaluation was the analysis of the current effectiveness, efficiency, and learnability of the system to compare them with the proposed solution. 
 
@@ -335,7 +353,7 @@ Being the relational database knowledge a crucial point to frame users' mental m
     \caption{User Groups}
     \label{tab:user-groups}
     \begin{tabular}{|
-    >{\columncolor[HTML]{C0C0C0}} m{3cm} |m{11cm}|}
+    >{\columncolor[HTML]{C0C0C0}} C{3cm} |C{11cm}|}
     \hline
     \begin{tabular}[c]{@{}l@{}}Software \\ Developer\end{tabular}   & Software Developer or Engineer who has a solid previous knowledge of programming and databases. These users are familiarized with textual programming languages, such as C\#, SQL, and others. In that way, they cannot abstract their previous knowledge in such a way that communication with these users should be more technical and specific. Finally, this user group is not an expert in low-code development. However, as they have solid programming, logic, and database knowledge, they could develop some applications using low-code if necessary. \\ \hline
     \begin{tabular}[c]{@{}l@{}}OutSystems \\ Developer\end{tabular} & Independently of their background, these users are experienced in OutSystems. That way, they are proficient and faster in low-code development, regardless of their experience in other traditional software development paradigms. \\ \hline

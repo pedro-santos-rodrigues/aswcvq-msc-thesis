@@ -419,9 +419,42 @@ In total, 291 images were created and, multiple interactions between them were c
 \subsection{Evaluation}
 \label{subsec:paper_prototype_evaluation}
 
-After completing the implementation of the Paper Prototype, the user testing phase has started. As mentioned in section \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. The testing methodology used was the same used to test the existing interface evaluation, described in section \ref{sec:existing_interface_evaluation}. Accordingly, the Zoom \cite{zoom} meeting solution was used to share and record the screen, showing the Paper Prototype built in InVision \cite{invision}, thus users managed to interact with the prototype using the Zoom remote control feature. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
+After completing the implementation of the Paper Prototype, the user testing phase has started. This prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. The testing methodology used was the same used to test the existing interface evaluation, completely described in section \ref{sec:existing_interface_evaluation}. Accordingly, the Zoom \cite{zoom} meeting solution was used to share and record the screen, showing the Paper Prototype built in InVision \cite{invision}, thus users managed to interact with the prototype using the Zoom remote control feature. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
 
-As a general result, by observing users using the interface, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that seeing all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
+The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development:\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
+
+\begin{itemize}
+  \item \textbf{OutSystems Developer: }users who have relevant experience developing software using OutSystems;
+  \item \textbf{Software Developer: }users who have programming knowledge and know \gls{SQL} but are not accustomed to build software using low-code platforms;
+  \item \textbf{Citizen Developer. }users who are not proficient in any programming language neither in low-code development. Fundamentally, these users are more accustomed to data management tools such as spreadsheet applications.
+\end{itemize}
+
+The detailed information about the usability test participants' profile are presented in Table \ref{tab:survey_profile_paper_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the evaluation method adopted and the testing scenarios planned were already described in sections \ref{sec:evaluation_method} and \ref{sec:testing_scenarios} respectively.
+
+Regarding the achievement of the tasks proposed, Table \ref{tab:effectiveness_summary_paper_prototype} summarizes the effectiveness results of users by each user group. As can be observed, there were positive results concerning the achievements of the tasks' goals since 76.95\% of users managed to reach the intended goals. Full results are detailed in table \ref{tab:effectiveness_paper_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Average of the success rate of all scenarios by user group (Paper Prototype usability tests - 15 users).}
+  \label{tab:effectiveness_summary_paper_prototype}
+  \begin{tabular}{lrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  OutSystems Developer & 11.43\%                                                           & 2.86\%                                                                  & 85.71\%                                                       \\
+  Software Developer   & 14.29\%                                                           & 8.57\%                                                                  & 77.14\%                                                       \\
+  Citizen Developer    & 28.00\%                                                           & 4.00\%                                                                  & 68.00\%                                                       \\
+  \textbf{Total}       & \textbf{17.90\%}                                                  & \textbf{5.14\%}                                                         & \textbf{76.95\%}                                              \\ \hline
+  \end{tabular}
+  \end{table}
+
+
+
+By observing users using the interface, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that seeing all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
 
 Regarding the query result preview, some users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied.\footnote{As mentioned in section \ref{subsubsec:current_progress} and exemplified in Figure \ref{fig:aggregations_example}, the query output preview not only presents the attributes that belong to the query output but also a preview of the data related to the aggregated attributes.} 
 Even though it was difficult to distinguish the two elements of the query result, since it was used a low expressiveness in terms of color, this constraint will be taken into account in the next design iteration since more styling and color resources will be available.
@@ -529,7 +562,8 @@ Furthermore, the following aspects were captured from observing users trying to 
 
 Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation shown how entities were related with each other
 
-In conclusion, the general success results of the 15 users performing the scenarios proposed, presented in Table \ref{tab:effectiveness_paper_prototype}, were positive although the improvement topics already stated. Therefore, the design implemented in the paper prototype was considerable favourable to optimize the usability of the interface for the different user groups analyzed. In that way, the following prototyping iteration will take into account the feedback users provided in this evaluation stage as well as the results obtained.
+In conclusion, the general success results of the 15 users performing the scenarios proposed were positive although the improvement topics already stated. Therefore, the design implemented in the paper prototype was considered favourable to optimize the usability of the interface for the different user groups analyzed. In that way, the following prototyping iteration will take into account the feedback users provided in this evaluation stage as well as the results obtained.
+
 
 
 %Comparison with Existing Interface Evaluation
@@ -788,11 +822,44 @@ In the same way, the query result table headers of these attributes were changed
 
 The final evaluation phase elaborated in the context of this dissertation was the usability tests of the final prototype, using the same methodology and testing scenarios used to test the existing interface and the paper prototype. Accordingly, the Final Prototype was tested with 30 users (10 users of each user group) under a remote environment supported by the Zoom \cite{zoom} meeting solution and its feature of sharing and recording the presenter's screen.
 
-In that way, the users tried to accomplish the tasks integrated in the testing scenarios, already presented in section \ref{sec:testing_scenarios}, and all this interaction process was analyzed in order to perceive the difficulties they had as well as to register usability metrics that could allow to characterize the success of the prototype built and compare it with the previous visual querying solution.
+The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development:\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
+
+\begin{itemize}
+  \item \textbf{OutSystems Developer: }users who have relevant experience developing software using OutSystems;
+  \item \textbf{Software Developer: }users who have programming knowledge and know \gls{SQL} but are not accustomed to build software using low-code platforms;
+  \item \textbf{Citizen Developer. }users who are not proficient in any programming language neither in low-code development. Fundamentally, these users are more accustomed to data management tools such as spreadsheet applications.
+\end{itemize}
+
+The detailed information about the usability test participants' profile are presented in Table \ref{tab:survey_profile_final_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the evaluation method adopted and the testing scenarios planned were already described in sections \ref{sec:evaluation_method} and \ref{sec:testing_scenarios} respectively.
+
+In that way, the users tried to accomplish the tasks integrated in the testing scenarios, and all this interaction process was analyzed in order to perceive the difficulties they had as well as to register usability metrics that could allow to characterize the success of the prototype built and compare it with the previous visual querying solution.
+
+Regarding the achievement of the tasks proposed, Table \ref{tab:effectiveness_summary_final_prototype} summarizes the effectiveness results of users by each user group. The positive results about the tasks achievement were positive since 66.67\% of users managed to reach the intended goals and 7.90\% partially achieved the goal. The complete list of results are presented in table \ref{tab:effectiveness_paper_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Average of the success rate of all scenarios by user group (Final Prototype usability tests - 30 users).}
+  \label{tab:effectiveness_summary_final_prototype}
+  \begin{tabular}{lrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  OutSystems Developer & 12.86\%                                                           & 5.71\%                                                                  & 81.43\%                                                       \\
+  Software Developer   & 21.43\%                                                           & 10.00\%                                                                  & 68.57\%                                                       \\
+  Citizen Developer    & 42.00\%                                                           & 8.00\%                                                                  & 50.00\%                                                       \\
+  \textbf{Total}       & \textbf{25.43\%}                                                  & \textbf{7.90\%}                                                         & \textbf{66.67\%}                                              \\ \hline
+  \end{tabular}
+  \end{table}
+
+
 
 %General overview
 
-The users who use to the previous interface, have reacted positively to the new interface layout without tabs and the three areas always visible. They reinforced that in the previous interface it was very cumbersome to interpreter or formulate query using the tabs since they did not have a query overview anytime.
+The users who use to the previous interface, have reacted positively to the new interface layout without tabs and the three areas always visible. They reinforced that in the previous interface it was very cumbersome to interpret or formulate queries using the tabs since they did not have a query overview anytime.
 
 %Leitura sources view
 
@@ -815,7 +882,7 @@ The new functionality added that allow users to search for a specific attribute 
 
 However, after ending the test, this functionality was demonstrated to the users and they revealed that is very useful although they did not discover the feature by themselves. In that way, it is necessary to add some introduction to indicate that this functionality is available or study other representations that could be more intuitive for users.
 
-In conclusion, Table \ref{tab:effectiveness_final_prototype} and Figure \ref{fig:effectivenessFinalPrototypeUserGroup} summarize the average of the success of each user group in each scenario as well as the total average. OutSystems Developers achieved 81.43\% of the scenarios, Software Developers 68.57\%, and Citizen Developers 50\%. Considering all user groups, 66.67\% of the scenarios were completely achieved and 7.90\% have not completely achieved due to the lack of some peculiarities. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively.
+In conclusion, Figure \ref{fig:effectivenessFinalPrototypeUserGroup} summarize the average of the success of each user group in each scenario as well as the total average. OutSystems Developers achieved 81.43\% of the scenarios, Software Developers 68.57\%, and Citizen Developers 50\%. Considering all user groups, 66.67\% of the scenarios were completely achieved and 7.90\% have not completely achieved due to the lack of some peculiarities. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively.
 
 
 % Please add the following required packages to your document preamble:
