@@ -169,7 +169,11 @@ The last phase of the problem definition was the usability tests to the existing
     \item \textbf{Gather usability metrics:} Record users' insights about the system as well as the difficulties they had to perform the proposed tasks. This information is going to be processed leading to the attainment of qualitative information to characterize the general opinion of users but also quantitative usability metrics regarding the completeness of the tasks, the time they required to perform it, the operations or elements they did not understand, and their satisfaction using the system.
 \end{enumerate}
 
-By this means, 30 users have performed usability tests in a remote environment using Zoom \cite{zoom}, where the screen was shared and recorded and the visual query builder of Service Studio was tested using the remote control functionality of this meeting platform. Besides, each user allowed to record the session in order to further collect usability metrics and analyze the feedback provided.
+By this means, \textbf{30 users have performed usability tests in a remote environment using Zoom \cite{zoom}}, where the screen was shared and recorded and the visual query builder of Service Studio was tested using the remote control functionality of this meeting platform. Besides, each user allowed to record the session in order to further collect usability metrics and analyze the feedback provided.
+
+\medskip
+\textbf{Understanding the user's profile:}
+\medskip
 
 The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development:\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
 
@@ -182,16 +186,31 @@ The profile of each user was identified through a survey where users answered so
 
 The detailed information about the usability test participants' profile are presented in Table \ref{tab:survey_profile_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
 
+\medskip
+\textbf{Preparation of the test:}
+\medskip
 
-The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the evaluation method adopted and the testing scenarios planned were already described in sections \ref{sec:evaluation_method} and \ref{sec:testing_scenarios} respectively.
+The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the testing scenarios presented and the evaluation method adopted were already described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_method} respectively.
 
-Regarding the learnability of the system, the results confirmed the lack of visibility of some functionalities have undermined users to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute, there was a set of users who had difficulty to find how to create it due to the hiddenness of the option. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
+\medskip
+\textbf{Observation during the test:}
+\medskip
+
+During the test, it was performed a direct observation of users interacting with the system to accomplish the tasks proposed in the scenarios planned. Thereby, a spreadsheet was used to manually register all aspects evaluated in each scenario that was previously enumerated in Table \ref{tab:scenarios_registered_aspects}.
+
+In summary, the achievement of the goals of each scenario was registered (effectiveness metrics) as well as the time users spent in each scenario (efficiency metrics). Moreover, as there was scenarios built to test specific problems and functionalities of the interface, specific notes and metrics regarding these functionalities studied were also registered.
+
+\medskip
+\textbf{Results:}
+\medskip
+
+Regarding the learnability of the system, the results confirmed the lack of visibility of some functionalities have undermined users to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute (evaluation point S14 according to Table \ref{tab:scenarios_registered_aspects}), there was a set of users who had difficulty to find how to create it due to the hiddenness of the option. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
 
 %Tabela de sucesso de inserção dos calculated attributes.
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Success rate of users when they needed to add a calculated attribute. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S14:} Success rate of users when they needed to add a calculated attribute.}
     \label{tab:existingInterfaceCalculatedAttribute}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -203,17 +222,17 @@ Regarding the learnability of the system, the results confirmed the lack of visi
     \end{tabular}
     \end{table}
 
-Furthermore, the users revealed difficulty to apply group bys or aggregation functions. In the formulation scenario F1, the users needed to apply one group by and one average aggregation function in order to reach the task goal. The results revealed that only around 40\% of the users managed to group the required data in this scenario, which confirmed the problem predicted by analysis of the interface about the lack of visibility of these functionalities.
+Furthermore, the users revealed difficulty to apply group bys or aggregation functions (evaluation point S28 according to Table \ref{tab:scenarios_registered_aspects}). In the formulation scenario F1, the users needed to apply one group by and one average aggregation function in order to reach the task goal. The results revealed that only around 40\% of the users managed to group the required data in this scenario, which confirmed the problem predicted by analysis of the interface about the lack of visibility of these functionalities.
 
 On the other hand, the tests revealed some problems concerning the effectiveness reaching the intended result. Although the value proposition of the visual interface is to empower users on understanding and formulating queries, it was identified occasions where users misinterpreter the represented queries or made slips in query formulation cases.
 
-For instance, the scenario C1, which includes a join between $"Sample\_Employee"$ and $"Sample\_Notification"$ with the intend of fetching only the employees who have never created any notification, demonstrated that the representation used was misleading users to correctly interpret the query. Observing the results presented in Table \ref{tab:existingInterfaceLeftJoinNull}, regardless of their groups, all users did not manage to entirely understand this join, even the users who are accustomed to use the visual query builder (OutSystems Developers).
+For instance, the scenario C1, which includes a join between $"Sample\_Employee"$ and $"Sample\_Notification"$ with the intend of fetching only the employees who have never created any notification, demonstrated that the representation used was misleading users to correctly interpret the query. Observing the results presented in Table \ref{tab:existingInterfaceLeftJoinNull}, regardless of their groups, all users did not manage to entirely understand this join (evaluation point S7 of Table \ref{tab:scenarios_registered_aspects}), even the users who are accustomed to use the visual query builder (OutSystems Developers).
 
 %Table os success C1 join
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S7:} Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null.}
     \label{tab:existingInterfaceLeftJoinNull}
     \begin{tabular}{@{}C{5.4cm}rrr@{}}
     \toprule
@@ -226,15 +245,15 @@ For instance, the scenario C1, which includes a join between $"Sample\_Employee"
     \end{table}
 
 
-In addition, the users have also exhibited other problems regarding the comprehension and formulation of the queries which contain joins between two entities that could be made using different foreign keys. For example, considering the data model presented in  Figure\ref{fig:dataModel}, an account has three foreign keys referencing employees: creators, managers and owners of the account. In those cases it is important to easily perceive which foreign key was used to made each join between the two entities. In this respect, only 15.93\% of the users identified this join aspect, which revealed that the interface was not supporting users to further comprehend the query's details. 
+In addition, the users have also exhibited other problems regarding the comprehension and formulation of the queries which contain joins between two entities that could be made using different foreign keys (evaluation point S8 of Table \ref{tab:scenarios_registered_aspects}). For example, considering the data model presented in  Figure\ref{fig:dataModel}, an account has three foreign keys referencing employees: creators, managers and owners of the account. In those cases it is important to easily perceive which foreign key was used to made each join between the two entities. In this respect, only 15.93\% of the users identified this join aspect, which revealed that the interface was not supporting users to further comprehend the query's details. 
 
-From a query formulation point of view, only 36.67\% of the users selected the intended foreign key when they added entities that could be joined using different attributes. Tables \ref{tab:existingInterfaceForeignKeyIdentification} and \ref{tab:existingInterfaceForeignKeySelection} detail the results regarding the query aspect described. It was concluded that the interface was not properly guiding users throughout the data querying process and neither facilitating their work in these specific cases.
+From a query formulation point of view, only 36.67\% of the users selected the intended foreign key when they added entities that could be joined using different attributes (evaluation point S22 of table \ref{tab:scenarios_registered_aspects}). Tables \ref{tab:existingInterfaceForeignKeyIdentification} and \ref{tab:existingInterfaceForeignKeySelection} detail the results regarding the query aspect described. It was concluded that the interface was not properly guiding users throughout the data querying process and neither facilitating their work in these specific cases.
 
 %Table regarding the foreign keys reading and selection
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Readability of the foreign keys used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S8:} Readability of the foreign keys used to join entities that could be joined using different attributes.}
     \label{tab:existingInterfaceForeignKeyIdentification}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -250,7 +269,7 @@ From a query formulation point of view, only 36.67\% of the users selected the i
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S22:} Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
     \label{tab:existingInterfaceForeignKeySelection}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -262,13 +281,13 @@ From a query formulation point of view, only 36.67\% of the users selected the i
     \end{tabular}
     \end{table}
 
-Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency, and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_summary_existing_interface} represents the average of the success of each user group for all scenarios performed. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively. The detailed results of each scenario are detailed in Table \ref{tab:effectiveness_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency, and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_summary_existing_interface} represents the average of the success of each user group for all scenarios performed (evaluation point S1 of Table \ref{tab:scenarios_registered_aspects}). The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively. The detailed results of each scenario are detailed in Table \ref{tab:effectiveness_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[tb]
-    \caption{Average of the success rate of all scenarios by user group (Existing Interface usability tests - 30 users).}
+    \caption{\textbf{Evaluation point S1:} Average of the success rate of all scenarios by user group.}
     \label{tab:effectiveness_summary_existing_interface}
     \begin{tabular}{lrrr}
     \hline
@@ -283,15 +302,15 @@ Finally, it was summarized metrics to evaluate the users' performance regarding 
 
 %In order to analyze users' behavior while they are interacting with the visual query interface, testing scenarios were prepared to evaluate usability attributes of the interface.\footnote{This evaluation process is described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_method}.} The main purpose of this evaluation was the analysis of the current effectiveness, efficiency, and learnability of the system to compare them with the proposed solution. 
 
-Even though there were negative results, it is visible how the SQL knowledge and the experience using the OutSystems platform impacted the success rate. The percentage of scenarios which were not achieved by Citizen Developers was 70\%. When comparing this value with the value of Software Developers, who have in general more SQL knowledge, the not achieved scenarios represented 50\%. In that way, there was a significant difference between these two types of users, meaning that, the existing interface is highly dependent on the users' SQL knowledge. Lastly, if the results of the Software Developers are compared with the OutSystems Developers results, it can be observed that the not achieved percentage decreases from 50\% to 27.14\%, revealing also that users who are accustomed to using the interface had a superior success rate.
+Even though there were negative results, it was visible how the SQL knowledge and the experience using the OutSystems platform impacted the success rate. The percentage of scenarios which were not achieved by Citizen Developers was 70\%. When comparing this value with the value of Software Developers, who have in general more SQL knowledge, the not achieved scenarios represented 50\%. In that way, there was a significant difference between these two types of users, meaning that, the existing interface is highly dependent on the users' SQL knowledge. Lastly, if the results of the Software Developers are compared with the OutSystems Developers results, it can be observed that the not achieved percentage decreases from 50\% to 27.14\%, revealing also that users who are accustomed to using the interface had a superior success rate.
 
-Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the difference of the effectiveness according to the user group, where it is highly visible the usability problems of the interface which are preventing users to reach the tasks' goals, allowing to conclude that for users who use the query builder for the first time, the learnability curve could be flattened if the user has SQL knowledge.
+Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the difference of the effectiveness according to the user group (evaluation point S1 of table \ref{tab:scenarios_registered_aspects}), where it is highly visible the usability problems of the interface which are preventing users to reach the tasks' goals, allowing to conclude that for users who use the query builder for the first time, the learnability curve could be flattened if the user has SQL knowledge.
 
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.4in]{effectiveness-existing-interface-user-group}
-	\caption{Average of the sucess rate of all scenarios by each user group (Existing interface usability tests - 30 users).}
+	\caption{\textbf{Evaluation point S1:} Average of the sucess rate of all scenarios by each user group.}
 	\label{fig:effectivenessExistingInterfaceUserGroup}
 \end{figure}
 
@@ -322,7 +341,7 @@ After obtaining a detailed and wide view of the existing problems, the following
 
 Considering that users will only use the visual query system if they use the OutSystems Platform, the low-code development context where the query system is inserted cannot be dissociated from the user analysis. Thereby, the user analysis process started by a study to categorize the profile of OutSystems Platform users according to the specificities of the data querying domain.
 
-Since the low-code development paradigm has integrated more people who do not have the strict software engineer profile into software development tasks, the users of the OutSystems Platform do not have the same backgrounds, requirements, and expectations. If, on the one hand, there are OutSystems Developers that have Computer Science academic backgrounds or similar, and experience working with low-level programming languages, on the other hand, there are business experts or specialized in other engineering fields that are also developing in OutSystems. In that way, the provided query building experience should be a hybrid approach that covers the traditional software developers demands without turning the development and the language less intuitive for people that are not familiarized with classical development patterns, terminologies, or processes.
+Since the low-code development paradigm has integrated more people who do not have the strict software engineer profile into software development tasks, the users of the OutSystems Platform do not have the same backgrounds, requirements, and expectations. If, on the one hand, there are OutSystems Developers that have Computer Science academic backgrounds or similar, and experience working with low-level programming languages, on the other hand, there are business experts or specialized in other engineering fields that are also developing in OutSystems. In that way, the provided query building experience should be a hybrid approach that covers the traditional software developers' demands without turning the development and the language less intuitive for people that are not familiarized with classical development patterns, terminologies, or processes.
 
 \subsection{Requirements and Expectations}
 \label{subsec:requirements_and_expectations}
