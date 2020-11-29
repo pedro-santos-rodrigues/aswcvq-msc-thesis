@@ -175,16 +175,9 @@ By this means, \textbf{30 users have performed usability tests in a remote envir
 \textbf{Understanding the user's profile:}
 \medskip
 
-The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development:\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
+The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development.\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
 
-
-\begin{itemize}
-    \item \textbf{OutSystems Developer: }users who have relevant experience developing software using OutSystems;
-    \item \textbf{Software Developer: }users who have programming knowledge and know \gls{SQL} but are not accustomed to build software using low-code platforms;
-    \item \textbf{Citizen Developer. }users who are not proficient in any programming language neither in low-code development. Fundamentally, these users are more accustomed to data management tools such as spreadsheet applications.
-\end{itemize}
-
-The detailed information about the usability test participants' profile are presented in Table \ref{tab:survey_profile_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+It was tested 10 users of each group and the detailed information about the usability test participants' profile is presented in Table \ref{tab:survey_profile_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
 
 \medskip
 \textbf{Preparation of the test:}
@@ -196,7 +189,7 @@ The testing process started with a brief explanation of the data model used acro
 \textbf{Observation during the test:}
 \medskip
 
-During the test, it was performed a direct observation of users interacting with the system to accomplish the tasks proposed in the scenarios planned. Thereby, a spreadsheet was used to manually register all aspects evaluated in each scenario that was previously enumerated in Table \ref{tab:scenarios_registered_aspects}.
+During the test, it was performed a direct observation of users interacting with the system to accomplish the tasks proposed in the scenarios planned. Thereby, a spreadsheet was used to manually register all aspects evaluated in each scenario that was previously enumerated in Table \ref{tab:scenarios_registered_aspects}. The results considered relevant to the usability improvement will be presented below.
 
 In summary, the achievement of the goals of each scenario was registered (effectiveness metrics) as well as the time users spent in each scenario (efficiency metrics). Moreover, as there was scenarios built to test specific problems and functionalities of the interface, specific notes and metrics regarding these functionalities studied were also registered.
 
@@ -204,13 +197,13 @@ In summary, the achievement of the goals of each scenario was registered (effect
 \textbf{Results:}
 \medskip
 
-Regarding the learnability of the system, the results confirmed the lack of visibility of some functionalities have undermined users to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute (evaluation point S14 according to Table \ref{tab:scenarios_registered_aspects}), there was a set of users who had difficulty to find how to create it due to the hiddenness of the option. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
+Regarding the learnability of the system, the results confirmed that the lack of visibility of some functionalities have undermined users' ability to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute (evaluation point S14 according to Table \ref{tab:scenarios_registered_aspects}), there was a set of users who had difficulty to find how to create it due to the hiddenness of the option. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
 
 %Tabela de sucesso de inserção dos calculated attributes.
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{\textbf{Evaluation point S14:} Success rate of users when they needed to add a calculated attribute.}
+    \caption{\textbf{Evaluation point S14:} Success rate of users when they needed to add a calculated attribute (Existing Interface usability tests - 30 users).}
     \label{tab:existingInterfaceCalculatedAttribute}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -232,7 +225,7 @@ For instance, the scenario C1, which includes a join between $"Sample\_Employee"
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{\textbf{Evaluation point S7:} Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null.}
+    \caption{\textbf{Evaluation point S7:} Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null (Existing Interface usability tests - 30 users).}
     \label{tab:existingInterfaceLeftJoinNull}
     \begin{tabular}{@{}C{5.4cm}rrr@{}}
     \toprule
@@ -253,7 +246,7 @@ From a query formulation point of view, only 36.67\% of the users selected the i
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{\textbf{Evaluation point S8:} Readability of the foreign keys used to join entities that could be joined using different attributes.}
+    \caption{\textbf{Evaluation point S8:} Readability of the foreign keys used to join entities that could be joined using different attributes (Existing Interface usability tests - 30 users).}
     \label{tab:existingInterfaceForeignKeyIdentification}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -269,7 +262,7 @@ From a query formulation point of view, only 36.67\% of the users selected the i
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{\textbf{Evaluation point S22:} Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S22:} Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes (Existing interface usability tests - 30 users).}
     \label{tab:existingInterfaceForeignKeySelection}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -287,7 +280,7 @@ Finally, it was summarized metrics to evaluate the users' performance regarding 
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[tb]
-    \caption{\textbf{Evaluation point S1:} Average of the success rate of all scenarios by user group.}
+    \caption{\textbf{Evaluation point S1:} Average success rate of all scenarios by user group (Existing Interface usability tests - 30 users).}
     \label{tab:effectiveness_summary_existing_interface}
     \begin{tabular}{lrrr}
     \hline
@@ -310,7 +303,7 @@ Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the differe
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.4in]{effectiveness-existing-interface-user-group}
-	\caption{\textbf{Evaluation point S1:} Average of the sucess rate of all scenarios by each user group.}
+	\caption{\textbf{Evaluation point S1:} Average of the sucess rate of all scenarios by each user group (Existing Interface usability tests - 30 users).}
 	\label{fig:effectivenessExistingInterfaceUserGroup}
 \end{figure}
 
@@ -318,10 +311,10 @@ The information about the background of each user regarding SQL and OutSystems w
 
 \begin{figure}[htbp]
     \centering
-    \subcaptionbox{"Have you used a query language (SQL or other)?"\label{fig:existingInterfaceSqlSuccessRate}}%
+    \subcaptionbox{"Insuccess rate vs. Have you used a query language (SQL or other)?"\label{fig:existingInterfaceSqlSuccessRate}}%
       {\includegraphics[height=3.0in]{existing-interface-sql-sucess-rate}}%
       \\
-    \subcaptionbox{"Have you already used OutSystems?"\label{fig:existingInterfaceOutsystemsSuccessRate}}%
+    \subcaptionbox{"Insuccess rate vs. Have you already used OutSystems?"\label{fig:existingInterfaceOutsystemsSuccessRate}}%
       {\includegraphics[height=3.0in]{existing-interface-outsystems-success-rate}}%
     \caption{Comparison between the users' profile characteristics of the users have not achieved scenarios. The charts illustrates the percentage of scenarios not achieved in average for the users who answered the represented in the horizontal axis to the question presented in the caption. (Existing interface usability tests - 30 users). 
       }
