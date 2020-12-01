@@ -3,25 +3,25 @@
 %% chapter1.tex
 %% NOVA thesis document file
 %%
-%% Chapter with introduciton
+%% Chapter with introduction
 
 
 \chapter{Design and Implementation}
 \label{cha:design_and_implementation}
 
-The design process adopted was an iterative design approach to build iteratively the solution according to the users' acceptance and feedback retrieved by users test in each iteration. Throughout this chapter, the design and implementation decisions taken in order to reach the final prototype are detailed.
+The design process adopted was an iterative design approach to iteratively build the solution according to the users' acceptance and feedback. Throughout this chapter, the design and implementation decisions taken in order to reach the final prototype are detailed.
 
 \section{Sketching}
 \label{sec:sketching}
 
-Before starting the development of the interface prototypes, which will be future tested with users, some sketches were performed, in order to organize and explore ideas to tackle the existing usability problems. The primary goal expected to attain at the end of this phase is not a functional or complete interface, but a practical idea of what that could be designed in the following prototypes.
+Before starting the development of the interface prototypes, which will be tested with users, some sketches were performed, in order to organize and explore ideas to tackle the existing usability problems. The primary goal expected to attain at the end of this phase is not a functional or complete interface, but a practical idea of what could be designed in the following prototypes.
 
 Considering the extensive list of problems identified, prioritization was an important aspect taken into account throughout all design phases. The first problem explored was the difficulty to comprehend the database query purpose.
 
-In the existing interface, users do not have a unique and clear view, which can facilitate the comprehension of what data could be fetched from the database through the query presented. As illustrated in Figure \ref{fig:example_of_query_representation}, the users can only see some components of the query at a time, due to the existence of tabs to individualize each type of query components (i.e., a tab for source, filter and sort options). In addition, as can be observed in Figure \ref{fig:ss_existing_layout}, when users open the query, only the query output preview was shown. That was considered a problem in the analysis of the interface for two different points of view:
+In the existing interface, users do not have a unique and clear view, which can facilitate the comprehension of what data could be fetched from the database through the presented query. As illustrated in Figure \ref{fig:example_of_query_representation}, the users can only see some components of the query at a time, due to the existence of tabs to individualize each type of query components (i.e., a tab for source, filter and sort options). In addition, as can be observed in Figure \ref{fig:ss_existing_layout}, when users open the query, only the query output preview was shown. That was considered a problem in the analysis of the interface for two different points of view:
 
 \begin{itemize}
-    \item When the existing interface was tested with users who do not usually use the Platform, they could not easily find the tabs, which increased the chances of guessing wrongly the query purpose, since they have only observed the query output preview. Besides not being an effective understanding technique, it can be even more difficult when the output contains several columns;
+    \item When the existing interface was tested with users who do not usually use the Platform, they could not easily find the tabs, which increased the chances of wrongly guessing the query purpose, since they have only observed the query output preview. Besides not being an effective understanding technique, it can be even more difficult when the output contains several columns;
     \item The users accustomed to this data tool revealed that is cumbersome to open and navigate between tabs in order to understand the query.
 \end{itemize}
 
@@ -42,7 +42,7 @@ In the existing interface, users do not have a unique and clear view, which can 
 
 Therefore, the designing of a new general layout, where it is possible to view the most important query components at once, was considered a major requirement. A solid improvement regarding this component, could optimize not only the time and effort required to comprehend queries but also to formulate them, since all information is more visible and accessible.
 
-From other prespective, there was also the concern to build a layout that would not compromise the system usability for more complex cases, such as queries that contain a relevant number of entities or conditions.
+From other perspective, there was also the concern to build a layout that would not compromise the system usability for more complex cases, such as queries that contain a relevant number of entities or conditions.
 
 Accordingly, some wireframes were sketched in order to perceive how the query components could be jointly combined in a unique view. Figure \ref{fig:sketch_wireframes} illustrates the two options elected from multiple approaches explored.
 
@@ -60,7 +60,7 @@ In both options, there are two principal areas in the interface as presented in 
 
 Regardless of the option, the layouts presented have in a single view the most important aspects to understand what query is built.
 
-The existing interface does not have any mechanisms that allows the user to easily find an entity or attribute. The attributes included in the query are not represented in any region of the interface beyond the query result table. Thereby, the unique way to find out the attribute is to look for it in the table header of the query output, using the horizontal scroll. That process is cumbersome and slow, so an alternative was sketched in order to include the attribute in the sources view. The users could click on the attributes and the attribute would be automatically highlighed in the query result preview, as illustrated in Figure \ref{fig:sketchAttributeSearch}. The idea of a search engine was also considered to prompt users to search for an entity or attribute.
+The existing interface does not have any mechanisms that allows the user to easily find an entity or attribute. The attributes included in the query are not represented in any region of the interface beyond the query result table. Thereby, the unique way to find out the attribute is to look for it in the table header of the query output, using the horizontal scroll. That process is cumbersome and slow, so an alternative was sketched in order to include the attribute in the sources view. The users could click on the attributes and the attribute would be automatically highlighted in the query result preview, as illustrated in Figure \ref{fig:sketchAttributeSearch}. The idea of a search engine was also considered to prompt users to search for an entity or attribute.
 
 \begin{figure}[htbp]
 	\centering
@@ -95,7 +95,7 @@ Lastly, an idea to accelerate the searching process of a specific element inside
 
 \section{Paper Prototype}
 \label{sec:paper_prototype}
-The interactive design process started entirety with the first prototype developed: the paper prototype. The main goal of this phase was to build a functional prototype using paper, ruler, try square, and writing materials, in order to create faster and with a low-risk level (i.e., reduced implementation effort spent) a prototype that could be tested by users.
+The iterative design process started entirely with the first prototype developed: the paper prototype. The main goal of this phase was to build a functional prototype using paper, ruler, try square, and writing materials, in order to create faster and with a low-risk level (i.e., reduced implementation effort spent) a prototype that could be tested by users.
 
 However, due to the COVID-19 pandemic, the prototype was virtually adapted, since it was not possible to test the prototype in person. Accordingly, the prototype was scanned and the interactions were configured using the digital product design platform InVision \cite{invision}.
 % Do not forget to refer that due to COVID-19 the Paper Prototype was scanned and assembled as a low-fidelity prototype using InVision App.
@@ -110,13 +110,13 @@ The building process of this low-fidelity prototype started with the design phas
 
 \medskip
 
-Taking into account the sketches mentioned in the last section, the first question evaluated was which rearrangement of the sub-editors and the result preview views would be implemented in the next phase. In order to take action in this regard, there was a point in the visual query builder background considered. As mentioned in \ref{subsubsec:previous_work}, this querying interface was completely redesigned seven years ago, which had a negative repercussion on users since they were accustomed to the previous interface. Therefore, there was a concern to change the interface without removing the main points that characterize and identifies it. In that way, the goal was to ensure that users consider the new interface as an improved version of the existing one, instead of a completely different interface.
+Taking into account the sketches mentioned in the last section, the first question evaluated was which rearrangement of the sub-editors and the result preview views would be implemented in the next phase. In order to take action in this regard, there was a point in the visual query builder background considered. As mentioned in section \ref{subsubsec:previous_work}, this querying interface was completely redesigned seven years ago, which had a negative repercussion on users since they were accustomed to the previous interface. Therefore, there was a concern to change the interface without removing the main points that characterize and identifies it. In that way, the goal was to ensure that users consider the new interface as an improved version of the existing one, instead of a completely different interface.
 
 Comparing the two options sketched (Figure \ref{fig:sketch_wireframes}) with the existing interface (Figure \ref{fig:example_of_query_representation}), the \nameref{fig:sketch_wireframe_a} is the most similar because the editors area keeps on the top region of the interface and the query result data below. For this reason, this arrangement was considered to be presented in the next phase.
 
 Having chosen where would take place the edition area of the interface, the second aspect taken into consideration was how to organize its sub-editors. This decision was taken, bearing in mind, what each query aspect represents in the user's mental model when they formulate queries as well as the physical space of the interface they could occupy.
 
-In this regard, it was thought about what were the order by each query elements arise in user thinking. This reasoning was performed taking into consideration the formulation using \gls{SQL} since one of the main goals is the improvement of the interface experience for users that are proficient in \gls{SQL}. According to the conceptual models presented in \ref{sec:query_conceptual_models}, the first aspect the user thinks, after understanding what data is required, was assessed to be how to translate them to the query language. In \gls{SQL}, the core statements are presented in the following order:
+In this regard, the way users think about the query elements was taken into account. This reasoning was performed taking into consideration the formulation using \gls{SQL} since one of the main goals is the improvement of the interface experience for users that are proficient in \gls{SQL}. According to the conceptual models presented in section \ref{sec:query_conceptual_models}, the first aspect the user thinks, after understanding what data is required, was assessed to be how to translate them to the query language. In \gls{SQL}, the core statements are presented in the following order:
 
 \begin{enumerate}
   \item \textbf{SELECT: }Indicates which attributes will be selected to be present in the query output table;
@@ -168,7 +168,7 @@ The idea of a tree view which displays all entities and joins used in the query 
 %learnability
 Regarding query formulation, there was several users who are not accustomed to the query builder, meaning that they appeared to have difficulty to discover some functionalities of the system when they were testing the existing interface. Thereby, learnability was also considering during the design phase of the first prototype.
 
-As mentioned in \ref{subsec:analysis}, the options to add a new calculated attribute or to apply a group by or aggregation functions were hidden. These functionalities could be frequently used, thus it was concluded that these options should be visible in the sources area. By doing this, not only the options were still visible to the novice users but users could have a faster alternative to insert these query components.
+As mentioned in section \ref{subsec:analysis}, the options to add a new calculated attribute or to apply a group by or aggregation functions were hidden. These functionalities could be frequently used, thus it was concluded that these options should be visible in the sources area. By doing this, not only the options were still visible to the novice users but users could have a faster alternative to insert these query components.
 
 %efficiency
 
@@ -176,7 +176,7 @@ Lastly, the distribution of the formulation options (i.e., the buttons or other 
 
 The main concern was to put these controls near to the area where the content will be displayed. As an example, if there is an area where entities, joins, and attributes are placed together, the related interaction should be accessible near them. In that way, users do not need to find options in other areas of the interface, keeping the user task on track, avoiding them to lose reasoning context.
 
-That design principle was considered advantageous to reduce the user's working memory overload since they could focus in each part of the query without distractions. Moreover, if the controls are near, the time the mouse need to move to them, is also reduced, accelerating the query formulation process.
+That design principle was considered advantageous to reduce the user's working memory overload since they could focus on each part of the query without distractions. Moreover, if the controls are near, the time the mouse need to move to them, is also reduced, accelerating the query formulation process.
 
 %Falar da divisão e distribuição do layout
 %Falar que tendo em conta o espaço disponível seria necessário encurtar a representação das sources e joins.
@@ -196,7 +196,7 @@ After defining priorities for the current design iteration, the paper prototype 
 
 \medskip
 
-As the reasoning applied in the design phase, the general layout was the first part implemented. The main concern at this phase was the definition of the dimensions for each sub-editor. In order to ensure that the design will be properly integrated into the Service Studio, it was created a sketched background image of the \gls{IDE} using a function of Balsamiq \cite{balsamiq} to convert the Service Studio screenshot to a black and white line drawing version \cite{balsamiq_using_images_and_assets}. As a result, it was possible to perceive if the design done would combine with the system where its is integrated without increasing the fidelity level of the prototype.
+As the reasoning applied in the design phase, the general layout was the first part implemented. The main concern at this phase was the definition of the dimensions for each sub-editor. In order to ensure that the design will be properly integrated into the Service Studio, it was created a sketched background image of the \gls{IDE} using a function of Balsamiq \cite{balsamiq} to convert the Service Studio screenshot to a black and white line drawing version \cite{balsamiq_using_images_and_assets}. As a result, it was possible to perceive if the design done would combine with the system where it is integrated without increasing the fidelity level of the prototype.
 
 After that, the main areas of the interface were elaborated until reaching the general layout that can be observed in Figure \ref{fig:paperPrototypeGeneralLayout}.
 
@@ -213,7 +213,7 @@ After that, the main areas of the interface were elaborated until reaching the g
 
 \medskip
 
-The next step was the design of the query result tables which shows the result preview of the query built. An outuput result table was designed in order to provide, in all user testing scenarios, a real context to users when they tested the prototype.
+The next step was the design of the query result tables which shows the result preview of the query built. An output result table was designed in order to provide, in all user testing scenarios, a real context to users when they tested the prototype.
 
 In order to accelerate the process of the table design in paper, it was used the same Balsamiq functionality used for background, to transform the table of the existing interface into a low-fidelity design.
 
@@ -251,15 +251,15 @@ Accordingly, concerning filters, it was only added some syntax highlighting to e
   \label{fig:filtersAndSortingComparison}
 \end{figure}
 
-\medskip
+\clearpage
 
 \textbf{Sources View: }
 
 \medskip
 
-As referred before, the design of the sources view was considered one of the most impactful aspects to improve the query builder usability. The restructuration design of this element was reasoned as a crutial section of the interface that could leverge the usability of the system. 
+As referred before, the design of the sources view was considered one of the most impactful aspects to improve the usability of the query builder. The restructuration design of this element was reasoned as a crucial section of the interface that could leverage the usability of the system. 
 
-A new approach to represent sources and joins was built progressively. The first aspect approached was the creation of a hierarquical view similar to a tree view which gives to the user the perception of what entities are related with each other. Figure \ref{fig:simpleSourcesTree} shown an example of a tree built at that stage.
+A new approach to represent sources and joins was progressively built. The first aspect approached was the creation of a hierarchical view similar to a tree view which gives to the user the perception of what entities are related with each other. Figure \ref{fig:simpleSourcesTree} shown an example of a tree built at that stage.
 
 \begin{figure}[htbp]
 	\centering
@@ -268,7 +268,7 @@ A new approach to represent sources and joins was built progressively. The first
 	\label{fig:simpleSourcesTree}
 \end{figure}
 
-Notwithstanding the visual simplicity achieved was insufficient since it not represents the join conditions. However, if join conditions were just included near to the join type, the interface would be overloaded again and it would still poor readability.
+Notwithstanding the visual simplicity achieved was insufficient since it does not represent the join conditions. However, if join conditions were just included near to the join type, the interface would be overloaded again and it would still poor readability.
 
 Furthermore, the usability tests of the existing interface showed that users tended to misunderstand the queries that display joins with specific characteristics. In particular, in cases where queries had joins with conditions that contained logical operators or when the join between the two tables could be done through different attributes.
 
@@ -295,7 +295,7 @@ In these cases, the join condition, which in many cases is not so important as j
 
 When users tested the existing interface with cases similar to the one presented, two relevant usability problems were detected. On the one hand, when users tried to comprehend the query, most of them did not pay attention to this detail, not mentioning the foreign keys used. On the other hand, when they need to formulate queries that contemplates these cases, several users, even the most experienced using this query builder, did not select the intended foreign key. This behavior was considered normal since the system just assumes one of the foreign keys and generate the join, without asking user what attribute he would want to use to join the two entities.
 
-Therefore, the exploration of a new sources and joins representation was an excellent opportunity to tackle this problem. In that way, the existing tree view of sources was designed in order to integrate also the foreign key used to build each of the presented joins. Moreover, when two entities are added and the join between them can be done through different keys, the system starts asking the user which key he wants to use. Figure \ref{fig:paperFkSelect} illustrates how this idea was transposed to the paper prototype.
+Therefore, the exploration of new sources and joins representation was an excellent opportunity to tackle this problem. In that way, the existing tree view of sources was designed in order to integrate also the foreign key used to build each of the presented joins. Moreover, when two entities are added and the join between them can be done through different keys, the system starts asking the user which key he wants to use. Figure \ref{fig:paperFkSelect} illustrates how this idea was transposed to the paper prototype.
 
 \begin{figure}[htbp]
 	\centering
@@ -306,7 +306,7 @@ Therefore, the exploration of a new sources and joins representation was an exce
 
 Nevertheless, the foreign key is not the only aspect that could be specified in the join condition. As in SQL, the existing query builder allows user to edit manually the join condition, for example to add more restrictions using logical operators.
 
-In these cases, not only is it important to continue to allow the conditions editing in the new interface but the conditions already edited should also be highlighted in such a way that users who open the query for the first time perceive that the condition of these joins is different. 
+In these cases, not only is it important to continue to allow the edition of the conditions in the new interface but the conditions already edited should also be highlighted in such a way that users who open the query for the first time perceive that the condition of these joins is different. 
 
 The strategy applied in the paper prototype to maintain the interface simple, clear, and intuitive while highlighting the relevant aspects was to put only the function icon in the simple join conditions, and the other ones has their difference explicitly represented after. Figure \ref{fig:paperComprehension1Sources} represents the sources of a query with a join condition edited. In this case the join condition between $"Sample\_Employee"$ and $"Sample\_Notification"$ was changed since the goal is to fetch the employees who have never created notifications. Accordingly, a simplification took place to represent only the differentiating factor instead of the full condition which is:
 
@@ -325,7 +325,7 @@ The strategy applied in the paper prototype to maintain the interface simple, cl
 
 Through that approach, users will be able to identify entities and joins of the query without information overloading, allowing them to perceive easily and faster the purpose of the query. Even if the join condition is hidden, the user could click on the function icon and the expression editor would appear making possible to see and edit the join condition selected.
 
-\medskip
+\clearpage
 
 \textbf{New alternatives to add and search for attributes:}
 
@@ -384,7 +384,7 @@ In order to improve the query readability and the consistency of the interface, 
 
 \medskip
 
-Combining all the components elaborated in paper, the result is illustrated in Figure \ref{fig:paperPrototypeExample}. In order to make it testable remotely, each one of the interface components were scanned and composed again using the InVision App \cite{invision}.
+Combining all the components elaborated in paper, the result is illustrated in Figure \ref{fig:paperPrototypeExample}. In order to make it remotely testable, each one of the interface components were scanned and composed again using the InVision App \cite{invision}.
 
 \begin{figure}[htbp]
 	\centering
@@ -400,11 +400,11 @@ Therefore, for each scenario, it was required to build multiple images since eac
 	\centering
   \includegraphics[height=2.4in]
   {invision-interaction-example}
-	\caption{Brief example of the interaction configuration in InVision to turn the Paper Prototype testible in a fluid way.}
+	\caption{Brief example of a small part of the interaction configuration in InVision in order to allow to test the Paper Prototype in a fluid way.}
 	\label{fig:invisionInteractionExample}
 \end{figure}
 
-In total, 291 images were created and, multiple interactions between them were configured, in order to reach a prototype that could be tested in all scenarios defined in the Appendix \ref{app:user_testing_scenarios} - \nameref{app:user_testing_scenarios} \cite{invision_managing_interactions}
+In total, 291 images were created and, multiple interactions between them were configured, in order to reach a prototype that could be tested in all scenarios.
 
 %Tabela do resultado para cada scenario
 %Filtros e sorting de cada scenario
@@ -419,11 +419,58 @@ In total, 291 images were created and, multiple interactions between them were c
 \subsection{Evaluation}
 \label{subsec:paper_prototype_evaluation}
 
-After completing the implementation of the Paper Prototype, the user testing phase has started. As mentioned in \ref{sec:iterative_design}, this prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. The testing methodology used was the same used to test the existing interface evaluation, described in \ref{sec:existing_interface_evaluation}. Accordingly, the Zoom \cite{zoom} meeting solution was used to share and record the screen, showing the Paper Prototype built in InVision \cite{invision}, thus users managed to interact with the prototype using the Zoom remote control feature. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
+After completing the implementation of the Paper Prototype, the user testing phase has started. This prototype was tested with 5 users of each user group to perform a qualitative analysis regarding the changes applied in the interface. The testing methodology used was the same used to test the existing interface evaluation, completely described in section \ref{sec:existing_interface_evaluation}. Accordingly, the Zoom \cite{zoom} meeting solution was used to share and record the screen, showing the Paper Prototype built in InVision \cite{invision}, thus users managed to interact with the prototype using the Zoom remote control feature. In that way, the aim, at this stage, was to map the improved aspects and details which require a redesign in the following phase.
 
-As a general result, by observing users using the interface, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that seeing all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
+\medskip
+\textbf{Understanding the user's profile:}
+\medskip
 
-Regarding the query result preview, some users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied.\footnote{As mentioned in section \ref{subsubsec:current_progress} and exemplified in Figure \ref{fig:aggregations_example}, the query output preview not only presents the attributes that belong to the query output but also a preview of the data related to the aggregated attributes.} 
+The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development.\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
+
+The detailed information about the usability test participants' profile (15 participants) are presented in Table \ref{tab:survey_profile_paper_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+\medskip
+\textbf{Preparation of the test:}
+\medskip
+
+The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the evaluation method adopted and the testing scenarios planned were already described in sections \ref{sec:evaluation_method} and \ref{sec:testing_scenarios} respectively.
+
+\medskip
+\textbf{Observation during the test:}
+\medskip
+
+During the test, it was performed a direct observation of users interacting with the system to accomplish the tasks proposed in the scenarios planned. Thereby, a spreadsheet was used to manually register all aspects evaluated in each scenario that was previously enumerated in Table \ref{tab:scenarios_registered_aspects}.The results considered relevant to the usability improvement will be presented below.
+
+In summary, the achievement of the goals of each scenario was registered (effectiveness metrics) as well as the time users spent in each scenario (efficiency metrics). Moreover, as there was scenarios built to test specific problems and functionalities of the interface, specific notes and metrics regarding these functionalities studied were also registered.
+
+\medskip
+\textbf{Results:}
+\medskip
+
+Regarding the achievement of the tasks proposed, Table \ref{tab:effectiveness_summary_paper_prototype} summarizes the effectiveness results of users by each user group (evaluation point S1 of Table \ref{tab:scenarios_registered_aspects}). As can be observed, there were positive results concerning the achievements of the tasks' goals since 76.95\% of users managed to reach the intended goals. Full results are detailed in table \ref{tab:effectiveness_paper_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Average of the success rate of all scenarios by user group (Paper Prototype usability tests - 15 users).}
+  \label{tab:effectiveness_summary_paper_prototype}
+  \begin{tabular}{lrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  OutSystems Developer & 11.43\%                                                           & 2.86\%                                                                  & 85.71\%                                                       \\
+  Software Developer   & 14.29\%                                                           & 8.57\%                                                                  & 77.14\%                                                       \\
+  Citizen Developer    & 28.00\%                                                           & 4.00\%                                                                  & 68.00\%                                                       \\
+  \textbf{Total}       & \textbf{17.90\%}                                                  & \textbf{5.14\%}                                                         & \textbf{76.95\%}                                              \\ \hline
+  \end{tabular}
+  \end{table}
+
+
+
+By observing users using the interface, the new sub-editors layout applied was accepted positively by the users, even the ones who were more accustomed to the previous tab layout. Although, at a first glance, some users claimed feeling overloaded with information, they mentioned, that seeing all query structure in a short visualization area above was useful. Other feedback pointed out was that it could be useful to resize the dimensions of each sub-editor area.
+
+Regarding the query result preview, a set of users did not manage to comprehend which attributes belong to the query output against the ones that were only a preview to understand the aggregations or group bys applied \footnote{As mentioned in section \ref{subsubsec:current_progress} and exemplified in Figure \ref{fig:aggregations_example}, the query output preview not only presents the attributes that belong to the query output but also a preview of the data related to the aggregated attributes.}.
 Even though it was difficult to distinguish the two elements of the query result, since it was used a low expressiveness in terms of color, this constraint will be taken into account in the next design iteration since more styling and color resources will be available.
 
 As predicted in the design and implementation phases of this prototype, the completely redesigned sources editor triggered different points of view and interesting feedback for the next iteration design phase.
@@ -431,9 +478,9 @@ As predicted in the design and implementation phases of this prototype, the comp
 Therefore, the following points describe the information collected with respect to the users' comprehension of this new representation:
 
 \begin{itemize}
-  \item Some users misinterpreted the joins of some queries due to the indentation used to represent them. For instance, in the example shown in Figure \ref{fig:paperPrototypeExample}, some users indicated that "Office" was joined with "Department", when "Office" was joined with "Employee";
-  \item Some users did not manage to understand what the foreign key label was, until they need to select one of them in the formulation scenario. That way, the representation of this element should be reevaluated to make it more clear. Nevertheless, the results concerning the identification of the foreign key, presented in Table \ref{tab:paperPrototypeForeignKeyIdentification}, are positive since considering all user groups 77.78\% of users have identified correctly the foreign key in the causes that entities could be joined using different attributes. Therefore, although the positive results, the lack of intuitiveness regarding the foreign key presentation perceived by users when they observed the interface at the first sight was considered as an aspect to improve in the following design iteration;
-  \item Regarding the join conditions simplification, it was identified an increased awareness, when compared to the existing interface, to perceive that there were two representations of join conditions, as shown in Figure \ref{fig:paperComprehension1Sources}. The majority of users did not manage to understand the meaning of these different visual representations, which intended to differentiate joins automatically generated from the ones manually edited, as Table \ref{tab:paperPrototypeLeftJoinNull} points out since only 26.67\% of users have identified clearly the join purpose.
+  \item Some users misinterpreted the joins of some queries due to the indentation used to represent them. For instance, in the example shown in Figure \ref{fig:paperPrototypeExample}, some users indicated that "Office" was joined with "Department", when "Office" was joined with "Employee" (evaluation point S5 of Table \ref{tab:scenarios_registered_aspects});
+  \item Some users did not manage to understand what the foreign key label was, until they need to select one of them in the formulation scenario. That way, the representation of this element should be reevaluated to make it more clear. Nevertheless, the results concerning the identification of the foreign key, presented in Table \ref{tab:paperPrototypeForeignKeyIdentification}, are positive since considering all user groups 77.78\% of users have identified correctly the foreign key in the causes that entities could be joined using different attributes (evaluation point S8 of Table \ref{tab:scenarios_registered_aspects}). Therefore, although the positive results, the lack of intuitiveness regarding the foreign key presentation perceived by users when they observed the interface at the first sight was considered as an aspect to improve in the following design iteration;
+  \item Regarding the join conditions simplification, it was identified an increased awareness, when compared to the existing interface, to perceive that there were two representations of join conditions, as shown in Figure \ref{fig:paperComprehension1Sources}. The majority of users did not manage to understand the meaning of these different visual representations, which intended to differentiate joins automatically generated from the ones manually edited, as Table \ref{tab:paperPrototypeLeftJoinNull} points out since only 26.67\% of users have identified clearly the join purpose (evaluation point S7 of Table \ref{tab:scenarios_registered_aspects}).
 \end{itemize}
 
 %TODO: Tables left join with foreign key identification, selection
@@ -443,7 +490,7 @@ Therefore, the following points describe the information collected with respect 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Readability of the foreign keys used to join entities that could be joined using different attributes. (Paper Prototype usability tests - 15 users)}
+  \caption{\textbf{Evaluation point S8:} Readability of the foreign keys used to join entities that could be joined using different attributes. (Paper Prototype usability tests - 15 users)}
     \label{tab:paperPrototypeForeignKeyIdentification}
   \begin{tabular}{@{}lrrr@{}}
   \toprule
@@ -458,7 +505,7 @@ Therefore, the following points describe the information collected with respect 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Paper Prototype usability tests - 15 users)}
+  \caption{\textbf{Evaluation point S7:} Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Paper Prototype usability tests - 15 users)}
     \label{tab:paperPrototypeLeftJoinNull}
   \begin{tabular}{@{}m{5.4cm}rrr@{}}
   \toprule
@@ -474,17 +521,17 @@ Therefore, the following points describe the information collected with respect 
 Furthermore, the following aspects were captured from observing users trying to formulate queries:
 
 \begin{itemize}
-  \item As expected, the foreign key selection method presented in Figure \ref{fig:paperFkSelect} has optimized the effectiveness of the formulation scenario. Since users were asked to choose between the existing foreign key, they were able to select the correct one. The results presented in Table \ref{tab:paperPrototypeForeignKeySelection} illustrates the effect of the improvement made in the interface since all users have selected the correct foreign key to indicate the properly join the formulation case that was necessary to add a join to merge two entities that could be joined using three different foreign keys;
-  \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, the results have enhanced, but some drawback aspects were identified. Users who have never used the system, found these features easy since the two buttons became visible in the interface. However, they continue to make misunderstand when they needed to use a calculated attribute or the aggregation function:
+  \item As expected, the foreign key selection method presented in Figure \ref{fig:paperFkSelect} has optimized the effectiveness of the formulation scenario (evaluation point S22 of Table \ref{tab:scenarios_registered_aspects}). Since users were asked to choose between the existing foreign key, they were able to select the correct one. The results presented in Table \ref{tab:paperPrototypeForeignKeySelection} illustrates the effect of the improvement made in the interface since all users have selected the correct foreign key to indicate the properly join the formulation case that was necessary to add a join to merge two entities that could be joined using three different foreign keys;
+  \item Concerning the two new buttons to add aggregation functions, group bys, and calculated attributes, it was concluded that, the results have enhanced, but some drawback aspects were identified (evaluation points S14 and S24 of Table \ref{tab:scenarios_registered_aspects}). Users who have never used the system, found these features easy since the two buttons became visible in the interface. However, they continue to make misunderstand when they needed to use a calculated attribute or the aggregation function:
   \begin{itemize}
-    \item Insert Calculated Attribute: The users' acceptance to the new options provided to insert calculated attributes was positive. Not only users who not have already used the query builder have less difficulty to create new attributes, since only 20\% of Software Developers and 40\% of Citizen Developers had difficulty to find the options and the remaining ones managed to added it intuitively, as detailed in Table \ref{tab:paperPrototypeCalculatedAttribute}, but also the new options provided were used by OutSystems Developers who are accustomed to use the previous query builder interface. As Table \ref{tab:paperPrototypeOptionCalculatedAttribute} demonstrates, the new button added on the bottom of the sources view was used by 86.67\% of users. Besides, even 80\% of the OutSystems Developers, who knew the existence of a button on the final of the query result table, preferred to use the new option to add the attribute, so that the acceptance of that changes was positive not only to mitigate learnabilty problems of users who had not found the option before in the existing interface, but also for expert users that preferred this option more accessible.
+    \item Insert Calculated Attribute: The users' acceptance to the new options provided to insert calculated attributes was positive. Not only users who not have already used the query builder have less difficulty to create new attributes, since only 20\% of Software Developers and 40\% of Citizen Developers had difficulty to find the options and the remaining ones managed to added it intuitively, as detailed in Table \ref{tab:paperPrototypeCalculatedAttribute}, but also the new options provided were used by OutSystems Developers who are accustomed to use the previous query builder interface. As Table \ref{tab:paperPrototypeOptionCalculatedAttribute} demonstrates, the new button added on the bottom of the sources view was used by 86.67\% of users. Besides, even 80\% of the OutSystems Developers, who knew the existence of a button on the final of the query result table, preferred to use the new option to add the attribute, so that the acceptance of that changes was positive not only to mitigate learnability problems of users who had not found the option before in the existing interface, but also for expert users that preferred this option more accessible.
   \end{itemize}
 \end{itemize}
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Paper Prototype usability tests - 15 users)}
+  \caption{\textbf{Evaluation point S22:} Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Paper Prototype usability tests - 15 users)}
   \label{tab:paperPrototypeForeignKeySelection}
   \begin{tabular}{@{}lrrr@{}}
   \toprule
@@ -499,7 +546,7 @@ Furthermore, the following aspects were captured from observing users trying to 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Success rate of users when they needed to add a calculated attribute. (Paper Prototype usability tests - 15 users)}
+  \caption{\textbf{Evaluation point S14:} Success rate of users when they needed to add a calculated attribute. (Paper Prototype usability tests - 15 users)}
   \label{tab:paperPrototypeCalculatedAttribute}
   \begin{tabular}{@{}m{5cm}rrr@{}}
   \toprule
@@ -515,7 +562,7 @@ Furthermore, the following aspects were captured from observing users trying to 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Options used by users to insert the calculated attribute in the context of the M1 scenario. (Paper Prototype usability tests - 15 users)}
+  \caption{\textbf{Evaluation point S16:} Options used by users to insert the calculated attribute in the context of the M1 scenario. (Paper Prototype usability tests - 15 users)}
   \label{tab:paperPrototypeOptionCalculatedAttribute}
   \begin{tabular}{@{}m{4.4cm}R{3.1cm}R{3.1cm}R{3.1cm}@{}}
   \toprule
@@ -529,7 +576,8 @@ Furthermore, the following aspects were captured from observing users trying to 
 
 Finally, some users referred that they felt a reduced necessity to confer the Data Model while they were building queries, since the new sources representation shown how entities were related with each other
 
-In conclusion, the general success results of the 15 users performing the scenarios proposed, presented in Table \ref{tab:effectiveness_paper_prototype}, were positive although the improvement topics already stated. Therefore, the design implemented in the paper prototype was considerable favourable to optimize the usability of the interface for the different user groups analyzed. In that way, the following prototyping iteration will take into account the feedback users provided in this evaluation stage as well as the results obtained.
+In conclusion, the general success results of the 15 users performing the proposed scenarios were positive although the improvement topics already stated. Therefore, the design implemented in the paper prototype was considered favourable to optimize the usability of the interface for the different user groups analyzed. In that way, the following prototyping iteration will take into account the feedback users provided in this evaluation stage as well as the results obtained.
+
 
 
 %Comparison with Existing Interface Evaluation
@@ -561,7 +609,7 @@ In conclusion, the general success results of the 15 users performing the scenar
 \section{Service Studio Implementation}
 \label{sec:service_studio_implementation}
 
-As mentioned in \ref{subsec:visual_development_environment}, Service Studio is the \gls{IDE} integrated in the OutSystems Platform that allows users to build full applications using the low-code programming paradigm. In that way, the last iteration of the design process, and consequently, the final prototype elaborated in this dissertation, was a functional prototype of the query builder completely integrated into the code of the Service Studio.
+As mentioned in section \ref{subsec:visual_development_environment}, Service Studio is the \gls{IDE} integrated in the OutSystems Platform that allows users to build full applications using the low-code programming paradigm. In that way, the last iteration of the design process, and consequently, the final prototype elaborated in this dissertation, was a functional prototype of the query builder completely integrated into the code of the Service Studio.
 
 Nevertheless, Service Studio was getting a major facelift to achieve a new revamped and refreshed design. Even though the new Service Studio design has not been released yet, the development of the final prototype was decided to be done using the new Service Studio look. In that way, the interface of the query builder developed could be easily integrated later on the OutSystems Platform. Figure \ref{fig:aggregateNewDesign} illustrates the design used as the starting point for the final prototype development. As can be observed, is a redesigned version of the previous Service Studio design illustrated before in Figures \ref{fig:ss_workspace} and \ref{fig:aggregate_created}
 
@@ -586,9 +634,9 @@ Taking into account the evaluation of the Paper Prototype, the sources editor wa
 
 Nevertheless, in order to implement the new interface representation of entities and joins, a considerable implementation effort would be required. The visualization area requires a personalized hierarchical view that should be built from scratch, since there is no similar element in the rest of the Service Studio.
 
-Accordingly, before implementing any idea, a robust design should be established in order to avoid wasting implementation time on doing and redoing ideas. Therefore, it was performed more designs, regarding the sources editor of the interface, using the product design system components. Basically, it was used the Figma \ cite {figma}, which is a design tool where all the new Service Studio components were designed, to explore concrete options to represent sources and solve the problems found when users tested the Paper Prototype. By this means, it was possible to obtain a high-fidelity design faster and perceive what solution could most fit the existing requirements.
+Accordingly, before implementing any idea, a robust design should be established in order to avoid wasting implementation time on doing and redoing ideas. Therefore, more designs were performed, regarding the sources editor of the interface, using the product design system components. Basically, it was used the Figma \cite{figma}, which is a design tool where all the new Service Studio components were designed, to explore concrete options to represent sources and solve the problems found when users tested the Paper Prototype. By this means, it was possible to obtain a high-fidelity design faster and perceive what solution could most fit the existing requirements.
 
-After exploring multiple alternatives, the options illustrated in Figure \ref{fig:sourcesFigma} were considered the most valuable. The main difference between them is the way joins are represented. In \nameref{fig:sourcesFigmaA}, the join is represented in a single line placed between the two entities involved. In \nameref{fig:sourcesFigmaB}, the join condition is represented after the the second entity involved in the join. Lastly, in \nameref{fig:sourcesFigmaC}, the second entity is presented on the right of the join kind.
+After exploring multiple alternatives, the options illustrated in Figure \ref{fig:sourcesFigma} were considered the most valuable. The main difference between them is the way joins are represented. In \nameref{fig:sourcesFigmaA}, the join is represented in a single line placed between the two entities involved. In \nameref{fig:sourcesFigmaB}, the join condition is represented after the second entity involved in the join. Lastly, in \nameref{fig:sourcesFigmaC}, the second entity is presented on the right of the join kind.
 
 \begin{figure}[tb]
   \centering
@@ -608,12 +656,12 @@ In order to decide an option, the following topics were taken into account:
 \begin{itemize}
   \item \textbf{Reading flow: } The flow of the entities and joins was considered important, especially due to the representation of the join kind. As this was presented in natural language, users should manage to read sequentially, first the entity, than the join, and after the second entity, all in a fluid way. Due to the arrangement adopted, the \nameref{fig:sourcesFigmaC} was considered the most clear regarding this aspect since the second entity is placed in the right side of the join kind. In that way, the users reading affordance will unconsciously help them to understand the reading flow, since becomes more natural due to the similarities with natural languages;
   \item \textbf{Width and height required: }The space that each option would occupy was important to analyze for the accommodation in the interface. Comparing the options presented, it can be concluded that the \nameref{fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB} would require more height, and the \nameref{fig:sourcesFigmaC} more width;
-  \item \textbf{Emphasis: }The used representation may end up giving more prominence to certain elements even though they were not built for that purpose. Accordingly, it was verified the aspects of the interface which would stand out at a first glance. In \nameref{sub@fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB}, joins are more highlighted since there are specific lines to represent them. Conversely, in the \nameref{sub@fig:sourcesFigmaC} the join is presented in the same line of an entity, which makes entities standed out, in general. Therefore, the \nameref{sub@fig:sourcesFigmaC} was considered the most appropriated to highlight entities at a first sight.
+  \item \textbf{Emphasis: }The used representation may end up giving more prominence to certain elements even though they were not built for that purpose. Accordingly, it was verified the aspects of the interface which would stand out at a first glance. In \nameref{sub@fig:sourcesFigmaA} and \nameref{sub@fig:sourcesFigmaB}, joins are more highlighted since there are specific lines to represent them. Conversely, in the \nameref{sub@fig:sourcesFigmaC} the join is presented in the same line of an entity, which makes entities stand out, in general. Therefore, the \nameref{sub@fig:sourcesFigmaC} was considered the most appropriated to highlight entities at a first sight.
 \end{itemize}
 
 Reflecting on the topics presented, the evaluation of the advantages and disadvantages of each option was conducted, the \nameref{fig:sourcesFigmaC} was elected, as preferred, since it provides a clear readability and highlights the entities used in the query. Despite it requires more width space in the interface, mainly if there are multiple joins nested, these disadvantages could be mitigated in the future if the join conditions would be simplified or represented in a different way.
 
-Regarding the remaining elements of the interface, the design approaches applied in the Paper Prototype improved the usability of the interface. As a result, the design concerning filters, sorting and the query result table have followed the ideas already detailed in \ref{sec:paper_prototype}.
+Regarding the remaining elements of the interface, the design approaches applied in the Paper Prototype improved the usability of the interface. As a result, the design concerning filters, sorting and the query result table have followed the ideas already detailed in section \ref{sec:paper_prototype}.
 
 
 \subsection{Implementation}
@@ -676,11 +724,11 @@ Therefore, the $"Sources"$ renders the first entity added to the query, and afte
 	\centering
   \includegraphics[height=3.0in]
   {without-join-simplification}
-	\caption{Structure of the React components created to dispose the sources.}
+	\caption{Example of the sources view implemented at this stage.}
 	\label{fig:withoutJoinSimplification}
 \end{figure}
 
-Nevertheless, as referred in \ref{subsec:paper_prototype_implementation}, the join conditions which were generated automatically by the system were simplified. In those cases, the join conditions, on the existing interface, presented the primary key of an entity equal to a foreign key of the other entity, however since the characteristics of this formulation shown drawbacks for the users fully comprehension, it was designed a simplified version of the join condition. In this simplified version, only the foreign key is presented. If the join between the two entities could be made through different foreign keys, the foreign key used is presented in a dropdown, which allows users to change to another key if they intend. An example of a query with these dropdowns is presented in Figure \ref{fig:changeForeignKeyDropdown}. Through that approach, users not only can change that query aspect faster but also the data model could be perceived without consulting it directly, since the dropdown is an indicator that there are multiple attributes that could be used to join the two entities.
+Nevertheless, as referred in section \ref{subsec:paper_prototype_implementation}, the join conditions which were generated automatically by the system were simplified. In those cases, the join conditions, on the existing interface, presented the primary key of an entity equal to a foreign key of the other entity, however since the characteristics of this formulation shown drawbacks for the users fully comprehension, it was designed a simplified version of the join condition. In this simplified version, only the foreign key is presented. If the join between the two entities could be made through different foreign keys, the foreign key used is presented in a dropdown, which allows users to change to another key if they intend. An example of a query with these dropdowns is presented in Figure \ref{fig:changeForeignKeyDropdown}. Through that approach, users not only can change that query aspect faster but also the data model could be perceived without consulting it directly, since the dropdown is an indicator that there are multiple attributes that could be used to join the two entities.
 
 \begin{figure}[htbp]
 	\centering
@@ -702,7 +750,7 @@ Furthermore, for users who open a query already created, it is important to perc
 
 %Modal
 
-Finally on this point concerning the foreign keys of the joins, there was a problem in the existing interface which could lead users to make semantic errors while they are formulating queries that uses entities which could be joined using different foreign keys. As explained in \ref{subsec:paper_prototype_implementation}, the existing interface did not ask users which foreign key he wants to use. Consequently, the idea adopted in the paper prototype (Figure \ref{fig:paperFkSelect}), which had leveraged the results for the user testing in a positive way, continued to this phase, where a modal appears in cases where there are multiple foreign keys, asking user which attribute he would want to use to merge the entities, as demonstrated in Figure \ref{fig:foreignKeyModal}.
+Finally on this point concerning the foreign keys of the joins, there was a problem in the existing interface which could lead users to make semantic errors while they are formulating queries that uses entities which could be joined using different foreign keys. As explained in section \ref{subsec:paper_prototype_implementation}, the existing interface did not ask users which foreign key he wants to use. Consequently, the idea adopted in the paper prototype (Figure \ref{fig:paperFkSelect}), which had leveraged the results for the user testing in a positive way, continued to this phase, where a modal appears in cases where there are multiple foreign keys, asking user which attribute he would want to use to merge the entities, as demonstrated in Figure \ref{fig:foreignKeyModal}.
 
 %Figure chave estrangeira modal
 
@@ -730,7 +778,7 @@ Moreover, the $"Source"$ component was changed to present every entity as a tree
 
 \medskip
 
-Nevertheless, these options not only are interesting alternatives to access these functionalities of the query builder, but also add a visible way to access these options, which will improve the adoption of new users when they try to use the system. As stated before, these options were added in the Paper Prototype, as illustrated in \ref{fig:paperAddAggregation} and \ref{fig:paperAddCalculatedAttribute}. However, as mentioned in \ref{subsec:paper_prototype_evaluation}, some users did not understand if they would need to add a calculated attribute or an aggregated attribute. Consequently, the button labels were changed to provide a more imperative and informative message related to the action accessible through each button. In that way, "Add Aggregation / Group By" was changed to "Group Data" and "Add Calculated Attribute" was changed to "New Attribute", to reinforce that using the "Group Data" button users can combine data of an attribute merging its rows, and in "New Attribute", they can add a new attribute calculated from the existing ones to the query result. Besides, tooltips were also added to each button in order to clarify the users who were confused about what function they intend. Figure \ref{fig:newButtonsTooltips} illustrates the two buttons and the respective tooltips added.
+Nevertheless, these options not only are interesting alternatives to access these functionalities of the query builder, but also add a visible way to access these options, which will improve the adoption of new users when they try to use the system. As stated before, these options were added in the Paper Prototype, as illustrated in \ref{fig:paperAddAggregation} and \ref{fig:paperAddCalculatedAttribute}. However, as mentioned in section \ref{subsec:paper_prototype_evaluation}, some users did not understand if they would need to add a calculated attribute or an aggregated attribute. Consequently, the button labels were changed to provide a more imperative and informative message related to the action accessible through each button. In that way, "Add Aggregation / Group By" was changed to "Group Data" and "Add Calculated Attribute" was changed to "New Attribute", to reinforce that using the "Group Data" button users can combine data of an attribute merging its rows, and in "New Attribute", they can add a new attribute calculated from the existing ones to the query result. Besides, tooltips were also added to each button in order to clarify the users who were confused about what function they intend. Figure \ref{fig:newButtonsTooltips} illustrates the two buttons and the respective tooltips added.
 
 %Figure with two sub figures to show the tooltips of the two buttons (group data and new attribute).
 
@@ -788,26 +836,73 @@ In the same way, the query result table headers of these attributes were changed
 
 The final evaluation phase elaborated in the context of this dissertation was the usability tests of the final prototype, using the same methodology and testing scenarios used to test the existing interface and the paper prototype. Accordingly, the Final Prototype was tested with 30 users (10 users of each user group) under a remote environment supported by the Zoom \cite{zoom} meeting solution and its feature of sharing and recording the presenter's screen.
 
-In that way, the users tried to accomplish the tasks integrated in the testing scenarios (detailed in Appendix \ref{app:user_testing_scenarios}) and all this interaction process was analyzed in order to perceive the difficulties they had as well as to register usability metrics that could allow to characterize the success of the prototype built and compare it with the previous visual querying solution.
+\medskip
+\textbf{Understanding the user's profile:}
+\medskip
+
+The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development.\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
+
+The detailed information about the usability test participants' profile are presented in Table \ref{tab:survey_profile_final_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+\medskip
+\textbf{Preparation of the test:}
+\medskip
+
+The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the evaluation method adopted and the testing scenarios planned were already described in sections \ref{sec:evaluation_method} and \ref{sec:testing_scenarios} respectively.
+
+\medskip
+\textbf{Observation during the test:}
+\medskip
+
+During the test, it was performed a direct observation of users interacting with the system to accomplish the tasks proposed in the scenarios planned. Thereby, a spreadsheet was used to manually register all aspects evaluated in each scenario that was previously enumerated in Table \ref{tab:scenarios_registered_aspects}.The results considered relevant to the usability improvement will be presented below.
+
+In summary, the achievement of the goals of each scenario was registered (effectiveness metrics) as well as the time users spent in each scenario (efficiency metrics). Moreover, as there was scenarios built to test specific problems and functionalities of the interface, specific notes and metrics regarding these functionalities studied were also registered.
+
+\medskip
+\textbf{Results:}
+\medskip
+
+In that way, the users tried to accomplish the tasks integrated in the testing scenarios, and all this interaction process was analyzed in order to perceive the difficulties they had as well as to register usability metrics that could allow to characterize the success of the prototype built and compare it with the previous visual querying solution.
+
+Regarding the achievement of the tasks proposed (evaluation point S1 of Table \ref{tab:scenarios_registered_aspects}), Table \ref{tab:effectiveness_summary_final_prototype} summarizes the effectiveness results of users by each user group. The positive results about the tasks achievement were positive since 66.67\% of users managed to reach the intended goals and 7.90\% partially achieved the goal. The complete list of results are presented in table \ref{tab:effectiveness_final_prototype} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{\textbf{Evaluation point S1:} Average of the success rate of all scenarios by user group (Final Prototype usability tests - 30 users).}
+  \label{tab:effectiveness_summary_final_prototype}
+  \begin{tabular}{lrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  OutSystems Developer & 12.86\%                                                           & 5.71\%                                                                  & 81.43\%                                                       \\
+  Software Developer   & 21.43\%                                                           & 10.00\%                                                                  & 68.57\%                                                       \\
+  Citizen Developer    & 42.00\%                                                           & 8.00\%                                                                  & 50.00\%                                                       \\
+  \textbf{Total}       & \textbf{25.43\%}                                                  & \textbf{7.90\%}                                                         & \textbf{66.67\%}                                              \\ \hline
+  \end{tabular}
+  \end{table}
+
+
 
 %General overview
 
-The users who use to the previous interface, have reacted positively to the new interface layout without tabs and the three areas always visible. They reinforced that in the previous interface it was very cumbersome to interpreter or formulate query using the tabs since they did not have a query overview anytime.
+The users who use to the previous interface, have reacted positively to the new interface layout without tabs and the three areas always visible. They reinforced that in the previous interface it was very cumbersome to interpret or formulate queries using the tabs since they did not have a query overview anytime.
 
 %Leitura sources view
 
 In general, users who have some relational database foundations managed to comprehend effortlessly the new sources view, which presents all entities in a tree and promotes a more simple and compact view of the entities and joins included in the query, and pointed out that the arrangement used allow to perceive faster the query purpose since it is possible to visualize which entities are related with each other.
 
-The changes applied to the foreign key used in the joins generated automatically have impacted positively the users' success rate performing scenarios that contain these cases. For example, as Table \ref{tab:finalPrototypeForeignKeyIdentification} details, the 58.89\% of users have identified the foreign keys used to merge tables that could be linked using different attributes. On the other hand, the modal added to ask user which foreign key he intend to use when there are multiple available options to create the automatic join, have improved the effectiveness of the join insertion for these cases. For instance, Table \ref{tab:finalPrototypeForeignKeySelection} demonstrates the effectiveness of the join specification of the F1 scenario where is necessary to join two entities using a specific foreign key and these two entities have three relationships linking each other. As it can be observed, the results are very positive since 96.67\% of users have joined the two entities used the required foreign key. In that way, this change of the interface have leveraged the guidance that the interface could give to users reaching their goals, mainly in these cases where a distraction could lead to query the wrong data, turning the interface less error-prone.
+The changes applied to the foreign key used in the joins generated automatically have impacted positively the users' success rate performing scenarios that contain these cases. For example, as Table \ref{tab:finalPrototypeForeignKeyIdentification} details, the 58.89\% of users have identified the foreign keys used to merge tables that could be linked using different attributes (evaluation point S8 of Table \ref{tab:scenarios_registered_aspects}). On the other hand, the modal added to ask user which foreign key he intend to use when there are multiple available options to create the automatic join, have improved the effectiveness of the join insertion for these cases (evaluation point S22 of Table \ref{tab:scenarios_registered_aspects}). For instance, Table \ref{tab:finalPrototypeForeignKeySelection} demonstrates the effectiveness of the join specification of the F1 scenario where is necessary to join two entities using a specific foreign key and these two entities have three relationships linking each other. As it can be observed, the results are very positive since 96.67\% of users have joined the two entities used the required foreign key. In that way, this change of the interface have leveraged the guidance that the interface could give to users reaching their goals, mainly in these cases where a distraction could lead to query the wrong data, turning the interface less error-prone.
 
-Nevertheless, the approach used to distinguish the joins generated automatically to the ones that were edited manually and have a more complex condition have not relevead positive results. As Table \ref{tab:finalPrototypeLeftJoinNull} presents, in the use case used to present a join edited manually, only 16.67\% of users have successfully interpreter the join purpose.
+Nevertheless, the approach used to distinguish the joins generated automatically to the ones that were edited manually and have a more complex condition have not revealed positive results (evaluation point S7 of Table \ref{tab:scenarios_registered_aspects}). As Table \ref{tab:finalPrototypeLeftJoinNull} presents, in the use case used to present a join edited manually, only 16.67\% of users have successfully interpreter the join purpose.
 
 
 %Relational database knowledge / Success 
 
 Regarding the operations which were identified as difficult to find by users who have never used the query builder neither visualize any tutorial video concerning it (add group by, aggregation function or calculated attributes), the majority of users managed to find intuitively the options to access this functions in the scenarios they needed it.
 
-As presented in table \ref{tab:finalPrototypeCalculatedAttribute}, 83.33\% of users added calculated attributes when necessary without difficulties and no user did not manage to add it. At the same way, users have less dificulties to apply aggregation functions and group bys, since the two buttons were visible in the interface and they found them easily. In that way, the main cause for users did not manage to group data was the lack of relational database knowledge.
+As presented in table \ref{tab:finalPrototypeCalculatedAttribute}, 83.33\% of users added calculated attributes when necessary without difficulties and no user did not manage to add it (evaluation points S14 of Table \ref{tab:scenarios_registered_aspects}). At the same way, users have fewer difficulties to apply aggregation functions and group bys, since the two buttons were visible in the interface and they found them easily. In that way, the main cause for users did not manage to group data was the lack of relational database knowledge.
 
 %TODO Probably, chart of relational database knowledge and F1 success
 
@@ -815,13 +910,13 @@ The new functionality added that allow users to search for a specific attribute 
 
 However, after ending the test, this functionality was demonstrated to the users and they revealed that is very useful although they did not discover the feature by themselves. In that way, it is necessary to add some introduction to indicate that this functionality is available or study other representations that could be more intuitive for users.
 
-In conclusion, Table \ref{tab:effectiveness_final_prototype} and Figure \ref{fig:effectivenessFinalPrototypeUserGroup} summarize the average of the success of each user group in each scenario as well as the total average. OutSystems Developers achieved 81.43\% of the scenarios, Software Developers 68.57\%, and Citizen Developers 50\%. Considering all user groups, 66.67\% of the scenarios were completely achieved and 7.90\% have not completely achieved due to the lack of some peculiarities. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in Appendix \ref{app:user_testing_scenarios} and in section \ref{sec:target_users} respectively.
+In conclusion, Figure \ref{fig:effectivenessFinalPrototypeUserGroup} summarize the average of the success of each user group in each scenario as well as the total average (evaluation point S1 of Table \ref{tab:scenarios_registered_aspects}). OutSystems Developers achieved 81.43\% of the scenarios, Software Developers 68.57\%, and Citizen Developers 50\%. Considering all user groups, 66.67\% of the scenarios were completely achieved and 7.90\% have not completely achieved due to the lack of some peculiarities. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively.
 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Success rate of users when they needed to add a calculated attribute. (Final Prototype usability tests - 30 users)}
+  \caption{\textbf{Evaluation point S14:} Success rate of users when they needed to add a calculated attribute. (Final Prototype usability tests - 30 users)}
     \label{tab:finalPrototypeCalculatedAttribute}
   \begin{tabular}{@{}lrrr@{}}
   \toprule
@@ -840,7 +935,7 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} and Figure \ref{fig
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Readability of the foreign keys used to join entities that could be joined using different attributes. (Final Prototype usability tests - 30 users)}
+  \caption{\textbf{Evaluation point S8:} Readability of the foreign keys used to join entities that could be joined using different attributes. (Final Prototype usability tests - 30 users)}
     \label{tab:finalPrototypeForeignKeyIdentification}
   \begin{tabular}{@{}lrrr@{}}
   \toprule
@@ -855,7 +950,7 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} and Figure \ref{fig
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Final Prototype usability tests - 30 users)}
+  \caption{\textbf{Evaluation point S22:} Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Final Prototype usability tests - 30 users)}
     \label{tab:finalPrototypeForeignKeySelection}
   \begin{tabular}{@{}lrrr@{}}
   \toprule
@@ -870,7 +965,7 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} and Figure \ref{fig
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Final Prototype usability tests - 30 users)}
+  \caption{\textbf{Evaluation point S7:} Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Final Prototype usability tests - 30 users)}
     \label{tab:finalPrototypeLeftJoinNull}
   \begin{tabular}{@{}m{5.4cm}rrr@{}}
   \toprule
@@ -886,7 +981,7 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} and Figure \ref{fig
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.8in]{effectiveness-final-prototype-user-group}
-	\caption{Average of the success rate of all scenarios by each user group (Final Prototype usability tests - 30 users).}
+	\caption{\textbf{Evaluation point S1:} Average of the success rate of all scenarios by each user group (Final Prototype usability tests - 30 users).}
 	\label{fig:effectivenessFinalPrototypeUserGroup}
 \end{figure}
 
@@ -895,7 +990,9 @@ In conclusion, Table \ref{tab:effectiveness_final_prototype} and Figure \ref{fig
 \section{Results Analysis}
 \label{sec:results_analysis}
 
-The results obtained in usability tests of the existing interface, presented in \ref{sec:existing_interface_evaluation}, were compared against the results extracted from usability tests of the final prototype, presented in \ref{subsec:service_studio_evaluation}. The test environment was the same for both tests where 30 users (10 of each user group) tested the existing interface and different 30 users (also 10 of each user group) tested the final prototype. Accordingly, this section will present a comparison of the gathered metrics in the evluation of the two interfaces.
+Since the goal of this dissertation is the usability improvement of the visual query building interface approached in this study, the results of the usability tests were analyzed regarding three attributes of usability: effectiveness, efficiency, and satisfaction.
+
+In that way, the purpose of this section is to compare the usability of the final prototype with the usability of the existing interface, measured before starting the solution building. Accordingly, the results obtained in usability tests of the existing interface, presented in section \ref{sec:existing_interface_evaluation}, were compared against the results extracted from usability tests of the final Service Studio prototype, presented in section \ref{subsec:service_studio_evaluation}. The test environment was the same for both tests where 30 users (10 of each user group) tested the existing interface and different 30 users (also 10 of each user group) tested the final prototype. Accordingly, this section will present a comparison of the gathered metrics in the evaluation of the two interfaces.
 
 \subsection{Effectiveness}
 \label{subsec:effectiveness}
@@ -904,30 +1001,30 @@ Regarding the problems of the interface, identified throughout the evaluation ph
 
 \begin{itemize}
   \item \textbf{Insert calculated attribute (Figure \ref{fig:addCalculatedAttributeComparison}): } When users performed the scenario which required a calculated attribute insertion, in the existing interface, the users who knew how to do it in the existing interface (OutSystems Developers) managed to insert it, but the majority of other users did not manage to add the calculated attribute or had difficulties discovering how to add it. For instance, in the existing interface 20\% of the citizen developers, 92\% of the OutSystems Developers and 20\% of the software developers added successfully the calculated attribute without difficulty. The results were more positive when users used the final prototype since 80\% of citizen developers, 100\% of OutSystems developers, and 70\% of software developers managed to add successfully the intended calculated attribute without difficulty. In conclusion, the new, and more visible option, mitigated the learnability problem identified in the existing interface, since in the final prototype not only the majority of users could successfully add the calculated attribute but also used the new button to add calculated attributes, as you can confirm in table \ref{tab:finalPrototypeOptionCalculatedAttribute};
-  \item \textbf{Left join with null identifier readability (Figure \ref{fig:leftJoinWithNullComparison}): } The strategy adopted to distinguish the joins generated automatically to the ones edited manually did not fullfill the expected effectiveness. The join presented in scenario C1, to select only the employees who have never created notifications (one entity left joined, with another entity and the condition defining that the primary key of the second entity must be null), was not comprehended by most of users. In spite of the number of users who successfully interpreted this joins have quite duplicated for OutSystems developers (from 17\% to 30\%) and Software Developers (from 10\% to 20\%), the values continue to be low. Consequently, the way these joins are presented is an aspect that should be further improved;
+  \item \textbf{Left join with null identifier readability (Figure \ref{fig:leftJoinWithNullComparison}): } The strategy adopted to distinguish the joins generated automatically to the ones edited manually did not fulfill the expected effectiveness. The join presented in scenario C1, to select only the employees who have never created notifications (one entity left joined, with another entity and the condition defining that the primary key of the second entity must be null), was not comprehended by most of users. In spite of the number of users who successfully interpreted this joins have quite duplicated for OutSystems developers (from 17\% to 30\%) and Software Developers (from 10\% to 20\%), the values continue to be low. Consequently, the way these joins are presented is an aspect that should be further improved;
   \item \textbf{Foreign key selection (Figure \ref{fig:foreignKeySelectionComparison}): } The modal implemented to force users to choose the foreign key, to join two entities, everytime the foreign key could not be foreseen due to the multiple hypotheses available, have revealed outstanding positive results in the correct join formulation. For the scenario F1, the success rate on adding correctly one of these joins that could be formulated using different foreign keys was 22\%, 50\%, and 40\% (Citizen Developers, OutSystems Developers, and Software Developers, respectively) in the existing interface. The values registered by observing the number of users interacting with the final prototype were much more favorable since 100\% of Citizen Developers, 90\% of OutSystems Developers, and 100\% of Software Developers added these joins correctly;
   \item \textbf{Foreign key readability (Figure \ref{fig:foreignKeyReadabilityComparison}): } The new representation of joins, which highlights the foreign key used, have leveraged the number of users who have correctly interpreted the joins of the query. Concerning the comprehension scenarios C2 and C4 that contained queries that included joins that could have been built by different foreign keys, it is important to highlight the foreign key used to link the entities in order to completely comprehend the query. With the highlight gave to the foreign keys in these cases, through the usage of a dropdown list, the foreign key identification success rate have more than duplicated, passing from 0\%, 28\% and 20\% of Citizen Developers, OutSystems Developers, and Software Developers, respectively, in the existing interface to a success rate of the correct comprehension of 40\%, 87\%, and 50\%.
 \end{itemize}
 
 \begin{figure}[tb]
   \centering
-  \subcaptionbox{Insert calculated attribute\label{fig:addCalculatedAttributeComparison}}%
+  \subcaptionbox{Insert calculated attribute (evaluation point S14)\label{fig:addCalculatedAttributeComparison}}%
     {\includegraphics[width=0.5\linewidth]{add-calculated-attribute-comparison}}%
-    \subcaptionbox{Left join with null readability\label{fig:leftJoinWithNullComparison}}%
+    \subcaptionbox{Left join with null readability (evaluation point S7)\label{fig:leftJoinWithNullComparison}}%
     {\includegraphics[width=0.5\linewidth]{left-join-with-null-readability-comparison}}%
     \\
-  \subcaptionbox{Foreign key selection\label{fig:foreignKeySelectionComparison}}%
+  \subcaptionbox{Foreign key selection (evaluation point S22)\label{fig:foreignKeySelectionComparison}}%
   {\includegraphics[width=0.5\linewidth]{foreign-key-selection-comparison}}%
-  \subcaptionbox{Foreign key readability\label{fig:foreignKeyReadabilityComparison}}%
+  \subcaptionbox{Foreign key readability (evaluation point S8)\label{fig:foreignKeyReadabilityComparison}}%
   {\includegraphics[width=0.5\linewidth]{foreign-key-readability-comparison}}%
-  \caption{Comparison of the effectiveness between the Existing Interface and the Final Prototype, regarding specific use cases.}
+  \caption{Comparison of the effectiveness between the Existing Interface (on the left side of each chart) and the Final Prototype (on the right side of each chart), regarding specific use cases.}
   \label{fig:specificComparisons}
 \end{figure}
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-  \caption{Options used by users to insert the calculated attribute in the context of the M1 scenario. (Final Prototype usability tests - 30 users)}
+  \caption{\textbf{Evaluation point S16:} Options used by users to insert the calculated attribute in the context of the M1 scenario. (Final Prototype usability tests - 30 users)}
   \label{tab:finalPrototypeOptionCalculatedAttribute}
   \begin{tabular}{@{}m{4.4cm}R{3.1cm}R{3.1cm}R{3.1cm}@{}}
   \toprule
@@ -942,14 +1039,14 @@ Regarding the problems of the interface, identified throughout the evaluation ph
 
 
 
-The results of all scenarios and all users were combined, in order to evaluate the differences of the success rate that users achieved with the existing interface and with the final prototype. Thereby, Figure \ref{fig:totalEffectivenessComparison} presents the average of the success rate, considering all user groups (defined in section \ref{subsec:user_groups}), all scenarios (described in Appendix \ref{app:user_testing_scenarios}) and the success rate labelling presented in table \ref{tab:effectiveness_states}.
+The results of all scenarios and all users were combined, in order to evaluate the differences of the success rate that users achieved with the existing interface and with the final prototype (evaluation point S1 of Table \ref{tab:scenarios_registered_aspects}). Thereby, Figure \ref{fig:totalEffectivenessComparison} presents the average of the success rate, considering all user groups (defined in section \ref{subsec:user_groups}), all scenarios, described in section \ref{sec:testing_scenarios}, and the success rate labelling, presented in table \ref{tab:effectiveness_states}.
 
 The changes applied in the interface have leveraged the values of the success rate. In the existing interface only 36\% of the scenarios were completely achieved and in the final prototype the percentage of the scenarios completely achieved was 68\%.
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.2in]{total-effectiveness-comparison}
-	\caption{Effectiveness Comparison between the existing interface and the final prototype. (Comparing the 30 users who tested the existing interface with the other 30 users who tested the final prototype)}
+	\caption{\textbf{Evaluation point S1:} Effectiveness Comparison between the existing interface and the final prototype. (Comparing the 30 users who tested the existing interface with the other 30 users who tested the final prototype)}
 	\label{fig:totalEffectivenessComparison}
 \end{figure}
 
@@ -969,14 +1066,14 @@ Furthermore, two one-way analysis of variance (ANOVA) were performed to determin
 
 A one-way ANOVA, between subjects, was conducted (table \ref{tab:anova_achieved} to compare if the mean between the samples are equal. In a 95\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests ($p-value = 1.24E-06 < 0,05$). Therefore, it can be concluded that there is a statistically significant difference in terms of the achieved scenarios between the existing interface and the final prototype tests.
 
-Regarding the effect size, which is a measure for ANOVA that indicates the proportion of variance accounted by a factor (i.e., measuring how different the means really are). Since the ANOVA performed was a one-way ANOVA, the effect size is given by the eta-squared ($\eta^2$), calculated using the formula \ref{eq:effect-size-formula}:
+%Regarding the effect size, which is a measure for ANOVA that indicates the proportion of variance accounted by a factor (i.e., measuring how different the means really are). Since the ANOVA performed was a one-way ANOVA, the effect size is given by the eta-squared ($\eta^2$), calculated using the formula \ref{eq:effect-size-formula}:
 
-\begin{equation}
-  \label{eq:effect-size-formula}
-  \eta^2 = \frac{SS_{between}}{SS_{between} + SS_{within}}
-\end{equation}
+%\begin{equation}
+  %\label{eq:effect-size-formula}
+  %\eta^2 = \frac{SS_{between}}{SS_{between} + SS_{within}}
+%\end{equation}
 
-Comparing the average of the success rate obtained by users in the existing interface, which was $\approx 0.3495$, with the one obtaining when users tested the final prototype, which was $\approx 0.6667$, it can be concluded that, not only, there is a statistical difference, as proved by the ANOVA analysis, but also the effect size, which is $\approx 0.3355 > 0.14$ indicates that there is a large effect. Thereby, the probability of a user achieve a higher success rate in the final prototype than in the existing interface is corroborated.
+%Comparing the average of the success rate obtained by users in the existing interface, which was $\approx 0.3495$, with the one obtaining when users tested the final prototype, which was $\approx 0.6667$, it can be concluded that, not only, there is a statistical difference, as proved by the ANOVA analysis, but also the effect size, which is $\approx 0.3355 > 0.14$ indicates that there is a large effect. Thereby, the probability of a user achieve a higher success rate in the final prototype than in the existing interface is corroborated.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
@@ -1016,7 +1113,7 @@ Therefore, the second ANOVA was used to determine the differences between the no
 
 A one-way ANOVA, between subjects, was conducted (table \ref{tab:anova_not_achieved} to compare if the mean between the samples are equal. In a 95\% confidence interval, the null hypothesis is rejected, meaning that the two means are statistically different between the two tests ($p-value = 5.08E-05 < 0,05$). Therefore, it can be concluded that there is a statistically significant difference in terms of the not achieved scenarios between the existing interface and the final prototype tests.
 
-Comparing the average of the not achievement rate obtained by users in the existing interface, which was $\approx 0.4905$, with the one obtaining when users tested the final prototype, which was $\approx 0.2543$, it can be concluded that not only there is a statistical difference, as proved by the ANOVA analysis, but also the effect size, which is $\approx 0.2586 > 0.14$, indicates that there is a large effect. Thereby, the probability of a user not achieve the given scenarios in the final prototype is lower than in the existing interface. 
+%Comparing the average of the not achievement rate obtained by users in the existing interface, which was $\approx 0.4905$, with the one obtaining when users tested the final prototype, which was $\approx 0.2543$, it can be concluded that not only there is a statistical difference, as proved by the ANOVA analysis, but also the effect size, which is $\approx 0.2586 > 0.14$, indicates that there is a large effect. Thereby, the probability of a user not achieve the given scenarios in the final prototype is lower than in the existing interface. 
 
 It was also verified that in the existing interface the average of the achieved scenarios ($\approx 0.3495$) was lower than the average of the not achieved scenarios ($\approx 0.4905$), but in the final prototype the average of the achieve scenarios ($\approx 0.6667$) was superior of the average of the not achieved scenarios ($\approx 0.2543$). By this means, users managed to most successfully comprehend and formulate queries using the final prototype than using the existing interface.
 
@@ -1052,7 +1149,9 @@ It was also verified that in the existing interface the average of the achieved 
 
 \subsection{Efficiency}
 \label{subsec:efficiency}
-The time users spent in each scenario when they tested the existing interface and the final prototype was also evaluated in order to compare the usability efficiency attribute of the final prototype against the one of the existing interface. Figure \ref{fig:box-plots-duration} and Table \ref{tab:duration-stats} presents the statistical data extracted to analyze the distribution of the time elapsed in each scenario and their skewness along the different quartiles.
+The time users spent in each scenario when they tested the existing interface and the final prototype was also evaluated in order to compare the usability efficiency attribute of the final prototype against the one of the existing interface (evaluation point S2 of Table \ref{tab:scenarios_registered_aspects}). Figure \ref{fig:box-plots-duration} and Table \ref{tab:duration-stats} presents the statistical data extracted to analyze the distribution of the time elapsed in each scenario and their skewness along the different quartiles.
+
+The interquartile range (IQR) (i.e., the difference between the first and the third quartiles) was used to measure the variability. Moreover, there were values considered as outliers (isolated points in Figure \ref{fig:box-plots-duration})) since they were located 1.5(IQR) or more below the first quartile (Q1) or they were located 1.5(IQR) or more above the third quartile (Q3) \cite{larose2005discovering}.
 
 As detailed in Table \ref{tab:duration-stats-comparison}, the comparison of the results regarding comprehension scenarios shown that the median has decreased at least 34\% with the exception of the scenario C4, where the median has increased 20 seconds from the existing interface to the final prototype tests. The difference between the first and the third quartiles has also become shorter in the comprehension scenarios excluding the case of the scenario C3 where this difference has slightly increased (2.67\%). 
 
@@ -1144,13 +1243,15 @@ The users' satisfaction increased in all questions. The users reacted positively
   \item "I think that I would like to use this system frequently" (27.35\%) 
 \end{itemize}
 
+Furthermore, the average SUS score \cite{system_usability_scale} of all participants in the existing prototype was around 58.58\% and the score of the final prototype was around 79.08\%, which transposed the improvement regarding users' satisfaction.
+
 However, although the questions regarding learnability have improved in comparison to the existing interface, they do not show as relevant as the remaining questions.
 
-Since the system learnability could be highly affected by the users' background, the information retrieved from the users' profile survey was analyzed in order to perceive if there is some degree of correlation between the technical knowledge and the satisfaction using the interface.
+Since the opinion about how the system is easy to use could be highly affected by the users' background, the information retrieved from the users' profile survey was analyzed in order to perceive if there is some degree of correlation between the technical knowledge and the satisfaction using the interface.
 
 Therefore, a study was performed in order to evaluate if the relational databases knowledge could have a significant impact into the users' opinion about how visual query builder is easy to use.
 
-In that way, a Kendall's Tau-a correlation test was performed to determine the correlation between the relational database knowledge and the perception about how easy is to use the system. The sampl considered the 30 users who tested the existing interface and the 30 users who tested the final prototype. 
+In that way, a Kendall's Tau-a correlation test was performed to determine the correlation between the relational database knowledge and the perception about how easy is to use the system. The sample considered the 30 users who tested the existing interface and the 30 users who tested the final prototype. 
 
 \begin{center}
   H0 = "There is no correlation between the relational databases knowledge and the interface ease of use"

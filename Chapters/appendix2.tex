@@ -1,1327 +1,346 @@
+%!TEX root = ../template.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% appendix1.tex
+%% appendix2.tex
 %% NOVA thesis document file
 %%
 %% Chapter with example of appendix with a short dummy text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Taxonomy of Problems - Existing Interface}
-\label{app:taxonomy_of_problems_existing_interface}
+\chapter{Usability Tests Results}
+\label{app:usability_tests_results}
 
-The visual interface to formulate queries that was implemented before this dissertation had several usability problems which led users to prefer to use other \glspl{DQL} such as SQL. In order to comprehend the existing problems of the visual interface or the characteristics that hamper users to extract advantages of that visual approach to query databases, there were performed the following studies:
 
-\begin{itemize}
-    \item \textbf{Study and Analysis:} This was the first approach used to explore the existing problems of the interface. The process started with the visualization of two OutSystems tutorials \cite{outsystems_tutorial_aggregates_101, outsystems_tutorial_advanced_aggregates} about visual data querying. This was the first experience using the interface and there were pointed out some problems. As this was the first experience, it was mainly found issues regarding hidden operations and behaviors that were not clear for users who did not use the platform. After that tutorials, there has been made some more explorations using practical examples where there were found other problems related to efficiency and effectiveness of use;
-    \item \textbf{User Interviews:} There were performed some dialogues with a reduced set of novice and expert users to comprehend what are the main issues pointed out. In the case of expert users, the causes to use SQL instead of the Visual Interface were registered as well as a set of other \gls{UX} issues. Regarding users who did not have relevant experience either in SQL or OutSystems, it was registered the functionalities more difficult to learn or understand;
-    \item \textbf{Community Ideas:} Since OutSystems contains a wide and worldwide Community where users could contribute with suggestions or express their problems or difficulties, all the ideas of the category "Aggregates and Queries" were explored to understand the problems presented. Moreover, the number of likes of each post was registered in order to know what are the problems which had more user reactions; 
-    \item \textbf{User Testing:} During the user tests of the existing implementation, there were pointed out some issues by users. Also, other problems were found through the interpretation of user-interface interaction.
-\end{itemize}
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Users' profile survey results. (Existing interface usability tests - 30 users)}
+  \label{tab:survey_profile_existing_interface}
+  \begin{tabular}{@{}C{4cm}rrrrr@{}}
+  \cmidrule(r){1-3}
+  \textbf{Questions}                                              & \multicolumn{1}{C{1.7cm}}{\textbf{Yes}}                    & \multicolumn{1}{C{1.7cm}}{\textbf{No}}                             & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\ \cmidrule(r){1-3}
+  Have you a degree in Computer Science or similar?               & 66.67\%                                    & 33.33\%                                            & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\
+  Are you familiar with relational operators (joins)?             & 80.00\%                                    & 20.00\%                                            & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{Never use}}     & \multicolumn{1}{C{1.7cm}}{\textbf{Almost never}}          & \multicolumn{1}{C{1.9cm}}{\textbf{Occasionally sometimes}} & \multicolumn{1}{C{1.7cm}}{\textbf{Almost every time}} & \multicolumn{1}{C{1.7cm}}{\textbf{Frequently use}}          \\ \midrule
+  Have you already used OutSystems?                               & 30.00\%                                    & 26.67\%                                            & 13.33\%                                             & 3.33\%                                         & 26.67\%                                              \\
+  Have you used a query language (SQL or other)?                  & 6.67\%                                     & 20.00\%                                            & 46.67\%                                             & 13.33\%                                        & 13.33\%                                              \\
+  Have you already used relational databases?                     & 10.00\%                                    & 13.33\%                                            & 30.00\%                                             & 23.33\%                                        & 23.33\%                                              \\
+  How often do you use spreadsheet applications?                  & 0.00\%                                     & 16.67\%                                            & 43.33\%                                             & 10.00\%                                        & 30.00\%                                              \\
+  How often do you use business intelligence software?            & 33.33\%                                    & 33.33\%                                            & 20.00\%                                             & 3.33\%                                         & 10.00\%                                              \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{No experience}} & \multicolumn{1}{C{1.7cm}}{\textbf{\textless{}= 6 months}} & \multicolumn{1}{C{1.7cm}}{\textbf{\textless{}= 1 year}}    & \multicolumn{1}{C{1.7cm}}{\textbf{1-3 years}}         & \multicolumn{1}{C{1.7cm}}{\textbf{\textgreater{}= 4 years}} \\ \midrule
+  How long do you use the platform?                               & 40.00\%                                    & 13.33\%                                            & 10.00\%                                             & 10.00\%                                        & 26.67\%                                              \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{Never use}}     & \multicolumn{1}{C{1.7cm}}{\textbf{Some weeks ago}}        & \multicolumn{1}{C{1.7cm}}{\textbf{Some months ago}}        & \multicolumn{1}{C{1.7cm}}{\textbf{Last year}}         & \multicolumn{1}{C{1.7cm}}{\textbf{Some years ago}}          \\ \midrule
+  When was the last time that you have used SQL to build queries? & 16.67\%                                    & 40.00\%                                            & 13.33\%                                             & 13.33\%                                        & 16.67\%                                              \\ \midrule
+                                                                  & \textbf{1}                                 & \textbf{2}                                         & \textbf{3}                                          & \textbf{4}                                     & \textbf{5}                                           \\ \midrule
+  How do you define your SQL expertise level?                     & 22.22\%                                    & 7.41\%                                             & 33.33\%                                             & 29.63\%                                        & 7.41\%                                               \\ \bottomrule
+  \end{tabular}
+  \end{table}
 
-Furthermore, each issue registered was characterized according to the Nielsen Heuristics \cite{nielsen_heuristics} and the artifact and task attributes of a Framework adapted from Usability-ODC Framework \cite{in_process_usability_problem_classification_analysis_improvement}. Besides, for each issue it was checked if the action most hampered is the query formulation or the query comprehension as well as what are the interface components affected between the ones presented below:
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Users' profile survey results. (Paper prototype usability tests - 15 users)}
+  \label{tab:survey_profile_paper_prototype}
+  \begin{tabular}{@{}C{4cm}rrrrr@{}}
+  \cmidrule(r){1-3}
+  \textbf{Questions}                                              & \multicolumn{1}{C{1.7cm}}{\textbf{Yes}}                    & \multicolumn{1}{C{1.7cm}}{\textbf{No}}                             & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\ \cmidrule(r){1-3}
+  Have you a degree in Computer Science or similar?               & 66.67\%                                    & 33.33\%                                            & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\
+  Are you familiar with relational operators (joins)?             & 86.67\%                                    & 13.33\%                                            & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{Never use}}     & \multicolumn{1}{C{1.7cm}}{\textbf{Almost never}}          & \multicolumn{1}{C{1.9cm}}{\textbf{Occasionally sometimes}} & \multicolumn{1}{C{1.7cm}}{\textbf{Almost every time}} & \multicolumn{1}{C{1.7cm}}{\textbf{Frequently use}}          \\ \midrule
+  Have you already used OutSystems?                               & 33.33\%                                    & 26.67\%                                            & 20.00\%                                             & 6.67\%                                         & 13.33\%                                              \\
+  Have you used a query language (SQL or other)?                  & 26.67\%                                     & 6.67\%                                            & 33.33\%                                             & 6.67\%                                        & 26.67\%                                              \\
+  Have you already used relational databases?                     & 0.00\%                                    & 20.00\%                                            & 40.00\%                                             & 20.00\%                                        & 20.00\%                                              \\
+  How often do you use spreadsheet applications?                  & 0.00\%                                     & 13.33\%                                            & 46.67\%                                             & 6.67\%                                        & 33.33\%                                              \\
+  How often do you use business intelligence software?            & 46.67\%                                    & 33.33\%                                            & 6.67\%                                             & 6.67\%                                         & 6.67\%                                              \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{No experience}} & \multicolumn{1}{C{1.7cm}}{\textbf{\textless{}= 6 months}} & \multicolumn{1}{C{1.7cm}}{\textbf{\textless{}= 1 year}}    & \multicolumn{1}{C{1.7cm}}{\textbf{1-3 years}}         & \multicolumn{1}{C{1.7cm}}{\textbf{\textgreater{}= 4 years}} \\ \midrule
+  How long do you use the platform?                               & 53.33\%                                    & 13.33\%                                            & 13.33\%                                             & 6.67\%                                        & 13.33\%                                              \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{Never use}}     & \multicolumn{1}{C{1.7cm}}{\textbf{Some weeks ago}}        & \multicolumn{1}{C{1.7cm}}{\textbf{Some months ago}}        & \multicolumn{1}{C{1.7cm}}{\textbf{Last year}}         & \multicolumn{1}{C{1.7cm}}{\textbf{Some years ago}}          \\ \midrule
+  When was the last time that you have used SQL to build queries? & 26.67\%                                    & 33.33\%                                            & 26.67\%                                             & 13.33\%                                        & 0.00\%                                              \\ \midrule
+                                                                  & \textbf{1}                                 & \textbf{2}                                         & \textbf{3}                                          & \textbf{4}                                     & \textbf{5}                                           \\ \midrule
+  How do you define your SQL expertise level?                     & 26.67\%                                    & 0.00\%                                             & 40.00\%                                             & 13.33\%                                        & 20.00\%                                               \\ \bottomrule
+  \end{tabular}
+  \end{table}
 
-\begin{itemize}
-    \item Actions and Nodes (Method/Function where the Visual Query was added)
-    \item General Layout (The arrangement of the main interface components on the main window)
-    \item Sources
-    \item Joins
-    \item Filters
-    \item Sorting
-    \item Aggregation Functions
-    \item Calculated Attributes
-    \item Static Entities
-    \item Query Result Table
-    \item Test Values
-\end{itemize}
 
-In that way, it is simple to categorize and prioritize the problems detected. Besides, as mentioned above, if the problem were referred in the OutSystems Community, their number of likes and the respecting posts were included. Table \ref{tab:taxonomy_of_existing_problems} represents the result of all problems detected and categorized under the parameters mentioned:
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[tb]
+  \caption{Users' profile survey results. (Final prototype usability tests - 30 users)}
+  \label{tab:survey_profile_final_prototype}
+  \begin{tabular}{@{}C{4cm}rrrrr@{}}
+  \cmidrule(r){1-3}
+  \textbf{Questions}                                              & \multicolumn{1}{C{1.7cm}}{\textbf{Yes}}                    & \multicolumn{1}{C{1.7cm}}{\textbf{No}}                             & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\ \cmidrule(r){1-3}
+  Have you a degree in Computer Science or similar?               & 76.67\%                                    & 23.33\%                                            & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\
+  Are you familiar with relational operators (joins)?             & 80.00\%                                    & 20.00\%                                            & \multicolumn{1}{l}{}                                & \multicolumn{1}{l}{}                           & \multicolumn{1}{l}{}                                 \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{Never use}}     & \multicolumn{1}{C{1.7cm}}{\textbf{Almost never}}          & \multicolumn{1}{C{1.9cm}}{\textbf{Occasionally sometimes}} & \multicolumn{1}{C{1.7cm}}{\textbf{Almost every time}} & \multicolumn{1}{C{1.7cm}}{\textbf{Frequently use}}          \\ \midrule
+  Have you already used OutSystems?                               & 23.33\%                                    & 30.00\%                                            & 26.67\%                                             & 0.00\%                                         & 20.00\%                                              \\
+  Have you used a query language (SQL or other)?                  & 16.67\%                                     & 13.33\%                                            & 46.67\%                                             & 10.00\%                                        & 13.33\%                                              \\
+  Have you already used relational databases?                     & 6.67\%                                    & 20.00\%                                            & 46.67\%                                             & 3.33\%                                        & 23.33\%                                              \\
+  How often do you use spreadsheet applications?                  & 0.00\%                                     & 16.67\%                                            & 46.67\%                                             & 10.00\%                                        & 26.67\%                                              \\
+  How often do you use business intelligence software?            & 30.00\%                                    & 33.33\%                                            & 30.00\%                                             & 0.00\%                                         & 6.67\%                                              \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{No experience}} & \multicolumn{1}{C{1.7cm}}{\textbf{\textless{}= 6 months}} & \multicolumn{1}{C{1.7cm}}{\textbf{\textless{}= 1 year}}    & \multicolumn{1}{C{1.7cm}}{\textbf{1-3 years}}         & \multicolumn{1}{C{1.7cm}}{\textbf{\textgreater{}= 4 years}} \\ \midrule
+  How long do you use the platform?                               & 43.33\%                                    & 10.00\%                                            & 10.00\%                                             & 16.67\%                                        & 20.00\%                                              \\ \midrule
+                                                                  & \multicolumn{1}{C{1.7cm}}{\textbf{Never use}}     & \multicolumn{1}{C{1.7cm}}{\textbf{Some weeks ago}}        & \multicolumn{1}{C{1.7cm}}{\textbf{Some months ago}}        & \multicolumn{1}{C{1.7cm}}{\textbf{Last year}}         & \multicolumn{1}{C{1.7cm}}{\textbf{Some years ago}}          \\ \midrule
+  When was the last time that you have used SQL to build queries? & 20.00\%                                    & 33.33\%                                            & 13.33\%                                             & 20.00\%                                        & 13.33\%                                              \\ \midrule
+                                                                  & \textbf{1}                                 & \textbf{2}                                         & \textbf{3}                                          & \textbf{4}                                     & \textbf{5}                                           \\ \midrule
+  How do you define your SQL expertise level?                     & 7.69\%                                    & 26.92\%                                             & 30.77\%                                             & 26.92\%                                        & 7.69\%                                               \\ \bottomrule
+  \end{tabular}
+  \end{table}
 
-\begin{longtable}[c]{| m{4.5cm} | m{4.5cm} | m{4.5cm} |}
-    \caption{Taxonomy of Aggregates' Problems - Existing Interface (Last community posts update: May 06, 2020)\label{tab:taxonomy_of_existing_problems}}\\
-   
-    \hline
-    \multicolumn{3}{|C{13.5cm}|}{Taxonomy of Aggregates' Problems}\\
-    \hline
-    \cellcolor{gray!50}\textbf{ID} & \cellcolor{gray!50}\textbf{Issue} & \cellcolor{gray!50}\textbf{Description}\\
-    \hline
-    \endfirsthead
-   
-    \hline
-    \multicolumn{3}{{|C{13.5cm}|}}{Continuation of Table \ref{tab:taxonomy_of_existing_problems}}\\
-    \hline
-    \cellcolor{gray!50}\textbf{ID} & \cellcolor{gray!50}\textbf{Issue} & \cellcolor{gray!50}\textbf{Description}\\
-    \hline
-    \endhead
-   
-    \hline \multicolumn{3}{{|C{13.5cm}|}}{\cellcolor{gray!15}Continued on next page} \\ \hline
-    \endfoot
 
-    \hline
-    \multicolumn{3}{|C{13.5cm}|}{End of Table \ref{tab:taxonomy_of_existing_problems}}\\
-    \hline
-    \endlastfoot
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+    \caption{Success Rate of the scenarios by user group when users tested the existing interface (30 users).}
+    \label{tab:effectiveness_existing_interface}
+    \begin{tabular}{@{}llrrr@{}}
+    \toprule
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \midrule
+    \textbf{C1}               & OutSystems Developer & 90.00\%                                                           & 0.00\%                                                                  & 10.00\%                                                        \\
+                              & Software Developer   & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\
+                              & Citizen Developer    & 100\%                                                             & 0.00\%                                                                  & 0.00\%                                                        \\
+                              & \textbf{Total}       & 90.00\%                                                           & 0.00\%                                                                  & 10.00\%                                                        \\ \midrule
+    \textbf{M1}               & OutSystems Developer & 0.00\%                                                            & 10.00\%                                                                 & 90.00\%                                                       \\
+                              & Software Developer   & 10.00\%                                                           & 10.00\%                                                                 & 80.00\%                                                       \\
+                              & Citizen Developer    & 30.00\%                                                           & 10.00\%                                                                 & 60.00\%                                                       \\
+                              & \textbf{Total}       & 13.33\%                                                           & 10.00\%                                                                 & 76.67\%                                                       \\ \midrule
+    \textbf{C2}               & OutSystems Developer & 0.00\%                                                            & 90.00\%                                                                 & 10.00\%                                                        \\
+                              & Software Developer   & 60.00\%                                                           & 30.00\%                                                                 & 10.00\%                                                       \\
+                              & Citizen Developer    & 90.00\%                                                           & 10.00\%                                                                 & 0.00\%                                                        \\
+                              & \textbf{Total}       & 50.00\%                                                           & 43.33\%                                                                 & 6.67\%                                                        \\ \midrule
+    \textbf{C3}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                              & Software Developer   & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                              & Citizen Developer    & 50.00\%                                                           & 10.00\%                                                                 & 40.00\%                                                       \\
+                              & \textbf{Total}       & 16.67\%                                                           & 10.00\%                                                                  & 73.33\%                                                       \\ \midrule
+    \textbf{F1}               & OutSystems Developer & 50.00\%                                                           & 0.00\%                                                                  & 50.00\%                                                       \\
+                              & Software Developer   & 70.00\%                                                           & 20.00\%                                                                 & 10.00\%                                                       \\
+                              & Citizen Developer    & 80.00\%                                                           & 10.00\%                                                                 & 10.00\%                                                       \\
+                              & \textbf{Total}       & 66.67\%                                                           & 10.00\%                                                                  & 23.33\%                                                       \\ \midrule
+    \textbf{C4}               & OutSystems Developer & 0.00\%                                                            & 40.00\%                                                                 & 60.00\%                                                       \\
+                              & Software Developer   & 30.00\%                                                           & 60.00\%                                                                 & 10.00\%                                                       \\
+                              & \textbf{Total}       & 15.00\%                                                           & 50.00\%                                                                 & 35.00\%                                                       \\ \midrule
+    \textbf{M4}               & OutSystems Developer & 50.00\%                                                           & 0.00\%                                                                  & 50.00\%                                                       \\
+                              & Software Developer   & 100.00\%                                                          & 0.00\%                                                                  & 0.00\%                                                        \\
+                              & \textbf{Total}       & 75.00\%                                                           & 0.00\%                                                                  & 25.00\%                                                       \\ \midrule
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{Total}            & OutSystems Developer & 27.14\%                                                           & 20.00\%                                                                 & 52.86\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & Software Developer   & 50.00\%                                                           & 20.00\%                                                                 & 30.00\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & Citizen Developer    & 70.00\%                                                           & 8.00\%                                                                  & 22.00\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & \textbf{Total}       & \textbf{46.84\%}                                                  & \textbf{16.84\%}                                                        & \textbf{36.32\%}                                              \\ \bottomrule
+    \end{tabular}
+    \end{table}
 
-    \cellcolor{gray!25}\textbf{1} & \cellcolor{gray!25}\textbf{Entity misadded (automatic joins deletion)} & \cellcolor{gray!25}\textbf{When the user adds an entity that trigger automatically a new join, if this entity is removed, the entity could also be removed.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources and Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{| m{13.5cm} |}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of Information/Results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{User Error Tolerance}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{User Control and Freedom}\\
-    \hline
-    \multicolumn{3}{| m{13.5cm} |}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate}}} & 25\\
-    \hline
-    \cellcolor{gray!25}\textbf{2} & \cellcolor{gray!25}\textbf{Select multiple sources at once} & \cellcolor{gray!25}\textbf{There are some use cases where this is already possible. However, it should be possible in any use case where the user can add multiple entities.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Study and Analysis, User Interviews, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Direct Manipulation}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and Consistency and standards}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate}}} & 25\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Allow multiple entity selection on first screen of new aggregate\footnote{\url{https://www.outsystems.com/ideas/5417/allow-multiple-entity-selection-on-first-screen-of-new-aggregate}}} & 6\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Replace data with multiple entities\footnote{\url{https://www.outsystems.com/ideas/7568/replace-data-with-multiple-entities}}} & 1\\
-    \hline
-    \cellcolor{gray!25}\textbf{3} & \cellcolor{gray!25}\textbf{Add the same entity more than once} & \cellcolor{gray!25}\textbf{Allow drag/dropping the same entity more than once (It’s possible using Select Source pop-up but it’s not possible using Drag and Drop.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Study and Analysis, and Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Direct Manipulation}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and User control and freedom}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate}}} & 25\\
-    \hline
-    \cellcolor{gray!25}\textbf{4} & \cellcolor{gray!25}\textbf{Add automatically a static entity even if it is not mandatory} & \cellcolor{gray!25}\textbf{“It's very annoying that every time I drag to an aggregate an entity with a foreign key to a static entity (SE) - even if it's not mandatory -  that static entity is dragged along with it.”}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{{| m{9cm} |}}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources, and Static Entities}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Direct Manipulation}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Task/function automation}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate}}} & 25\\
-    \hline
-    \cellcolor{gray!25}\textbf{5} & \cellcolor{gray!25}\textbf{Join tables with more than one identifier of the same table (other table)} & \cellcolor{gray!25}\textbf{When an entity has several identifiers of same other entity, do the join like currently but with a warning or ask which field to do the join.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{{| m{9cm} |}}{Study and Analysis, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{No-message feedback}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{User control and freedom, and Visibility of System Status}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Changes to behaviour of adding Entities to an Aggregate\footnote{\url{https://www.outsystems.com/ideas/2890/changes-to-behaviour-of-adding-entities-to-an-aggregate}}} & 25\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Join tables with more than one identifier of same other table\footnote{\url{https://www.outsystems.com/ideas/2885/aggregate-join-tables-with-more-than-one-identifier-of-same-other-table}}} & 5\\
-    \hline
-    \cellcolor{gray!25}\textbf{6} & \cellcolor{gray!25}\textbf{Move multiple aggregate columns at the same time} & \cellcolor{gray!25}\textbf{Actually it is possible to reorder one column. Extend this behavior.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Direct Manipulation}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Move multiple aggregate columns at the same time\footnote{\url{https://www.outsystems.com/ideas/6590/move-multiple-aggregate-columns-at-the-same-time}}} & 5\\
-    \hline
-    \cellcolor{gray!25}\textbf{7} & \cellcolor{gray!25}\textbf{Search and focus for particular columns of the query result} & \cellcolor{gray!25}\textbf{There should be an intuitive solution to navigate through the query result columns. That solution should include search fields and vertical scroll lists to improve the user navigation and control.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Study Analysis, User Interviews, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources and Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Direct Manipulation}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Navigation}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and Visibility of System Status}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Improve Aggregates to allow entity/attribute filtering\footnote{\url{https://www.outsystems.com/ideas/5720/service-studio-improve-aggregates-to-allow-entity-attribute-filtering}}} & 18\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Aggregates improvement - Visual Filters\footnote{\url{https://www.outsystems.com/ideas/5955/aggregates-improvement-visual-filters}}} & 32\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Ability to search attributes in aggregates while grouping\footnote{\url{https://www.outsystems.com/ideas/5904/ability-to-search-attributes-in-aggregates-while-grouping}}} & 5\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Search columns in Aggregate\footnote{\url{https://www.outsystems.com/ideas/6826/search-columns-in-aggregate}}} & 0\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Focus Aggregate Column\footnote{\url{https://www.outsystems.com/ideas/6537/focus-aggregate-column}}} & 2\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Aggregate Group By Tab\footnote{\url{https://www.outsystems.com/ideas/7322/aggregate-group-by-tab}}} & 19\\
-    \hline
-    \cellcolor{gray!25}\textbf{8} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Expand hidden columns.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, User Interviews, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and Consistency and standards}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Expand hidden columns\footnote{\url{https://www.outsystems.com/ideas/5054/aggregate-expand-hidden-columns}}} & 8\\
-    \hline
-    \cellcolor{gray!25}\textbf{9} & \cellcolor{gray!25}\textbf{Hide multiple columns with right-click} & \cellcolor{gray!25}\textbf{Actually users can use table of query results to hidden some columns. In addition, they can right-click in an attribute column and select hide. However, if they select multiple columns and right-click in one of them, only one will be selected.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Interaction}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Ability to select multiple columns in an aggregate for hiding them\footnote{\url{https://www.outsystems.com/ideas/7102/ability-to-select-multiple-columns-in-an-aggregate-for-hiding-them}}} & 1\\
-    \hline
-    \cellcolor{gray!25}\textbf{10} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{If an attribute is lengthy the user cannot see the entry.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Interaction}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{User control and freedom, and Visibility of System Status}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Adjust the columnsize in aggregates query data result\footnote{\url{https://www.outsystems.com/ideas/7027/adjust-the-columnsize-in-aggregates-query-data-result}}} & 2\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Improve cell options for aggregate tables\footnote{\url{https://www.outsystems.com/ideas/6009/service-studio-improve-cell-options-for-aggregate-tables}}} & 5\\
-    \hline
-    \cellcolor{gray!25}\textbf{11} & \cellcolor{gray!25}\textbf{Search and navigate between values} & \cellcolor{gray!25}\textbf{Actually users can only select columns. They cannot select rows or cells.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Direct Manipulation}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Position cursor on desired field within an aggregate\footnote{\url{https://www.outsystems.com/ideas/7290/position-cursor-on-desired-field-within-an-aggregate}}} & 1\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Improve cell options for aggregate tables\footnote{\url{https://www.outsystems.com/ideas/6009/service-studio-improve-cell-options-for-aggregate-tables}}} & 5\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Copy a value from the Aggregate preview data\footnote{\url{https://www.outsystems.com/ideas/2828/copy-a-value-from-the-aggregate-preview-data}}} & 27\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{In an aggregate you can't copy (Ctrl-C) values\footnote{\url{https://www.outsystems.com/ideas/7015/in-an-aggregate-you-cant-copy-ctrl-c-values}}} & 3\\
-    \hline
-    \cellcolor{gray!25}\textbf{12} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{It's not possible to see all the results (disable remaining results).}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of System Status, and Match between system and the real world}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{In aggregates I should have an option to see all results in DEV mode\footnote{\url{https://www.outsystems.com/ideas/3052/in-aggregates-i-should-have-an-option-to-see-all-results-in-dev-mode}}} & 18\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Don't always truncate aggregate results\footnote{\url{https://www.outsystems.com/ideas/8097/dont-always-truncate-aggregate-results}}} & 1\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Ability to switch off 'remaining results truncated'\footnote{\url{https://www.outsystems.com/ideas/6824/ability-to-switch-off-remaining-results-truncated}}} & 2\\
-    \hline
-    \cellcolor{gray!25}\textbf{13} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Provide more shortcuts.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{General Layout, Sources, Joins, Filters, Sorting, Aggregation Functions, Calculated Attributes, Query Result Table, and Test Values}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Keyboard press}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Aggregate Editor - Shortcut Keys - Move Column Left and Right\footnote{\url{https://www.outsystems.com/ideas/3322/aggregate-editor-shortcut-keys-move-column-left-and-right}}} & 5\\
-    \hline
-    \cellcolor{gray!25}\textbf{14} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Present number of results (rows) of the query result.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{User Interviews and Community Tests}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Tables}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of System Status}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Record count in Aggregates\footnote{\url{https://www.outsystems.com/ideas/1780/record-count-in-aggregates}}} & 7\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Display number of rows returned for an aggregate\footnote{\url{https://www.outsystems.com/ideas/6825/display-number-of-rows-returned-for-an-aggregate}}} & 2\\
-    \hline
-    \cellcolor{gray!25}\textbf{15} & \cellcolor{gray!25}\textbf{Invert members of join operation} & \cellcolor{gray!25}\textbf{As we only have left join (with or without) it would be interesting one button that changes the entity in the left side of the join with the one that is in the right side.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Aggregate: swap join entities\footnote{\url{https://www.outsystems.com/ideas/1870/aggregate-swap-join-entities}}} & 9\\
-    \hline
-    \cellcolor{gray!25}\textbf{16} & \cellcolor{gray!25}\textbf{Improve joins readability} & \cellcolor{gray!25}\textbf{Change the visual representation of joins, because could be difficult to users to understand what are the tables joined in the query, principally if there is some nesting.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Object appearance}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Interaction}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of System Status}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Aggregates: make them smarter (nested joins)\footnote{\url{https://www.outsystems.com/ideas/1846/aggregates-make-them-smarter-nested-joins}}} & 14\\
-    \hline
-    \cellcolor{gray!25}\textbf{17} & \cellcolor{gray!25}\textbf{Delete last joins automatically added if a user want to remove last entity added} & \cellcolor{gray!25}\textbf{When an entity is added, the system analyzes the relationships with other tables. In some cases the system put automatically other entities related with the added. But if the user removes the entity that he had added, the joins automatically added, remain in the aggregate.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources and Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Object appearance}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards, and Match between system and the real world}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Delete joins automatically when we delete an entity\footnote{\url{https://www.outsystems.com/ideas/8104/aggregates-delete-joins-automatically-when-we-delete-an-entity}}} & 22\\
-    \hline
-    \cellcolor{gray!25}\textbf{18} & \cellcolor{gray!25}\textbf{Copy and past filters} & \cellcolor{gray!25}\textbf{Could be more efficient to user, to generate a similar filter.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Keyboard press}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and Consistency and standards}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Ability to copy and paste Filters in Aggregates (including in bulk)\footnote{\url{https://www.outsystems.com/ideas/6627/ability-to-copy-and-paste-filters-in-aggregates-including-in-bulk}}} & 2\\
-    \hline
-    \cellcolor{gray!25}\textbf{19} & \cellcolor{gray!25}\textbf{Copy and past joins} & \cellcolor{gray!25}\textbf{Could be more efficient to user, to generate a similar join.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Keyboard press}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and Consistency and standards}\\
-    \hline
-    \cellcolor{gray!25}\textbf{20} & \cellcolor{gray!25}\textbf{Comments in Filters} & \cellcolor{gray!25}\textbf{Improve the highlighting of comments. It doesn't matter if the commentls will be showed separated or if the comments would have a different color. Just examples...}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Match between system and the real world}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Comments and Activate/Deactivate on Aggregates (Filters, Joins)\footnote{\url{https://www.outsystems.com/ideas/2058/comments-and-activate-deactivate-on-aggregates-filters-joins}}} & 13\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Comments on aggregate filter\footnote{\url{https://www.outsystems.com/ideas/7664/comments-on-aggregate-filter}}} & 6\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Comments inside Aggregates\footnote{\url{https://www.outsystems.com/ideas/2891/comments-inside-aggregates}}} & 7\\
-    \hline
-    \cellcolor{gray!25}\textbf{21} & \cellcolor{gray!25}\textbf{Disable filters} & \cellcolor{gray!25}\textbf{Option to disable filter's effect.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query COmprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{User control and freedom}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Comments and Activate/Deactivate on Aggregates (Filters, Joins)\footnote{\url{https://www.outsystems.com/ideas/2058/comments-and-activate-deactivate-on-aggregates-filters-joins}}} & 13\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Aggregate Filter option\footnote{\url{https://www.outsystems.com/ideas/1765/aggregate-filter-option}}} & 9\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Temporarily disable aggregate Filters\footnote{\url{https://www.outsystems.com/ideas/7170/temporarily-disable-aggregate-filters}}} & 2\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Allow to disable (not remove) aggregate filters\footnote{\url{https://www.outsystems.com/ideas/7565/allow-to-disable-not-remove-aggregate-filters}}} & 5\\
-    \hline
-    \cellcolor{gray!25}\textbf{22} & \cellcolor{gray!25}\textbf{Turn filter edition more accessible} & \cellcolor{gray!25}\textbf{Change aggregate filter without openning aggregate.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Change Aggregate filter without opening Aggregate\footnote{\url{https://www.outsystems.com/ideas/3309/change-aggregate-filter-without-opening-aggregate}}} & 23\\
-    \hline
-    \cellcolor{gray!25}\textbf{23} & \cellcolor{gray!25}\textbf{Change filter without necessity to open the modal of expression editor} & \cellcolor{gray!25}\textbf{Turn the insertion and edition process more faster.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Direct Manipulation}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \cellcolor{gray!25}\textbf{24} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Increase the readability of filters (text highlighting) withou open expression editor modal.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Match between system and the real world}\\
-    \hline
-    \cellcolor{gray!25}\textbf{25} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Remove aggregate filter if rule is empty.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Task/function automation}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Remove Aggregate filter if rule is empty\footnote{\url{https://www.outsystems.com/ideas/5056/remove-aggregate-filter-if-rule-is-empty}}} & 10\\
-    \hline
-    \cellcolor{gray!25}\textbf{26} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Bin button to delete filter is not visible.}}\\ 
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Screen layout}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{User control and freedom, and Recognition rather than recall}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Don't make me scroll to delete filters\footnote{\url{https://www.outsystems.com/ideas/5686/dont-make-me-scroll-to-delete-filters}}} & 8\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Move delete filter button to be near the actual filter in an aggregate\footnote{\url{https://www.outsystems.com/ideas/7145/move-delete-filter-button-to-be-near-the-actual-filter-in-an-aggregate}}} & 3\\
-    \hline
-    \cellcolor{gray!25}\textbf{27} & \cellcolor{gray!25}\textbf{Group by attributes' names are not perceptive} & \cellcolor{gray!25}\textbf{For example if two different entities have attributes called "Name" and a user group by this two attribuytes, they will be presented as "Name1" and "Name2". Moreover, there is not any reference to attribute's entity.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Aggregation Functions}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Language}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Nameling/labeling}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Interaction}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of system status, and Error prevention}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Set attribute name when 'Group by Id' to EntityNameId\footnote{\url{https://www.outsystems.com/ideas/6456/set-attribute-name-when-group-by-id-to-entitynameid}}} & 4\\
-    \hline
-    \cellcolor{gray!25}\textbf{28} & \cellcolor{gray!25}\textbf{View area of group bys.} & \cellcolor{gray!25}\textbf{There is no list view with all aggregated attributes, in order to improve the efficiency of query comprehension.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, Community Ideas, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Aggregation Functions}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Navigation}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of system status}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Aggregate Group By Tab\footnote{\url{https://www.outsystems.com/ideas/7322/aggregate-group-by-tab}}} & 19\\
-    \hline
-    \cellcolor{gray!25}\textbf{29} & \cellcolor{gray!25}\textbf{When the user clicks in "add attribute" (calculated attribute), set the cursor automatically to value} & \cellcolor{gray!25}\textbf{This is useful to turns the process of adding faster, reducing the user's effort, increasing the pleasant of use.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, and Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Calculated Attributes}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards, and Recognition rather than recall}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Set cursor to 'value' after adding new attribute to an aggregate\footnote{\url{https://www.outsystems.com/ideas/7528/set-cursor-to-value-after-adding-new-attribute-to-an-aggregate}}} & 1\\
-    \hline
-    \cellcolor{gray!25}\textbf{30} & \cellcolor{gray!25}\textbf{Inconsistent data formats between filters and test values} & \cellcolor{gray!25}\textbf{"The test values for Aggregate filters requires YYYY-MM-DD, but data in the results is displayed as MM/DD/YYYY. If you enter MM/DD/YYYY into the test values, you get an error."}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Language}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Nameling/labeling}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} }{Allow date entry into test values in same format as results are displayed\footnote{\url{https://www.outsystems.com/ideas/4985/allow-date-entry-into-test-values-in-same-format-as-results-are-displayed}}} & 4\\
-    \hline
-    \cellcolor{gray!25}\textbf{31} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Inconsistent of sorting between aggregate properties and aggregate popup on action.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Actions and Nodes}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards, and Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Consistency between Aggregate properties and popup info balloon when hovering\footnote{\url{https://www.outsystems.com/ideas/5740/consistency-between-aggregate-properties-and-popup-info-balloon-when-hovering}}} & 10\\
-    \hline
-    \cellcolor{gray!25}\textbf{32} & \cellcolor{gray!25}\textbf{Aggregates' Search engine.} & \cellcolor{gray!25}\textbf{General query search box.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, and Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{General Layout, Sources, Joins, Filters, Sorting, Aggregation Functions, Calculated Attributes, and Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Keyboard press}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and Recognition rather than recall}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Aggregate - Highlight/Find Usage by Source\footnote{\url{https://www.outsystems.com/ideas/3412/aggregate-highlight-find-usage-by-source}}} & 4\\
-    \hline
-    \cellcolor{gray!25}\textbf{33} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Freeze formulation areas while scroll horizontal in query result table.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, User Interviews, and Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{General Layout}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Screen layout}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Navigation}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of system status}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Freeze Sources, Filters, Sorting and Test Values in AGGREGATE\footnote{\url{https://www.outsystems.com/ideas/5935/freeze-sources-filters-sorting-and-test-values-in-aggregate}}} & 10\\
-    \hline
-    \cellcolor{gray!25}\textbf{34} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Duplicate tables.}}\\ 
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formualtion}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Keyboard press}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Aggregates: Duplicate Tables / Joins\footnote{\url{https://www.outsystems.com/ideas/7582/aggregates-duplicate-tables-joins}}} & 1\\
-    \hline
-    \cellcolor{gray!25}\textbf{35} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Duplicate joins.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formualtion}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Keyboard press}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Aggregates: Duplicate Tables / Joins\footnote{\url{https://www.outsystems.com/ideas/7582/aggregates-duplicate-tables-joins}}} & 1\\
-    \hline
-    \cellcolor{gray!25}\textbf{36} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Duplicate filters.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formualtion}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Keyboard press}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Aggregates: Duplicate Tables / Joins\footnote{\url{https://www.outsystems.com/ideas/7582/aggregates-duplicate-tables-joins}}} & 1\\
-    \hline
-    \cellcolor{gray!25}\textbf{37} & \cellcolor{gray!25}\textbf{Distinct function} & \cellcolor{gray!25}\textbf{Without extending aggregates' expressiveness is the "Group by of all columns of the result".}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, and Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Language}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Nameling/labeling}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards, and Match between system and the real world}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Aggregate with Distinct\footnote{\url{https://www.outsystems.com/ideas/Idea_View.aspx?IdeaID=2179&IdeaName=aggregate-with-distinct&utm_source=community&utm_medium=email&utm_campaign=idea-comment}}} & 107\\
-    \hline
-    \cellcolor{gray!25}\textbf{38} & \cellcolor{gray!25}\textbf{Count Distinct function} & \cellcolor{gray!25}\textbf{Expressiveness problem (distinct in all could be "replaced" by group bys, but COUNT DISTINCT cannot be reached using group bys).}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Aggregation Function, and Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Community Posts}}\\
-    \hline
-    \multicolumn{2}{{| m{9cm} |}}{Post} & Likes\\
-    \hline
-    \multicolumn{2}{| m{9cm} |}{Aggregate: Count Distinct\footnote{\url{https://www.outsystems.com/ideas/1889/aggregate-count-distinct}}} & 13\\
-    \hline
-    \cellcolor{gray!25}\textbf{39} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{Drag and drop input parameters to automatically create filters into Aggregates.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Community Ideas}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Actions and Nodes, and Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Object movement}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \cellcolor{gray!25}\textbf{40} & \cellcolor{gray!25}\textbf{Button to clear all the test values inserted} & \cellcolor{gray!25}\textbf{It could be a good resource if users have many values inserted and they want to clear all. It could be very annoying if they need to clear one at a time.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Test Values}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \cellcolor{gray!25}\textbf{41} & \cellcolor{gray!25}\textbf{Add variable into aggregate puts again the entity already inserted} & \cellcolor{gray!25}\textbf{When dragging a variable of type identifier (e.g. CompanyID) the entity Company is added even if it was added before. The only thing that it should add is the filter (if there isn’t one already).}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Actions and Nodes, and Sources}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Object movement}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{User control and freedom}\\
-    \hline
-    \cellcolor{gray!25}\textbf{42} & \cellcolor{gray!25}\textbf{Query compreension at a glance} & \cellcolor{gray!25}\textbf{To comprehend what data the query will retrive (query structure) the user need to switch between tabs.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, and User Interviews}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{General Layout}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Screen layout}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Navigation}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of system status}\\
-    \hline
-    \cellcolor{gray!25}\textbf{43} & \cellcolor{gray!25}\textbf{"Hide others" bug in group by} & \cellcolor{gray!25}\textbf{When someone clicks on “hide others” above an aggregation column, there is no visible effect (gray columns stay visible).}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Aggregation Functions, and Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \cellcolor{gray!25}\textbf{44} & \cellcolor{gray!25}\textbf{Highlight new additions (feedback)} & \cellcolor{gray!25}\textbf{Highlight elements added in last interaction. For example sources, joins, group bys sorts, etc...}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources, Joins, Filters, Sorting, Aggregation Functions, Calculated Attributes, Static Entities, and Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{No-message feedback}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of system status}\\
-    \hline
-    \cellcolor{gray!25}\textbf{45} & \cellcolor{gray!25}\textbf{Turn visible query formulation options} & \cellcolor{gray!25}\textbf{Some query formulation options like aggregation functions or calculated attributes are only visible if the user uses accelerators like right-click on columns. As well as possible, try to show these options without pain simplicity of interface. Improve "Recognition, not recall" without harm "Aesthetic and minimalist design".}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{General Layout}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Object appearance}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Alternatives}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Recognition rather than recall}\\
-    \hline
-    \cellcolor{gray!25}\textbf{46} & \multicolumn{2}{| m{9cm} |}{\cellcolor{gray!25}\textbf{It's not possible to remove more than one aggregated attribute at the same time.}}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Aggregation Functions, Calculated Attributes, and Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use, and Consistency and standards}\\
-    \hline
-    \cellcolor{gray!25}\textbf{47} & \cellcolor{gray!25}\textbf{It's not possible to change aggregation functions} & \cellcolor{gray!25}\textbf{To change an aggregation function (e.g. count, max, etc.) is necessary to remove the attribute and to add again.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{Analysis and Study, and User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Aggregation Functions, and Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Flexibility and efficiency of use}\\
-    \hline
-    \cellcolor{gray!25}\textbf{48} & \cellcolor{gray!25}\textbf{Add another join of two tables that are already merged.} & \cellcolor{gray!25}\textbf{When for example already exists a join between A and B with foreign key Key1 and we need to add another join between A and B but with the foreign key Key2, the interface should add automatically the entities twice (e.g., A2 join B using Key2).}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Sources and Joins}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Task/function automation}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Error prevention, and Match between system and the real world}\\
-    \hline
-    \cellcolor{gray!25}\textbf{49} & \cellcolor{gray!25}\textbf{The users don't know that exist hidden attributes} & \cellcolor{gray!25}\textbf{If the users don't have experience using the platform they don't know that some attributes are hidden.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation and Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Object appearance}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{User error tolerance}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of system status, and Match between system and the real world}\\
-    \hline
-    \cellcolor{gray!25}\textbf{50} & \cellcolor{gray!25}\textbf{Function symbol of aggregated attributes isn't clickable.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Aggregation Functions, and  Query Result Table}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Comprehension}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Manipulation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Mouse click}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-facilitation}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Keeping the user task on track}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Consistency and standards, and Visibility of system status}\\
-    \hline
-    \cellcolor{gray!25}\textbf{51} & \cellcolor{gray!25}\textbf{No visual identifier to show that is a filter edition option} & \cellcolor{gray!25}\textbf{Reported by a user in an User Test.}\\
-    \hline
-    \textbf{Figured Out} & \multicolumn{2}{| m{9cm} |}{User Testing}\\
-    \hline
-    \textbf{Interface Components Related} & \multicolumn{2}{| m{9cm} |}{Filters}\\
-    \hline
-    \textbf{Main Action Hampered} & \multicolumn{2}{| m{9cm} |}{Query Formulation}\\
-    \hline
-    \multicolumn{3}{{| m{13.5cm} |}}{\textbf{Usability-ODC Framework Attributes}}\\
-    \hline
-    Artifact Category & \multicolumn{2}{| m{9cm} |}{Representation}\\
-    \hline
-    Artifact Subcategory & \multicolumn{2}{| m{9cm} |}{Presentation of information/results}\\
-    \hline
-    Task Category & \multicolumn{2}{| m{9cm} |}{Task-mapping}\\
-    \hline
-    Task Subcategory & \multicolumn{2}{| m{9cm} |}{Functionality}\\
-    \hline
-    \textbf{Nielsen Heuristics} & \multicolumn{2}{| m{9cm} |}{Visibility of system status}\\
-\end{longtable}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Success Rate of the scenarios by user group when users tested the paper prototype (15 users).}
+    \label{tab:effectiveness_paper_prototype}
+  \begin{tabular}{llrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  \textbf{C1}               & OutSystems Developer & 60.00\%                                                           & 0.00\%                                                                  & 40.00\%                                                       \\
+                            & Software Developer   & 100.00\%                                                          & 0.00\%                                                                  & 0.00\%                                                        \\
+                            & Citizen Developer    & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\
+                            & \textbf{Total}       & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\ \hline
+  \textbf{M1}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 83.33\%                                                       \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 80.00\%                                                       \\
+                            & Citizen Developer    & 0.00\%                                                            & 0.00\%                                                                  & 60.00\%                                                       \\
+                            & \textbf{Total}       & 0.00\%                                                            & 0.00\%                                                                  & 75.00\%                                                       \\ \hline
+  \textbf{C2}               & OutSystems Developer & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                            & Software Developer   & 0.00\%                                                            & 40.00\%                                                                 & 60.00\%                                                       \\
+                            & Citizen Developer    & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                            & \textbf{Total}       & 0.00\%                                                            & 26.67\%                                                                 & 73.33\%                                                       \\ \hline
+  \textbf{C3}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Citizen Developer    & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & \textbf{Total}       & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\ \hline
+  \textbf{F1}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Citizen Developer    & 60.00\%                                                           & 0.00\%                                                                  & 40.00\%                                                       \\
+                            & \textbf{Total}       & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\ \hline
+  \textbf{C4}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & Software Developer   & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                            & \textbf{Total}       & 0.00\%                                                            & 10.00\%                                                                 & 90.00\%                                                       \\ \hline
+  \textbf{M4}               & OutSystems Developer & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\
+                            & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                            & \textbf{Total}       & 10.00\%                                                           & 0.00\%                                                                  & 90.00\%                                                       \\ \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Total}            & OutSystems Developer & 11.43\%                                                           & 2.86\%                                                                  & 85.71\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & Software Developer   & 14.29\%                                                           & 8.57\%                                                                  & 77.14\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & Citizen Developer    & 28.00\%                                                           & 4.00\%                                                                  & 68.00\%                                                       \\
+  \rowcolor[HTML]{EFEFEF} 
+                            & \textbf{Total}       & \textbf{17.90\%}                                                  & \textbf{5.14\%}                                                         & \textbf{76.95\%}                                              \\ \hline
+  \end{tabular}
+  \end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+    \caption{Success Rate of the scenarios by user group when users tested the Final Prototype (30 users).}
+      \label{tab:effectiveness_final_prototype}
+    \begin{tabular}{llrrr}
+    \hline
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+    \textbf{C1}               & OutSystems Developer & 70.00\%                                                           & 0.00\%                                                                  & 30.00\%                                                       \\
+                              & Software Developer   & 80.00\%                                                           & 0.00\%                                                                  & 20.00\%                                                       \\
+                              & Citizen Developer    & 100.00\%                                                          & 0.00\%                                                                  & 0.00\%                                                        \\
+                              & \textbf{Total}       & 83.33\%                                                           & 0.00\%                                                                  & 16.67\%                                                       \\ \hline
+    \textbf{M1}               & OutSystems Developer & 0.00\%                                                            & 10.00\%                                                                 & 90.00\%                                                       \\
+                              & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                              & Citizen Developer    & 10.00\%                                                           & 0.00\%                                                                  & 90.00\%                                                       \\
+                              & \textbf{Total}       & 3.33\%                                                            & 3.33\%                                                                  & 93.33\%                                                       \\ \hline
+    \textbf{C2}               & OutSystems Developer & 0.00\%                                                            & 20.00\%                                                                 & 80.00\%                                                       \\
+                              & Software Developer   & 20.00\%                                                           & 40.00\%                                                                 & 40.00\%                                                       \\
+                              & Citizen Developer    & 20.00\%                                                           & 40.00\%                                                                 & 40.00\%                                                       \\
+                              & \textbf{Total}       & 13.33\%                                                           & 33.33\%                                                                 & 53.33\%                                                       \\ \hline
+    \textbf{C3}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                              & Software Developer   & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                              & Citizen Developer    & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\
+                              & \textbf{Total}       & 6.67\%                                                            & 0.00\%                                                                  & 93.33\%                                                       \\ \hline
+    \textbf{F1}               & OutSystems Developer & 10.00\%                                                           & 10.00\%                                                                 & 80.00\%                                                       \\
+                              & Software Developer   & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\
+                              & Citizen Developer    & 60.00\%                                                           & 0.00\%                                                                  & 40.00\%                                                       \\
+                              & \textbf{Total}       & 30.00\%                                                           & 3.33\%                                                                  & 66.67\%                                                       \\ \hline
+    \textbf{C4}               & OutSystems Developer & 0.00\%                                                            & 0.00\%                                                                  & 100.00\%                                                      \\
+                              & Software Developer   & 0.00\%                                                            & 30.00\%                                                                 & 70.00\%                                                       \\
+                              & \textbf{Total}       & 0.00\%                                                            & 15.00\%                                                                 & 85.00\%                                                       \\ \hline
+    \textbf{M4}               & OutSystems Developer & 10.00\%                                                           & 0.00\%                                                                  & 90.00\%                                                       \\
+                              & Software Developer   & 30.00\%                                                           & 0.00\%                                                                  & 70.00\%                                                       \\
+                              & \textbf{Total}       & 20.00\%                                                           & 0.00\%                                                                  & 80.00\%                                                       \\ \hline
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{Total}            & OutSystems Developer & 12.86\%                                                           & 5.71\%                                                                  & 81.43\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & Software Developer   & 21.43\%                                                           & 10.00\%                                                                 & 68.57\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & Citizen Developer    & 42.00\%                                                           & 8.00\%                                                                  & 50.00\%                                                       \\
+    \rowcolor[HTML]{EFEFEF} 
+                              & \textbf{Total}       & \textbf{25.43\%}                                                  & \textbf{7.90\%}                                                         & \textbf{66.67\%}                                              \\ \hline
+    \end{tabular}
+    \end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Average of the time needed for each scenario and user group in the existing interface (extracted from usability tests with 30 users).}
+    \label{tab:duration_existing_interface}
+  \begin{tabular}{llrrr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  \textbf{C1}               & OutSystems Developer & 0:02:14                                                           & \multicolumn{1}{c}{-}                                                   & 0:03:46                                                       \\
+                            & Software Developer   & 0:03:30                                                           & \multicolumn{1}{c}{-}                                                   & 0:04:20                                                       \\
+                            & Citizen Developer    & 0:04:47                                                           & \multicolumn{1}{c}{-}                                                   & \multicolumn{1}{c}{-}                                         \\
+                            & \textbf{Total}       & 0:03:30                                                           & \multicolumn{1}{c}{-}                                                   & 0:04:03                                                       \\ \hline
+  \textbf{M1}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & 0:01:18                                                                 & 0:02:06                                                       \\
+                            & Software Developer   & 0:07:53                                                           & 0:04:28                                                                 & 0:04:55                                                       \\
+                            & Citizen Developer    & 0:08:25                                                           & 0:08:26                                                                 & 0:04:11                                                       \\
+                            & \textbf{Total}       & 0:08:09                                                           & 0:04:44                                                                 & 0:03:44                                                       \\ \hline
+  \textbf{C2}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & 0:02:31                                                                 & 0:04:09                                                       \\
+                            & Software Developer   & 0:02:38                                                           & 0:03:58                                                                 & 0:02:15                                                       \\
+                            & Citizen Developer    & 0:03:09                                                           & 0:03:07                                                                 & \multicolumn{1}{c}{-}                                         \\
+                            & \textbf{Total}       & 0:02:53                                                           & 0:03:12                                                                 & 0:03:12                                                       \\ \hline
+  \textbf{C3}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & \multicolumn{1}{c}{-}                                                   & 0:01:01                                                       \\
+                            & Software Developer   & \multicolumn{1}{c}{-}                                             & 0:00:54                                                                 & 0:01:40                                                       \\
+                            & Citizen Developer    & 0:01:50                                                           & 0:02:45                                                                 & 0:01:57                                                       \\
+                            & \textbf{Total}       & 0:01:50                                                           & 0:01:50                                                                 & 0:01:33                                                       \\ \hline
+  \textbf{F1}               & OutSystems Developer & 0:04:46                                                           & \multicolumn{1}{c}{-}                                                   & 0:06:05                                                       \\
+                            & Software Developer   & 0:08:44                                                           & 0:10:56                                                                 & 0:07:17                                                       \\
+                            & Citizen Developer    & 0:08:46                                                           & 0:10:57                                                                 & 0:08:10                                                       \\
+                            & \textbf{Total}       & 0:07:25                                                           & 0:10:56                                                                 & 0:07:11                                                       \\ \hline
+  \textbf{C4}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & 0:01:23                                                                 & 0:02:09                                                       \\
+                            & Software Developer   & 0:02:11                                                           & 0:01:51                                                                 & 0:02:03                                                       \\
+                            & \textbf{Total}       & 0:02:11                                                           & 0:01:37                                                                 & 0:02:06                                                       \\ \hline
+  \textbf{M4}               & OutSystems Developer & 0:02:38                                                           & \multicolumn{1}{c}{-}                                                   & 0:03:55                                                       \\
+                            & Software Developer   & 0:04:47                                                           & \multicolumn{1}{c}{-}                                                   & \multicolumn{1}{c}{-}                                         \\
+                            & \textbf{Total}       & 0:03:42                                                           & \multicolumn{1}{c}{-}                                                   & 0:03:55                                                       \\ \hline
+  \end{tabular}
+  \end{table}
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+  \caption{Average of the time needed for each scenario and user group in the final prototype (extracted from usability tests with 30 users).}
+    \label{tab:duration_final_prototype}
+  \begin{tabular}{llrcr}
+  \hline
+  \rowcolor[HTML]{EFEFEF} 
+  \textbf{Testing Scenario} & \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+  \textbf{C1}               & OutSystems Developer & 0:01:54                                                           & -                                                                       & 0:02:02                                                       \\
+                            & Software Developer   & 0:01:50                                                           & -                                                                       & 0:02:22                                                       \\
+                            & Citizen Developer    & 0:04:10                                                           & -                                                                       & \multicolumn{1}{c}{-}                                         \\
+                            & \textbf{Total}       & 0:02:38                                                           & -                                                                       & 0:02:12                                                       \\ \hline
+  \textbf{M1}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & \multicolumn{1}{r}{0:02:36}                                             & 0:02:31                                                       \\
+                            & Software Developer   & \multicolumn{1}{c}{-}                                             & -                                                                       & 0:04:02                                                       \\
+                            & Citizen Developer    & 0:06:50                                                           & -                                                                       & 0:05:00                                                       \\
+                            & \textbf{Total}       & 0:06:50                                                           & \multicolumn{1}{r}{0:02:36}                                             & 0:03:51                                                       \\ \hline
+  \textbf{C2}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & \multicolumn{1}{r}{0:02:22}                                             & 0:03:04                                                       \\
+                            & Software Developer   & 0:02:09                                                           & \multicolumn{1}{r}{0:04:17}                                             & 0:03:00                                                       \\
+                            & Citizen Developer    & 0:03:14                                                           & \multicolumn{1}{r}{0:04:55}                                             & 0:03:34                                                       \\
+                            & \textbf{Total}       & 0:02:41                                                           & \multicolumn{1}{r}{0:03:51}                                             & 0:03:12                                                       \\ \hline
+  \textbf{C3}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & -                                                                       & 0:00:47                                                       \\
+                            & Software Developer   & \multicolumn{1}{c}{-}                                             & -                                                                       & 0:01:01                                                       \\
+                            & Citizen Developer    & 0:02:52                                                           & -                                                                       & 0:01:11                                                       \\
+                            & \textbf{Total}       & 0:02:52                                                           & -                                                                       & 0:01:00                                                       \\ \hline
+  \textbf{F1}               & OutSystems Developer & 0:11:17                                                           & \multicolumn{1}{r}{0:06:14}                                             & 0:05:10                                                       \\
+                            & Software Developer   & 0:06:59                                                           & -                                                                       & 0:08:36                                                       \\
+                            & Citizen Developer    & 0:07:12                                                           & -                                                                       & 0:08:59                                                       \\
+                            & \textbf{Total}       & 0:08:29                                                           & \multicolumn{1}{r}{0:06:14}                                             & 0:07:35                                                       \\ \hline
+  \textbf{C4}               & OutSystems Developer & \multicolumn{1}{c}{-}                                             & -                                                                       & 0:00:59                                                       \\
+                            & Software Developer   & \multicolumn{1}{c}{-}                                             & \multicolumn{1}{r}{0:01:45}                                             & 0:01:14                                                       \\
+                            & \textbf{Total}       & \multicolumn{1}{c}{-}                                             & \multicolumn{1}{r}{0:01:45}                                             & 0:01:07                                                       \\ \hline
+  \textbf{M4}               & OutSystems Developer & 0:00:45                                                           & -                                                                       & 0:03:01                                                       \\
+                            & Software Developer   & 0:01:18                                                           & -                                                                       & 0:04:24                                                       \\
+                            & \textbf{Total}       & 0:01:02                                                           & -                                                                       & 0:03:42                                                       \\ \hline
+  \end{tabular}
+  \end{table}
+
+  \begin{figure}[tb]
+    \centering
+    \subcaptionbox{Existing Interface\label{fig:susChartExistingInterface}}%
+      {\includegraphics[width=1.0\linewidth]{sus-chart-existing-interface}}%
+      \\
+    \subcaptionbox{Final Prototype\label{fig:susChartFinalPrototype}}%
+    {\includegraphics[width=1.0\linewidth]{sus-chart-final-prototype}}%
+  \caption{Comparison of the System Usability Scale results (SUS) between the Existing Interface and the Final Prototype.}
+    \label{fig:susChartComparison}
+  \end{figure}
+  
+  % Please add the following required packages to your document preamble:
+  % \usepackage{booktabs}
+  % \usepackage{multirow}
+  % \usepackage[table,xcdraw]{xcolor}
+  % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+  \begin{table}[tb]
+    \caption{Average and Standard Deviation of the System Usability Scale (SUS) results.}
+  \label{tab:sus_results}
+    \begin{tabular}{@{}|m{6cm}R{1.7cm}R{1.7cm}R{1.7cm}R{1.7cm}|@{}}
+    \toprule
+                                                                                               & \multicolumn{2}{l}{\textbf{Average}}                                                                                                           & \multicolumn{2}{l|}{\textbf{Standard Deviation}}                                                                                                \\ \cmidrule(l){2-5} 
+    \multirow{-2}{*}{\textbf{Question}}                                                        & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Existing Interface}} & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{E6E6E6}\textbf{Final Prototype}} & \multicolumn{1}{m{1.7cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Existing Interface}} & \multicolumn{1}{m{1.7cm}|}{\cellcolor[HTML]{E6E6E6}\textbf{Final Prototype}} \\ \midrule
+    I think that I would like to use this system frequently.                                   & \cellcolor[HTML]{EFEFEF}3.40                                            & \cellcolor[HTML]{E6E6E6}4.33                                         & \cellcolor[HTML]{EFEFEF}1.00                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+    I found the system unnecessarily complex.                                                  & \cellcolor[HTML]{EFEFEF}2.87                                            & \cellcolor[HTML]{E6E6E6}1.90                                         & \cellcolor[HTML]{EFEFEF}1.01                                            & \cellcolor[HTML]{E6E6E6}0.79                                          \\ \midrule
+    I thought the system was easy to use.                                                      & \cellcolor[HTML]{EFEFEF}3.40                                            & \cellcolor[HTML]{E6E6E6}4.07                                         & \cellcolor[HTML]{EFEFEF}0.97                                            & \cellcolor[HTML]{E6E6E6}0.73                                          \\ \midrule
+    I think that I would need the support of a technical person to be able to use this system. & \cellcolor[HTML]{EFEFEF}2.97                                            & \cellcolor[HTML]{E6E6E6}2.20                                         & \cellcolor[HTML]{EFEFEF}1.27                                            & \cellcolor[HTML]{E6E6E6}1.14                                          \\ \midrule
+    I found the various functions in this system were well integrated.                         & \cellcolor[HTML]{EFEFEF}3.07                                            & \cellcolor[HTML]{E6E6E6}4.30                                         & \cellcolor[HTML]{EFEFEF}0.91                                            & \cellcolor[HTML]{E6E6E6}0.64                                          \\ \midrule
+    I thought there was too much inconsistency in this system.                                 & \cellcolor[HTML]{EFEFEF}2.40                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.22                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+    I would imagine that most people would learn to use this system very quickly.              & \cellcolor[HTML]{EFEFEF}3.60                                            & \cellcolor[HTML]{E6E6E6}4.13                                         & \cellcolor[HTML]{EFEFEF}1.04                                            & \cellcolor[HTML]{E6E6E6}0.85                                          \\ \midrule
+    I found the system very cumbersome to use.                                                 & \cellcolor[HTML]{EFEFEF}2.37                                            & \cellcolor[HTML]{E6E6E6}1.33                                         & \cellcolor[HTML]{EFEFEF}1.13                                            & \cellcolor[HTML]{E6E6E6}0.54                                          \\ \midrule
+    I felt very confident using the system.                                                    & \cellcolor[HTML]{EFEFEF}3.30                                            & \cellcolor[HTML]{E6E6E6}4.00                                         & \cellcolor[HTML]{EFEFEF}1.24                                            & \cellcolor[HTML]{E6E6E6}0.93                                          \\ \midrule
+    I needed to learn a lot of things before I could get going with this system.               & \cellcolor[HTML]{EFEFEF}2.73                                            & \cellcolor[HTML]{E6E6E6}2.43                                         & \cellcolor[HTML]{EFEFEF}1.11                                           & \cellcolor[HTML]{E6E6E6}1.12                                          \\ \bottomrule
+    \end{tabular}
+    \end{table}

@@ -9,23 +9,21 @@
 \label{cha:requirements_and_analysis}
 %As previously stated, the main goal of this dissertation is the development of an efficient and effective visual interface for query formulation. The design process phase is the first phase of the solution development, where all the existing relevant problems are combined and took into account in order to draft some possible solutions based on the problem requirements.
 
-As previously stated, the problem comprehension and the users' requirements were considered a key point throughout the design process in order to build a user-centered solution that could tackle the existing most impactful problems. For this to happen, this chapter describes the processes used to structure the problems of the current visual interface. Furthermore, target users of the system are presented and categorized, accordingly with their background, expectations, and necessities.
+As previously stated, the problem comprehension and the users' requirements were considered key points throughout the design process in order to build a user-centered solution that could tackle the existing most impactful problems. For this to happen, this chapter describes the processes used to structure the problems of the current visual interface, using the methodology described in the previous chapter. Furthermore, target users of the system are presented and categorized, accordingly with their background, expectations, and necessities.
 
-\section{Problem Definition}
-\label{sec:problem_definition}
+\section{Problem Analysis}
+\label{sec:problem_analysis}
 
-As the actual visual interface has not been having the expected acceptability due to its interaction problems, these are problems that have an impactful role in the solution building process. In that way, multiple approaches were used to collect interaction problems, understanding for each of them what are the tasks involved, and the most harmed set of users.
+As the existing \gls{VQI} of the OutSystems Platform has not been having the expected acceptability due to its interaction problems, multiple approaches were used to collect the existing problems, understanding for each of them what are the tasks involved, and the most harmed set of users.
 
-The following sections describe the implemented strategies to define the problem as completely as possible. The result of those analyses was combined in a table that characterizes each identified problem of the existing interface. This table is presented in the Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface} and describes all the problems identified. For each problem, it is detailed the interface components involved and the Nielsen Heuristics \cite{nielsen_heuristics} affected. Moreover, the issues are classified according to the artifact and task attributes of a Framework adapted from Usability-ODC Framework \cite{in_process_usability_problem_classification_analysis_improvement}, as well as it contains information regarding OutSystems Community\cite{outsystems_community} posts and likes related to each problem.
-
-Hereinafter, the approaches and strategies used to collect and organize data regarding the existing problems of the interface will be presented. As usability issues depend on interaction with users, it was important to analyze the problems holistically, considering, in each problem, the impact caused on each type of user.
+Hereinafter, the approaches and strategies used to collect and organize data regarding the existing problems of the interface will be presented. As usability issues depend on interaction with users, the problems were holistically analyzed, considering, in each problem, the impact caused on each type of user.
 
 \subsection{Analysis}
 \label{subsec:analysis}
 
 The analysis of the query formulation interface through self-exploration was the first method used to comprehend the existing problems. The process started with the visualization of two OutSystems tutorials \cite{outsystems_tutorial_aggregates_101, outsystems_tutorial_advanced_aggregates} about visual data querying. The tutorials included some hands-on exploration that provided an initial contextualization of the visual query builder and its functionalities. After that, other scenarios of query formulation were explored to comprehend the system barriers and difficulties.
 
-As pointed out in \ref{sec:problem_description}, the lack of some advanced functionalities were observed during that exploration process. Nevertheless, other problems, which have a negative effect on user experience and task efficiency and effectiveness, were also identified.
+As pointed out in section \ref{sec:problem_description}, the lack of some advanced functionalities were observed during that exploration process. Nevertheless, other problems, which have a negative effect on user experience and task efficiency and effectiveness, were also identified.
 
 First of all, it was detected that some functionalities were hidden, damaging the learnability of the system, not fulfilling the "Recognition rather than recall" principle of the Nielsen Heuristics \cite{nielsen_heuristics}. Notwithstanding that the learnability issue mainly affects the novice users, there are peculiarities of this system and its environment that aggravate this problem. Since SQL formulation is an alternative approach to build queries, if SQL users do not find the intended functionalities in the visual query builder due to its hiddenness, they could use SQL to perform their tasks, avoiding the use of the visual system.
 
@@ -34,7 +32,7 @@ The hidden functionalities are not only advanced features of query formulation. 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.5in]{right-click-group-by}
-	\caption{Hidden option to add an aggregation function, since it is enclosed in a right-click on the query result table column header.}
+	\caption{Hidden option to add an aggregation function, since it is enclosed\\ in a right-click on the query result table column header.}
 	\label{fig:rightClickGroupBy}
 \end{figure}
 
@@ -44,13 +42,11 @@ Furthermore, the interface has not revealed to be flexible, efficient, and effec
 \begin{itemize}
     \item Search engines: there is no option to efficiently search for an attribute neither to look for some data in the query result or to apply some aggregation function (as illustrated in Figure \ref{fig:rightClickGroupBy}). Moreover, there is no general search in all queries, which could be useful when users need to find if some entity or variable is present in the query.
     \item Hidden columns: in the existing interface, primary and foreign keys are automatically hidden in the query result table since they are considered not relevant data for the query output. That strategy has been implemented since the first release of the interface to provide the most clear output for users with lack of technical background, assuming that they could not understand the meaning of those attributes. Since those attributes may contain relevant information, it is possible to unhide them. However, it must be highlighted that there is no efficient way to expand all hidden columns at once, difficulting significantly the comprehension and formulation of all queries who do not have a reduced number of entities and attributes. Figure \ref{fig:hiddenAttributes} illustrates how the hidden attributes are presented in the interface.
-    \item Filter edition: the adaptability of existing query filters is possible using the expression editor modal, as demonstrated in Figure \ref{fig:aggregateFilterModal}. This modal is useful because it provides some guidance in the expression formulation. Users, can select the intended language expressions or the entities, attributes, or variables that need without having to recall those names. However, if users do not need that assistance, the interaction strategy implemented could led to time and visual context wastefulness every time that a modal is opened. It should be noted that the modal is definitely a good feature but it should not be the unique way to edit filters since it can increase the time spent to built queries unnecessarily. Moreover, there is no way to copy and past filter or to read effectively the content since there is no color highlighting in filters expressions.
-    \item Accelerators feedback: this visual query interface has multiple accelerators that turn the query building process faster. Nevertheless, sometimes the automatic mechanisms are silent and users may not comprehend they were applied. For example, when two entities are added and are related, the system automatically joins those entities. However, there is no highlight or other visual interaction mechanism that provides feedback to the user and shows him what action were applied in the aggregation output.
+    \item Filter edition: the adaptability of existing query filters is possible using the expression editor modal, as demonstrated in Figure \ref{fig:aggregateFilterModal}. This modal is useful because it provides some guidance in the expression formulation. Users, can select the intended language expressions or the entities, attributes, or variables that need without having to recall those names. However, if users do not need that assistance, the interaction strategy implemented could led to time and visual context wastefulness every time that a modal is opened. It should be noted that the modal is definitely a good feature but it should not be the unique way to edit filters since it can increase the time spent to built queries unnecessarily. Moreover, there is no way to copy and past filter or to read effectively the content since there is no color highlighting in filters' expressions.
+    \item Accelerators feedback: this visual query interface has multiple accelerators that turn the query building process faster. Nevertheless, sometimes the automatic mechanisms are silent and users may not comprehend they were applied. For example, when two entities are added and are related, the system automatically joins those entities. However, there is no highlight or other visual interaction mechanism that provides feedback to the user and shows him which action was applied in the aggregation output.
     \item Inconsistency problems: some functionalities were accessible through a determined context and option but other alternative options do not have the same behavior. For instance, in some use cases it is not possible to add a new entity to the query using drag and drop but if the user click in another add button the entity is added.
     \item Multiple actions at once: sometimes it could be useful to do several actions at once in order to reduce the time spent to build the query. For instance, it should be possible to add multiple entities at once instead of adding one at a time; 
 \end{itemize}
-
-As mentioned, the list of all problems identified is presented in the Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface}.
 
 In a nutshell, the first analysis and exploration of the interface lead to conclude that the interface is useful for users without technical background and has implemented good strategies that could optimize the query formulation process even more than \gls{SQL} if those strategies would be reconsidered and redesigned. Moreover, it was concluded that it is necessary to provide search engines and other accelerators to enhance the efficiency value proposition of the system. The value of the system increases if users could build queries in that system as fast as \gls{SQL} or even more.
 
@@ -63,7 +59,7 @@ In a nutshell, the first analysis and exploration of the interface lead to concl
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[height=2.5in]{aggregate-filter-modal}
+	\includegraphics[height=3.0in]{aggregate-filter-modal}
 	\caption{Filter edition modal - example of a filter edition after selection of the intended filter (the first one in that case).}
 	\label{fig:aggregateFilterModal}
 \end{figure}
@@ -71,20 +67,20 @@ In a nutshell, the first analysis and exploration of the interface lead to concl
 \subsection{User Interviews}
 \label{subsec:user_interviews}
 
-After the analysis and study of the existing interface, there was a necessity to realize how are the usage of the visual query system for users. There was a demanding to comprehend what are the most impacting problems of the interface for users' tasks, what are the first users' reactions when asked about the utility of that interface, and if it could be applied, what are the reasons to use \gls{SQL} instead of OutSystems' visual query builder. Asking those general questions to users was the technique used to understand what is their in-depth and sincere opinion about the system utility and its most impacting problems.
+After the analysis and study of the existing interface, there was a necessity to realize how are the usage of the visual query system for users. There was a demand to comprehend what are the most impacting problems of the interface for users' tasks, what are the first users' reactions when asked about the utility of that interface, and if it could be applied, what are the reasons to use \gls{SQL} instead of OutSystems' visual query builder. Asking those general questions to users was the technique used to understand what is their in-depth and sincere opinion about the system utility and its most impacting problems.
 
-Therefore, ten user interviews were performed to explore the tool's limits and understand their impact on user actions. The interviews started with some brief questions to perceive the background of the participant. After that, more directed questions were asked in order to understand the users' opinions about the advantages and disadvantages of the visual query tool. Besides, it was asked in which situations users prefer to use \gls{SQL} instead of the visual tool. The answer reveled to be important since it provided information about the main reasons to resort on \gls{SQL} alternative and also the main causes which led the user to stop using the visual query builder interface. Participants identified and demonstrated in-loco examples of limitations of the visual query system, highlighting causes and the impact of the problems. Also, users revealed other problems which have not been already identified.
+Therefore, 10 user interviews were performed to explore the tool's limits and understand their impact on user actions. The interviews started with some brief questions to perceive the background of the participant. After that, more directed questions were asked in order to understand the users' opinions about the advantages and disadvantages of the visual query tool. Besides, it was asked in which situations users prefer to use \gls{SQL} instead of the visual tool. The answer reveled to be important since it provided information about the main reasons to resort on \gls{SQL} alternative and also the main causes which led the user to stop using the visual query builder interface. Participants identified and demonstrated in-loco examples of limitations of the visual query system, highlighting causes and the impact of the problems. Also, users revealed other problems which have not been already identified.
 
 Furthermore, the set of interviewed users, answered about which advanced functionalities would benefit further adoption and some usability problems previously identified. The purpose of these last questions was to ensure that the user answered truthfully about the aspects that most affect him negatively while using the visual query system. By letting him explain all the details about his vison, on further adjustments to the system, is possible to establish aspects of common groud between the conclusions of the primary analysis and the user reasoning about major limitations.
 
-The results revealed that the most novice users, the users with less than six months of experience, consider Aggregates simple to use and stated that it covered their necessities, referring that it is more simple to learn than \gls{SQL}. The most experienced users, who use the OutSystems platform to develop applications, every day, for professional purposes, and have a technical technological background, reported that in the visual tool they cannot have a clear query understanding at a first glance. Moreover, they referred that they work with queries that contain several tables, attributes, and business rules. In those cases, they have considered that it was difficult to formulate queries using the visual querying interface. Besides, being required to switch between tabs in the interface to view the data sources, and the filters and sorts criteria, other issues were presented such as the lack of control on the query output\footnote{As referred on section \ref{subsubsec:current_progress}. When a user adds an entity to an Aggregate, all its attributes are added automatically and if the user hides them the output of the query does not change.}. When asked about the aggregation functions\footnote{Funtionality added when Simple Queries have been replaced by Aggregates (Section \ref{subsubsec:previous_work})}, they do not refer any problem with the approach interaction strategy adopted, but they have emphasized that it is very difficult to find the intended column they need, since there is no search or navigation engine. Other usability problems that decreases the users’ satisfaction, such as difficulty to search in all query or to copy and paste query components, were also pointed out.
+The results revealed that the most novice users, the users with less than six months of experience, consider Aggregates simple to use and stated that it covered their necessities, referring that it is more simple to learn than \gls{SQL}. The most experienced users, who use the OutSystems platform to develop applications, every day, for professional purposes, and have a technical technological background, reported that in the visual tool they cannot have a clear query understanding at a first glance. Moreover, they referred that they work with queries that contain several tables, attributes, and business rules. In those cases, they have considered that it was difficult to formulate queries using the visual querying interface. Besides, being required to switch between tabs in the interface to view the data sources, and the filters and sorts criteria, other issues were presented such as the lack of control on the query output\footnote{As referred on section \ref{subsubsec:current_progress}. When a user adds an entity to an Aggregate, all its attributes are added automatically and if the user hides them the output of the query does not change.}. When asked about the aggregation functions\footnote{Funtionality added when Simple Queries have been replaced by Aggregates (section \ref{subsubsec:previous_work})}, they do not refer any problem with the approach interaction strategy adopted, but they have emphasized that it is very difficult to find the intended column they need, since there is no search or navigation engine. Other usability problems that decreases the users’ satisfaction, such as difficulty to search in all query or to copy and paste query components, were also pointed out.
 
 In conclusion, the results of the problem definition phase indicated that the interface is simple to use but presents a considerable set of limitations in its components, mainly in the domain of professional purpose tasks. In that way, the suggestions to create an improved overview of the query, which would allow a faster comprehension of the query, as well as the implementation of interface accelerators to make the query editor powerful such as search engines and several access alternatives to the same functionality were the most stated aspects. Regardless of the suggestions, the user experience of the interface should be kept simple in order to continue to be easy to be learned and used by users without a technical technological background.
 
 \subsection{Data Analysis}
 \label{subsec:data_analysis}
 
-Even though the analysis made and the first user interviews have indicated user experience problems of the interface as the factor that has been impacting the user acceptance of the visual query builder, a quantitative analysis was performed to perceive what are the operations most used by developers when they formulate queries textually. Thereby, the analysis was complemented with a metric study on queries executed on the Outsystems cloud, in order to find patterns that could justify users reasons to use \gls{SQL} instead of Aggregates. 
+Even though the performed analysis and the first user interviews have indicated user experience problems of the interface as the factor that has been impacting the user acceptance of the visual query builder, a quantitative analysis was performed to perceive what are the operations most used by developers when they formulate queries textually. Thereby, the analysis was complemented with a metric study on queries executed on the Outsystems cloud, in order to find patterns that could justify users reasons to use \gls{SQL} instead of Aggregates. 
 
 The queries analyzed, which have been extracted in July 2019 from customers’ projects, were built using Advanced Queries\footnote{The option of the OutSystems Platform, invoked in section \ref{subsubsec:previous_work}, that allows the query design in a textual way using a language based on \gls{SQL}.}. The data set used is composed of 214.400 statements. However, only 60.8\% were used in this study since only the queries are important for the results and not other SQL statements, such as inserts, updates, deletes, and transactions. Nevertheless, that set of 125.613 queries has duplicated results, so that these ones were removed resulting in a final data set of 67.828 queries. The operators and clauses were identified using a \gls{SQL} Parser developed in JavaScript \cite{jsSqlParser}. After obtaining the abstract syntax trees of the queries in a JSON file, that data was analyzed in a program to count the operators and the clauses that were present in the queries. 
 
@@ -151,14 +147,16 @@ Since OutSystems has a wide worldwide Community of developers, the users can use
 
 First of all, it has been taken into account for each post if the topic is related to the lack of some functionalities or related to some problems in the interface. That approach leads to perceive that the predominance of the posts were about usability problems of the interface, whereas there are a reduce quantity of posts about functionalities not supported.
 
-Therefore, the users’ problems and suggestions regarding usability or enhancements of the interface were processed, transforming that information to relevant input to the next design phases. All problems and suggestions identified were detailed in the Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface}, followed with some examples of the problems and suggestions indicated in the OutSystems Community:
+Therefore, the users’ problems and suggestions regarding usability or enhancements of the interface were processed, transforming that information to relevant input to the next design phases. The problems presented below were the most important problems and suggestions indicated in the OutSystems Community:
 
 \begin{itemize}
     \item Search engines: users requested in multiple posts alternatives to search for an entity, attribute, or filter inside the query. Not only they refer that the readability in the interface is difficult primarily due to the non-existing color highlight in the text but also there is no possibility to search for the intended fields. They have also referred that this feature was extremely important for their work since they need to build queries with a large set of entities, attributes, and conditions;
-    \item Filters Edition: it was pointed out in several posts suggestions to improve the interface in order to support filters comments with color highlighting, since they could be useful to explain the intention of the filter, or even the possibility to disable filters instead of deleting them.  
+    \item Filters Edition: it was pointed out in several posts suggestions to improve the interface in order to support filters comments with color highlighting, since they could be useful to explain the intention of the filter, or even the possibility to disable filters instead of deleting them;
     \item Result Count: it was referred that there is no visible count of how many rows the query result has;
     \item Accelerators and Utilities: it has been suggested to add different accelerators in order to accelerate and streamline the query formulation process as well as different ways to present the query structure since, in the user's point of view, the query readability, provided with the existing interface, should be improved.
 \end{itemize}
+
+The description of all problems and suggestions posted in the OutSystems community are detailed in Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{tab:taxonomy_of_existing_problems} in a table that aggregates all problems identified throughout this problem analysis process.
 
 In summary, beyond the necessity of new advanced functionalities, the developers on the OutSystems Community have indicated different situations where the interface turns out not to be as powerful as it could be, since there is a lack of utilities or accelerators that could assist users keeping their task on track.
 
@@ -167,30 +165,45 @@ In summary, beyond the necessity of new advanced functionalities, the developers
 The last phase of the problem definition was the usability tests to the existing visual query interface, which were performed with two main goals:
 
 \begin{enumerate}
-    \item \textbf{Identify problems:} Explore more usability problems that could exist in the interface, by directly observing users interacting with it, under the tasks defined in the prepared testing scenarios (detailed in \ref{app:user_testing_scenarios});
+    \item \textbf{Identify problems:} Explore more usability problems that could exist in the interface, by directly observing users interacting with it, under the tasks defined in the prepared testing scenarios;
     \item \textbf{Gather usability metrics:} Record users' insights about the system as well as the difficulties they had to perform the proposed tasks. This information is going to be processed leading to the attainment of qualitative information to characterize the general opinion of users but also quantitative usability metrics regarding the completeness of the tasks, the time they required to perform it, the operations or elements they did not understand, and their satisfaction using the system.
 \end{enumerate}
 
-By this means, 30 users have performed usability tests in a remote environment using Zoom \cite{zoom}, where the screen was chared and recorded and the visual query builder of Service Studio was tested using the remote control functionality of this meeting platform. Besides, each user allowed to record the session in order to further collect usability metrics and analyze the feedback provided.
+By this means, \textbf{30 users have performed usability tests in a remote environment using Zoom \cite{zoom}}, where the screen was shared and recorded and the visual query builder of Service Studio was tested using the remote control functionality of this meeting platform. Besides, each user allowed to record the session in order to further collect usability metrics and analyze the feedback provided.
 
-The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development:\footnote{A complete definition of each user group is provided in the section \ref{sec:target_users}.}
+\medskip
+\textbf{Understanding the user's profile:}
+\medskip
 
-\begin{itemize}
-    \item \textbf{OutSystems Developer: }users who have relevant experience developing software using OutSystems;
-    \item \textbf{Software Developer: }users who have programming knowledge and know \gls{SQL} but are not accustomed to build software using low-code platforms;
-    \item \textbf{Citizen Developer. }users who are not proficient in any programming language neither in low-code development. Fundamentally, these users are more accustomed to data management tools such as spreadsheet applications.
-\end{itemize}
+The profile of each user was identified through a survey where users answered some questions concerning their background namely regarding OutSystems, \gls{SQL}, and data tools. This information was useful to attribute each user to his respective user group according to his knowledge in relational databases and OutSystems development.\footnote{A complete definition of each user group is provided in section \ref{sec:target_users}.}
 
+It was tested 10 users of each group and the detailed information about the usability test participants' profile is presented in Table \ref{tab:survey_profile_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
 
-As mentioned in \ref{sec:evaluation_method}, the testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios defined in Appendix \ref{app:user_testing_scenarios} - \nameref{app:user_testing_scenarios}.
+\medskip
+\textbf{Preparation of the test:}
+\medskip
 
-Regarding the learnability of the system, the results confirmed the lack of visibility of some functionalities have undermined users to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute, there was a set of users who had difficulty to find how to create it due to the hiddenness of the option, as stated in \ref{cha:requirements_and_analysis}. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
+The testing process started with a brief explanation of the data model used across the tests. The communication used to explain the data model was adapted according to the relational database knowledge each user has. When users confirmed they comprehended the data model and the aim of the tasks they started using the interface according to the testing scenarios. More details about the testing scenarios presented and the evaluation method adopted were already described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_method} respectively.
+
+\medskip
+\textbf{Observation during the test:}
+\medskip
+
+During the test, it was performed a direct observation of users interacting with the system to accomplish the tasks proposed in the scenarios planned. Thereby, a spreadsheet was used to manually register all aspects evaluated in each scenario that was previously enumerated in Table \ref{tab:scenarios_registered_aspects}. The results considered relevant to the usability improvement will be presented below.
+
+In summary, the achievement of the goals of each scenario was registered (effectiveness metrics) as well as the time users spent in each scenario (efficiency metrics). Moreover, as there was scenarios built to test specific problems and functionalities of the interface, specific notes and metrics regarding these functionalities studied were also registered.
+
+\medskip
+\textbf{Results:}
+\medskip
+
+Regarding the learnability of the system, the results confirmed that the lack of visibility of some functionalities have undermined users' ability to find out how to query data in some cases. For example, in the scenario M1, where users needed to create a new calculated attribute (evaluation point S14 according to Table \ref{tab:scenarios_registered_aspects}), there was a set of users who had difficulty to find how to create it due to the hiddenness of the option. Table \ref{tab:existingInterfaceCalculatedAttribute}, presents the percentage of users who managed to add this attribute without difficulty, the ones who struggle to find it, and the remaining who did not manage to add it although perceived the goal of the proposed task.
 
 %Tabela de sucesso de inserção dos calculated attributes.
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Success rate of users when they needed to add a calculated attribute. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S14:} Success rate of users when they needed to add a calculated attribute (Existing Interface usability tests - 30 users).}
     \label{tab:existingInterfaceCalculatedAttribute}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -202,19 +215,19 @@ Regarding the learnability of the system, the results confirmed the lack of visi
     \end{tabular}
     \end{table}
 
-Furthermore, the users revealed difficulty to apply group bys or aggregation functions. In the formulation scenario F1, the users needed to apply one group by and one average aggregation function in order to reach the task goal. The results revealed that only around 40\% of the users managed to group the required data in this scenario, which confirms the problems pointed out in \ref{cha:requirements_and_analysis} about the lack of visibility of these functionalities.
+Furthermore, the users revealed difficulty to apply group bys or aggregation functions (evaluation point S28 according to Table \ref{tab:scenarios_registered_aspects}). In the formulation scenario F1, the users needed to apply one group by and one average aggregation function in order to reach the task goal. The results revealed that only around 40\% of the users managed to group the required data in this scenario, which confirmed the problem predicted by analysis of the interface about the lack of visibility of these functionalities.
 
 On the other hand, the tests revealed some problems concerning the effectiveness reaching the intended result. Although the value proposition of the visual interface is to empower users on understanding and formulating queries, it was identified occasions where users misinterpreter the represented queries or made slips in query formulation cases.
 
-For instance, the scenario C1, which includes a join between $"Sample\_Employee"$ and $"Sample\_Notification"$ with the intend of fetching only the employees who have never created any notification, demonstrated that the representation used was misleading users to correctly interpret the query. Observing the results presented in Table \ref{tab:existingInterfaceLeftJoinNull}, regardless of their groups, all users did not manage to entirely understand this join, even the users who are accustomed to use the visual query builder (OutSystems Developers).
+For instance, the scenario C1, which includes a join between $"Sample\_Employee"$ and $"Sample\_Notification"$ with the intend of fetching only the employees who have never created any notification, demonstrated that the representation used was misleading users to correctly interpret the query. Observing the results presented in Table \ref{tab:existingInterfaceLeftJoinNull}, regardless of their groups, all users did not manage to entirely understand this join (evaluation point S7 of Table \ref{tab:scenarios_registered_aspects}), even the users who are accustomed to use the visual query builder (OutSystems Developers).
 
 %Table os success C1 join
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S7:} Readability rate of the join which represents the case where two entities were merged using a left join and the conditions specified the that the primary key of the right enitity must be null (Existing Interface usability tests - 30 users).}
     \label{tab:existingInterfaceLeftJoinNull}
-    \begin{tabular}{@{}m{5.4cm}rrr@{}}
+    \begin{tabular}{@{}C{5.4cm}rrr@{}}
     \toprule
     \textbf{Left Join with Null Identifier Comprehension} & \multicolumn{1}{l}{Identified} & \multicolumn{1}{l}{Did not Identify} & \multicolumn{1}{l}{Did not see the Join} \\ \midrule
     OutSystems Developer                                  & 16.67\%                        & 83.33\%                                & 0.00\%                                   \\
@@ -225,15 +238,15 @@ For instance, the scenario C1, which includes a join between $"Sample\_Employee"
     \end{table}
 
 
-In addition, the users have also exhibited other problems regarding the comprehension and formulation of the queries which contain joins between two entities that could be made using different foreign keys. For example, considering the data model presented in  Figure\ref{fig:dataModel}, an account has three foreign keys referencing employees: creators, managers and owners of the account. In those cases it is important to easily perceive which foreign key was used to made each join between the two entities. In this respect, only 15.93\% of the users identified this join aspect, which revealed that the interface was not supporting users to further comprehend the query's details. 
+In addition, the users have also exhibited other problems regarding the comprehension and formulation of the queries which contain joins between two entities that could be made using different foreign keys (evaluation point S8 of Table \ref{tab:scenarios_registered_aspects}). For example, considering the data model presented in  Figure\ref{fig:dataModel}, an account has three foreign keys referencing employees: creators, managers and owners of the account. In those cases it is important to easily perceive which foreign key was used to made each join between the two entities. In this respect, only 15.93\% of the users identified this join aspect, which revealed that the interface was not supporting users to further comprehend the query's details. 
 
-From a query formulation point of view, only 36.67\% of the users selected the intended foreign key when they added entities that could be joined using different attributes. Tables \ref{tab:existingInterfaceForeignKeyIdentification} and \ref{tab:existingInterfaceForeignKeySelection} detail the results regarding the query aspect described. It was concluded that the interface was not properly guiding users throughout the data querying process and neither facilitating their work in these specific cases.
+From a query formulation point of view, only 36.67\% of the users selected the intended foreign key when they added entities that could be joined using different attributes (evaluation point S22 of table \ref{tab:scenarios_registered_aspects}). Tables \ref{tab:existingInterfaceForeignKeyIdentification} and \ref{tab:existingInterfaceForeignKeySelection} detail the results regarding the query aspect described. It was concluded that the interface was not properly guiding users throughout the data querying process and neither facilitating their work in these specific cases.
 
 %Table regarding the foreign keys reading and selection
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Readability of the foreign keys used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S8:} Readability of the foreign keys used to join entities that could be joined using different attributes (Existing Interface usability tests - 30 users).}
     \label{tab:existingInterfaceForeignKeyIdentification}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -249,7 +262,7 @@ From a query formulation point of view, only 36.67\% of the users selected the i
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[tb]
-    \caption{Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes. (Existing interface usability tests - 30 users)}
+    \caption{\textbf{Evaluation point S22:} Selection of the foreign key, in the formulation scenario, used to join entities that could be joined using different attributes (Existing interface usability tests - 30 users).}
     \label{tab:existingInterfaceForeignKeySelection}
     \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -261,32 +274,47 @@ From a query formulation point of view, only 36.67\% of the users selected the i
     \end{tabular}
     \end{table}
 
-Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency, and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_existing_interface} represents the average of the success of each user group in each scenario as well as the total average. The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in Appendix \ref{app:user_testing_scenarios} and in section \ref{sec:target_users} respectively.
+Finally, it was summarized metrics to evaluate the users' performance regarding effectiveness, efficiency, and satisfaction for all testing scenarios performed. Table \ref{tab:effectiveness_summary_existing_interface} represents the average of the success of each user group for all scenarios performed (evaluation point S1 of Table \ref{tab:scenarios_registered_aspects}). The success was classified according to the Table \ref{tab:effectiveness_states} already presented and the description of user testing scenarios and user groups which are detailed in section \ref{sec:testing_scenarios} and in section \ref{sec:target_users} respectively. The detailed results of each scenario are detailed in Table \ref{tab:effectiveness_existing_interface} of Appendix \ref{app:usability_tests_results} - \nameref{app:usability_tests_results}.
 
-
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[tb]
+    \caption{\textbf{Evaluation point S1:} Average success rate of all scenarios by user group (Existing Interface usability tests - 30 users).}
+    \label{tab:effectiveness_summary_existing_interface}
+    \begin{tabular}{lrrr}
+    \hline
+    \rowcolor[HTML]{EFEFEF} 
+    \textbf{User Group}  & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Not Achieved}} & \multicolumn{1}{C{2cm}}{\cellcolor[HTML]{EFEFEF}\textbf{Partially Achieved}} & \multicolumn{1}{l}{\cellcolor[HTML]{EFEFEF}\textbf{Achieved}} \\ \hline
+    OutSystems Developer & 27.14\%                                                           & 20.00\%                                                                  & 52.86\%                                                       \\
+    Software Developer   & 50.00\%                                                           & 20.00\%                                                                  & 30.00\%                                                       \\
+    Citizen Developer    & 70.00\%                                                           & 8.00\%                                                                  & 22.00\%                                                       \\
+    \textbf{Total}       & \textbf{46.84\%}                                                  & \textbf{16.84\%}                                                         & \textbf{36.32\%}                                              \\ \hline
+    \end{tabular}
+    \end{table}
 
 %In order to analyze users' behavior while they are interacting with the visual query interface, testing scenarios were prepared to evaluate usability attributes of the interface.\footnote{This evaluation process is described in sections \ref{sec:testing_scenarios} and \ref{sec:evaluation_method}.} The main purpose of this evaluation was the analysis of the current effectiveness, efficiency, and learnability of the system to compare them with the proposed solution. 
 
-Even though there were negative results, it is visible how the SQL knowledge and the experience using the OutSystems platform impacted the success rate. The percentage of scenarios which were not achieved by Citizen Developers was 70\%. When comparing this value with the value of Software Developers, who have in general more SQL knowledge, the not achieved scenarios represented 50\%. In that way, there was a significant difference between these two types of users, meaning that, the existing interface is highly dependent on the users' SQL knowledge. Lastly, if the results of the Software Developers are compared with the OutSystems Developers results, it can be observed that the not achieved percentage decreases from 50\% to 27.14\%, revealing also that users who are accustomed to using the interface had a superior success rate.
+Even though there were negative results, it was visible how the SQL knowledge and the experience using the OutSystems platform impacted the success rate. The percentage of scenarios which were not achieved by Citizen Developers was 70\%. When comparing this value with the value of Software Developers, who have in general more SQL knowledge, the not achieved scenarios represented 50\%. In that way, there was a significant difference between these two types of users, meaning that, the existing interface is highly dependent on the users' SQL knowledge. Lastly, if the results of the Software Developers are compared with the OutSystems Developers results, it can be observed that the not achieved percentage decreases from 50\% to 27.14\%, revealing also that users who are accustomed to using the interface had a superior success rate.
 
-Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the difference of the effectiveness according to the user group, where it is highly visible the usability problems of the interface which are preventing users to reach the tasks' goals, allowing to conclude that for users who use the query builder for the first time, the learnability curve could be flattened if the user has SQL knowledge.
+Figure \ref{fig:effectivenessExistingInterfaceUserGroup} illustrates the difference of the effectiveness according to the user group (evaluation point S1 of table \ref{tab:scenarios_registered_aspects}), where it is highly visible the usability problems of the interface which are preventing users to reach the tasks' goals, allowing to conclude that for users who use the query builder for the first time, the learnability curve could be flattened if the user has SQL knowledge.
 
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2.4in]{effectiveness-existing-interface-user-group}
-	\caption{Average of the sucess rate of all scenarios by each user group (Existing interface usability tests - 30 users).}
+	\caption{\textbf{Evaluation point S1:} Average of the sucess rate of all scenarios by each user group (Existing Interface usability tests - 30 users).}
 	\label{fig:effectivenessExistingInterfaceUserGroup}
 \end{figure}
 
 The information about the background of each user regarding SQL and OutSystems were filled in the survey, asked before starting the tests. Analyzing the relation between the SQL knowledge and the OutSystems experience with the scenarios success results, presented in Figure \ref{fig:existingInterfaceSqlOutsystemsSuccessRate}, led to concluded that in average, a user who never or almost never have used a query language did not achieve 80\% and 67\%, respectively, of scenarios' goals.
 
-\begin{figure}[tb]
+\begin{figure}[htbp]
     \centering
-    \subcaptionbox{"Have you used a query language (SQL or other)?"\label{fig:existingInterfaceSqlSuccessRate}}%
+    \subcaptionbox{"Insuccess rate vs. Have you used a query language (SQL or other)?"\label{fig:existingInterfaceSqlSuccessRate}}%
       {\includegraphics[height=3.0in]{existing-interface-sql-sucess-rate}}%
       \\
-    \subcaptionbox{"Have you already used OutSystems?"\label{fig:existingInterfaceOutsystemsSuccessRate}}%
+    \subcaptionbox{"Insuccess rate vs. Have you already used OutSystems?"\label{fig:existingInterfaceOutsystemsSuccessRate}}%
       {\includegraphics[height=3.0in]{existing-interface-outsystems-success-rate}}%
     \caption{Comparison between the users' profile characteristics of the users have not achieved scenarios. The charts illustrates the percentage of scenarios not achieved in average for the users who answered the represented in the horizontal axis to the question presented in the caption. (Existing interface usability tests - 30 users). 
       }
@@ -295,16 +323,18 @@ The information about the background of each user regarding SQL and OutSystems w
 
 %Percentage of scenarios not achieved, when users tested the existing interface, by the answers given by users regarding their SQL and Outsystems capabilities.
 
-During the tests, users have mentioned other details of the interface that could be a useful input for the next design iterations. In that way, that feedback was also taken into account and registered as all the other issues identified. Thereby, Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface} includes also all problems identified during the user testing process of the existing visual query interface.
+During the tests, users have mentioned other details of the interface that could be a useful input for the next design iterations. In that way, that feedback was also taken into account and registered as well as all the other issues identified. 
+
+The result of those analyses described in this section was combined in a table that characterizes each identified problem of the existing interface. This table is presented in the Appendix \ref{app:taxonomy_of_problems_existing_interface} - \nameref{app:taxonomy_of_problems_existing_interface} and describes all the problems identified. For each problem, it is detailed the interface components involved, the methods used to identify the problem, and the Nielsen Heuristics \cite{nielsen_heuristics} affected. Moreover, the issues are classified according to the artifact and task attributes of a Framework adapted from Usability-ODC Framework \cite{in_process_usability_problem_classification_analysis_improvement}, as well as it contains information regarding OutSystems Community\cite{outsystems_community} posts and likes related to each problem.
 
 \section{Target Users}
 \label{sec:target_users}
 
 After obtaining a detailed and wide view of the existing problems, the following step was the exploration of how those problems can be solved. As the main goal is the development of an improved interface that gives to the users a solution to manage data queries efficiently, and effectively through intuitive interaction strategies, users are a crucial factor that must be taken into account throughout the entire solution development. Each user has his peculiarities, then the user experience of the solution should be adapted as much as possible to the target users of the query formulation system.
 
-Considering that users will only use the visual query system if they use the OutSystems Platform, that low-code development context where the query system is inserted cannot be dissociated from the user analysis. Thereby, the user analysis process started by a study to categorize the profile of OutSystems Platform users according to the specificities of the data querying domain.
+Considering that users will only use the visual query system if they use the OutSystems Platform, the low-code development context where the query system is inserted cannot be dissociated from the user analysis. Thereby, the user analysis process started by a study to categorize the profile of OutSystems Platform users according to the specificities of the data querying domain.
 
-Since the low-code development paradigm has integrated more people who do not have the strict software engineer profile into software development tasks, the users of the OutSystems Platform do not have the same backgrounds, requirements, and expectations. If, on the one hand, there are OutSystems Developers that have Computer Science academic backgrounds or similar, and experience working with low-level programming languages, on the other hand, there are business experts or specialized in other engineering fields that are also developing in OutSystems. In that way, the provided query building experience should be a hybrid approach that covers the traditional software developers demands without turning the development and the language less intuitive for people that are not familiarized with classical development patterns, terminologies, or processes.
+Since the low-code development paradigm has integrated more people who do not have the strict software engineer profile into software development tasks, the users of the OutSystems Platform do not have the same backgrounds, requirements, and expectations. If, on the one hand, there are OutSystems Developers that have Computer Science academic backgrounds or similar, and experience working with low-level programming languages, on the other hand, there are business experts or specialized in other engineering fields that are also developing in OutSystems. In that way, the provided query building experience should be a hybrid approach that covers the traditional software developers' demands without turning the development and the language less intuitive for people that are not familiarized with classical development patterns, terminologies, or processes.
 
 \subsection{Requirements and Expectations}
 \label{subsec:requirements_and_expectations}
@@ -335,7 +365,7 @@ Being the relational database knowledge a crucial point to frame users' mental m
     \caption{User Groups}
     \label{tab:user-groups}
     \begin{tabular}{|
-    >{\columncolor[HTML]{C0C0C0}} m{3cm} |m{11cm}|}
+    >{\columncolor[HTML]{C0C0C0}} C{3cm} |C{11cm}|}
     \hline
     \begin{tabular}[c]{@{}l@{}}Software \\ Developer\end{tabular}   & Software Developer or Engineer who has a solid previous knowledge of programming and databases. These users are familiarized with textual programming languages, such as C\#, SQL, and others. In that way, they cannot abstract their previous knowledge in such a way that communication with these users should be more technical and specific. Finally, this user group is not an expert in low-code development. However, as they have solid programming, logic, and database knowledge, they could develop some applications using low-code if necessary. \\ \hline
     \begin{tabular}[c]{@{}l@{}}OutSystems \\ Developer\end{tabular} & Independently of their background, these users are experienced in OutSystems. That way, they are proficient and faster in low-code development, regardless of their experience in other traditional software development paradigms. \\ \hline
